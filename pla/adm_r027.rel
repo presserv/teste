@@ -1,0 +1,313 @@
+GAS-Pro v3.0
+002003024079026007093001009000176001
+                                                                                         PAG
+
+NŽO SAI TAXAS
+
+Grp/Codigo Admiss„o Saitxa Reg Nome                               motivo                     Cobrador
+-----------------------------------------------------------------------------------------------------
+[Ÿ]
+ 8 
+GRUPOS
+N„o ter„o d‚bito gerado
+
+
+!EMPT(RV4401F9())
+011
+
+
+
+
+
+
+
+
+
+ 0 
+ 1 
+ 0 
+ 66 
+ 0 
+ 5 
+ 3 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Grupo
+grupo
+
+ 2 
+C
+ 7 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Codigo
+codigo
+
+ 6 
+C
+ 7 
+ 5 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Admiss„o
+admissao
+@D
+ 8 
+D
+ 7 
+ 12 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Saitxa
+saitxa
+@R 99/99
+ 5 
+C
+ 7 
+ 21 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Regi„o
+regiao
+999
+ 3 
+C
+ 7 
+ 28 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Nome
+nome
+ 
+ 35 
+C
+ 7 
+ 32 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+motivo
+RV4401F9()
+
+ 30 
+C
+ 7 
+ 68 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Cobrador
+cobrador
+!!
+ 2 
+C
+ 7 
+ 99 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 1 
+ 1 
+ 44 
+
+T¡tulo aplica‡„o
+nsis
+
+ 2 
+ 1 
+ 22 
+
+Data do sistema
+DTOC(DATE())
+
+ 3 
+ 90 
+ 8 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 3 
+ 82 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 1 
+ 94 
+ 4 
+
+C¢digo relat¢rio
+"ADM_R027"
+
+ 2 
+ 90 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 4 
+ 1 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 0 
+ 0 
+ 0 
+ 5 
+ARQGRUP
+ 1 
+grupo
+
+
+
+COBRADOR
+ 1 
+cobrador
+
+
+
+CIRCULAR
+ 1 
+grupo+ARQGRUP->proxcirc
+
+
+
+REGIAO
+ 1 
+regiao
+
+
+
+CLASSES
+ 1 
+tipcont
+
+
+

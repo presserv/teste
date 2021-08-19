@@ -1,0 +1,294 @@
+GAS-Pro v3.0
+007016014067001003020001010001176001
+ Emiss„o....:           Horas:
+ Hist¢rico..:
+ Contrato...:
+ Complemento:
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ Qtde:       Valor:            Tipo:    Circ:
+[Ÿ]
+Inclus„o~~26006
+Manuten‡„o~~27007
+Consulta~~28008
+[Ÿ]
+ 10 
+ 4 
+Ocorrencia
+
+ 1 
+[Ÿ]
+Hist¢rico
+
+ 4 
+ 5 
+[Ÿ]
+Contrato
+
+ 5 
+ 9 
+ 10 
+[Ÿ]
+N§Cobran‡a
+
+ 10 
+ 5 
+[Ÿ]
+Custos Adicionais
+Custos Adicionais
+
+
+
+
+
+
+
+005
+
+
+
+
+
+
+
+ 0 
+ 1 
+-1 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+emissao_
+D
+E
+@D
+ 8 
+ 10 
+ 1 
+ 15 
+ 0 
+Emiss„o
+
+!EMPT(emissao_)
+Necess rio informar DATA DE EMISSAO v lida
+date()
+Informe a data da gera‡„o desta cobran‡a
+DATE()
+ 0 
+ 0 
+
+
+hora
+C
+E
+99:99
+ 5 
+ 5 
+ 1 
+ 32 
+ 0 
+Hora
+
+!EMPT(hora)
+Necess rio informar HORA
+TIME()
+Informe a hora|Se necess rio
+
+ 0 
+ 0 
+
+
+quem
+C
+V
+ 
+ 10 
+ 10 
+ 1 
+ 40 
+ 0 
+Quem
+
+
+
+M->usuario
+
+
+ 0 
+ 0 
+
+
+historic
+C
+E
+999
+ 3 
+ 3 
+ 2 
+ 15 
+ 0 
+Hist¢rico
+
+PTAB(historic,'HISTORIC',1)
+Este ‚ um campo de preenchimento obrigat¢rio.|Tecle F8 para busca em tabela
+
+Entre com um c¢digo para identificar| a cobran‡a
+
+ 0 
+ 0 
+
+
+contrato
+C
+E
+999999
+ 6 
+ 6 
+ 3 
+ 15 
+ 0 
+Contrato
+
+PTAB(contrato,'GRUPOS',1)
+Contrato inv lido |ou inexistente
+
+Informe o n£mero do contrato
+VDBF(6,26,20,77,'GRUPOS',{'grupo','codigo','nome'},1,'codigo')
+ 0 
+ 0 
+
+
+complement
+C
+E
+@!
+ 35 
+ 35 
+ 4 
+ 15 
+ 0 
+Complemento
+
+!EMPT(complement)
+Entre com uma informa‡„o que diferencie este|lan‡amento de outros com mesmo hist¢rico.
+
+Informe algo para identificar esta cobran‡a
+
+ 0 
+ 0 
+
+
+qtdade
+N
+E
+99999
+ 5 
+ 5 
+ 6 
+ 8 
+ 0 
+Qtdade
+
+!(qtdade<0)
+Informe uma quantidade v lida (>=0)
+
+
+
+ 0 
+ 0 
+
+
+valor
+N
+E
+999999.99
+ 9 
+ 9 
+ 6 
+ 21 
+ 2 
+Valor
+
+!(valor=0)
+VALOR n„o aceit vel|Deve ser diferente de zeros
+
+Informe o valor do servi‡o
+
+ 0 
+ 0 
+
+
+tipo
+C
+E
+9
+ 1 
+ 1 
+ 6 
+ 38 
+ 0 
+Tipo
+
+ 
+
+
+Qual o tipo de lan‡amento
+MTAB([1=J¢ia|2=Taxa|3=Carnˆ],[TIPO])
+ 0 
+ 0 
+
+
+circ
+C
+E
+999
+ 3 
+ 3 
+ 6 
+ 47 
+ 0 
+Circ
+
+(PTAB(contrato+tipo+circ,'TAXAS',1).AND.TAXAS->valorpg=0).or.circ<[001]
+Taxa n„o cadastrada,|ou,| j  paga.
+
+Informe o n£mero da circular a consultar
+
+ 0 
+ 0 
+
+
+ 0 
+ 1 
+CSTSEG
+quem
+M->usuario
+
+
+
+
+ 0 
+ 0 
+ 0 

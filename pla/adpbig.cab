@@ -1,0 +1,934 @@
+GAS-Pro v4.0
+002004005078001002056001004000176001
+                                                            ,
+[Ÿ]
+[Ÿ]
+ 39 
+ 0 
+
+
+
+
+
+
+
+
+
+003
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+pgrupo
+C
+V
+!!
+ 2 
+ 2 
+ 0 
+ 0 
+ 0 
+Grupo
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+p_filial
+C
+E
+@!
+ 2 
+ 2 
+ 0 
+ 0 
+ 0 
+C¢digo
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+pcontrato
+C
+V
+999999
+ 6 
+ 6 
+ 0 
+ 0 
+ 0 
+Codigo
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+pgrau
+C
+V
+9
+ 1 
+ 1 
+ 0 
+ 0 
+ 0 
+Inscr.
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+pseq
+N
+V
+99
+ 2 
+ 2 
+ 0 
+ 0 
+ 0 
+Seq
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+pverpag
+C
+I
+!
+ 1 
+ 1 
+ 0 
+ 0 
+ 0 
+Verificar Pagas?
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+preplanc
+C
+I
+!
+ 1 
+ 1 
+ 0 
+ 0 
+ 0 
+Repetir lan‡amento?
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+lastcodigo
+C
+I
+999999
+ 6 
+ 6 
+ 0 
+ 0 
+ 0 
+Maior Contrato
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+nrcanc
+N
+V
+999999
+ 6 
+ 6 
+ 0 
+ 0 
+ 0 
+N£mero
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+nrreint
+N
+V
+999999
+ 6 
+ 6 
+ 0 
+ 0 
+ 0 
+Nrreint
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+contarec
+C
+E
+@!
+ 5 
+ 5 
+ 0 
+ 0 
+ 0 
+Conta Recepcao
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+contapag
+C
+E
+@!
+ 5 
+ 5 
+ 0 
+ 0 
+ 0 
+Conta Pagamento
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+histrcfcc
+C
+E
+999
+ 3 
+ 3 
+ 0 
+ 0 
+ 0 
+Hist¢rico
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+histrcrec
+C
+E
+999
+ 3 
+ 3 
+ 0 
+ 0 
+ 0 
+Hist¢rico
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+histrccar
+C
+E
+999
+ 3 
+ 3 
+ 0 
+ 0 
+ 0 
+Hist¢rico
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+histpg
+C
+E
+999
+ 3 
+ 3 
+ 0 
+ 0 
+ 0 
+Hist¢rico
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+nrauxrec
+C
+E
+@R 99-999999
+ 8 
+ 9 
+ 0 
+ 0 
+ 0 
+N§ Recibo
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+mcodigo
+C
+E
+999999
+ 6 
+ 6 
+ 0 
+ 0 
+ 0 
+Codigo
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+mtipo
+C
+E
+!
+ 1 
+ 1 
+ 0 
+ 0 
+ 0 
+Tipo
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+mcirc
+C
+E
+999
+ 3 
+ 3 
+ 0 
+ 0 
+ 0 
+Circular
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+mgrupvip
+C
+E
+!!
+ 2 
+ 2 
+ 0 
+ 0 
+ 0 
+Grup
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+combarra
+C
+E
+!
+ 1 
+ 1 
+ 0 
+ 0 
+ 0 
+Combarra
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+cinscr
+C
+E
+!
+ 1 
+ 1 
+ 0 
+ 0 
+ 0 
+Com Inscritos
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+comfalec
+C
+E
+!
+ 1 
+ 1 
+ 0 
+ 0 
+ 0 
+Com Falecido
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+mproc1
+C
+I
+99999
+ 5 
+ 5 
+ 0 
+ 0 
+ 0 
+Processo
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+mproc2
+C
+I
+99
+ 2 
+ 2 
+ 0 
+ 0 
+ 0 
+Ano
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+mproc3
+C
+I
+99
+ 2 
+ 2 
+ 0 
+ 0 
+ 0 
+Filial
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+impnrrec
+C
+I
+99999
+ 5 
+ 5 
+ 0 
+ 0 
+ 0 
+N£mero
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+procimp
+C
+I
+@R 99999/99/!!
+ 9 
+ 8 
+ 0 
+ 0 
+ 0 
+Procimp
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+pvalor
+N
+I
+@E 999,999.99
+ 9 
+ 10 
+ 0 
+ 0 
+ 2 
+Valor
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+pcob
+C
+I
+!!!
+ 3 
+ 2 
+ 0 
+ 0 
+ 0 
+Cobrador
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+mmesref
+C
+I
+@R 99/99
+ 4 
+ 5 
+ 0 
+ 0 
+ 0 
+Mˆs Ref.
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+pnumfcc
+C
+I
+ 
+ 8 
+ 8 
+ 0 
+ 0 
+ 0 
+Pnumfcc
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+p_cidade
+C
+E
+@!
+ 25 
+ 25 
+ 0 
+ 0 
+ 0 
+Munic¡pio
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+p_recp
+C
+E
+!
+ 1 
+ 1 
+ 0 
+ 0 
+ 0 
+Recibo Padr„o
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+setup1
+C
+E
+ 
+ 40 
+ 40 
+ 0 
+ 0 
+ 0 
+Ident1
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+cgcsetup
+C
+E
+@R 99.999.999/9999-99
+ 14 
+ 18 
+ 0 
+ 0 
+ 0 
+CGC
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+setup2
+C
+E
+ 
+ 50 
+ 50 
+ 0 
+ 0 
+ 0 
+Ident2
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+setup3
+C
+E
+ 
+ 50 
+ 50 
+ 0 
+ 0 
+ 0 
+Setup3
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+ 8 
+Nome da empresa
+nemp
+
+ 1 
+ 2 
+ 44 
+
+T¡tulo aplica‡„o
+nsis
+
+ 2 
+ 2 
+ 22 
+
+Data do sistema
+DATE()
+
+ 1 
+ 63 
+ 10 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 1 
+ 54 
+ 7 
+
+Diret¢rio atual
+drvdbf
+
+ 2 
+ 50 
+ 23 
+
+Nome do usu rio
+PADR(usuario,15)
+
+ 0 
+ 0 
+ 15 
+
+Obs do usu rio
+PADR(obs_usuario,15)
+
+ 0 
+ 0 
+ 15 
+
+ 0 
+ 0 
+ 0 
+ 0 

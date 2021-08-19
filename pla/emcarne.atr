@@ -1,0 +1,541 @@
+GAS-Pro v3.0
+008014020071001001029001009001176001
+                    Filial:     (                     )
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ Contrato..:
+
+ Vendedor..:
+ Tabela Tip:        Gerar    parcelas de
+                    com tipo   a cada
+ Parcela de:     at‚       Vencto:
+                                (   parcelas geradas)
+ Emitido em:               Etiquetas em:
+[Ÿ]
+Inclus„o~~26006
+Manuten‡„o~~27007
+Consulta~~28008
+[Ÿ]
+ 12 
+ 2 
+N£mero
+
+ 1 
+[Ÿ]
+Contrato
+
+ 2 
+[Ÿ]
+Lan‡amento/Carnˆs
+Lan‡amento/Carnˆs
+
+
+
+
+
+
+
+005
+
+
+
+
+
+
+
+ 0 
+ 1 
+-1 
+-1 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+seq
+C
+V
+999999
+ 6 
+ 6 
+ 1 
+ 2 
+ 0 
+Seq
+
+
+
+
+
+
+ 0 
+ 1 
+
+
+codigo
+C
+E
+999999
+ 6 
+ 6 
+ 3 
+ 14 
+ 0 
+Codigo
+
+PTAB(codigo,'GRUPOS',1).AND.!(GRUPOS->situacao=[2])
+Contrato inexistente|ou |Cancelado.|Verifique
+EMC_02F9()
+Informe o n£mero do contrato|a gerar a cobran‡a
+VDBF(6,26,20,77,'GRUPOS',{'grupo','codigo','nome'},3,'codigo')
+ 0 
+ 0 
+
+
+vendedor
+C
+E
+!!!
+ 3 
+ 3 
+ 5 
+ 14 
+ 0 
+Vendedor
+
+PTAB(vendedor,'COBRADOR',1).AND.(PTAB(GRUPOS->tipcont,'CLASSES',1).OR.1=1)
+Informe o Vendedor|ou|Tecle F8 para consulta
+GRUPOS->vendedor
+Informe o c¢digo do vendedor|ou|Cobrador desta taxa
+VDBF(6,11,20,77,'COBRADOR',{'cobrador','nome','cidade'},1,'cobrador',[])
+ 0 
+ 0 
+
+
+tip
+C
+E
+@!
+ 2 
+ 2 
+ 6 
+ 14 
+ 0 
+Tipo
+
+PTAB(tip,'TCARNES',1)
+TIPO n„o existe na tabela|Tecle F8 para consultar em tabela
+GRUPOS->vlcarne
+Informe o tipo de tabela de venda|a utilizar na gera‡„o desta cobran‡a
+VDBF(6,43,20,77,'TCARNES',{'tip','tipcob','formapgto','pari','parf','vali'},1,'tip',[])
+ 0 
+ 0 
+
+
+circ
+C
+E
+999
+ 3 
+ 3 
+ 8 
+ 14 
+ 0 
+Circular
+
+(circ>[000]).AND.!PTAB(codigo+TCARNES->tipcob+circ,'TAXAS',1)
+CIRCULAR j  cadastrada|ou|com n£mero inv lido.
+[001]
+Informe o n£mero da primeira parcela a gerar
+
+ 0 
+ 0 
+
+
+vencto_
+D
+E
+@D
+ 8 
+ 10 
+ 8 
+ 36 
+ 0 
+Vencto
+
+!EMPT(vencto_)
+Necess rio informar VENCTO
+
+Entre com a data do vencimento da 1¦Parcela
+
+ 0 
+ 0 
+
+
+emissao_
+D
+E
+@D
+ 8 
+ 10 
+ 10 
+ 14 
+ 0 
+Emiss„o
+
+ 
+
+
+Informe a data em que foi emitido o carnˆ|para emiti-lo, deixe sem preencher
+
+ 0 
+ 0 
+
+
+etiqueta_
+D
+E
+@D
+ 8 
+ 10 
+ 10 
+ 42 
+ 0 
+Etiqueta
+
+ 
+
+
+Informe a data de emiss„o das etiquetas|para emitir, deixe sem preencher
+
+ 0 
+ 0 
+
+
+filial
+C
+I
+@!
+ 2 
+ 2 
+ 0 
+ 0 
+ 0 
+Filial
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+lancto_
+D
+I
+@D
+ 8 
+ 10 
+ 0 
+ 0 
+ 0 
+Lan‡amento
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+por
+C
+I
+ 
+ 10 
+ 10 
+ 0 
+ 0 
+ 0 
+Por
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+parok
+N
+I
+99
+ 2 
+ 2 
+ 0 
+ 0 
+ 0 
+PFim
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+ 14 
+Nome
+GRUPOS->nome
+
+ 3 
+ 21 
+ 35 
+
+TAXAS OK
+IIF(PTAB(codigo,[TAXAS],1),[TAXAS EXISTENTES],[ ])
+
+ 4 
+ 3 
+ 16 
+
+Nome do Vendedo
+IIF(PTAB(vendedor,'COBRADOR',1),COBRADOR->nome,[ ])
+
+ 5 
+ 21 
+ 30 
+
+PIni
+left(CLASSES->classcod+' '+CLASSES->descricao,30)
+
+ 4 
+ 21 
+ 30 
+
+Filial
+filial
+@!
+ 1 
+ 29 
+ 2 
+
+Tipo
+TCARNES->tipcob
+!
+ 7 
+ 30 
+ 1 
+
+FormaPgto
+IIF(TCARNES->formapgto=[01],[01 mes.],TCARNES->formapgto+[ meses.])
+
+ 7 
+ 39 
+ 8 
+
+PFim
+TCARNES->parf
+99
+ 6 
+ 27 
+ 2 
+
+Val.Inic.
+TCARNES->vali/TCARNES->parf
+99999.99
+ 6 
+ 42 
+ 8 
+
+obs
+IIF(TCARNES->pari=2,[N„o gerar a primeira parcela],IIF(TCARNES->pari>2,[N„o gerar as ]+str(TCARNES->pari-1,1)+[ primeiras parcelas],[ ]))
+
+ 9 
+ 2 
+ 30 
+
+nr.final
+RIGHT('000'+ALLTRIM(STR(VAL(circ)-1+TCARNES->parf)),3)
+999
+ 8 
+ 22 
+ 3 
+
+Lan‡amento
+lancto_
+@D
+ 1 
+ 34 
+ 10 
+
+Por
+por
+
+ 1 
+ 45 
+ 10 
+
+PFim
+parok
+99
+ 9 
+ 34 
+ 2 
+
+ 3 
+EMCARNE
+lancto_
+DATE()
+
+EMPT(por)
+
+
+EMCARNE
+por
+M->usuario
+
+EMPT(por)
+
+
+EMCARNE
+parok
+parok + 1
+parok - 1
+
+
+
+ 0 
+ 2 
+TAXAS
+TCARNES->parf
+ 13 
+!PTAB(codigo+TCARNES->tipcob+EMCARNES->circ,'TAXAS',1)
+
+-1 
+
+
+
+codigo
+C
+codigo
+
+
+tipo
+C
+TCARNES->tipcob
+
+
+circ
+C
+RIGHT('00'+ALLTRIM(STR(nparc)),3)
+
+
+emissao_
+D
+CTOD(LEFT(DTOC(vencto_),3)+SUBSTR(DTOC(vencto_-DAY(vencto_)+1+(31*(nparc-1))),4))
+
+
+valor
+N
+EMC_01F9()
+
+
+pgto_
+D
+
+
+
+valorpg
+N
+
+
+
+cobrador
+C
+COBRADOR->cobrador
+
+
+forma
+C
+
+
+
+baixa_
+D
+
+
+
+por
+C
+
+
+
+stat
+C
+[1]
+
+
+filial
+C
+
+
+
+HISTORIC
+1
+ 4 
+1=3 // For‡a CODLAN
+1=3
+ 0 
+
+
+
+historico
+C
+
+
+
+descricao
+C
+
+
+
+tipo
+C
+
+
+
+origem
+C
+
+
+
+ 0 

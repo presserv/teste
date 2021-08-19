@@ -1,0 +1,589 @@
+GAS-Pro v3.0
+002003024079001086002068021000176001
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.
+[Ÿ]
+ 19 
+GRUPOS
+Contrato Baldochi
+
+
+codigo==M->rcodigo
+011
+
+
+
+
+
+
+
+
+
+-1 
+ 1 
+ 0 
+ 88 
+ 0 
+ 5 
+ 3 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+-1 
+-1 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Codigo
+codigo
+
+ 6 
+C
+ 11 
+ 17 
+
+
+ûû        
+
+
+
+
+
+
+
+
+
+
+habilita 216
+CHR(27)+'3'+chr(20)
+
+ 5 
+C
+ 1 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Endere‡o Res
+IIF(PTAB(GRUPOS->codigo+[R],[ECOB],1),ECOB->endereco,[ ])
+@!
+ 35 
+C
+ 23 
+ 22 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Bairro Res
+ECOB->bairro
+@!
+ 20 
+C
+ 27 
+ 11 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Cidade Res
+ECOB->cidade
+@!
+ 25 
+C
+ 27 
+ 47 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+UF Res
+ECOB->uf
+!!
+ 2 
+C
+ 27 
+ 73 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Telefone Res
+ECOB->telefone
+@!
+ 14 
+C
+ 23 
+ 60 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Endere‡o Trab
+IIF(PTAB(GRUPOS->codigo+[T],[ECOB],1),ECOB->endereco,[ ])
+@!
+ 35 
+C
+ 47 
+ 13 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Telefone Trab
+ECOB->telefone
+@!
+ 14 
+C
+ 47 
+ 60 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Grupo
+grupo
+!!
+ 2 
+C
+ 11 
+ 30 
+
+
+ û        
+
+
+
+
+
+
+
+
+
+
+Nome
+nome
+
+ 35 
+C
+ 19 
+ 22 
+
+
+û         
+
+
+
+
+
+
+
+
+
+
+Endere‡o
+endereco
+ 
+ 35 
+C
+ 31 
+ 24 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Est Civil
+IIF(!EMPT(estcivil),SUBS(tbestciv,AT(estcivil,tbestciv),11),[])
+
+ 11 
+C
+ 39 
+ 60 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+CPF
+cpf
+@R 999.999.999-99
+ 14 
+C
+ 19 
+ 60 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Telefone
+telefone
+@!
+ 14 
+C
+ 31 
+ 60 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Naturalidade
+natural
+
+ 25 
+C
+ 35 
+ 15 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Nascto
+nascto_
+@D
+ 8 
+D
+ 35 
+ 55 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Relig
+relig
+@!
+ 20 
+C
+ 55 
+ 46 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+desabilita 216/21
+CHR(27)+'2'
+
+ 3 
+C
+ 86 
+ 2 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 0 
+ 0 
+ 44 
+
+T¡tulo aplica‡„o
+nsis
+
+ 0 
+ 0 
+ 22 
+
+Data do sistema
+DTOC(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 0 
+ 0 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 0 
+ 0 
+ 4 
+
+C¢digo relat¢rio
+"AMBAR041"
+
+ 0 
+ 0 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 0 
+ 0 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 1 
+GRUPOS
+ultimp_
+DATE()
+
+DATE()>ultimp_
+
+
+ 0 
+ 0 
+ 3 
+EMCARNE
+ 1 
+codigo
+
+
+
+INSCRITS
+ 1 
+codigo
+
+
+
+ECOB
+ 1 
+codigo
+
+
+

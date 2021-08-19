@@ -1,0 +1,259 @@
+GAS-Pro v3.0
+011003022079001003025001014000176001
+Processo  Circ Gr Contr  Falecido                            Data
+========= ==== == =====  ============================================
+[Ÿ]
+ 6 
+CPRCIRC
+Processos Cobrados
+grup
+grupo+DTOS(dfal)
+ARQGRUP->proxcirc=circ
+011
+
+
+
+
+
+
+
+
+
+ 0 
+ 0 
+ 0 
+ 66 
+ 0 
+ 2 
+ 3 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Processo
+processo
+ 
+ 9 
+C
+ 3 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Circular
+circ
+
+ 3 
+C
+ 3 
+ 11 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Grupo
+grupo
+!!
+ 2 
+C
+ 3 
+ 16 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Contrato
+num
+
+ 6 
+C
+ 3 
+ 19 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Fal
+fal
+@!
+ 35 
+C
+ 3 
+ 26 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Data
+dfal
+@D
+ 8 
+D
+ 3 
+ 62 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 0 
+ 0 
+ 32 
+
+T¡tulo aplica‡„o
+nsis
+
+ 0 
+ 0 
+ 22 
+
+Data do sistema
+DTOC(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 0 
+ 0 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 0 
+ 0 
+ 4 
+
+C¢digo relat¢rio
+"ADM_R012"
+
+ 0 
+ 0 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 0 
+ 0 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 2 
+PRCESSOS
+saiu
+circ
+
+
+
+
+ARQGRUP
+procpend
+ARQGRUP->procpend-1
+
+
+
+
+ 0 
+ 0 
+ 1 
+PRCESSOS
+ 1 
+processo+categ
+
+
+

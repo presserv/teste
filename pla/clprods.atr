@@ -1,0 +1,179 @@
+GAS-Pro v3.0
+009022016069001001001001010001176001
+ C¢digo ³ Qtdade
+ÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+        ³
+        ³
+        ³
+        ³
+[Ÿ]
+Inclus„o~~26006
+Manuten‡„o~~27007
+Consulta~~28008
+[Ÿ]
+ 5 
+ 1 
+C¢digo
+
+ 1 
+ 2 
+[Ÿ]
+Produtos p/Categoria
+Produtos p/Categoria
+
+
+
+
+
+
+
+005
+
+
+
+
+
+
+
+ 0 
+ 0 
+-1 
+-1 
+-1 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+classcod
+C
+I
+99
+ 2 
+ 2 
+ 0 
+ 0 
+ 0 
+C¢digo
+
+
+
+
+
+
+-1 
+ 0 
+
+
+codigo
+C
+E
+9999
+ 4 
+ 4 
+ 3 
+ 2 
+ 0 
+C¢digo
+
+PTAB(codigo,'PRODUTOS',1)
+C¢digo do PRODUTO inv lido.
+
+Informe o c¢digo do produto
+
+ 0 
+ 0 
+
+
+qtdade
+N
+E
+9999
+ 4 
+ 4 
+ 3 
+ 11 
+ 0 
+Qtdade
+
+!(qtdade<0)
+QUANTIDADE nÆo aceit vel
+
+Informe a quantidade do produto
+
+ 0 
+ 0 
+
+
+data
+D
+I
+@D
+ 8 
+ 8 
+ 0 
+ 0 
+ 0 
+Data
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+por
+C
+I
+ 
+ 10 
+ 10 
+ 0 
+ 0 
+ 0 
+Usu rio
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+ 1 
+Descri‡Æo do pr
+PRODUTOS->produto
+@!
+ 3 
+ 16 
+ 30 
+
+ 0 
+ 0 
+ 0 
+ 0 

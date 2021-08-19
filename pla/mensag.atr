@@ -1,0 +1,207 @@
+GAS-Pro v3.0
+010014015068001001053001011000176001
+ Seq.....:                     (                   )
+ Contrato:
+ Mensagem:
+[Ÿ]
+Inclus„o~~26006
+Manuten‡„o~~27007
+Consulta~~28008
+[Ÿ]
+ 5 
+ 2 
+Sequencia
+
+ 1 
+[Ÿ]
+Contrato
+
+ 2 
+[Ÿ]
+Mensagem p/Contrato
+Mensagem p/Contrato
+
+
+
+
+
+
+
+005
+
+
+
+
+
+
+
+ 0 
+ 0 
+-1 
+-1 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+seq
+C
+V
+999999
+ 6 
+ 6 
+ 1 
+ 11 
+ 0 
+Seq
+
+
+
+
+
+
+ 0 
+ 1 
+
+
+codigo
+C
+E
+999999
+ 6 
+ 6 
+ 2 
+ 11 
+ 0 
+Codigo
+
+PTAB(codigo,'GRUPOS',1)
+Contrato cancelado |ou inexistente
+
+Informe o n£mero do contrato
+VDBF(6,26,20,77,'GRUPOS',{'grupo','codigo','nome'},1,'codigo')
+ 0 
+ 0 
+
+
+mens1
+C
+E
+ 
+ 40 
+ 40 
+ 3 
+ 11 
+ 0 
+Mens1
+
+!EMPT(mens1)
+Necess rio informar a primeira linha de mensagen|Tecle ESC para cancelar.
+
+Informe a mensagem a imprimir na cobran‡a|Vocˆ tem trˆs linhas com at‚ 80 caracteres.
+
+ 0 
+ 0 
+
+
+lancto_
+D
+I
+@D
+ 8 
+ 10 
+ 0 
+ 0 
+ 0 
+Lan‡amento
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+por
+C
+I
+ 
+ 10 
+ 10 
+ 0 
+ 0 
+ 0 
+Por
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+ 3 
+Nome
+GRUPOS->nome
+
+ 2 
+ 18 
+ 35 
+
+Lan‡amento
+lancto_
+@D
+ 1 
+ 33 
+ 8 
+
+Por
+por
+
+ 1 
+ 42 
+ 10 
+
+ 2 
+MENSAG
+por
+M->usuario
+
+EMPT(lancto_)
+
+
+MENSAG
+lancto_
+DATE()
+
+EMPT(lancto_)
+
+
+ 0 
+ 0 
+ 0 

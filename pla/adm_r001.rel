@@ -1,0 +1,290 @@
+GAS-Pro v3.0
+002003024079001007001001009000176001
+                                                                      PAG
+
+INSCRITOS
+
+Nome                                Contrato      Nascto   Titular
+------------------------------------------------------------------------------
+                                             -
+[Ÿ]
+ 8 
+INSCRITS
+Inscritos
+
+nome
+vivofalec=[V]
+011
+
+
+
+
+
+
+
+
+
+ 0 
+ 1 
+ 0 
+ 66 
+ 0 
+ 6 
+ 3 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Nome
+nome
+
+ 35 
+C
+ 7 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Grupo
+GRUPOS->grupo
+!!
+ 2 
+C
+ 7 
+ 37 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Contrato
+codigo
+
+ 6 
+C
+ 7 
+ 40 
+
+
+  û       
+
+
+
+
+
+
+
+
+
+
+Inscr.
+SUBSTR([TitPaiMaeSgoSgaEspFilDep],(VAL(grau)-1)*3+1,3)
+
+ 3 
+C
+ 7 
+ 47 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Nascto
+nascto_
+
+ 8 
+D
+ 7 
+ 51 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Titular
+[S]
+
+ 1 
+C
+ 7 
+ 62 
+ehtitular=[S]
+
+          
+
+
+
+
+
+
+
+
+
+
+N§Processo
+procnr
+@R 99999/99
+ 8 
+C
+ 7 
+ 67 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Tipo
+tipo
+!!!
+ 3 
+C
+ 7 
+ 76 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 1 
+ 1 
+ 32 
+
+T¡tulo aplica‡„o
+nsis
+
+ 2 
+ 1 
+ 22 
+
+Data do sistema
+DTOC(DATE())
+
+ 3 
+ 71 
+ 8 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 3 
+ 63 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 1 
+ 75 
+ 4 
+
+C¢digo relat¢rio
+"ADM_R001"
+
+ 2 
+ 71 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 4 
+ 1 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 0 
+ 0 
+ 0 
+ 1 
+GRUPOS
+ 1 
+codigo
+
+
+

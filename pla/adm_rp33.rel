@@ -1,0 +1,1061 @@
+GAS-Pro v3.0
+002003021079001001001001003007033001
++-----------------------------------------+---------------------------------------------------+   +------------------------------+
+|                                         |                                                   | : |                              |
+|  Pelo presente, comunicamos a V.S. os   |                                                   | : |                              |
+|  atendimentos efetuados at‚ esta data   |                                                   | : |                              |
+| de acordo com as cl usulas contratuais  +------ Contrato -------------+---- Emiss„o --------+ : +-Contrato --------- Emiss„o --+
+|                                         |                             |  Manut.:            | : |                              |
+|                                         +-----------------------------+  Seguro:            | : +------------------------------+
+|                                         |                             |  Total.:            | : |            Valor:            |
+|                                         +-----------------------------+---------------------+ : +------------------------------+
+|                                         |Titular.:                                          | : |                              |
+|                                         |Endere‡o:                                          | : |                              |
+|                                         |                                                   | : |                              |
+|                                         +---------------------------------------------------+ : +------------------------------+
+|                                         |                                                   | : |                              |
+|                                         |                                                   | : |                              |
+|                                         |                                                   | : |                              |
+|                                         |                                                   | : |                              |
+|                                         +------------ Autentica‡„o Mecƒnica ----------------+ : +- Autentica‡„o Mecƒnica ------+
+|                                         |                                                   | : |                              |
+|                                         |                                                   | : |                              |
++-----------------------------------------+---------------------------- 1¦Via - Contribuinte -+ : +-    --------- 2¦Via Empresa -+
+...................................................................................................................................
+[Ÿ]
+ 43 
+TAXAS
+Modelo por Rateio
+
+tipo+codigo+circ
+R08701F9()
+011
+
+
+
+
+
+
+
+
+
+ 0 
+ 1 
+ 0 
+ 22 
+ 1 
+ 4 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+-1 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Montagem dos dados
+R08703F9()
+
+ 1 
+C
+ 2 
+ 44 
+R08701F9()
+
+          
+
+
+
+
+
+
+
+
+
+
+Ident1
+M->setup1
+
+ 40 
+C
+ 2 
+ 2 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+detprc1
+LEFT(detprc[1],40)
+
+ 40 
+C
+ 7 
+ 2 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+detprc2
+LEFT(detprc[2],40)
+
+ 40 
+C
+ 8 
+ 2 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+det3
+LEFT(detprc[3],40)
+
+ 40 
+C
+ 9 
+ 2 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+det4
+LEFT(detprc[4],40)
+
+ 40 
+C
+ 10 
+ 2 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+det5
+LEFT(detprc[5],40)
+
+ 40 
+C
+ 11 
+ 2 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+det6
+LEFT(detprc[6],40)
+
+ 40 
+C
+ 12 
+ 2 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+det7
+LEFT(detprc[7],40)
+
+ 40 
+C
+ 13 
+ 2 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+det8
+LEFT(detprc[8],40)
+
+ 40 
+C
+ 14 
+ 2 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+det9
+LEFT(detprc[9],40)
+
+ 40 
+C
+ 15 
+ 2 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+det10
+LEFT(detprc[10],40)
+
+ 40 
+C
+ 16 
+ 2 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Ident1
+M->setup1
+
+ 40 
+C
+ 2 
+ 47 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Ident1
+LEFT(M->setup1,30)
+
+ 30 
+C
+ 2 
+ 100 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Ident2
+M->setup2
+
+ 50 
+C
+ 3 
+ 44 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Setup3
+M->setup3
+
+ 50 
+C
+ 4 
+ 44 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Codigo 2
+GRUPOS->grupo+'  '+GRUPOS->codigo
+
+ 10 
+C
+ 6 
+ 46 
+
+
+ûû        
+
+
+
+
+
+
+
+
+
+
+Codigo 3
+GRUPOS->grupo+'  '+GRUPOS->codigo
+
+ 10 
+C
+ 6 
+ 100 
+
+
+û         
+
+
+
+
+
+
+
+
+
+
+N§ 1
+TAXAS->tipo+[  ]+TAXAS->circ+IIF(tipo$[16].AND.EMCARNE->(EOF()),[],[/]+STRZERO(TCARNES->parf,3))
+
+ 10 
+C
+ 8 
+ 45 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+N§ 2
+TAXAS->tipo+[  ]+TAXAS->circ+IIF(tipo$[16].AND.EMCARNE->(EOF()),[],[/]+STRZERO(TCARNES->parf,3))
+
+ 10 
+C
+ 8 
+ 100 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Valor Manut
+R08702F9()
+@E 999,999.99
+ 10 
+N
+ 6 
+ 84 
+
+vlraux
+          
+
+
+
+
+
+
+
+
+
+
+Valor Seg
+vlseg
+@E 999,999.99
+ 10 
+N
+ 7 
+ 84 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Valor Total
+vlraux+vlseg
+@E 999,999.99
+ 10 
+N
+ 8 
+ 84 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+deb1
+detdeb[1]+[ ]+detdeb[2]
+
+ 40 
+C
+ 18 
+ 2 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+deb2
+detdeb[3]+[ ]+detdeb[4]
+
+ 40 
+C
+ 19 
+ 2 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+deb3
+detdeb[5]+[ ]+detdeb[6]
+
+ 40 
+C
+ 20 
+ 2 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Valor 2
+M->vlraux+vlseg
+@E 999,999.99
+ 10 
+N
+ 8 
+ 119 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Nome
+GRUPOS->nome
+
+ 35 
+C
+ 10 
+ 55 
+
+
+û         
+
+
+
+
+
+
+
+
+
+
+Nome
+LEFT(GRUPOS->nome,30)
+
+ 30 
+C
+ 10 
+ 100 
+
+
+û         
+
+
+
+
+
+
+
+
+
+
+Endere‡o
+GRUPOS->endereco
+
+ 35 
+C
+ 11 
+ 55 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Bairro
+GRUPOS->bairro
+
+ 20 
+C
+ 12 
+ 44 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Cidade
+GRUPOS->cidade
+
+ 25 
+C
+ 12 
+ 65 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+UF
+GRUPOS->uf
+!!
+ 2 
+C
+ 12 
+ 91 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Vencto 1
+TAXAS->emissao_
+@D
+ 8 
+D
+ 8 
+ 56 
+
+
+ûû        
+
+
+
+
+
+
+
+
+
+
+Vencto 2
+TAXAS->emissao_
+@D
+ 8 
+D
+ 6 
+ 119 
+
+
+û         
+
+
+
+
+
+
+
+
+
+
+Mens1
+IIF(EMPT(MENSAG->mens1),LEFT(CIRCULAR->menscirc,50),MENSAG->mens1)
+
+ 50 
+C
+ 14 
+ 44 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Mens2
+IIF(EMPT(MENSAG->mens1),LEFT(CIRCULAR->menscirc1,50),MENSAG->mens2)
+
+ 50 
+C
+ 15 
+ 44 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Mens 3
+IIF(EMPT(MENSAG->mens1),LEFT(CIRCULAR->menscirc2,50),MENSAG->mens3)
+
+ 50 
+C
+ 16 
+ 44 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+debitos
+LEFT(M->lindeb,50)
+
+ 50 
+C
+ 17 
+ 44 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+debitos 2
+LEFT(M->lindeb,25)
+
+ 25 
+C
+ 11 
+ 103 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+debitos 3
+SUBSTR(M->lindeb,26,25)
+
+ 25 
+C
+ 12 
+ 103 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+CodBar 1
+codigo+tipo+circ
+
+ 13 
+4
+ 15 
+ 108 
+
+
+
+
+
+
+
+
+
+
+
+
+
+CodBar 2
+codigo+tipo+circ
+
+ 13 
+4
+ 16 
+ 108 
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 0 
+ 0 
+ 32 
+
+T¡tulo aplica‡„o
+nsis
+
+ 0 
+ 0 
+ 22 
+
+Data do sistema
+DTOC(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 0 
+ 0 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 21 
+ 101 
+ 4 
+
+C¢digo relat¢rio
+"ADM_RP33"
+
+ 0 
+ 0 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 0 
+ 0 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 2 
+EMCARNE
+emissao_
+DATE()
+
+TCARNES->parf=VAL(TAXAS->circ).AND.EMPT(EMCARNE->emissao_).AND.tipo$'16'
+
+
+TAXAS
+stat
+[2]
+
+stat < [2]
+
+
+ 0 
+ 0 
+ 8 
+GRUPOS
+ 1 
+codigo
+
+
+
+CLASSES
+ 1 
+GRUPOS->tipcont
+
+
+
+COBRADOR
+ 1 
+cobrador
+
+
+
+CIRCULAR
+ 1 
+GRUPOS->grupo+circ
+
+
+
+MENSAG
+ 1 
+codigo+circ
+
+
+
+CSTSEG
+ 3 
+codigo+tipo+circ
+
+
+
+EMCARNE
+ 1 
+codigo
+
+
+
+TCARNES
+ 1 
+EMCARNE->tip
+
+
+

@@ -1,0 +1,784 @@
+GAS-Pro v3.0
+002003021079001001001001003000176001
+
+
+               Contr :                                        Contr :
+               Seguro:                                        Seguro:
+               TOTAL.:                                        TOTAL.:
+
+
+                    Vencto:                                Vencto:
+Cobrador:                              Cobrador:
+
+Admiss:           Vendedor:            Admiss:           Vendedor:
+[Ÿ]
+ 30 
+TAXAS
+Emiss„o Carnˆ VIP
+
+
+R08701F9()
+011
+
+
+
+
+
+
+
+
+
+ 0 
+ 1 
+ 0 
+ 26 
+ 1 
+ 2 
+ 1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Valor Contribuicao
+R08702F9()
+@E 999,999.99
+ 10 
+N
+ 3 
+ 24 
+
+valororig
+          
+
+
+
+
+
+
+
+
+
+
+Valor Contribuicao 2
+valororig
+@E 999,999.99
+ 10 
+N
+ 3 
+ 70 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Valor Seguro
+vlseg
+@E 999,999.99
+ 10 
+N
+ 4 
+ 24 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Valor Seguro 2
+vlseg
+@E 999,999.99
+ 10 
+N
+ 4 
+ 70 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Valor Total
+valororig+vlseg
+@E 999,999.99
+ 10 
+N
+ 5 
+ 24 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Valor Total
+valororig + vlseg
+@E 999,999.99
+ 10 
+N
+ 5 
+ 70 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Codigo
+GRUPOS->codigo+[ ]+GRUPOS->grupo
+
+ 9 
+C
+ 8 
+ 1 
+
+
+û         
+
+
+
+
+
+
+
+
+
+
+compl.codigo 1
+tipo+[/]+circ+[ ]
+
+ 6 
+C
+ 8 
+ 51 
+
+
+û         
+
+
+
+
+
+
+
+
+
+
+Codigo 2
+GRUPOS->codigo+[ ]+GRUPOS->grupo
+
+ 9 
+C
+ 8 
+ 40 
+
+
+û         
+
+
+
+
+
+
+
+
+
+
+compl.codigo 2
+tipo+[/]+circ+[ ]
+
+ 6 
+C
+ 8 
+ 12 
+
+
+û         
+
+
+
+
+
+
+
+
+
+
+Emissao
+emissao_
+@D
+ 8 
+D
+ 8 
+ 28 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Emissao 2
+emissao_
+@D
+ 8 
+D
+ 8 
+ 67 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Admiss„o
+GRUPOS->admissao
+@D
+ 8 
+D
+ 11 
+ 8 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Admiss„o 2
+GRUPOS->admissao
+@D
+ 8 
+D
+ 11 
+ 47 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Cobrador
+COBRADOR->cobrador+[ ]+LEFT(COBRADOR->nome,15)
+
+ 18 
+C
+ 9 
+ 10 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Cobrador 2
+COBRADOR->cobrador+[ ]+LEFT(COBRADOR->nome,15)
+
+ 18 
+C
+ 9 
+ 49 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Vendedor
+GRUPOS->vendedor
+!!
+ 2 
+C
+ 11 
+ 29 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Vendedor 2
+GRUPOS->vendedor
+!!
+ 2 
+C
+ 11 
+ 68 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+definicao 1
+ALLTRIM(CLASSES->descricao)+[ ]+IIF(GRUPOS->formapgto$[01,02,03,04,05],SUBSTR(tbfpgto,(VAL(GRUPOS->formapgto)-1)*13+1,13),GRUPOS->formapgto)
+
+ 35 
+C
+ 10 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+definicao 2
+ALLTRIM(CLASSES->descricao)+[ ]+IIF(GRUPOS->formapgto$[01,02,03,04,05],SUBSTR(tbfpgto,(VAL(GRUPOS->formapgto)-1)*13+1,13),GRUPOS->formapgto)
+
+ 35 
+C
+ 10 
+ 40 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Nome
+GRUPOS->nome
+
+ 35 
+C
+ 13 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Nome 2
+GRUPOS->nome
+
+ 35 
+C
+ 13 
+ 40 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Endere‡o
+GRUPOS->endereco
+
+ 35 
+C
+ 14 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Endere‡o 2
+GRUPOS->endereco
+
+ 35 
+C
+ 14 
+ 40 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Bairro
+GRUPOS->bairro
+
+ 20 
+C
+ 15 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Bairro 2
+GRUPOS->bairro
+
+ 20 
+C
+ 15 
+ 40 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Cidade
+GRUPOS->cep+[ ]+ALLTRIM(GRUPOS->cidade)+[, ]+GRUPOS->uf
+
+ 35 
+C
+ 16 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Cidade 2
+GRUPOS->cep+[ ]+ALLTRIM(GRUPOS->cidade)+[, ]+GRUPOS->uf
+
+ 35 
+C
+ 16 
+ 40 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Codigo barras 1
+codigo+tipo+circ
+
+ 13 
+4
+ 19 
+ 20 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Codigo barras 2
+codigo+tipo+circ
+
+ 13 
+4
+ 20 
+ 20 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 0 
+ 0 
+ 44 
+
+T¡tulo aplica‡„o
+nsis
+
+ 0 
+ 0 
+ 22 
+
+Data do sistema
+DTOC(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 0 
+ 0 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 0 
+ 0 
+ 4 
+
+C¢digo relat¢rio
+"ADP_R066"
+
+ 0 
+ 0 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 0 
+ 0 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 2 
+TAXAS
+stat
+[2]
+
+stat < [2]
+
+
+EMCARNE
+emissao_
+DATE()
+
+M->rtp=[1].AND.VAL(circ)=TCARNES->parf.AND.EMPT(EMCARNE->emissao_)
+
+
+ 0 
+ 0 
+ 7 
+GRUPOS
+ 1 
+codigo
+
+
+
+CLASSES
+ 1 
+GRUPOS->tipcont
+
+
+
+COBRADOR
+ 1 
+cobrador
+
+
+
+CSTSEG
+ 3 
+codigo+tipo+circ
+
+
+
+MENSAG
+ 1 
+codigo
+
+
+
+EMCARNE
+ 1 
+codigo
+
+
+
+TCARNES
+ 1 
+EMCARNE->tip
+
+
+

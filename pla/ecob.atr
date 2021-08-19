@@ -1,0 +1,294 @@
+GAS-Pro v3.0
+009018017066001005046001014000176001
+ Tipo....:
+ Endere‡o:
+ Bairro..:
+ CEP.....:
+ Cidade..:                            Est.:
+ Telefone:
+ Obs.....:
+[Ÿ]
+Inclus„o~~26006
+Manuten‡„o~~27007
+Consulta~~28008
+[Ÿ]
+ 10 
+ 1 
+Contrato
+
+ 1 
+ 2 
+[Ÿ]
+Outros Endere‡os
+Outros Endere‡os
+
+
+
+
+
+
+
+005
+
+
+
+
+
+
+
+-1 
+ 0 
+-1 
+-1 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+codigo
+C
+I
+999999
+ 6 
+ 6 
+ 0 
+ 0 
+ 0 
+Codigo
+
+
+
+
+
+
+-1 
+ 0 
+
+
+tipo
+C
+E
+!
+ 1 
+ 1 
+ 1 
+ 12 
+ 0 
+Tipo
+MTAB([Residˆncia|Trabalho|Outro],[TIPO])
+tipo $ [RTO]
+TIPO n„o aceit vel|Apenas endere‡os de Residˆncia e Trabalho.
+[R]
+Informe que tipo de Endere‡o ‚ este.|R=Residˆncia, T=Trabalho
+MTAB([Residˆncia|Trabalho|Outro],[TIPO])
+ 0 
+ 0 
+
+
+endereco
+C
+E
+@!
+ 35 
+ 35 
+ 2 
+ 12 
+ 0 
+Endere‡o
+
+!EMPT(endereco)
+Informe a localiza‡„o ou tecle ESC para cancelar
+
+Informe o Endere‡o|Rua,n£mero,apto, blocl, etc...
+
+ 0 
+ 0 
+
+
+bairro
+C
+E
+@!
+ 20 
+ 20 
+ 3 
+ 12 
+ 0 
+Bairro
+
+ 
+
+
+Digite o Bairro|ou complemento| do endere‡o
+
+ 0 
+ 0 
+
+
+cep
+C
+E
+@R 99999-999
+ 8 
+ 9 
+ 4 
+ 12 
+ 0 
+CEP
+
+ 
+
+
+Informe o CEP para facilitar a localiza‡„o
+
+ 0 
+ 0 
+
+
+cidade
+C
+E
+@!
+ 25 
+ 25 
+ 5 
+ 12 
+ 0 
+Cidade
+
+ 
+
+
+Informe a Cidade/Municipio
+
+ 0 
+ 0 
+
+
+uf
+C
+E
+!!
+ 2 
+ 2 
+ 5 
+ 45 
+ 0 
+UF
+
+VUF(uf).OR. EMPT(uf)
+UNIDADE DA FEDERA€ŽO inv lida
+
+Informe o Estado.|Ex.: SP,RJ,GO,AM,...
+
+ 0 
+ 0 
+
+
+telefone
+C
+E
+@!
+ 14 
+ 14 
+ 6 
+ 12 
+ 0 
+Telefone
+
+ 
+
+
+Informe o n£mero do telefone para contato
+
+ 0 
+ 0 
+
+
+obs
+C
+E
+ 
+ 20 
+ 20 
+ 7 
+ 12 
+ 0 
+Obs
+
+ 
+
+
+
+
+ 0 
+ 0 
+
+
+data_
+D
+I
+@D
+ 8 
+ 10 
+ 0 
+ 0 
+ 0 
+Data
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+ 2 
+Tipo
+IIF(tipo=[R],[Residˆncia],IIF(tipo=[T],[Trabalho],[Outro]))
+
+ 1 
+ 15 
+ 12 
+
+Data
+data_
+@D
+ 7 
+ 39 
+ 8 
+
+ 1 
+ECOB
+data_
+DATE()
+
+
+
+
+ 0 
+ 0 
+ 0 

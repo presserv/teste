@@ -1,0 +1,108 @@
+GAS-Pro v3.0
+
+[Ÿ]
+ 0 
+PRCESSOS
+Processos
+grup
+grup+DTOS(dfal)
+!(CLASSES->prior=[S]).AND.(saiu<[001].OR.saiu=M->rproxcirc)
+001
+
+
+
+
+
+
+
+
+
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 1 
+CPRCIRC
+1
+ 9 
+CIRCULAR->procpend<ARQGRUP->maxproc
+
+-1 
+
+
+
+grupo
+C
+M->rgrupo
+
+
+circ
+C
+M->rproxcirc
+
+
+processo
+C
+processo
+
+
+categ
+C
+categ
+
+
+num
+C
+num
+
+
+fal
+C
+fal
+
+
+ends
+C
+ends
+
+
+cids
+C
+cids
+
+
+dfal
+D
+dfal
+
+
+ 0 

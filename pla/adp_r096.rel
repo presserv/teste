@@ -1,0 +1,354 @@
+GAS-Pro v3.0
+002003024079001002001001004000176001
+                                                                      PAG
+
+GERAR FCC DOS BOLETOS
+
+Nr Lote Emiss„o  Total das Despesas Total dos Cr‚ditos Liquido creditado
+------------------------------------------------------------------------------
+[Ÿ]
+ 5 
+LBXBOLET
+Gerar FCC dos Boletos
+
+
+EMPT(nfcc)
+011
+
+
+
+
+
+
+
+
+
+ 0 
+ 1 
+ 0 
+ 66 
+ 0 
+ 6 
+ 3 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Nr Lote
+nrlote
+999999
+ 6 
+C
+ 7 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Emiss„o
+emissao_
+@D
+ 8 
+D
+ 7 
+ 9 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Total das Despesas
+totdesp
+@E 999,999.99
+ 10 
+N
+ 7 
+ 26 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Total dos Cr‚ditos
+totcred
+@E 999,999.99
+ 10 
+N
+ 7 
+ 45 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Liquido creditado
+totliq
+@E 999,999.99
+ 10 
+N
+ 7 
+ 63 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 1 
+ 1 
+ 32 
+
+T¡tulo aplica‡„o
+nsis
+
+ 2 
+ 1 
+ 22 
+
+Data do sistema
+DTOC(DATE())
+
+ 3 
+ 71 
+ 8 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 3 
+ 63 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 1 
+ 75 
+ 4 
+
+C¢digo relat¢rio
+"ADP_R096"
+
+ 2 
+ 71 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 4 
+ 1 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 1 
+LBXBOLET
+nfcc
+BXFCC->numero
+
+
+
+
+ 0 
+ 1 
+BXFCC
+1
+ 23 
+
+
+ 0 
+
+
+
+idfilial
+C
+M->p_filial
+
+
+numero
+C
+
+
+
+lancto_
+D
+DATE()
+
+
+por
+C
+M->usuario
+
+
+cobrador
+C
+
+
+
+nomecobr
+C
+[Baixa p/Boleto Bancario]
+
+
+despesas
+N
+totdesp
+
+
+baixa_
+D
+emissao_
+
+
+comtxa
+N
+
+
+
+comtroc
+N
+
+
+
+comcarn
+N
+
+
+
+comoutr
+N
+
+
+
+qtdoutr
+N
+
+
+
+vloutr
+N
+
+
+
+parcpag
+N
+
+
+
+vltaxas
+N
+
+
+
+parctroc
+N
+
+
+
+vltrocas
+N
+
+
+
+parccarn
+N
+
+
+
+vlcarnes
+N
+
+
+
+vlrbaix
+N
+
+
+
+nrccpagar
+C
+
+
+
+numop
+C
+
+
+
+ 0 

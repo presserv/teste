@@ -1,0 +1,116 @@
+GAS-Pro v3.0
+012020017059001001014001013000176001
+ Codigo:
+
+
+                      Confirma ?
+[Ÿ]
+[Ÿ]
+ 2 
+ 0 
+Impress„o Contrato
+Impress„o Contrato
+
+
+
+
+
+
+
+056
+
+
+
+
+
+
+
+ 0 
+ 0 
+-1 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+rcodigo
+C
+E
+999999
+ 6 
+ 6 
+ 1 
+ 10 
+ 0 
+Codigo
+
+PTAB(rcodigo,'GRUPOS',1)
+CODIGO n„o aceit vel
+
+Entre com o n£mero do contrato a imprimir
+VDBF(6,20,20,77,'GRUPOS',{'codigo','nome','admissao'},3,'codigo',[])
+ 0 
+ 0 
+
+
+confirme
+C
+E
+!
+ 1 
+ 1 
+ 4 
+ 34 
+ 0 
+Confirme
+
+confirme='S'
+CONFIRME n„o aceit vel|Digite S ou tecle ESC para cancelar
+
+Digite S para imprimir o contrato|ou |Tecle ESC para cancelar
+
+ 0 
+ 0 
+
+
+ 2 
+Nome
+GRUPOS->nome
+@!
+ 2 
+ 3 
+ 35 
+
+Endere‡o
+GRUPOS->endereco
+
+ 3 
+ 3 
+ 35 
+
+ 0 
+ 0 
+ 0 
+ 0 

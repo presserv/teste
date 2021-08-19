@@ -1,0 +1,217 @@
+GAS-Pro v3.0
+011003022079001001001001012000176001
+[Ÿ]
+ 5 
+CPRCIRC
+Processos (2¦ via)
+GRUPOS->grupo+TAXAS->circ
+grupo+circ+DTOS(dfal)
+
+011
+
+
+
+
+
+
+
+
+
+ 0 
+ 0 
+ 0 
+ 48 
+ 1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Processo
+processo
+ 
+ 9 
+C
+ 1 
+ 42 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Contrato
+num
+
+ 5 
+C
+ 1 
+ 31 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Falecido
+fal
+
+ 35 
+C
+ 1 
+ 55 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Ends
+ALLTRIM(ends)+'-'+ALLTRIM(cids)
+@!
+ 40 
+C
+ 1 
+ 92 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Data
+dfal
+@D
+ 8 
+D
+ 1 
+ 150 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 0 
+ 0 
+ 16 
+
+T¡tulo aplica‡„o
+nsis
+
+ 0 
+ 0 
+ 29 
+
+Data do sistema
+DTOC(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 0 
+ 0 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 0 
+ 0 
+ 4 
+
+C¢digo relat¢rio
+"ADM_R034"
+
+ 0 
+ 0 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 0 
+ 0 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 0 
+ 0 
+ 0 
+ 0 

@@ -1,0 +1,415 @@
+GAS-Pro v3.0
+002003024079001007001001009000176001
+                                                                                    PAG
+
+GERA TAXAS C/RELAT¢RIO - Emiss„o             Grupo    Circ.
+
+Contr. Nome                                TC FP Admiss„o   Saitxa Reg Cob Fun Ult.  Valor
+----------------------------------------------------------------------------------------------
+[Ÿ]
+ 14 
+GRUPOS
+D‚bitos a Gerar
+
+
+grupo=M->rgrupo.AND.EMPT(rv4401f9())
+011
+
+
+
+
+
+
+
+
+
+ 0 
+ 1 
+ 0 
+ 66 
+ 0 
+ 6 
+ 3 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Codigo
+codigo
+999999
+ 6 
+C
+ 7 
+ 1 
+EMPT(RV4401F9())
+
+          
+
+
+
+
+
+
+
+
+
+
+Nome
+nome+R08704F9()
+
+ 35 
+C
+ 7 
+ 8 
+VAL_03F9()
+
+          
+
+
+
+
+
+
+
+
+
+
+TC
+tipcont
+99
+ 2 
+C
+ 7 
+ 44 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+FP
+formapgto
+99
+ 2 
+C
+ 7 
+ 47 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Admiss„o
+admissao
+@D
+ 10 
+D
+ 7 
+ 50 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Saitxa
+saitxa
+@R 99/99
+ 5 
+C
+ 7 
+ 61 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Reg
+regiao
+999
+ 3 
+C
+ 7 
+ 68 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Cob
+cobrador
+!!
+ 2 
+C
+ 7 
+ 73 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Fun
+funerais
+99
+ 2 
+N
+ 7 
+ 77 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Ult.
+ultcirc
+999
+ 3 
+C
+ 7 
+ 80 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Valor
+VAL_01F9()
+99999999.99
+ 11 
+N
+ 7 
+ 84 
+
+
+   û      
+
+
+
+
+
+
+
+
+
+
+Emiss„o
+M->remissao_
+@D
+ 10 
+D
+ 3 
+ 34 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Grupo
+M->rgrupo
+!!
+ 2 
+C
+ 3 
+ 52 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+N§Proxima Circ.
+M->rproxcirc
+999
+ 3 
+C
+ 3 
+ 60 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 1 
+ 1 
+ 44 
+
+T¡tulo aplica‡„o
+nsis
+
+ 2 
+ 1 
+ 22 
+
+Data do sistema
+DTOC(DATE())
+
+ 3 
+ 85 
+ 8 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 3 
+ 77 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 1 
+ 89 
+ 4 
+
+C¢digo relat¢rio
+"ADP_R070"
+
+ 2 
+ 85 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 4 
+ 1 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 0 
+ 0 
+ 0 
+ 2 
+CLASSES
+ 1 
+tipcont
+
+
+
+ARQGRUP
+ 1 
+grupo
+
+
+

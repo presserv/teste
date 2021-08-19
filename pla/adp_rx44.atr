@@ -1,0 +1,156 @@
+GAS-Pro v3.0
+009017014060001004014001013000176001
+ Contrato:
+
+
+ Circular:  -               Confirma?
+[Ÿ]
+[Ÿ]
+ 4 
+ 0 
+Taxas (2¦ Via)
+Taxas (2¦ Via)
+
+
+
+
+
+
+
+056
+
+
+
+
+
+
+
+ 0 
+ 0 
+-1 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+rcodigo
+C
+E
+999999
+ 6 
+ 6 
+ 1 
+ 12 
+ 0 
+Codigo
+
+PTAB(rcodigo,'GRUPOS',1)
+Necess rio informar CODIGO
+
+Informe o n£mero do contrato
+VDBF(6,3,20,77,'GRUPOS',{'grupo','codigo','nome','cidade'},1,'codigo',[])
+ 0 
+ 0 
+
+
+rtipo
+C
+E
+!
+ 1 
+ 1 
+ 4 
+ 12 
+ 0 
+Tipo
+
+rtipo $ [123678]
+TIPO n„o aceit vel
+
+Qual o tipo de lan‡amento
+MTAB([1=J¢ia|2=Taxa|3=Carnˆ|6=J¢ia+Seguro|7=Taxa+Seguro|8=Carnˆ+Seguro],[TIPO])
+ 0 
+ 0 
+
+
+rcirc
+C
+E
+999
+ 3 
+ 3 
+ 4 
+ 14 
+ 0 
+Circular
+
+PTAB(rcodigo+rtipo+rcirc,'TAXAS',1)
+Necess rio informar CIRCULAR v lida
+
+Informe o n£mero da circular a imprimir
+VDBF(6,3,20,77,'TAXAS',{'codigo','tipo','circ','emissao_','valor','pgto_','valorpg','cobrador','por'},1,'circ',[])
+ 0 
+ 0 
+
+
+confirme
+C
+E
+!
+ 1 
+ 1 
+ 4 
+ 39 
+ 0 
+Confirme?
+
+confirme='S'.AND.V03301F9()
+Digite S para confirmar|ou|Tecle ESC para cancelar
+
+Digite S para confirmar|ou|Tecle ESC para cancelar
+
+ 0 
+ 0 
+
+
+ 2 
+Nome
+GRUPOS->nome
+@!
+ 2 
+ 5 
+ 35 
+
+Endere‡o
+GRUPOS->endereco
+
+ 3 
+ 5 
+ 35 
+
+ 0 
+ 0 
+ 0 
+ 0 

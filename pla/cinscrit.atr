@@ -1,0 +1,444 @@
+GAS-Pro v3.0
+018004024078001002001001020001176001
+         Inscr:        Seq:       titular?:     (                   )
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ Nome......:                                      Nascimento.:
+ Est.Civil.:     Interdito:            Sexo:      T.Carˆncia.:
+ Vivo/Falec:     Falecto..:            Tipo:      N§ Processo:
+[Ÿ]
+Inclus„o~~26006
+Manuten‡„o~~27007
+Consulta~~28008
+[Ÿ]
+ 17 
+ 2 
+Contrato
+
+ 1 
+ 3 
+ 4 
+[Ÿ]
+p/Nome
+
+ 6 
+[Ÿ]
+Inscritos Cancelados
+Inscritos Cancelados
+
+1=3
+Contrato Cancelado
+1=3
+Contrato Cancelado!!!
+1=3
+Contrato Cancelado!!!
+005
+
+
+1=3
+Contrato Cancelado
+
+
+
+ 0 
+ 0 
+-1 
+-1 
+ 0 
+-1 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+numero
+C
+I
+999999
+ 6 
+ 6 
+ 0 
+ 0 
+ 0 
+N£mero
+
+
+
+
+
+
+-1 
+ 0 
+
+
+codigo
+C
+I
+999999
+ 6 
+ 6 
+ 0 
+ 0 
+ 0 
+Codigo
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+grau
+C
+E
+9
+ 1 
+ 1 
+ 1 
+ 17 
+ 0 
+Inscr.
+
+grau $ [12345678]
+INSCR. n„o aceit vel
+IIF(M->pgrau<[7],SUBSTR([234567],VAL(M->pgrau),1),M->pgrau)
+
+MTAB(M->TBTIPGRAU,[INSCR.])
+ 0 
+ 0 
+
+
+seq
+N
+E
+99
+ 2 
+ 2 
+ 1 
+ 29 
+ 0 
+Seq
+grau>[6]
+seq>0
+SEQ n„o aceit vel
+INS_01F9()
+
+
+ 0 
+ 0 
+
+
+ehtitular
+C
+E
+!
+ 1 
+ 1 
+ 1 
+ 46 
+ 0 
+Titular?
+
+ehtitular$[SN]
+Digite S ou N...
+IIF(EMPT(GRUPOS->titular),[S],[N])
+Informe se ‚ este inscrito o titular do contrato.
+MTAB([Sim|N„o],[TITULAR?])
+ 0 
+ 0 
+
+
+nome
+C
+E
+ 
+ 35 
+ 35 
+ 3 
+ 14 
+ 0 
+Nome
+
+!EMPT(nome)
+Necess rio informar NOME
+
+
+
+ 0 
+ 0 
+
+
+nascto_
+D
+E
+@D
+ 8 
+ 8 
+ 3 
+ 64 
+ 0 
+Nascto
+
+ 
+
+
+Informe a Data de Nascimento deste Inscrito
+
+ 0 
+ 0 
+
+
+estcivil
+C
+E
+ 
+ 2 
+ 2 
+ 4 
+ 14 
+ 0 
+Est Civil
+
+(ESTCIVIL$tbestciv)
+Necess rio informar ESTADO CIVIL|ou tecle F8
+IIF(grau<[7],[CA],[SO])
+Digite o Estado Civil do Falecido
+MTAB(tbestciv,[EST CIVIL])
+ 0 
+ 0 
+
+
+interdito
+C
+E
+!
+ 1 
+ 1 
+ 4 
+ 29 
+ 0 
+Interdito
+
+interdito $ [SN]
+INTERDITO n„o aceit vel
+[N]
+Digite S se for interdiro (deficiente mental).
+MTAB([Sim|NÆo],[INTERDITO])
+ 0 
+ 0 
+
+
+sexo
+C
+E
+!
+ 1 
+ 1 
+ 4 
+ 46 
+ 0 
+Sexo
+
+ 
+
+
+
+
+ 0 
+ 0 
+
+
+tcarencia
+D
+E
+@D
+ 8 
+ 8 
+ 4 
+ 64 
+ 0 
+T.Carˆncia
+
+ 
+
+
+
+
+ 0 
+ 0 
+
+
+lancto_
+D
+I
+@D
+ 8 
+ 8 
+ 0 
+ 0 
+ 0 
+Lan‡to.
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+vivofalec
+C
+E
+!
+ 1 
+ 1 
+ 5 
+ 14 
+ 0 
+V/F
+
+vivofalec$[VF]
+Necess rio informar VIVOFALEC
+[V]
+Vivo ou Falecido
+MTAB([Vivo|Falecido],[V/F])
+ 0 
+ 0 
+
+
+falecto_
+D
+E
+@D
+ 8 
+ 8 
+ 5 
+ 29 
+ 0 
+Falecto.
+vivofalec==[F]
+ 
+
+
+Entre com a data de falecimento
+
+ 0 
+ 0 
+
+
+tipo
+C
+E
+!!!
+ 3 
+ 3 
+ 5 
+ 46 
+ 0 
+Tipo
+vivofalec==[F]
+EMPTY(tipo).OR.UPPER(tipo) $ [FUN|AUX]
+Necess rio informar TIPO
+
+Com Direitos (Funeral) ou com Auxilio.
+MTAB([Funeral|Auxilio],[TIPO])
+ 0 
+ 0 
+
+
+procnr
+C
+E
+@R 99999/99
+ 7 
+ 8 
+ 5 
+ 64 
+ 0 
+N§Processo
+vivofalec==[F]
+ 
+
+
+Informe o n£mero do processo
+
+ 0 
+ 0 
+
+
+por
+C
+I
+ 
+ 10 
+ 10 
+ 0 
+ 0 
+ 0 
+Por
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+ 4 
+graupart
+SUBSTR([TitPaiMaeSgoSgaEspFilDep],(VAL(grau)-1)*3+1,3)
+
+ 1 
+ 19 
+ 3 
+
+Lan‡to.
+lancto_
+@D
+ 1 
+ 51 
+ 8 
+
+Por
+por
+
+ 1 
+ 60 
+ 10 
+
+Codigo
+codigo
+999999
+ 1 
+ 2 
+ 6 
+
+ 0 
+ 0 
+ 0 
+ 0 

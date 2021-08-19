@@ -1,0 +1,115 @@
+
+
+
+
+
+
+
+
+
+
+
+
+                 ###   ####   #   #  #####  #   #  #####   ####  #####  ####    ###   ####    ###   ####    ###   
+		#   #  #   #  ## ##    #    ##  #    #    #        #    #   #  #   #  #   #  #   #  #   #  #   #
+                #####  #   #  # # #    #    # # #    #     ###     #    ####   #####  #   #  #   #  ####   #####  
+                #   #  #   #  #   #    #    #  ##    #        #    #    #  #   #   #  #   #  #   #  #  #   #   #  
+                #   #  ####   #   #  #####  #   #  #####  ####     #    #   #  #   #  ####    ###   #   #  #   #  
+
+
+                                                                    
+                                                                    
+                                                             #####  
+                                                                    
+                                                                    
+
+
+                                               ####   #       ###   #   #   ###   
+                                               #   #  #      #   #  ##  #  #   #  
+                                               ####   #      #####  # # #  #   #  
+                                               #      #      #   #  #  ##  #   #  
+					       #      #####  #   #  #   #   ###
+
+
+                                                                    
+
+                                                             #####  
+                                                                    
+                                                                    
+
+
+                                         ####   ####    ###       #  #####  #####   ###   
+                                         #   #  #   #  #   #      #  #        #    #   #  
+                                         ####   ####   #   #      #  ###      #    #   #  
+					 #      #  #   #   #  #   #  #        #    #   #
+					 #      #   #   ###    ###   #####    #     ###
+
+
+
+                                                                 
+                                                                 
+                                                                 
+
+
+
+		  PRESSERV INFORMATICA - LIMEIRA (019)3452.6623
+
+							   Setembro/2002
+
+			      Ademilson Pedro Bom
+			      Analista/projetista
+
+    PresServ Informatica - Limeira (019)3452.6623                    PAG   1
+    MoDULOS DO PROJETO
+    ------------------------------------------------------------------------
+
+
+                               MoDULOS DO PROJETO
+
+
+                                  SUBSISTEMAS
+
+    TITULO                             TITULO REDUZIDO          ARQUIVO
+    ------------------------------------------------------------------------
+    Contratos                          Contratos                GRUPOS.DBF
+    Outros Enderecos                   Outros Enderecos         ECOB.DBF
+    Inscritos                          Inscritos                INSCRITS.DBF
+    Cadastro de Taxas                  Taxas                    TAXAS.DBF
+    Cancelamentos                      Cancelamentos            CANCELS.DBF
+    Processos                          Processos                PRCESSOS.DBF
+    Lancamento/Carnes                  Lancamento/Carnes        EMCARNE.DBF
+    Tabela                             Tabela                   TCARNES.DBF
+    Custos Adicionais                  Custos Adicionais        CSTSEG.DBF
+    Boletos Emitidos                   Boletos Emitidos         BOLETOS.DBF
+    Baixa Boletos (Francesinha)        Baixa Boletos            LBXBOLET.DBF
+    Baixa de Boletos (Francesinha)     Baixa de Boletos         BXBOLET.DBF
+    Taxas a processar                  Taxas a processar        TXPROC.DBF
+    Taxas a Imprimir                   Taxas a Imprimir         TX2VIA.DBF
+    Categoria dos Planos               Categoria dos Planos     CLASSES.DBF
+    Produtos p/Categoria               Produtos p/Categoria     CLPRODS.DBF
+    Grupos                             Grupos                   ARQGRUP.DBF
+    Cobrancas                          Cobrancas                FCGRUPO.DBF
+    Regioes                            Regioes                  REGIAO.DBF
+    Cobradores/Vendedores              Cobradores/Vendedores    COBRADOR.DBF
+    Parcelas do Vendedor               Parcelas do Vendedor     PCBRAD.DBF
+    Cobrancas                          Cobrancas                FCCOB.DBF
+    Circulares                         Circulares               CIRCULAR.DBF
+    Processos da Circular              Processos da Circular    CPRCIRC.DBF
+    Funcionarios                       Funcionarios             FNCS.DBF
+    Parametro de Juros                 Parametro de Juros       JUROS.DBF
+    Historico Padrao                   Historico Padrao         HISTORIC.DBF
+    Contratos Cancelados               Contratos Cancelados     CGRUPOS.DBF
+    Outros Enderecos                   Outros Enderecos         COECOB.DBF
+    Inscritos Cancelados               Inscritos Cancelados     CINSCRIT.DBF
+    Taxas Canceladas                   Taxas Canceladas         CTAXAS.DBF
+    Cadastro de produtos               Produtos                 PRODUTOS.DBF
+    Filiais                            Filiais                  TFILIAIS.DBF
+    Entregues aos cobradores           Entregues aos Cobradores TXENTR.DBF
+    Recebimento de Taxas               Recebimento de Taxas     BXREC.DBF
+    Enderecos                          Enderecos                ALENDER.DBF
+    Acerto Pagos e Trocas              Acerto Pagos e Trocas    BXFCC.DBF
+    Taxas Pagas                        Taxas Pagas              BXTXAS.DBF
+    Taxas Trocadas                     Taxas Trocadas           TROTXAS.DBF
+    Mensagem p/Contrato                Mensagem p/Contrato      MENSAG.DBF
+    Parametros do sistema              Parametros               PAR_ADM.DBF
+

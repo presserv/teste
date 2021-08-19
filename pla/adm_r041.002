@@ -1,0 +1,287 @@
+/*
+ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+ \ Empresa.: PresServ Inform tica-Limeira (019)452.6623
+ \ Programa: ADM_R041.PRG
+ \ Data....: 11-11-96
+ \ Sistema.: Administradora - PLANO
+ \ Funcao..: Impress„o Contrato
+ \ Analista: Ademilson Pedro Bom
+ \ Criacao.: GAS-Pro v3.0 
+ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+*/
+
+#include "adpbig.ch"    // inicializa constantes manifestas
+
+LOCAL dele_atu, getlist:={}
+PARA  lin_menu, col_menu
+PRIV  tem_borda:=.t., op_menu:=VAR_COMPL, l_s:=11, c_s:=19, l_i:=16, c_i:=58, tela_fundo:=SAVESCREEN(0,0,MAXROW(),79)
+nucop=1
+SETCOLOR(drvtittel)
+vr_memo=NOVAPOSI(@l_s,@c_s,@l_i,@c_i)     // pega posicao atual da tela
+CAIXA(mold,l_s,c_s,l_i,c_i)               // monta caixa da tela
+@ l_s,c_s+10 SAY " IMPRESSŽO CONTRATO "
+SETCOLOR(drvcortel)
+@ l_s+01,c_s+1 SAY " Codigo:"
+@ l_s+04,c_s+1 SAY "                      Confirma ?"
+rcodigo=SPAC(6)                                    // Codigo
+confirme=SPAC(1)                                   // Confirme
+DO WHILE .t.
+ rola_t=.f.
+ cod_sos=56
+ SET KEY K_ALT_F8 TO ROLATELA
+ SETCOLOR(drvcortel+","+drvcorget+",,,"+corcampo)
+ @ l_s+01 ,c_s+10 GET  rcodigo;
+                  PICT "999999";
+		  VALI CRIT("PTAB(rcodigo,'GRUPOS',1)~CODIGO n„o aceit vel")
+                  AJUDA "Entre com o n£mero do contrato a imprimir"
+                  CMDF8 "VDBF(6,20,20,77,'GRUPOS',{'codigo','nome','admissao'},3,'codigo',[])"
+                  MOSTRA {"LEFT(TRAN(GRUPOS->nome,[@!]),35)", 2 , 3 }
+                  MOSTRA {"LEFT(TRAN(GRUPOS->endereco,[]),35)", 3 , 3 }
+
+ @ l_s+04 ,c_s+34 GET  confirme;
+		  PICT "!";
+                  VALI CRIT("confirme='S'~CONFIRME n„o aceit vel|Digite S ou tecle ESC para cancelar")
+		  AJUDA "Digite S para imprimir o contrato|ou |Tecle ESC para cancelar"
+
+ READ
+ SET KEY K_ALT_F8 TO
+ IF rola_t
+  ROLATELA(.f.)
+  LOOP
+ ENDI
+ IF LASTKEY()=K_ESC                                // se quer cancelar
+  RETU                                             // retorna
+ ENDI
+
+ #ifdef COM_REDE
+  IF !USEARQ("GRUPOS",.f.,10,1)                    // se falhou a abertura do arq
+   RETU                                            // volta ao menu anterior
+  ENDI
+ #else
+  USEARQ("GRUPOS")                                 // abre o dbf e seus indices
+ #endi
+
+ PTAB(codigo,"EMCARNE",1,.t.)                      // abre arquivo p/ o relacionamento
+ SET RELA TO codigo INTO EMCARNE                   // relacionamento dos arquivos
+ titrel:=criterio:=cpord := ""                     // inicializa variaveis
+ titrel:=chv_rela:=chv_1:=chv_2 := ""
+ tps:=op_x:=ccop := 1
+ IF !opcoes_rel(lin_menu,col_menu,10,11)           // nao quis configurar...
+  CLOS ALL                                         // fecha arquivos e
+  LOOP                                             // volta ao menu
+ ENDI
+ IF tps=2                                          // se vai para arquivo/video
+  arq_=ARQGER()                                    // entao pega nome do arquivo
+  IF EMPTY(arq_)                                   // se cancelou ou nao informou
+   LOOP                                            // retorna
+  ENDI
+ ELSE
+  arq_=drvporta                                    // porta de saida configurada
+ ENDI
+ SET PRINTER TO (arq_)                             // redireciona saida
+ EXIT
+ENDD
+criterio_=criterio                                 // salva criterio e ordenacao
+cpord_=cpord                                       // definidos se huver
+criterio=""
+
+#ifdef COM_REDE
+ IF !USEARQ("INSCRITS",.f.,10,1)                   // se falhou a abertura do arq
+  RETU                                             // volta ao menu anterior
+ ENDI
+#else
+ USEARQ("INSCRITS")                                // abre o dbf e seus indices
+#endi
+
+cpord="codigo"
+INDTMP()
+criterio=criterio_                                 // restabelece criterio e
+cpord=cpord_                                       // ordenacao definidos
+SELE GRUPOS
+DBOX("[ESC] Interrompe",15,,,NAO_APAGA)
+dele_atu:=SET(_SET_DELETED,.t.)                    // os excluidos nao servem...
+SET DEVI TO PRIN                                   // inicia a impressao
+maxli=150                                           // maximo de linhas no relatorio
+IMPCTL("chr(27)+[3]")                                    // ativa 8 lpp
+IF tps=2
+ IMPCTL("' '+CHR(8)")
+ENDI
+BEGIN SEQUENCE
+ DO WHIL ccop<=nucop                               // imprime qde copias pedida
+  pg_=1; cl=999
+  INI_ARQ()                                        // acha 1o. reg valido do arquivo
+  SEEK M->rcodigo
+  ccop++                                           // incrementa contador de copias
+  DO WHIL !EOF()
+   #ifdef COM_TUTOR
+    IF IN_KEY()=K_ESC                              // se quer cancelar
+   #else
+    IF INKEY()=K_ESC                               // se quer cancelar
+   #endi
+    IF canc()                                      // pede confirmacao
+     BREAK                                         // confirmou...
+    ENDI
+   ENDI
+   IF codigo==M->rcodigo                           // se atender a condicao...
+    PTAB(codigo+[T],[ECOB],1)
+    @ 10,000 SAY '3'
+
+    REL_CAB(1)                                     // soma cl/imprime cabecalho
+//    IMPCTL(drvpenf)
+    @ cl,057 SAY grupo                             // Codigo
+//    IMPCTL(drvtenf)
+    REL_CAB(7)                                     // soma cl/imprime cabecalho
+//    IMPCTL(drvpenf)
+    @ cl,057 SAY codigo                            // Codigo
+//    IMPCTL(drvtenf)
+    REL_CAB(6)                                     // soma cl/imprime cabecalho
+//    IMPCTL(drvpenf)
+    @ cl,005 SAY nome                              // Nome
+//    IMPCTL(drvtenf)
+    @ cl,050 SAY TRAN(cpf,"@R 999.999.999-99")     // CPF (24)
+    REL_CAB(4) //28                                // soma cl/imprime cabecalho
+    @ cl,005 SAY TRAN(rg,"@!")                     // R.G.
+    REL_CAB(5) //33                                // soma cl/imprime cabecalho
+    @ cl,005 SAY IIF(uf='RJ',[Rio de Janeiro],uf)  // UF
+    @ cl,055 SAY TRAN(nascto_,"@D")                // Nascto
+    REL_CAB(4) //38                                     // soma cl/imprime cabecalho
+    @ cl,055 SAY upper(SUBSTR(tbestciv,AT(estcivil,[SOlteiro   |CAsado     |VIuvo      |DEsquitado |OUtro      |IGnorado   |JUdici.sep.|COncens.sep]),11))
+    REL_CAB(5) //43                                    // soma cl/imprime cabecalho
+    @ cl,005 SAY endereco                          // Endere‡o
+    @ cl,059 SAY bairro                            // Endere‡o
+    REL_CAB(5) //47                                    // soma cl/imprime cabecalho
+    @ cl,007 SAY TRAN(cep,"@R 99999-999")          // CEP
+    @ cl,023 SAY cidade                          // Endere‡o
+    @ cl,053 SAY UF               //
+    @ cl,063 SAY telefone                // Telefone
+    REL_CAB(20) //66                                    // soma cl/imprime cabecalho
+    IF !ECOB->(EOF())
+     @ cl,011 SAY ECOB->endereco
+     @ cl,055 SAY ECOB->bairro                            // Bairro
+     REL_CAB(4) //70
+     @ cl,009 SAY TRAN(cep,"@R 99999-999")          // CEP
+     @ cl,023 SAY cidade                          // Endere‡o
+     @ cl,055 SAY UF               //
+    ELSE
+     REL_CAB(4) //70
+    ENDI
+    REL_CAB(3)                                     // soma cl/imprime cabecalho
+    @ cl,000 SAY "."
+    chv025=codigo
+    SELE INSCRITS
+    SEEK chv025
+    IF FOUND()
+     IF cl+2>maxli                                 // se cabecalho do arq filho
+      REL_CAB(0)                                   // nao cabe nesta pagina
+     ENDI                                          // salta para a proxima pagina
+     cl:=72                                         // soma contador de linha
+//     @ cl,013 SAY CHR(27)+'3'+chr(15)              // Habilita 216/20
+     DO WHIL ! EOF() .AND. chv025=codigo //LEFT(&(INDEXKEY(0)),LEN(chv025))
+      #ifdef COM_TUTOR
+       IF IN_KEY()=K_ESC                           // se quer cancelar
+      #else
+       IF INKEY()=K_ESC                            // se quer cancelar
+      #endi
+       IF canc()                                   // pede confirmacao
+	BREAK                                      // confirmou...
+       ENDI
+      ENDI
+      IF grau>'1'                                  // se atender a condicao...
+       IF grau="8"
+	cl:=134
+	ultgrau:=seq*5
+       ELSE
+	ultgrau:=(VAL(grau)+seq-1)*5
+       ENDI
+       IF grau$"456"
+	ultgrau-=1
+       ENDI
+       IF grau="7"
+	ultgrau:=(ultgrau - 5)
+	cl-=1
+       ENDI
+//       REL_CAB(3)                                  // soma cl/imprime cabecalho
+//       @ cl+ultgrau,001 say str(cl+ultgrau,5)
+       @ cl+ultgrau,014+IIF(grau='8',4,0) SAY ALLTRIM(nome)    // Nome
+       IF grau<'6'.and.vivofalec='V'               // pode imprimir?
+	@ cl+ultgrau,054 SAY 'X'                           // tab1
+       ENDI
+       IF grau<'6'.and.vivofalec='F'               // pode imprimir?
+	@ cl+ultgrau,059 SAY ' X'
+       ENDI
+       IF grau>'5'                                 // pode imprimir?
+	@ cl+ultgrau,064 SAY LEFT(DTOC(nascto_),2)+'  '+SUBSTR(DTOC(nascto_),4,2)+'  '+RIGHT(DTOC(nascto_),2)// tab2
+       ENDI
+       SKIP                                        // pega proximo registro
+      ELSE                                         // se nao atende condicao
+       SKIP                                        // pega proximo registro
+      ENDI
+     ENDD
+//     cl+=1+ultgrau                                         // soma contador de linha
+    ENDI
+    @ CL,000 SAY CHR(27)+[6]
+    SELE GRUPOS                                    // volta ao arquivo pai
+    SKIP                                           // pega proximo registro
+    eject
+//    cl=999                                         // forca salto de pagina
+   ELSE                                            // se nao atende condicao
+    SKIP                                           // pega proximo registro
+   ENDI
+   EXIT
+  ENDD
+ ENDD ccop
+ EJEC                                              // salta pagina
+END SEQUENCE
+IMPCTL(drvtde8)                                    // ativa 6 lpp
+SET PRINTER TO (drvporta)                          // fecha arquivo gerado (se houver)
+SET DEVI TO SCRE                                   // direciona saida p/ video
+IF tps=2                                           // se vai para arquivo/video
+ BROWSE_REL(arq_,2,3,MAXROW()-2,78)
+ENDI                                               // mostra o arquivo gravado
+GRELA(10)                                          // grava variacao do relatorio
+msgt="PROCESSAMENTOS DO RELAT¢RIO|IMPRESSŽO CONTRATO"
+ALERTA()
+op_=1 //DBOX("Prosseguir|Cancelar opera‡„o",,,E_MENU,,msgt)
+IF op_=1
+ DBOX("Processando registros|.|",,,,NAO_APAGA,"AGUARDE!")
+ dele_atu:=SET(_SET_DELETED,.t.)                   // os excluidos nao servem...
+ SELE GRUPOS                                       // processamentos apos emissao
+ INI_ARQ()                                         // acha 1o. reg valido do arquivo
+ SEEK M->rcodigo
+ DO WHIL !EOF()
+  IF codigo==M->rcodigo                            // se atender a condicao...
+
+   #ifdef COM_REDE
+    IF DATE()>ultimp_
+     REPBLO('GRUPOS->ultimp_',{||DATE()})
+    ENDI
+   #else
+    IF DATE()>ultimp_
+     REPL GRUPOS->ultimp_ WITH DATE()
+    ENDI
+   #endi
+
+   SKIP                                            // pega proximo registro
+   exit
+  ELSE                                             // se nao atende condicao
+   SKIP                                            // pega proximo registro
+  ENDI
+ ENDD
+ ALERTA(2)
+ DBOX("Processo terminado com sucesso!",,,,,msgt)
+ENDI
+SELE GRUPOS                                        // salta pagina
+SET RELA TO                                        // retira os relacionamentos
+SET(_SET_DELETED,dele_atu)                         // os excluidos serao vistos
+RETU
+
+STATIC PROC REL_CAB(qt)                            // cabecalho do relatorio
+IF qt>0                                            // se parametro maior que 0
+ cl=cl+qt                                          // soma no contador de linhas
+ENDI
+IF cl>maxli .OR. qt=0                              // quebra de pagina
+ cl=qt+10 ; pg_++
+ENDI
+RETU
+
+* \\ Final de ADM_R041.PRG

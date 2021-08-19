@@ -1,0 +1,144 @@
+GAS-Pro v3.0
+
+[Ÿ]
+ 0 
+ARQGRUP
+Grupo
+
+
+grup=M->rgrupo
+001
+
+
+
+
+
+
+
+
+
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 1 
+CIRCULAR
+1
+ 15 
+!PTAB(M->rgrupo+rproxcirc,[CIRCULAR],1)
+
+ 0 
+
+
+
+grupo
+C
+M->rgrupo
+
+
+circ
+C
+M->rproxcirc
+
+
+procpend
+N
+
+
+
+emissao_
+D
+M->remissao_
+
+
+mesref
+C
+
+
+
+valor
+N
+M->rvlaux
+
+
+menscirc
+C
+
+
+
+menscirc1
+C
+
+
+
+menscirc2
+C
+
+
+
+emitidos
+N
+
+
+
+pagos
+N
+
+
+
+cancelados
+N
+
+
+
+lancto_
+D
+
+
+
+funcionar
+C
+
+
+
+impress_
+D
+
+
+
+ 1 
+CLASSES
+ 1 
+classe
+
+
+

@@ -1,0 +1,211 @@
+GAS-Pro v3.0
+009009017075001001042001010000176001
+ C¢digo.....:             Abreviatura:
+ Nome.......:
+ Endereco...:
+ Cidade.....:
+ Ref........:
+ Contato....:
+[Ÿ]
+Inclus„o~~26006
+Manuten‡„o~~27007
+Consulta~~28008
+[Ÿ]
+ 7 
+ 1 
+C¢digo
+
+ 1 
+[Ÿ]
+Filiais
+Filiais
+
+
+
+
+
+
+
+005
+
+
+
+
+
+
+
+ 0 
+ 0 
+-1 
+-1 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+codigo
+C
+E
+@!
+ 2 
+ 2 
+ 1 
+ 15 
+ 0 
+C¢digo
+
+!EMPT(codigo)
+Necess rio informar C¢DIGO
+
+Informe o c¢digo da filial
+
+ 0 
+ 0 
+
+
+abrev
+C
+E
+ 
+ 25 
+ 25 
+ 1 
+ 40 
+ 0 
+Abreviatura
+
+!EMPT(abrev)
+Necess rio informar ABREVIATURA
+
+Dˆ um nome abreviado para a filial|Ser  utilizada para identifica‡Æo nas telas
+
+ 0 
+ 0 
+
+
+nome
+C
+E
+@!
+ 50 
+ 50 
+ 2 
+ 15 
+ 0 
+Nome
+
+!EMPT(nome)
+Necess rio informar NOME
+
+Entre com o nome da filial
+
+ 0 
+ 0 
+
+
+endereco
+C
+E
+@!
+ 50 
+ 50 
+ 3 
+ 15 
+ 0 
+Endereco
+
+ 
+
+
+
+
+ 0 
+ 0 
+
+
+cidade
+C
+E
+@!
+ 50 
+ 50 
+ 4 
+ 15 
+ 0 
+Cidade
+
+ 
+
+
+
+
+ 0 
+ 0 
+
+
+ref
+M
+E
+
+ 10 
+ 35 
+ 5 
+ 15 
+ 0 
+Ref
+
+ 
+
+
+Informe um ponto de referˆncia|para facilitar a localiza‡Æo
+
+ 0 
+ 0 
+
+
+contato
+C
+E
+@!
+ 20 
+ 20 
+ 6 
+ 15 
+ 0 
+Contato
+
+!EMPT(contato)
+Necess rio informar CONTATO
+
+Qual a pessoa que responde por ‚sta filial?
+
+ 0 
+ 0 
+
+
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 

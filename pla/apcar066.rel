@@ -1,0 +1,773 @@
+GAS-Pro v3.0
+002003021079035013109000016007033001
++---------------------------------------------------+ : +---------------------------------------------------+
+|                                                   | : |                                                   |
+|                                                   | : |                                                   |
+|                                                   | : |                                                   |
++------ Contrato -------------+--  Emiss„o  --------+ : +------ Contrato -------------+--  Emiss„o  --------+
+|                             | Manut.:             | : |                             | Manut.:             |
++-----------------------------+ Seguro:             | : +-----------------------------+ Seguro:             |
+|                             | Total.:             | : |                             | Total.:             |
++-----------------------------+---------------------+ : +-----------------------------+---------------------+
+|Titular.:                                          | : |Titular.:                                          |
+|Endere‡o:                                          | : |Endere‡o:                                          |
+|                                                   | : |                                                   |
++---------------------------- 1¦Via - Contribuinte -+ : +-    ---------------------------- 2¦Via - Empresa -+
+ úúúúúúúúúúúúúúúúúúúúúúúúúúúúúúúúúúúúúúúúúúúúúúúúúúúúú:úúúúúúúúúúúúúúúúúúúúúúúúúúúúúúúúúúúúúúúúúúúúúúúúúúúúúú
+[Ÿ]
+ 29 
+TAXAS
+Carnˆ Capivari
+
+tipo+codigo+circ
+R08701F9()
+011
+
+
+
+
+
+
+
+
+
+ 0 
+ 1 
+ 0 
+ 16 
+ 3 
+ 4 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Ident1
+M->setup1
+
+ 40 
+C
+ 2 
+ 6 
+R08701F9()
+
+          
+
+
+
+
+
+
+
+
+
+
+Montagem dos dados
+R08703F9()
+
+ 1 
+C
+ 2 
+ 2 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Ident1
+M->setup1
+
+ 40 
+C
+ 2 
+ 64 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Ident2
+M->setup2
+
+ 50 
+C
+ 3 
+ 2 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Ident2
+M->setup2
+
+ 50 
+C
+ 3 
+ 58 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Setup3
+M->setup3
+
+ 50 
+C
+ 4 
+ 2 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Setup3
+M->setup3
+
+ 50 
+C
+ 4 
+ 58 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Codigo 2
+GRUPOS->grupo+'  '+GRUPOS->codigo
+
+ 10 
+C
+ 6 
+ 4 
+
+
+ûû        
+
+
+
+
+
+
+
+
+
+
+Codigo 3
+GRUPOS->grupo+'  '+GRUPOS->codigo
+
+ 10 
+C
+ 6 
+ 61 
+
+
+ûû        
+
+
+
+
+
+
+
+
+
+
+N§ 1
+TAXAS->tipo+[  ]+TAXAS->circ+IIF(tipo$[16].AND.EMCARNE->(EOF()),[],[/]+STRZERO(TCARNES->parf,3))
+
+ 10 
+C
+ 8 
+ 3 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+N§ 2
+TAXAS->tipo+[  ]+TAXAS->circ+IIF(tipo$[16].AND.EMCARNE->(EOF()),[],[/]+STRZERO(TCARNES->parf,3))
+
+ 10 
+C
+ 8 
+ 59 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Valor 1
+R08702F9()
+@E 999,999.99
+ 10 
+N
+ 6 
+ 41 
+
+valororig
+          
+
+
+
+
+
+
+
+
+
+
+Valor 2
+M->valororig
+@E 999,999.99
+ 10 
+N
+ 6 
+ 97 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Valor Seg.
+vlseg
+@E 999,999.99
+ 10 
+N
+ 7 
+ 97 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Valor Seg
+vlseg
+@E 999,999.99
+ 10 
+N
+ 7 
+ 41 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Valor Total
+valororig+vlseg
+@E 999,999.99
+ 10 
+N
+ 8 
+ 97 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Valor Total
+valororig+vlseg
+@E 999,999.99
+ 10 
+N
+ 8 
+ 41 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Nome
+GRUPOS->nome
+
+ 35 
+C
+ 10 
+ 13 
+
+
+û         
+
+
+
+
+
+
+
+
+
+
+Nome
+GRUPOS->nome
+
+ 35 
+C
+ 10 
+ 70 
+
+
+û         
+
+
+
+
+
+
+
+
+
+
+Endere‡o
+GRUPOS->endereco
+
+ 35 
+C
+ 11 
+ 13 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Endere‡o
+GRUPOS->endereco
+
+ 35 
+C
+ 11 
+ 70 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Bairro
+GRUPOS->bairro
+
+ 20 
+C
+ 12 
+ 2 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Bairro
+GRUPOS->bairro
+
+ 20 
+C
+ 12 
+ 59 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Cidade
+GRUPOS->cidade
+
+ 25 
+C
+ 12 
+ 23 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Cidade
+GRUPOS->cidade
+
+ 25 
+C
+ 12 
+ 80 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+UF
+GRUPOS->uf
+!!
+ 2 
+C
+ 12 
+ 49 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+UF 2
+GRUPOS->uf
+!!
+ 2 
+C
+ 12 
+ 106 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Vencto 1
+TAXAS->emissao_
+@D
+ 8 
+D
+ 8 
+ 14 
+
+
+ûû        
+
+
+
+
+
+
+
+
+
+
+Vencto 2
+TAXAS->emissao_
+@D
+ 8 
+D
+ 8 
+ 70 
+
+
+ûû        
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 0 
+ 0 
+ 32 
+
+T¡tulo aplica‡„o
+nsis
+
+ 0 
+ 0 
+ 22 
+
+Data do sistema
+DTOC(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 0 
+ 0 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 13 
+ 59 
+ 4 
+
+C¢digo relat¢rio
+"APCAR066"
+
+ 0 
+ 0 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 0 
+ 0 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 2 
+EMCARNE
+emissao_
+DATE()
+
+TCARNES->parf=VAL(TAXAS->circ).AND.EMPT(EMCARNE->emissao_).AND.tipo$'16'
+
+
+TAXAS
+stat
+[2]
+
+stat < [2]
+
+
+ 0 
+ 0 
+ 8 
+GRUPOS
+ 1 
+codigo
+
+
+
+CLASSES
+ 1 
+GRUPOS->tipcont
+
+
+
+COBRADOR
+ 1 
+cobrador
+
+
+
+CIRCULAR
+ 1 
+GRUPOS->grupo+circ
+
+
+
+MENSAG
+ 1 
+codigo+circ
+
+
+
+CSTSEG
+ 3 
+codigo+tipo+circ
+
+
+
+EMCARNE
+ 1 
+codigo
+
+
+
+TCARNES
+ 1 
+EMCARNE->tip
+
+
+

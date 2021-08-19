@@ -1,0 +1,1145 @@
+GAS-Pro v3.0
+002003024079060001098001003000176001
++------------------Circular de Cobranca------------------+-------------------------------------+-------------------------------------+
+|                                                        |                                     |                                     |
+|Pelo presente comunicamos a VS., de conformidade com as |                                     |                                     |
+|clausulas  contatuais, os  Obitos abaixo discriminados. |                                     |                                     |
+|--------------------------------------------------------|-------------------------------------|-------------------------------------|
+|Inscr.|  Data  | Nome do (a) falecido (a)               | PAGAMENTO   -   FUNERARIA           | PAGAMENTO   -   FUNERARIA           |
+|--------------------------------------------------------|-------------------------------------|-------------------------------------|
+|                                                        | Titular:                            | Titular:                            |
+|                                                        |                                     |                                     |
+|                                                        |-------------------------------------|-------------------------------------|
+|                                                        | Insc. | Grupo | Refer. | Vencimento | Insc. | Grupo | Refer. | Vencimento |
+|                                                        |       |       |        |            |       |       |        |            |
+|                                                        |-------------------------------------|-------------------------------------|
+|                                                        | APOS O VENCIMENTO COBRAR 0.33% AO   | APOS O VENCIMENTO COBRAR 0.33% AO   |
+|                                                        | DIA.                                | DIA                                 |
+|                                                        |-------------------------------------|-------------------------------------|
+|                                                        | Valor r$  |  Multa r$  |  Total r$  | Valor r$  |  Multa r$  |  Total r$  |
+|--------------------------------------------------------|           |            |            |           |            |            |
+|PAGAMENTO:                                              |-------------------------------------|-------------------------------------|
+|--------------------------------------------------------| MENSAGEM:                           | MENSAGEM:                           |
+|Titular:                                                |                                     |                                     |
+|--------------------------------------------------------|                                     |                                     |
+|Insc.|Grupo|Refer.|Vencimento|Valor r$|Multa r$|Total r$|                                     |                                     |
+      |     |      |                   |        |        |                                     |                                     |
+|--------------------------------------------------------|                                     |                                     |
+|        APOS O VENCIMENTO COBRAR 0.33% AO DIA           |                                     |                                     |
+|--------------------------------------------------------|-------------------------------------|-------------------------------------|
+|Autenticacao Mecanica ( Contribuinte )                  | Autenticacao Mecanica (Compensacao) | Autenticacao Mecanica (Funeraria)   |
+|                                                        |                                     |                                     |
+|                                                        |                                     |                                     |
+|                                                        |                                     |                                     |
+[Ÿ]
+ 48 
+TAXAS
+Impress„o das Taxas
+
+cobrador+codigo+tipo+circ
+ROIS02F9()
+011
+
+
+
+
+
+
+
+
+
+ 0 
+ 1 
+ 0 
+ 33 
+ 1 
+ 1 
+ 1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Montagem do dados
+R08703F9()
+
+ 1 
+C
+ 2 
+ 2 
+R08701F9()
+
+          
+
+
+
+
+
+
+
+
+
+
+Grupo
+GRUPOS->grupo
+!!
+ 2 
+C
+ 12 
+ 69 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Nome
+GRUPOS->nome
+
+ 35 
+C
+ 21 
+ 12 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Codigo
+TAXAS->codigo
+999999
+ 6 
+C
+ 12 
+ 59 
+
+rcodigo
+          
+
+
+
+
+
+
+
+
+
+
+Valor
+R08702F9()
+@E 999,999.99
+ 10 
+N
+ 24 
+ 30 
+
+vlaux
+          
+
+
+
+
+
+
+
+
+
+
+det01
+detprc[01]
+
+ 51 
+C
+ 8 
+ 2 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+det02
+detprc[02]
+
+ 51 
+C
+ 9 
+ 2 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+det03
+detprc[03]
+
+ 51 
+C
+ 10 
+ 2 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+det04
+detprc[04]
+
+ 51 
+C
+ 11 
+ 2 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+det05
+detprc[05]
+
+ 51 
+C
+ 12 
+ 2 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+det06
+detprc[06]
+
+ 51 
+C
+ 13 
+ 2 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+det07
+detprc[07]
+
+ 51 
+C
+ 14 
+ 2 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+det08
+detprc[08]
+
+ 51 
+C
+ 15 
+ 2 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+det09
+detprc[09]
+
+ 51 
+C
+ 16 
+ 2 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+det10
+detprc[10]
+
+ 51 
+C
+ 17 
+ 2 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Ident1 1
+M->setup1
+
+ 40 
+C
+ 2 
+ 3 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Ident1 2
+LEFT(M->setup1,37)
+
+ 37 
+C
+ 2 
+ 59 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Ident1 3
+LEFT(M->setup1,37)
+
+ 37 
+C
+ 2 
+ 97 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Ident1 4
+M->setup1
+
+ 40 
+C
+ 19 
+ 13 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Ident2 1
+LEFT(M->setup2,37)
+
+ 37 
+C
+ 3 
+ 59 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Setup3
+LEFT(M->setup3,37)
+
+ 37 
+C
+ 4 
+ 59 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Setup3
+LEFT(M->setup3,37)
+
+ 37 
+C
+ 4 
+ 97 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Ident2 2
+LEFT(M->setup2,37)
+
+ 37 
+C
+ 3 
+ 97 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+det tax
+LEFT(M->detdeb,35)
+
+ 35 
+C
+ 24 
+ 60 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+det tax1
+SUBSTR(detdeb,36,35)
+
+ 35 
+C
+ 25 
+ 60 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Valor 2
+vlaux
+@E 999,999.99
+ 10 
+N
+ 18 
+ 59 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Circular 1
+tipo+[-]+circ
+
+ 5 
+C
+ 12 
+ 76 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Emissao
+emissao_
+@D
+ 8 
+D
+ 12 
+ 86 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Mensagem 1b
+CIRCULAR->menscirc2
+
+ 35 
+C
+ 23 
+ 60 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Mensagem 2b
+CIRCULAR->menscirc2
+
+ 35 
+C
+ 23 
+ 98 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Nome 1
+LEFT(GRUPOS->nome,28)
+
+ 28 
+C
+ 8 
+ 68 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Nome 2
+LEFT(GRUPOS->nome,28)
+
+ 28 
+C
+ 8 
+ 106 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Endere‡o 1
+GRUPOS->endereco
+
+ 35 
+C
+ 9 
+ 61 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Endere‡o 2
+GRUPOS->endereco
+
+ 35 
+C
+ 9 
+ 99 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Codigo
+GRUPOS->codigo
+
+ 6 
+C
+ 24 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Grupo
+GRUPOS->grupo
+
+ 2 
+C
+ 24 
+ 9 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+circ
+tipo+[ ]+circ
+
+ 5 
+C
+ 24 
+ 14 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Emissao
+emissao_
+
+ 8 
+D
+ 24 
+ 21 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Codigo
+GRUPOS->codigo
+
+ 6 
+C
+ 12 
+ 97 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Grupo
+GRUPOS->grupo
+
+ 2 
+C
+ 12 
+ 107 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Circular
+tipo+[-]+circ
+
+ 5 
+C
+ 12 
+ 114 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Emissao
+emissao_
+@D
+ 8 
+D
+ 12 
+ 124 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Valor
+vlaux
+@E 999,999.99
+ 10 
+N
+ 18 
+ 97 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Mensagem 1
+LEFT(CIRCULAR->menscirc,35)
+
+ 35 
+C
+ 21 
+ 60 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Mensagem 2
+LEFT(CIRCULAR->menscirc,35)
+
+ 35 
+C
+ 21 
+ 98 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Mensagem 1a
+CIRCULAR->menscirc1
+
+ 35 
+C
+ 22 
+ 60 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Mensagem 2a
+CIRCULAR->menscirc1
+
+ 35 
+C
+ 22 
+ 98 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+BarCode 1
+TAXAS->codigo+TAXAS->tipo+TAXAS->circ
+
+ 13 
+4
+ 26 
+ 113 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 0 
+ 0 
+ 32 
+
+T¡tulo aplica‡„o
+nsis
+
+ 0 
+ 0 
+ 22 
+
+Data do sistema
+DTOC(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 0 
+ 0 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 31 
+ 98 
+ 4 
+
+C¢digo relat¢rio
+"AMCARV33"
+
+ 0 
+ 0 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 0 
+ 0 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 1 
+TAXAS
+stat
+[2]
+
+STAT<[2]
+
+
+ 0 
+ 0 
+ 5 
+GRUPOS
+ 1 
+codigo
+
+
+
+ARQGRUP
+ 1 
+GRUPOS->grupo
+
+
+
+REGIAO
+ 1 
+GRUPOS->regiao
+
+
+
+CIRCULAR
+ 1 
+GRUPOS->grupo+circ
+
+
+
+CPRCIRC
+ 1 
+GRUPOS->grupo+circ
+
+
+

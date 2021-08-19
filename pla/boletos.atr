@@ -1,0 +1,227 @@
+GAS-Pro v3.0
+009017022066001001006001010001176001
+ Seq.   ³ N.N£mero   ³ Contrato ³ Tipo ³ N.Circ
+ÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄ
+        ³            ³          ³      ³
+        ³            ³          ³      ³
+        ³            ³          ³      ³
+        ³            ³          ³      ³
+        ³            ³          ³      ³
+        ³            ³          ³      ³
+        ³            ³          ³      ³
+        ³            ³          ³      ³
+        ³            ³          ³      ³
+        ³            ³          ³      ³
+[Ÿ]
+Inclus„o~~26006
+Manuten‡„o~~27007
+Consulta~~28008
+[Ÿ]
+ 7 
+ 3 
+Lan‡amento
+
+ 1 
+[Ÿ]
+Nosso N£mero
+
+ 2 
+[Ÿ]
+Circular
+
+ 3 
+ 4 
+ 5 
+[Ÿ]
+Boletos Emitidos
+Boletos Emitidos
+
+
+
+
+
+
+
+005
+
+
+
+
+
+
+
+ 0 
+ 1 
+-1 
+-1 
+-1 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+seq
+C
+V
+999999
+ 6 
+ 6 
+ 3 
+ 2 
+ 0 
+Seq
+
+
+
+
+
+
+ 0 
+ 1 
+
+
+nnumero
+C
+E
+9999999999
+ 10 
+ 10 
+ 3 
+ 11 
+ 0 
+N.N£mero
+
+!EMPT(nnumero)
+Necess rio informar N.N£MERO
+
+Informe o n£mero do boleto|Chamado pelo banco de Nosso N£mero
+
+ 0 
+ 1 
+
+
+codigo
+C
+E
+999999
+ 6 
+ 6 
+ 3 
+ 24 
+ 0 
+Contrato
+
+PTAB(codigo,'GRUPOS',1)
+Necess rio informar CODIGO
+
+Informe o n£mero do contrato deste boleto
+VDBF(6,25,20,77,'GRUPOS',{'codigo','grupo','nome'},1,'codigo',[])
+ 0 
+ 0 
+
+
+tipo
+C
+E
+!
+ 1 
+ 1 
+ 3 
+ 35 
+ 0 
+Tipo
+
+tipo $ [123456789]
+TIPO n„o aceit vel
+
+Qual o tipo de lan‡amento
+MTAB([1=J¢ia|2=Taxa p/Processo|3=Taxa Peri¢dica],[TIPO])
+ 0 
+ 0 
+
+
+circ
+C
+E
+999
+ 3 
+ 3 
+ 3 
+ 42 
+ 0 
+N.Circ
+
+PTAB(codigo+tipo+circ,'TAXAS',1)
+Taxa n„o encontrada no cadastro de Taxas|Verifique
+
+Informe o n£mero da cobran‡a
+
+ 0 
+ 0 
+
+
+por
+C
+I
+ 
+ 10 
+ 10 
+ 0 
+ 0 
+ 0 
+Por
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+em_
+D
+I
+@D
+ 8 
+ 10 
+ 0 
+ 0 
+ 0 
+Em
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 

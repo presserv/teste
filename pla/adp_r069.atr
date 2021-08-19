@@ -1,0 +1,146 @@
+GAS-Pro v3.0
+010021019062001007032001017000176001
+   As taxas que receber„o o valor dos
+  custos, est„o com Emiss„o/Vencimento
+           em que per¡odo?
+     De:              At‚:
+
+  Ignorar os custos adicionais com data
+  de emiss„o posterior a
+               Confirme
+[Ÿ]
+[Ÿ]
+ 4 
+ 0 
+Lan‡ar Custos Adicionais nas Taxas
+Lan‡ar Custos Adicionais nas Taxas
+
+
+
+
+
+
+
+056
+
+
+
+
+
+
+
+ 0 
+ 0 
+-1 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+rini_
+D
+E
+@D
+ 8 
+ 10 
+ 4 
+ 10 
+ 0 
+De:
+
+!EMPT(rini_)
+Necess rio informar Data inicial a considerar
+DATE()-DAY(DATE())+1
+Informe a data inicial a considerar
+
+ 0 
+ 0 
+
+
+rfim_
+D
+E
+@D
+ 8 
+ 10 
+ 4 
+ 28 
+ 0 
+At‚:
+
+!EMPT(rfim_)
+Necess rio informar Data final a considerar
+DATE()+35-DAY(DATE()+35)
+Informe a data final a considerar
+
+ 0 
+ 0 
+
+
+remiss_
+D
+E
+@D
+ 8 
+ 10 
+ 7 
+ 26 
+ 0 
+Emiss„o
+
+!EMPT(Remiss_)
+Informe uma data v lida p/ EMISSŽO
+DATE()
+Informe a data final dos custos a considerar
+
+ 0 
+ 0 
+
+
+confirme
+C
+E
+!
+ 1 
+ 1 
+ 8 
+ 25 
+ 0 
+Confirme
+
+confirme=[S].AND.(PTAB([],[TAXAS],1).or.1=1)
+CONFIRME n„o aceit vel
+
+Digite S para confirmar ou Tecle ESC para cancelar
+
+ 0 
+ 0 
+
+
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 

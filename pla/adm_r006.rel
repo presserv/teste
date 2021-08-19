@@ -1,0 +1,1133 @@
+GAS-Pro v3.0
+002003024079001016001001018000083001
+                                                                      PAG
+
+
+REINTEGRA€ŽO
+------------------------------------------------------------------------------
+
+Cancelamento.:
+Reintegra‡Æo.:
+Situa‡„o:     Nome:                                      Nascto.:
+EstCivil:     CPF.:                  R.G.:
+Endere‡o:                                     Bairro:
+Cidade..:                            CEP.:
+Contato.:                            TipCont:      Vlcarne:      FormaPgto:
+Admiss„o:           Carˆncia:           SaiTxa:        Vend/Reg/Cob.:   /   /
+Obs.....:                                          Renovar:
+Funerais:     Circulares:- Inicial:      £ltima:      Emitidas:      Pagas:
+[Ÿ]
+ 29 
+CGRUPOS
+Reintegra‡„o
+
+numero
+numero==M->rcnumero
+011
+
+
+
+
+
+
+
+
+
+ 0 
+ 3 
+ 0 
+ 66 
+ 1 
+ 5 
+ 2 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Cancelamento
+numero+[ (]+grupo+[/]+codigo+[ ]+motivo+[)]
+
+ 50 
+C
+ 7 
+ 18 
+
+
+û         
+
+
+
+
+
+
+
+
+
+
+Reintegra‡Æo
+M->rnumero+[ (]+M->rgrupo+[/]+M->rcodigo+[ ]+M->rmotivo+[)]
+
+ 50 
+C
+ 8 
+ 18 
+
+
+û         
+
+
+
+
+
+
+
+
+
+
+Situa‡„o
+situacao
+9
+ 1 
+C
+ 9 
+ 11 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Nome
+nome
+ 
+ 35 
+C
+ 9 
+ 21 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Nascto
+nascto_
+@D
+ 8 
+D
+ 9 
+ 67 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Est Civil
+estcivil
+!!
+ 2 
+C
+ 10 
+ 11 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+CPF
+cpf
+@R 999.999.999-99
+ 14 
+C
+ 10 
+ 21 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+R.G.
+rg
+@!
+ 20 
+C
+ 10 
+ 44 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Endere‡o
+endereco
+ 
+ 35 
+C
+ 11 
+ 11 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Bairro
+bairro
+ 
+ 20 
+C
+ 11 
+ 55 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Cidade
+cidade
+ 
+ 25 
+C
+ 12 
+ 11 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+CEP
+cep
+@R 99999-999
+ 9 
+C
+ 12 
+ 44 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Contato
+contato
+@!
+ 25 
+C
+ 13 
+ 11 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+TipCont
+tipcont
+99
+ 2 
+C
+ 13 
+ 47 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Vlcarne
+vlcarne
+ 
+ 3 
+C
+ 13 
+ 61 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+FormaPgto
+formapgto
+99
+ 2 
+C
+ 13 
+ 77 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Admiss„o
+admissao
+@D
+ 8 
+D
+ 14 
+ 11 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+T.Carˆncia
+tcarencia
+@D
+ 8 
+D
+ 14 
+ 31 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Saitxa
+saitxa
+@R 99/99
+ 5 
+C
+ 14 
+ 49 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Vendedor
+vendedor
+!!!
+ 3 
+C
+ 14 
+ 71 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Regi„o
+regiao
+999
+ 3 
+C
+ 14 
+ 74 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Cobrador
+cobrador
+!!!
+ 3 
+C
+ 14 
+ 78 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Obs
+obs
+
+ 35 
+M
+ 15 
+ 11 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Renovar
+renovar
+@D
+ 8 
+D
+ 15 
+ 61 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Funerais
+funerais
+99
+ 2 
+N
+ 16 
+ 11 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Circ.Inicial
+circinic
+999
+ 3 
+C
+ 16 
+ 37 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Ult.Circular
+ultcirc
+999
+ 3 
+C
+ 16 
+ 50 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Qt.Circulares
+qtcircs
+999
+ 3 
+N
+ 16 
+ 65 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Circ.Pagas
+qtcircpg
+999
+ 3 
+N
+ 16 
+ 77 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 1 
+ 1 
+ 44 
+
+T¡tulo aplica‡„o
+nsis
+
+ 2 
+ 1 
+ 22 
+
+Data do sistema
+DTOC(DATE())
+û
+ 3 
+ 71 
+ 8 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 3 
+ 63 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 1 
+ 75 
+ 4 
+
+C¢digo relat¢rio
+"ADM_R006"
+
+ 2 
+ 71 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 3 
+ 1 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+û
+ 0 
+ 0 
+ 5 
+
+ 30 
+PAR_ADM
+nrreint
+M->nrreint+1
+
+
+
+
+ARQGRUP
+contrat
+ARQGRUP->contrat + 1 + R00601F9()
+
+PTAB(rgrupo,'ARQGRUP',1)
+
+
+GRUPOS
+situacao
+[1]
+
+PTAB(M->rcodigo,'GRUPOS',1)
+
+
+GRUPOS
+nome
+nome
+
+
+
+
+GRUPOS
+nascto_
+nascto_
+
+
+
+
+GRUPOS
+estcivil
+estcivil
+
+
+
+
+GRUPOS
+cpf
+cpf
+
+
+
+
+GRUPOS
+rg
+rg
+
+
+
+
+GRUPOS
+endereco
+endereco
+
+
+
+
+GRUPOS
+bairro
+bairro
+
+
+
+
+GRUPOS
+cidade
+cidade
+
+
+
+
+GRUPOS
+cep
+cep
+
+
+
+
+GRUPOS
+contato
+contato
+
+
+
+
+GRUPOS
+tipcont
+tipcont
+
+
+
+
+GRUPOS
+vlcarne
+vlcarne
+
+
+
+
+GRUPOS
+formapgto
+formapgto
+
+
+
+
+GRUPOS
+seguro
+seguro
+
+
+
+
+GRUPOS
+admissao
+admissao
+
+
+
+
+GRUPOS
+tcarencia
+tcarencia
+
+
+
+
+GRUPOS
+saitxa
+saitxa
+
+
+
+
+GRUPOS
+vendedor
+vendedor
+
+
+
+
+GRUPOS
+regiao
+regiao
+
+
+
+
+GRUPOS
+cobrador
+cobrador
+
+
+
+
+GRUPOS
+renovar
+renovar
+
+
+
+
+GRUPOS
+funerais
+funerais
+
+
+
+
+CGRUPOS
+reintnum
+M->rnumero
+
+
+
+
+CGRUPOS
+codreint
+M->rgrupo+M->rcodigo
+
+
+
+
+CGRUPOS
+motreint
+M->rmotivo
+
+
+
+
+CGRUPOS
+reintem_
+DATE()
+
+EMPT(reintem_)
+
+
+CGRUPOS
+reintpor
+M->usuario
+
+EMPT(reintpor)
+
+
+ 0 
+ 1 
+GRUPOS
+1
+ 39 
+!PTAB(M->rcodigo,'GRUPOS',1)
+
+-1 
+
+
+
+codigo
+C
+M->rcodigo
+
+
+grupo
+C
+M->rgrupo
+
+
+situacao
+C
+[1]
+
+
+nome
+C
+nome
+
+
+nascto_
+D
+nascto_
+
+
+estcivil
+C
+estcivil
+
+
+cpf
+C
+cpf
+
+
+rg
+C
+rg
+
+
+endereco
+C
+endereco
+
+
+bairro
+C
+bairro
+
+
+cidade
+C
+cidade
+
+
+uf
+C
+
+
+
+cep
+C
+cep
+
+
+contato
+C
+contato
+
+
+telefone
+C
+
+
+
+tipcont
+C
+tipcont
+
+
+vlcarne
+C
+vlcarne
+
+
+formapgto
+C
+formapgto
+
+
+seguro
+N
+seguro
+
+
+admissao
+D
+admissao
+
+
+tcarencia
+D
+tcarencia
+
+
+saitxa
+C
+saitxa
+
+
+vendedor
+C
+vendedor
+
+
+regiao
+C
+regiao
+
+
+cobrador
+C
+cobrador
+
+
+obs
+M
+obs
+
+
+renovar
+D
+renovar
+
+
+funerais
+N
+funerais
+
+
+circinic
+C
+circinic
+
+
+ultcirc
+C
+ultcirc
+
+
+qtcircs
+N
+qtcircs
+
+
+qtcircpg
+N
+qtcircpg
+
+
+titular
+C
+titular
+
+
+particv
+N
+0
+
+
+particf
+N
+particf
+
+
+nrdepend
+N
+nrdepend
+
+
+ultimp_
+D
+ultimp_
+
+
+ender_
+D
+ender_
+
+
+ultend
+C
+ultend
+
+
+ 1 
+ARQGRUP
+ 1 
+grupo
+
+
+

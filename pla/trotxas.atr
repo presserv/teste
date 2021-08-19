@@ -1,0 +1,255 @@
+GAS-Pro v3.0
+014034022076001007013001021001176001
+       Codigo ³ Circular ³     Valor
+      ÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+              ³          ³
+              ³          ³
+              ³          ³
+              ³          ³
+              ³          ³
+[Ÿ]
+Inclus„o~~26006
+Manuten‡„o~~27007
+Consulta~~28008
+[Ÿ]
+ 8 
+ 1 
+p/N£mero
+
+ 1 
+ 2 
+ 3 
+[Ÿ]
+Taxas Trocadas
+Taxas Trocadas
+
+1=3
+Mantido pelo sistema de Cobran‡a (ADCBIG)
+1=3
+Mantido pelo sistema de Cobran‡a (ADCBIG)
+1=3
+Mantido pelo sistema de Cobran‡a (ADCBIG)
+005
+
+
+1=3
+Mantido pelo sistema de Cobran‡a (ADCBIG)
+
+
+
+ 0 
+ 0 
+-1 
+-1 
+-1 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+idfilial
+C
+I
+!!
+ 2 
+ 2 
+ 0 
+ 0 
+ 0 
+Id
+
+
+
+
+
+
+-1 
+ 0 
+
+
+numero
+C
+I
+999999
+ 6 
+ 6 
+ 0 
+ 0 
+ 0 
+Numero
+
+
+
+
+
+
+-1 
+ 0 
+
+
+seq
+C
+V
+99999
+ 5 
+ 5 
+ 3 
+ 2 
+ 0 
+Seq
+
+
+
+
+
+
+ 0 
+ 1 
+
+
+codigo
+C
+E
+999999
+ 6 
+ 6 
+ 3 
+ 8 
+ 0 
+Codigo
+
+codigo>[000000]
+Necess rio informar CODIGO
+
+Informe o n£mero do contrato
+
+ 0 
+ 0 
+
+
+tipo
+C
+E
+!
+ 1 
+ 1 
+ 3 
+ 18 
+ 0 
+Tipo
+
+tipo $ [123678]
+TIPO n„o aceit vel
+
+Qual o tipo de lan‡amento
+MTAB([1=J¢ia|2=Taxa|3=Carnˆ|6=J¢ia+Seguro|7=Taxa+Seguro|8=Carnˆ+Seguro],[TIPO])
+ 0 
+ 0 
+
+
+circ
+C
+E
+999
+ 3 
+ 3 
+ 3 
+ 20 
+ 0 
+Circular
+
+circ >[000]
+CIRCULAR n„o aceit vel
+
+N£mero da Circular|Mantido pela emissao de recibos
+
+ 0 
+ 0 
+
+
+valorpg
+N
+E
+@E 999,999.99
+ 9 
+ 10 
+ 3 
+ 28 
+ 2 
+Valor pago
+
+valorpg>0
+VALOR PAGO n„o aceit vel
+M->pvalor
+Informe o valor pago.
+
+ 0 
+ 0 
+
+
+procok
+C
+I
+ 
+ 1 
+ 1 
+ 0 
+ 0 
+ 0 
+ProcOk
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+ 0 
+ 3 
+BXFCC
+parctroc
+BXFCC->parctroc + 1
+BXFCC->parctroc - 1
+
+
+
+BXFCC
+vltrocas
+BXFCC->vltrocas +valorpg
+BXFCC->vltrocas -valorpg
+
+
+
+PAR_ADM
+pvalor
+valorpg
+
+
+
+
+ 0 
+ 0 
+ 0 

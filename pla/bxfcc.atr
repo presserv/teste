@@ -1,0 +1,684 @@
+GAS-Pro v3.0
+004017017072001001045001005001176001
+ C¢digo Filial:
+ Numero FCC...:           em          por
+ Cobrador.....:
+ Despesas.....:             Data de Baixa:
+         Comiss„o   Qtde   Valor Rec.    Comiss„o
+ Taxas.:       %
+ Trocas:       %          *          *
+ Carnˆs:       %
+ Outros:       %
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+                  Total:
+** A soma das Trocas n„o est  incluida no Total **
+
+
+
+
+
+
+
+
+
+
+
+
+02005PRCESSOS.ATR
+02005PRCESSOS.ATR
+[Ÿ]
+Inclus„o~~26006
+Manuten‡„o~~27007
+Consulta~~28008
+[Ÿ]
+ 23 
+ 1 
+p/FCC
+
+ 1 
+ 2 
+[Ÿ]
+Acerto Pagos e Trocas
+Acerto Pagos e Trocas
+
+1=3
+Mantido pelo sistema de Cobran‡a (ADCBIG)
+1=3
+Mantido pelo sistema de Cobran‡a (ADCBIG)
+1=3
+Mantido pelo sistema de Cobran‡a (ADCBIG)
+005
+
+
+1=3
+Mantido pelo sistema de Cobran‡a (ADCBIG)
+
+
+
+ 0 
+ 1 
+-1 
+-1 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+idfilial
+C
+E
+!!
+ 2 
+ 2 
+ 1 
+ 17 
+ 0 
+Id
+
+ 
+
+
+Identifique a filial|se houver.
+
+ 0 
+ 0 
+
+
+numero
+C
+E
+999999
+ 6 
+ 6 
+ 2 
+ 17 
+ 0 
+Numero
+
+!EMPT(numero)
+Necess rio informar NUMERO
+
+Informe o n£mero da FCC
+
+ 0 
+ 1 
+
+
+lancto_
+D
+I
+@D
+ 8 
+ 10 
+ 0 
+ 0 
+ 0 
+Lancto_
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+por
+C
+I
+ 
+ 10 
+ 10 
+ 0 
+ 0 
+ 0 
+Por
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+cobrador
+C
+E
+!!!
+ 3 
+ 3 
+ 3 
+ 17 
+ 0 
+Cobrador
+
+PTAB(cobrador,'COBRADOR',1)
+Necess rio informar COBRADOR
+
+Entre com o c¢digo do cobrador
+VDBF(6,22,20,77,'COBRADOR',{'cobrador','nome','telefone'},1,'cobrador')
+ 0 
+ 0 
+
+
+nomecobr
+C
+E
+@!
+ 30 
+ 30 
+ 3 
+ 20 
+ 0 
+Nome do Cobrador
+
+!EMPT(nomecobr)
+Necess rio informar NOME DO COBRADOR
+COBRADOR->nome
+
+
+ 0 
+ 0 
+
+
+despesas
+N
+E
+99999999.99
+ 11 
+ 11 
+ 4 
+ 17 
+ 2 
+Despesas
+
+!(despesas<0)
+VALOR DAS DESPESAS n„o aceit vel
+
+Informe o valor das despesas desta cobran‡a.
+
+ 0 
+ 0 
+
+
+baixa_
+D
+E
+@D
+ 8 
+ 10 
+ 4 
+ 44 
+ 0 
+Baixa
+
+!EMPT(baixa_)
+Necess rio informar BAIXA
+DATE()
+Informe a data da Baixa
+
+ 0 
+ 0 
+
+
+comtxa
+N
+E
+999.9
+ 5 
+ 5 
+ 6 
+ 11 
+ 1 
+%Comiss.Taxas
+
+!(comtxa<0).AND.!(comtxa>100)
+Comiss„o das Taxas n„o aceit vel
+COBRADOR->percent
+Informe o percentual de comiss„o|sobre os recebimento de Taxas
+
+ 0 
+ 0 
+
+
+comtroc
+N
+E
+999.9
+ 5 
+ 5 
+ 7 
+ 11 
+ 1 
+%Comiss.Trocas
+
+!(comtroc<0).AND.!(comtroc>100)
+Comiss„o das Trocas n„o aceit vel
+COBRADOR->percent
+Informe o percentual de comiss„o|sobre as Trocas
+
+ 0 
+ 0 
+
+
+comcarn
+N
+E
+999.9
+ 5 
+ 5 
+ 8 
+ 11 
+ 1 
+%Comiss.Carnˆs
+
+!(comcarn<0).AND.!(comcarn>100)
+Comiss„o dos Carnˆs n„o aceit vel
+COBRADOR->percent
+Informe o percentual de comiss„o|sobre os recebimento de Carnˆs
+
+ 0 
+ 0 
+
+
+comoutr
+N
+E
+999.9
+ 5 
+ 5 
+ 9 
+ 11 
+ 1 
+Percentual
+
+!(comoutr<0).AND.!(comoutr>100)
+Comiss„o das Taxas n„o aceit vel
+
+Informe o percentual de comiss„o|de outros recebimentos
+
+ 0 
+ 0 
+
+
+qtdoutr
+N
+E
+99999
+ 5 
+ 5 
+ 9 
+ 20 
+ 0 
+Qtdoutr
+
+!(qtdoutr<0)
+QTDOUTR n„o aceit vel
+
+Informe o n£mero de documentos
+
+ 0 
+ 0 
+
+
+vloutr
+N
+E
+@E 999,999.99
+ 9 
+ 10 
+ 9 
+ 28 
+ 2 
+Vl.Outros
+
+!(vloutr<0)
+VL.OUTROS n„o aceit vel
+
+Informe o valor de outros recebimentos
+
+ 0 
+ 0 
+
+
+parcpag
+N
+I
+99999
+ 5 
+ 5 
+ 0 
+ 0 
+ 0 
+Parc Pag
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+vltaxas
+N
+I
+@E 999,999.99
+ 9 
+ 10 
+ 0 
+ 0 
+ 2 
+Valor Taxas
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+parctroc
+N
+I
+99999
+ 5 
+ 5 
+ 0 
+ 0 
+ 0 
+Parc Troc
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+vltrocas
+N
+I
+@E 999,999.99
+ 9 
+ 10 
+ 0 
+ 0 
+ 2 
+Valor Trocas
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+parccarn
+N
+I
+99999
+ 5 
+ 5 
+ 0 
+ 0 
+ 0 
+Parc Carn
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+vlcarnes
+N
+I
+@E 999,999.99
+ 9 
+ 10 
+ 0 
+ 0 
+ 2 
+Valor Carnˆs
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+vlrbaix
+N
+I
+99999999.99
+ 11 
+ 11 
+ 0 
+ 0 
+ 2 
+Vlr.Baixado
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+nrccpagar
+C
+I
+ 
+ 6 
+ 6 
+ 0 
+ 0 
+ 0 
+NrCCPagar
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+numop
+C
+V
+999999
+ 6 
+ 6 
+ 1 
+ 45 
+ 0 
+N§ O.P.
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+ 14 
+por
+IIF(EMPT(por),M->usuario,por)
+
+ 2 
+ 43 
+ 10 
+
+em
+IIF(EMPT(lancto_),DATE(),lancto_)
+@D
+ 2 
+ 30 
+ 8 
+
+Parc Pag
+parcpag
+99999
+ 6 
+ 20 
+ 5 
+
+Parc Trocas
+parctroc
+99999
+ 7 
+ 20 
+ 5 
+
+Parc Carn
+parccarn
+99999
+ 8 
+ 20 
+ 5 
+
+Valor Taxas
+vltaxas
+@E 999,999.99
+ 6 
+ 28 
+ 10 
+
+Valor Trocas
+vltrocas
+@E 999,999.99
+ 7 
+ 28 
+ 10 
+
+Valor Carnˆs
+vlcarnes
+@E 999,999.99
+ 8 
+ 28 
+ 10 
+
+Valor Total
+vltaxas+vlcarnes+vloutr
+@E 9,999,999.99
+ 11 
+ 26 
+ 12 
+
+% Taxas
+vltaxas*comtxa/100
+@E 99,999.99
+ 6 
+ 42 
+ 9 
+
+% Trocas
+vltrocas*comtroc/100
+@E 99,999.99
+ 7 
+ 42 
+ 9 
+
+% Carnˆs
+vlcarnes*comcarn/100
+@E 99,999.99
+ 8 
+ 42 
+ 9 
+
+% Outros
+vloutr *comoutr/100
+@E 99,999.99
+ 9 
+ 42 
+ 9 
+
+% Total
+(vltaxas*comtxa/100)+(vltrocas*comtroc/100)+(vlcarnes*comcarn/100)+(vloutr*comoutr/100)
+@E 999,999.99
+ 11 
+ 41 
+ 10 
+
+ 0 
+ 0 
+ 1 
+HISTORIC
+1
+ 5 
+1=3
+1=3
+ 0 
+
+
+
+historico
+C
+
+
+
+descricao
+C
+
+
+
+tipo
+C
+
+
+
+origem
+C
+
+
+
+recdesp
+C
+
+
+
+ 0 

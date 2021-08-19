@@ -1,0 +1,170 @@
+GAS-Pro v3.0
+010020016063001004037001014000176001
+ Reintegra‡„o n£mero:
+ Reintegrar o cancelamento n£mero
+
+ Reativar em.:  Grupo:     C¢digo:
+ Motivo.:
+[Ÿ]
+[Ÿ]
+ 5 
+ 0 
+Reintegra‡„o
+Reintegra‡„o
+
+
+
+
+
+
+
+056
+
+
+
+
+
+
+
+ 0 
+ 0 
+-1 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+rnumero
+C
+E
+999999
+ 6 
+ 6 
+ 1 
+ 23 
+ 0 
+N£mero
+
+!EMPT(rnumero)
+Necess rio informar N£MERO
+STRZERO(M->nrreint+1,6)
+
+
+ 0 
+ 0 
+
+
+rcnumero
+C
+E
+999999
+ 6 
+ 6 
+ 2 
+ 35 
+ 0 
+Canc.N§
+
+PTAB(rcnumero,'CGRUPOS',1).AND.EMPT(CGRUPOS->reintnum)
+CANCELAMENTO inv lido|ou|j  reintegrado.
+
+Informe o n£mero do cancelamento a reintegrar.
+VDBF(6,17,20,77,'CGRUPOS',{'numero','grupo','codigo','nome'},2,'numero',[])
+ 0 
+ 0 
+
+
+rgrupo
+C
+E
+!!
+ 2 
+ 2 
+ 4 
+ 24 
+ 0 
+Grupo
+
+PTAB(rgrupo,'ARQGRUP',1)
+GRUPO n„o existe na tabela
+
+Entre com o grupo ou |tecle F8 para consulta em tabela
+VDBF(6,51,20,77,'ARQGRUP',{'grup','classe','inicio','final'},1,'grup')
+ 0 
+ 0 
+
+
+rcodigo
+C
+E
+999999
+ 6 
+ 6 
+ 4 
+ 36 
+ 0 
+Codigo
+
+(PTAB(M->rcodigo,'GRUPOS',1).AND.GRUPOS->situacao=[2]).OR.(!PTAB(rcodigo,'GRUPOS',1))
+CODIGO n„o aceit vel,|ultrapassa os limites permitidos|pelo grupo ou|contrato encontra-se Ativo.
+
+Entre com o n£mero do contrato
+VDBF(6,64,20,77,'GRUPOS',{'grupo','codigo'},1,'codigo',[GRUPOS->situacao='2'])
+ 0 
+ 0 
+
+
+rmotivo
+C
+E
+@!
+ 30 
+ 30 
+ 5 
+ 11 
+ 0 
+Motivo
+
+!EMPT(rmotivo)
+Necess rio informar MOTIVO
+
+Entre com a justificativa
+
+ 0 
+ 0 
+
+
+ 1 
+Nome
+CGRUPOS->nome
+
+ 3 
+ 6 
+ 35 
+
+ 0 
+ 0 
+ 0 
+ 0 

@@ -1,0 +1,410 @@
+GAS-Pro v3.0
+007015019069001001014001008000176001
+ Processo.:
+ Categoria:    (PL=Plano, PD=Plano c/Dif.,AF=Auxilio)
+ Saiu.....:
+ Contrato.:   /      / /
+ Segurado.:
+ Endere‡o.:
+ Cidade...:
+ Falecido.:
+ Sepultam.:
+ Data Fal.:
+[Ÿ]
+Consulta Individual~~27007
+Consulta Global~~28008
+[Ÿ]
+ 13 
+ 2 
+p/Processo
+
+ 1 
+ 2 
+[Ÿ]
+Grupo+data
+
+ 4 
+ 13 
+[Ÿ]
+Processos
+Processos
+
+EMPT(saiu)
+J  emitido nas Taxas|Exclusao nao permitida
+
+
+
+
+005
+
+
+
+
+
+
+
+ 0 
+ 1 
+-1 
+-1 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+processo
+C
+E
+@R 99999/99/!!
+ 9 
+ 11 
+ 1 
+ 13 
+ 0 
+Processo
+
+!EMPT(processo)
+Necess rio informar PROCESSO
+
+Informe o n£mero do processo a incluir
+
+ 0 
+ 0 
+
+
+categ
+C
+E
+!!
+ 2 
+ 2 
+ 2 
+ 13 
+ 0 
+Categoria
+
+categ $ [PL|PD|AF]
+CATEGORIA n„o aceit vel
+
+Preencha com:|PL para Plano,| PD p/Diferen‡a ou |AX para Aux.Funeral
+MTAB([PL=Plano|PD=Plano c/Diferen‡a|AF=Auxilio],[CATEGORIA])
+ 0 
+ 0 
+
+
+saiu
+C
+E
+ 
+ 3 
+ 3 
+ 3 
+ 13 
+ 0 
+Saiu
+
+ 
+
+
+Preencha com o n£mero da circular|ou|deixe em branco se ainda n„o saiu em cobran‡a
+
+ 0 
+ 0 
+
+
+grup
+C
+E
+!!
+ 2 
+ 2 
+ 4 
+ 13 
+ 0 
+Grup
+
+!EMPT(grup).AND.PTAB(grup,'ARQGRUP',1)
+GRUP n„o existe na tabela
+
+Pertence a qual grupo
+
+ 0 
+ 0 
+
+
+num
+C
+E
+999999
+ 6 
+ 6 
+ 4 
+ 16 
+ 0 
+Num
+
+!EMPT(num).AND.PTAB(num,'GRUPOS',1)
+NUM n„o existe na tabela
+
+Qual contrato
+
+ 0 
+ 0 
+
+
+grau
+C
+E
+9
+ 1 
+ 1 
+ 4 
+ 23 
+ 0 
+Inscr.
+
+grau $ [12345678].and.(PTAB(num,'INSCRITS',1).or.1=1)
+INSCR. n„o aceit vel
+IIF(M->pgrau<[7],SUBSTR([1234567],VAL(M->pgrau),1),M->pgrau)
+Qual o grau de parentesco|Tecle F8 para consulta
+MTAB(M->TBTIPGRAU,[INSCR.])
+ 0 
+ 0 
+
+
+seq
+N
+E
+99
+ 2 
+ 2 
+ 4 
+ 25 
+ 0 
+Seq
+grau>'6'
+ 
+
+
+Que sequencia
+
+ 0 
+ 0 
+
+
+seg
+C
+E
+@!
+ 35 
+ 35 
+ 5 
+ 13 
+ 0 
+Seg
+
+ 
+
+
+Nome do segurado/Contratante
+
+ 0 
+ 0 
+
+
+ends
+C
+E
+@!
+ 40 
+ 40 
+ 6 
+ 13 
+ 0 
+Ends
+
+ 
+
+
+
+
+ 0 
+ 0 
+
+
+cids
+C
+E
+@!
+ 15 
+ 15 
+ 7 
+ 13 
+ 0 
+Cids
+
+ 
+
+
+
+
+ 0 
+ 0 
+
+
+fal
+C
+E
+@!
+ 35 
+ 35 
+ 8 
+ 13 
+ 0 
+Fal
+
+!EMPT(fal)
+Necess rio informar FAL
+
+Nome do falecido
+
+ 0 
+ 0 
+
+
+sep
+C
+E
+@!
+ 35 
+ 35 
+ 9 
+ 13 
+ 0 
+Sep
+
+!EMPT(sep)
+Necess rio informar SEP
+
+Sepultado em
+
+ 0 
+ 0 
+
+
+dfal
+D
+E
+@D
+ 8 
+ 10 
+ 10 
+ 13 
+ 0 
+Data
+
+ 
+
+
+Data do falecimento
+
+ 0 
+ 0 
+
+
+ 1 
+T.Carˆncia
+IIF(INSCRITS->tcarencia>dfal,[Carˆncia do Inscrito],[])
+
+ 4 
+ 29 
+ 22 
+
+ 9 
+ARQGRUP
+procpend
+ARQGRUP->procpend + 1
+ARQGRUP->procpend - 1
+saiu<'001'.AND.PTAB(grup,'ARQGRUP',1)
+
+
+ARQGRUP
+partic
+ARQGRUP->partic - 1
+ARQGRUP->partic + 1
+saiu<'001'.AND.PTAB(grup,'ARQGRUP',1)
+
+
+GRUPOS
+funerais
+GRUPOS->funerais + 1
+GRUPOS->funerais - 1
+PTAB(num,'GRUPOS',1)
+
+
+GRUPOS
+particv
+GRUPOS->particv - 1
+GRUPOS->particv + 1
+PTAB(num,'GRUPOS',1)
+
+
+GRUPOS
+particf
+GRUPOS->particf + 1
+GRUPOS->particf - 1
+PTAB(num,'GRUPOS',1)
+
+
+INSCRITS
+vivofalec
+[F]
+[V]
+PTAB(num+grau+STR(seq,02,00),'INSCRITS',1)
+
+
+INSCRITS
+falecto_
+dfal
+ctod('  /  /  ')
+PTAB(num+grau+STR(seq,02,00),'INSCRITS',1)
+
+
+INSCRITS
+tipo
+categ
+[  ]
+PTAB(num+grau+STR(seq,02,00),'INSCRITS',1)
+
+
+INSCRITS
+procnr
+processo
+[ ]
+PTAB(num+grau+STR(seq,02,00),'INSCRITS',1)
+
+
+ 0 
+ 0 
+ 0 

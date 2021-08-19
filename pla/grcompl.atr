@@ -1,0 +1,904 @@
+GAS-Pro v2.0
+005018023069001001014001006000176001
+ Contrato:
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄ
+                                     ³ Circulares
+                                     ³  Ini
+                           Reg.:     ³  £lt
+                                     ³  Qtd
+ Admiss„o:           Sai Taxa:       ³
+ Funerais:           Cobrador:       ³  Pend
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄ
+  Cir Emiss„o     Valor   Pago em     Valor
+[Ÿ]
+Inclus„o~~26006
+[Ÿ]
+ 37 
+ 1 
+
+
+ 1 
+[Ÿ]
+Consulta Contrato
+Consulta Contrato
+GRUPOS
+
+
+
+
+
+
+006
+
+
+
+
+
+
+
+ 0 
+ 1 
+-1 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+codigo
+C
+E
+999999
+ 6 
+ 6 
+ 1 
+ 13 
+ 0 
+Codigo
+
+PTAB('',[ARQGRUP],1).AND.GRU_01F9()
+CODIGO n„o aceit vel|N„o cadastrado na tabela de grupos
+
+Entre com o n£mero do contrato
+
+ 0 
+ 0 
+
+
+grupo
+C
+E
+!9
+ 2 
+ 2 
+ 0 
+ 0 
+ 0 
+Grupo
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+situacao
+C
+E
+9
+ 1 
+ 1 
+ 0 
+ 0 
+ 0 
+Situa‡„o
+
+situacao $ [12]
+SITUA€ŽO n„o aceit vel
+[1]
+Digite 1 para ativo ou 2 para cancelado
+MTAB([1=Ativo|2=Cancelado],[SITUA€ŽO])
+ 0 
+ 0 
+
+
+nome
+C
+E
+ 
+ 35 
+ 35 
+ 0 
+ 0 
+ 0 
+Nome
+
+!EMPT(nome)
+Necess rio informar NOME
+
+
+
+ 0 
+ 0 
+
+
+nascto_
+D
+E
+@D
+ 8 
+ 8 
+ 0 
+ 0 
+ 0 
+Nascto
+
+ 
+
+
+Informe a data de nascimento do titular
+
+ 0 
+ 0 
+
+
+estcivil
+C
+E
+!!
+ 2 
+ 2 
+ 0 
+ 0 
+ 0 
+Est Civil
+
+(estcivil$tbestciv)
+Informe Estado Civil|ou|Tecle F8 para consulta em tabela
+
+Digite o Estado Civil do Titular
+MTAB(tbestciv,[EST CIVIL])
+ 0 
+ 0 
+
+
+cpf
+C
+E
+@R 999.999.999-99
+ 11 
+ 14 
+ 0 
+ 0 
+ 0 
+CPF
+
+VDV2(cpf).OR.EMPT(cpf)
+CPF nÆo aceit vel
+
+Informe o CIC (CPF) do titular
+
+ 0 
+ 0 
+
+
+rg
+C
+E
+@!
+ 20 
+ 20 
+ 0 
+ 0 
+ 0 
+R.G.
+
+ 
+
+
+Informe o n£mero do documento do titular
+
+ 0 
+ 0 
+
+
+endereco
+C
+E
+ 
+ 35 
+ 35 
+ 0 
+ 0 
+ 0 
+Endere‡o
+
+!EMPT(endereco)
+Necess rio informar ENDERE€O do Titular
+
+Informe o Endere‡o para correspondˆncias.|Rua,n£mero,apto, blocl, etc...
+
+ 0 
+ 0 
+
+
+bairro
+C
+E
+ 
+ 20 
+ 20 
+ 0 
+ 0 
+ 0 
+Bairro
+
+!EMPT(bairro)
+Necess rio informar BAIRRO do Titular
+
+
+
+ 0 
+ 0 
+
+
+cidade
+C
+E
+ 
+ 25 
+ 25 
+ 0 
+ 0 
+ 0 
+Cidade
+
+!EMPT(cidade)
+Necess rio informar MUNICIPIO para cobran‡a do Titular.
+
+
+
+ 0 
+ 0 
+
+
+cep
+C
+E
+@R 99999-999
+ 8 
+ 9 
+ 0 
+ 0 
+ 0 
+CEP
+
+!EMPT(cep)
+Necess rio informar CEP do Titular |com 08 digitos
+
+
+
+ 0 
+ 0 
+
+
+contato
+C
+E
+@!
+ 25 
+ 25 
+ 0 
+ 0 
+ 0 
+Contato
+
+ 
+
+
+
+
+ 0 
+ 0 
+
+
+tipcont
+C
+E
+99
+ 2 
+ 2 
+ 0 
+ 0 
+ 0 
+TipCont
+
+PTAB(tipcont,'CLASSES',1)
+Informe a Classe deste contrato
+
+Qual a categoria do Contrato?|Tecle F8 para consulta em tabela
+VDBF(6,13,20,77,'CLASSES',('classcod','descricao','vljoia'),1,'classcod',[])
+ 0 
+ 0 
+
+
+vlcarne
+C
+E
+ 
+ 3 
+ 3 
+ 0 
+ 0 
+ 0 
+Vlcarne
+
+ 
+
+
+
+
+ 0 
+ 0 
+
+
+formapgto
+C
+E
+99
+ 2 
+ 2 
+ 0 
+ 0 
+ 0 
+FormaPgto
+
+ 
+
+
+Informe a forma de pagamento desejada
+
+ 0 
+ 0 
+
+
+seguro
+N
+E
+ 
+ 2 
+ 0 
+ 0 
+ 0 
+ 0 
+Seguro
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+admissao
+D
+E
+@D
+ 8 
+ 8 
+ 0 
+ 0 
+ 0 
+Admiss„o
+
+!EMPT(admissao)
+Necess rio informar DATA DE ADMISSŽO
+DATE()
+Informe a data da Admiss„o neste contrato
+DATE()
+ 0 
+ 0 
+
+
+tcarencia
+D
+E
+@D
+ 8 
+ 8 
+ 0 
+ 0 
+ 0 
+T.Carˆncia
+
+ 
+
+
+
+
+ 0 
+ 0 
+
+
+saitxa
+C
+E
+@R 99/99
+ 4 
+ 5 
+ 0 
+ 0 
+ 0 
+Saitxa
+
+!EMPT(saitxa).AND.MMAA(saitxa) .or.nivelop==3
+Necess rio informar SAITXA (MM/AA)
+SUBSTR(DTOC(admissao+120),4,2)+RIGHT(DTOC(admissao+120),2)
+Informe o Mˆs a sair a 1¦ Taxa.
+
+ 0 
+ 0 
+
+
+vendedor
+C
+E
+!!
+ 2 
+ 2 
+ 0 
+ 0 
+ 0 
+Vendedor
+
+PTAB(vendedor,'COBRADOR',1).OR.EMPT(vendedor)
+VENDEDOR n„o existe na tabela
+
+
+
+ 0 
+ 0 
+
+
+regiao
+C
+E
+999
+ 3 
+ 3 
+ 0 
+ 0 
+ 0 
+Regi„o
+
+PTAB(regiao,'REGIAO',1).OR.EMPT(regiao)
+REGIŽO n„o existe na tabela
+
+Informe a regi„o ou tecle F8 para busca em tabela
+VDBF(6,38,20,77,'REGIAO',{'codigo','regiao'},1,'codigo')
+ 0 
+ 0 
+
+
+cobrador
+C
+E
+!!
+ 2 
+ 2 
+ 0 
+ 0 
+ 0 
+Cobrador
+
+PTAB(cobrador,'COBRADOR',1)
+COBRADOR n„o existe na tabela
+
+Digite o c¢digo do COBRADOR que|receber  as Taxas deste contrato,|Tecle F8 para consultar os cobradores.
+VDBF(6,39,20,77,'REGIAO',{'regiao','cobrador'},2,'cobrador',[!EMPT(cobrador)])
+ 0 
+ 0 
+
+
+obs
+M
+E
+
+ 10 
+ 35 
+ 0 
+ 0 
+ 0 
+Obs
+
+ 
+
+
+
+
+ 0 
+ 0 
+
+
+renovar
+D
+E
+@D
+ 8 
+ 8 
+ 0 
+ 0 
+ 0 
+Renovar
+
+ 
+
+
+Data final para renova‡Æo
+
+ 0 
+ 0 
+
+
+funerais
+N
+E
+99
+ 2 
+ 2 
+ 0 
+ 0 
+ 0 
+Funerais
+
+!(funerais<0)
+FUNERAIS n„o aceit vel
+
+N£mero de Funerais efetuados|para este processo
+
+ 0 
+ 0 
+
+
+circinic
+C
+E
+999
+ 3 
+ 3 
+ 0 
+ 0 
+ 0 
+Circ.Inicial
+
+circinic <=ARQGRUP->ultcirc .or. nivelop==3
+CIRC.INICIAL maior que a £ltima|emitida para este Grupo.
+
+Informe o n£mero da 1¦ Circular|que saiu para este contrato.
+
+ 0 
+ 0 
+
+
+ultcirc
+C
+E
+999
+ 3 
+ 3 
+ 0 
+ 0 
+ 0 
+Ult.Circular
+
+PTAB(IIF(CLASSES->prior=[S],M->mgrupvip,grupo)+ultcirc,'CIRCULAR',1).OR.ultcirc=[000].or.nivelop==3
+Necess rio informar ULT.CIRCULAR
+
+Entre com o £ltimo n£mero de circular|deste contrato.
+
+ 0 
+ 0 
+
+
+qtcircs
+N
+E
+999
+ 3 
+ 3 
+ 0 
+ 0 
+ 0 
+Qt.Circulares
+
+ 
+
+
+Informe a quantidade de Circulares|emitidas para este contrato.
+
+ 0 
+ 0 
+
+
+qtcircpg
+N
+E
+999
+ 3 
+ 3 
+ 0 
+ 0 
+ 0 
+Circ.Pagas
+
+ 
+
+
+Informe a quantidade de Circulares|pagas/retornadas deste contrato
+
+ 0 
+ 0 
+
+
+titular
+C
+E
+ 
+ 3 
+ 3 
+ 0 
+ 0 
+ 0 
+Titular
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+particv
+N
+E
+99
+ 2 
+ 2 
+ 0 
+ 0 
+ 0 
+Part.Vivos
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+particf
+N
+E
+99
+ 2 
+ 2 
+ 0 
+ 0 
+ 0 
+Part.Falecidos
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+nrdepend
+N
+E
+99
+ 2 
+ 2 
+ 0 
+ 0 
+ 0 
+N§ Depend.
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+ultimp_
+D
+E
+@D
+ 8 
+ 8 
+ 0 
+ 0 
+ 0 
+Ult.Impress.
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+ender_
+D
+E
+@D
+ 8 
+ 8 
+ 0 
+ 0 
+ 0 
+élt.alter.endere‡o
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+ultend
+C
+E
+ 
+ 10 
+ 10 
+ 0 
+ 0 
+ 0 
+UltEnd
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+ 13 
+Circulares
+IIF(PTAB(codigo,'TAXAS',1),BXR_01F9(),[])
+
+ 11 
+ 3 
+ 40 
+
+Nome
+nome
+
+ 3 
+ 2 
+ 35 
+
+Endere‡o
+endereco
+
+ 4 
+ 2 
+ 35 
+
+Bairro
+bairro
+
+ 5 
+ 2 
+ 25 
+
+Cidade
+cidade
+
+ 6 
+ 2 
+ 25 
+
+CEP
+cep
+@R 99999-999
+ 6 
+ 28 
+ 9 
+
+Admiss„o
+admissao
+@D
+ 7 
+ 12 
+ 8 
+
+Saitxa
+saitxa
+@R 99/99
+ 7 
+ 32 
+ 5 
+
+Funerais
+funerais
+99
+ 8 
+ 12 
+ 2 
+
+Cobrador
+cobrador
+!!
+ 8 
+ 32 
+ 2 
+
+Circ.Inicial
+circinic
+999
+ 4 
+ 46 
+ 3 
+
+Ult.Circular
+ultcirc
+999
+ 5 
+ 46 
+ 3 
+
+Qt.Circulares
+qtcircs
+999
+ 6 
+ 46 
+ 3 
+
+ 0 
+ 0 
+ 0 
+ 0 

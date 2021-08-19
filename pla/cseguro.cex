@@ -1,0 +1,446 @@
+GAS-Pro v3.0
+
+[Ÿ]
+ 19 
+GRSEGUR
+Seguros Ativos
+
+
+
+008
+
+
+
+
+
+
+
+
+
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+N§Seguro
+nrseguro
+999999
+ 6 
+
+ 0 
+ 0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ap¢lice
+apolice
+@!
+ 15 
+
+ 0 
+ 0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tipo
+tipo
+ 
+ 2 
+
+ 0 
+ 0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Contrato
+contrato
+999999
+ 6 
+
+ 0 
+ 0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Abertura
+aberseg_
+@D
+ 8 
+
+ 0 
+ 0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Parc.
+(YEAR(DATE())-YEAR(aberseg_))*12+MONTH(DATE())-MONTH(aberseg_)+1
+99
+ 2 
+
+ 0 
+ 0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Vencimento
+vencseg_
+@D
+ 8 
+
+ 0 
+ 0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+T.Carˆncia
+tcarencia
+@D
+ 8 
+
+ 0 
+ 0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Renovar
+renovar
+!
+ 1 
+
+ 0 
+ 0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tipo
+ulttipo
+!
+ 1 
+
+ 0 
+ 0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Circular
+circ
+999
+ 3 
+
+ 0 
+ 0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+£lt.Emiss„o
+emissao_
+@D
+ 8 
+
+ 0 
+ 0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+ParcEmit
+parcemit
+99
+ 2 
+
+ 0 
+ 0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Segurado
+codigoseg
+ 
+ 11 
+
+ 0 
+ 0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Nome do inscrito
+SINSCRIT->inscseg
+
+ 35 
+C
+ 0 
+ 0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Documento
+SINSCRIT->documento
+@!
+ 15 
+C
+ 0 
+ 0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Cobertura
+TSEGURO->cobertura
+99999999.99
+ 11 
+N
+ 0 
+ 0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Custo Empr.
+TSEGURO->custmesemp
+999999.99
+ 9 
+N
+ 0 
+ 0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Custo Contr.
+TSEGURO->custmescon
+999999.99
+ 9 
+N
+ 0 
+ 0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 0 
+ 0 
+ 0 
+ 0 
+ 2 
+SINSCRIT
+ 2 
+codigoseg+nrseguro
+
+
+
+TSEGURO
+ 1 
+tipo
+
+
+

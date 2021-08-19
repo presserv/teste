@@ -1,0 +1,548 @@
+GAS-Pro v3.0
+002003021079001001001001003000176001
+
+
+
+
+
+
+                                DS
+
+CVT: 7744.5 ESPEC.   R$
+[Ÿ]
+ 18 
+TAXAS
+Emiss„o Boleto Banc rio
+
+
+R08701F9()
+011
+
+
+
+
+
+
+
+
+
+ 0 
+ 1 
+ 0 
+ 32 
+ 1 
+ 1 
+ 1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+-1 
+-1 
+-1 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Valor Total
+R08702F9()+vlseg
+@E 999,999.99
+ 10 
+N
+ 9 
+ 54 
+r08701f9()
+
+          
+
+
+
+
+
+
+
+
+
+
+Local de Pagamento
+M->locpgto
+
+ 40 
+C
+ 2 
+ 6 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Codigo
+GRUPOS->grupo+[ ]+GRUPOS->codigo+[ ]+tipo+[ ]+circ
+
+ 15 
+C
+ 7 
+ 13 
+
+
+û         
+
+
+
+
+
+
+
+
+
+
+Emissao
+emissao_
+@D
+ 8 
+D
+ 3 
+ 56 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Nome
+GRUPOS->nome
+
+ 35 
+C
+ 21 
+ 3 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Endere‡o
+GRUPOS->endereco
+
+ 35 
+C
+ 22 
+ 3 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Bairro
+GRUPOS->bairro
+
+ 20 
+C
+ 22 
+ 39 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Cidade
+GRUPOS->cep+[ ]+ALLTRIM(GRUPOS->cidade)+[, ]+GRUPOS->uf
+
+ 35 
+C
+ 23 
+ 3 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Mens1
+M->mens1
+
+ 40 
+C
+ 3 
+ 6 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Mensagem 2
+M->mens2
+
+ 40 
+C
+ 12 
+ 5 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Mensagem 3
+M->mens3
+
+ 40 
+C
+ 13 
+ 5 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Mensagem 4
+M->mens4
+
+ 40 
+C
+ 14 
+ 5 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Mensagem 5
+M->mens5
+
+ 40 
+C
+ 15 
+ 5 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Mensagem 6
+IIF(EMPT(M->mens6),MENSAG->mens1,M->mens6)
+
+ 40 
+C
+ 16 
+ 5 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Mensagem 7
+IIF(EMPT(M->mens7),MENSAG->mens2,M->mens7)
+
+ 40 
+C
+ 17 
+ 5 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Mensagem 8
+IIF(EMPT(M->mens8),MENSAG->mens3,M->mens8)
+
+ 40 
+C
+ 18 
+ 5 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+data1
+DATE()
+@D
+ 8 
+D
+ 7 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+data2
+DATE()
+@D
+ 8 
+C
+ 7 
+ 43 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 0 
+ 0 
+ 32 
+
+T¡tulo aplica‡„o
+nsis
+
+ 0 
+ 0 
+ 22 
+
+Data do sistema
+DTOC(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 0 
+ 0 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 0 
+ 0 
+ 4 
+
+C¢digo relat¢rio
+"ADP_R087"
+
+ 0 
+ 0 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 0 
+ 0 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 2 
+TAXAS
+stat
+[2]
+
+stat < [2]
+
+
+EMCARNE
+emissao_
+DATE()
+
+TCARNES->parf=VAL(TAXAS->circ).AND.EMPT(EMCARNE->emissao_).AND.tipo$'16'
+
+
+ 0 
+ 0 
+ 8 
+GRUPOS
+ 1 
+codigo
+
+
+
+CLASSES
+ 1 
+GRUPOS->tipcont
+
+
+
+COBRADOR
+ 1 
+cobrador
+
+
+
+CIRCULAR
+ 1 
+GRUPOS->grupo+circ
+
+
+
+CSTSEG
+ 3 
+codigo+tipo+circ
+
+
+
+EMCARNE
+ 1 
+codigo
+
+
+
+TCARNES
+ 1 
+EMCARNE->tip
+
+
+
+MENSAG
+ 1 
+codigo+circ
+
+
+

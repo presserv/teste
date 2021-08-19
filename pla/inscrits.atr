@@ -1,0 +1,459 @@
+GAS-Pro v3.0
+018004024078001001013001019001176001
+ Inscr:                                            (                   )
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ Nome:                                     Nasc.:
+ Est.Civil.:     Sexo.....:          T.Carˆncia.:
+ Vivo/Falec:     Falecto..:            Tipo:      N§ Processo:
+[Ÿ]
+Inclus„o~~26006
+Manuten‡„o~~27007
+Consulta~~28008
+[Ÿ]
+ 16 
+ 2 
+Contrato
+
+ 1 
+ 2 
+ 3 
+[Ÿ]
+p/Nome
+
+ 5 
+[Ÿ]
+Inscritos
+Inscritos
+
+
+
+
+
+
+
+005
+
+
+
+
+
+
+
+ 0 
+ 0 
+-1 
+-1 
+ 0 
+-1 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+codigo
+C
+I
+999999
+ 6 
+ 6 
+ 0 
+ 0 
+ 0 
+Codigo
+
+
+
+
+
+
+-1 
+ 0 
+
+
+grau
+C
+E
+9
+ 1 
+ 1 
+ 1 
+ 9 
+ 0 
+Inscr.
+MTAB(M->TBTIPGRAU,[INSCR.])
+grau $ [12345678]
+INSCR. n„o aceit vel
+IIF(M->pgrau<[7],SUBSTR([234567],VAL(M->pgrau),1),M->pgrau)
+Informe o grau de liga‡„o deste com o|titular do contrato|ou|tecle F8 para consulta em tabela
+MTAB(M->TBTIPGRAU,[INSCR.])
+ 0 
+ 0 
+
+
+seq
+N
+E
+99
+ 2 
+ 2 
+ 1 
+ 10 
+ 0 
+Seq
+grau>[6]
+seq>0
+SEQ n„o aceit vel
+INS_01F9()
+
+
+ 0 
+ 0 
+
+
+ehtitular
+C
+I
+!
+ 1 
+ 1 
+ 0 
+ 0 
+ 0 
+Titular?
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+nome
+C
+E
+@!
+ 35 
+ 35 
+ 3 
+ 8 
+ 0 
+Nome
+
+!EMPT(nome)
+Necess rio informar NOME
+IIF(grau=[1],GRUPOS->nome,[ ])
+
+
+ 0 
+ 0 
+
+
+nascto_
+D
+E
+@D
+ 8 
+ 10 
+ 3 
+ 51 
+ 0 
+Nascto
+
+INS_02F9()
+NASCTO n„o aceit vel
+IIF(grau=[1],GRUPOS->nascto_,ctod('  /  /  '))
+Informe a Data de Nascimento deste Inscrito
+
+ 0 
+ 0 
+
+
+estcivil
+C
+E
+ 
+ 2 
+ 2 
+ 4 
+ 14 
+ 0 
+Est Civil
+MTAB(tbestciv,[EST CIVIL])
+(ESTCIVIL$tbestciv)
+Necess rio informar ESTADO CIVIL|ou tecle F8
+IIF(grau<[7],[CA],[SO])
+Digite o Estado Civil do Falecido
+MTAB(tbestciv,[EST CIVIL])
+ 0 
+ 0 
+
+
+interdito
+C
+I
+!
+ 1 
+ 1 
+ 0 
+ 0 
+ 0 
+Interdito
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+sexo
+C
+E
+!
+ 1 
+ 1 
+ 4 
+ 33 
+ 0 
+Sexo
+
+ 
+
+IIF(grau$[124],[M],IIF(grau$[356],[F],[ ]))
+Digite M ou F |(Masculino ou Feminino)
+
+ 0 
+ 0 
+
+
+tcarencia
+D
+E
+@D
+ 8 
+ 10 
+ 4 
+ 51 
+ 0 
+T.Carˆncia
+
+ 
+
+IIF(GRUPOS->tcarencia>DATE(),GRUPOS->tcarencia,CTOD('  /  /  '))
+
+
+ 0 
+ 0 
+
+
+lancto_
+D
+I
+@D
+ 8 
+ 10 
+ 0 
+ 0 
+ 0 
+Lan‡to.
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+vivofalec
+C
+E
+!
+ 1 
+ 1 
+ 5 
+ 14 
+ 0 
+V/F
+
+vivofalec$[VF]
+Necess rio informar VIVOFALEC
+[V]
+Vivo ou Falecido
+MTAB([Vivo|Falecido],[V/F])
+ 0 
+ 0 
+
+
+falecto_
+D
+E
+@D
+ 8 
+ 10 
+ 5 
+ 29 
+ 0 
+Falecto.
+vivofalec==[F]
+ 
+
+
+Entre com a data de falecimento
+
+ 0 
+ 0 
+
+
+tipo
+C
+E
+!!!
+ 3 
+ 3 
+ 5 
+ 46 
+ 0 
+Tipo
+vivofalec==[F]
+EMPTY(tipo).OR.UPPER(tipo) $ [FUN|AUX]
+Necess rio informar TIPO
+
+Com Direitos (Funeral) ou com Auxilio.
+MTAB([Funeral|Auxilio],[TIPO])
+ 0 
+ 0 
+
+
+procnr
+C
+E
+@R 99999/99
+ 7 
+ 8 
+ 5 
+ 64 
+ 0 
+N§Processo
+vivofalec==[F]
+ 
+
+
+Informe o n£mero do processo
+
+ 0 
+ 0 
+
+
+por
+C
+I
+ 
+ 10 
+ 10 
+ 0 
+ 0 
+ 0 
+Por
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+ 4 
+graupart
+SUBSTR([TitPaiMaeSgoSgaEspFilDep],(VAL(grau)-1)*3+1,3)
+
+ 1 
+ 13 
+ 3 
+
+Lan‡to.
+lancto_
+@D
+ 1 
+ 53 
+ 8 
+
+Por
+por
+
+ 1 
+ 62 
+ 10 
+
+Idade
+IIF(!EMPT(nascto_),LEFT(DLAPSO(DATE(),nascto_),12),[            ])
+
+ 3 
+ 62 
+ 12 
+
+ 5 
+INSCRITS
+lancto_
+date()
+date()
+
+
+
+GRUPOS
+titular
+grau+STRZERO(seq,2)
+[   ]
+ehtitular=[S]
+
+
+GRUPOS
+particv
+GRUPOS->particv + 1
+GRUPOS->particv - 1
+vivofalec=[V]
+
+
+GRUPOS
+particf
+GRUPOS->particf + 1
+GRUPOS->particf - 1
+vivofalec=[F]
+
+
+GRUPOS
+nrdepend
+GRUPOS->nrdepend + 1
+GRUPOS->nrdepend - 1
+grau=[8]
+
+
+ 0 
+ 0 
+ 0 

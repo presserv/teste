@@ -1,0 +1,123 @@
+GAS-Pro v3.0
+
+[Ÿ]
+ 0 
+TXPROC
+Processo de Taxas
+
+
+
+001
+
+
+
+
+
+
+
+
+
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 9 
+TAXAS
+pgto_
+pgto_
+
+PTAB(codigo+tipo+circ,'TAXAS',1).AND.TAXAS->stat <= stat
+
+
+TAXAS
+valorpg
+valorpg
+
+PTAB(codigo+tipo+circ,'TAXAS',1).AND.TAXAS->stat < stat
+
+
+TAXAS
+cobrador
+cobrador
+
+PTAB(codigo+tipo+circ,'TAXAS',1).AND.TAXAS->stat < stat
+
+
+TAXAS
+forma
+forma
+
+PTAB(codigo+tipo+circ,'TAXAS',1).AND.TAXAS->stat < stat
+
+
+TAXAS
+baixa_
+baixa_
+
+PTAB(codigo+tipo+circ,'TAXAS',1).AND.TAXAS->stat < stat
+
+
+TAXAS
+por
+por
+
+PTAB(codigo+tipo+circ,'TAXAS',1).AND.TAXAS->stat < stat
+
+
+TAXAS
+filial
+filial
+
+PTAB(codigo+tipo+circ,'TAXAS',1).AND.TAXAS->stat < stat
+
+
+TXPROC
+atp
+'X'
+
+TAXAS->stat < stat
+
+
+TAXAS
+stat
+IIF(bxrec=[S].and.stat=[6],[9],IIF(bxcob=[S].and.stat=[7],[9],stat))
+
+PTAB(codigo+tipo+circ,'TAXAS',1).AND.TAXAS->stat < stat
+
+
+ 0 
+ 0 
+ 1 
+TAXAS
+ 1 
+codigo+tipo+circ
+
+
+

@@ -1,0 +1,340 @@
+GAS-Pro v3.0
+
+[Ÿ]
+ 14 
+INSCRITS
+Consulta Inscritos
+
+
+
+008
+
+
+
+
+
+
+
+
+
+-1 
+ 1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Codigo
+codigo
+999999
+ 6 
+
+ 0 
+ 0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Inscr.
+grau
+9
+ 1 
+
+ 0 
+ 0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Seq
+seq
+99
+ 2 
+
+ 0 
+ 0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Titular?
+ehtitular
+!
+ 1 
+
+ 0 
+ 0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Nome
+nome
+ 
+ 35 
+
+ 0 
+ 0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Nascto
+nascto_
+@D
+ 8 
+
+ 0 
+ 0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Est Civil
+estcivil
+ 
+ 2 
+
+ 0 
+ 0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Interdito
+interdito
+!
+ 1 
+
+ 0 
+ 0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sexo
+sexo
+!
+ 1 
+
+ 0 
+ 0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+T.Carˆncia
+tcarencia
+@D
+ 8 
+
+ 0 
+ 0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+V/F
+vivofalec
+!
+ 1 
+
+ 0 
+ 0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Falecto.
+falecto_
+@D
+ 8 
+
+ 0 
+ 0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tipo
+tipo
+!!!
+ 3 
+
+ 0 
+ 0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+N§Processo
+procnr
+@R 99999/99
+ 8 
+
+ 0 
+ 0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 0 
+ 0 
+ 0 
+ 0 
+ 1 
+GRUPOS
+ 1 
+codigo
+
+
+

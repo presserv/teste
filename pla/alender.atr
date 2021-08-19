@@ -1,0 +1,427 @@
+GAS-Pro v3.0
+010003018078001007013001017000176001
+ Contrato:
+ Alterar de:                          para:
+
+
+
+
+                      p/               Listado em:
+[Ÿ]
+Inclus„o~~26006
+Manuten‡„o~~27007
+Consulta~~28008
+[Ÿ]
+ 16 
+ 1 
+p/Contrato
+
+ 1 
+[Ÿ]
+Endere‡os
+Endere‡os
+
+nivelop>1
+Permitido apenas a usu rios cadastrados|com n¡vel de Manuten‡„o ou Maior
+nivelop>1
+Permitido apenas a usu rios cadastrados|com n¡vel de Manuten‡„o ou Maior
+nivelop>1
+Permitido apenas a usu rios cadastrados|com n¡vel de Manuten‡„o ou Maior
+005
+
+
+nivelop>1
+Permitido apenas a usu rios cadastrados|com n¡vel de Manuten‡„o ou Maior
+
+
+
+ 0 
+ 0 
+-1 
+-1 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+codigo
+C
+E
+999999
+ 6 
+ 6 
+ 1 
+ 12 
+ 0 
+Codigo
+
+PTAB(codigo,'GRUPOS',1).AND.ALE_01F9()
+CODIGO n„o aceit vel|Tecle F8 para consulta
+
+Entre com o n£mero do contrato|Tecle F8 para consulta
+VDBF(6,31,20,77,'GRUPOS',{'codigo','nome'},4,'codigo')
+ 0 
+ 0 
+
+
+endereco
+C
+E
+@!
+ 35 
+ 35 
+ 3 
+ 39 
+ 0 
+Endere‡o
+
+!EMPT(endereco)
+Necess rio informar ENDERE€O do Titular
+GRUPOS->endereco
+Informe o Endere‡o para correspondˆncias.|Rua,n£mero,apto, blocl, etc...
+
+ 0 
+ 0 
+
+
+bairro
+C
+E
+@!
+ 25 
+ 25 
+ 4 
+ 39 
+ 0 
+Bairro
+
+!EMPT(bairro)
+Necess rio informar BAIRRO do Titular
+GRUPOS->bairro
+
+
+ 0 
+ 0 
+
+
+cidade
+C
+E
+@!
+ 25 
+ 25 
+ 5 
+ 39 
+ 0 
+Cidade
+
+!EMPT(cidade)
+Necess rio informar MUNICIPIO para cobran‡a do Titular.
+GRUPOS->cidade
+
+
+ 0 
+ 0 
+
+
+cep
+C
+E
+@R 99999-999
+ 8 
+ 9 
+ 6 
+ 39 
+ 0 
+CEP
+
+!EMPT(cep)
+Necess rio informar CEP do Titular |com 08 digitos
+GRUPOS->cep
+
+
+ 0 
+ 0 
+
+
+cobrador
+C
+E
+!!!
+ 3 
+ 3 
+ 6 
+ 49 
+ 0 
+Cobrador
+
+PTAB(cobrador,'COBRADOR',1)
+COBRADOR n„o existe na tabela
+
+Digite o c¢digo do COBRADOR que|receber  as Taxas deste contrato,|Tecle F8 para consultar os cobradores.
+VDBF(6,39,20,77,'REGIAO',{'regiao','cobrador'},2,'cobrador',[!EMPT(cobrador)])
+ 0 
+ 0 
+
+
+data_
+D
+V
+@D
+ 8 
+ 10 
+ 7 
+ 10 
+ 0 
+Data_
+
+
+
+DATE()
+
+
+ 0 
+ 0 
+
+
+por
+C
+V
+ 
+ 10 
+ 10 
+ 7 
+ 26 
+ 0 
+Por
+
+
+
+M->usuario
+
+
+ 0 
+ 0 
+
+
+dendereco
+C
+V
+@!
+ 35 
+ 35 
+ 3 
+ 2 
+ 0 
+Endere‡o
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+dbairro
+C
+V
+@!
+ 25 
+ 25 
+ 4 
+ 2 
+ 0 
+Bairro
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+dcidade
+C
+V
+@!
+ 25 
+ 25 
+ 5 
+ 2 
+ 0 
+Cidade
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+dcep
+C
+V
+@R 99999-999
+ 8 
+ 9 
+ 6 
+ 2 
+ 0 
+CEP
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+dcobrador
+C
+V
+!!!
+ 3 
+ 3 
+ 6 
+ 13 
+ 0 
+Cobrador
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+dgrupo
+C
+V
+ 
+ 2 
+ 2 
+ 1 
+ 19 
+ 0 
+Dgrupo
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+emitido_
+D
+E
+@D
+ 8 
+ 10 
+ 7 
+ 52 
+ 0 
+Emitido
+nivelop=3
+ 
+
+
+Data da emiss„o de solicita‡„o do endere‡o
+
+ 0 
+ 0 
+
+
+filial
+C
+I
+@!
+ 2 
+ 2 
+ 0 
+ 0 
+ 0 
+Filial
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+ 2 
+Nome
+GRUPOS->nome
+
+ 1 
+ 25 
+ 35 
+
+Filial
+filial
+@!
+ 1 
+ 22 
+ 2 
+
+ 3 
+ALENDER
+data_
+DATE()
+
+EMPT(data_)
+
+
+ALENDER
+por
+M->usuario
+
+EMPT(por)
+
+
+ALENDER
+filial
+M->p_filial
+
+
+
+
+ 0 
+ 0 
+ 0 

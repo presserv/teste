@@ -1,0 +1,7 @@
+COPY  *.PAD  *.PRG
+COPY  *.%1   *.PRG
+copy h:bloqueio.ch
+DEL *.OBJ
+RMAKE ADRBIG
+ARJ A H:ADRBP ADRBIG.EXE
+H:

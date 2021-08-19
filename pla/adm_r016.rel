@@ -1,0 +1,343 @@
+GAS-Pro v3.0
+002003024079001007001001009000176001
+                                                                    PAG
+
+RESUMO P/CIRCULAR
+
+Gr Circ Proc Emiss„o  Mˆs      Valor  Emitid Pagos  Canc  Lancamento Usu rio
+------------------------------------------------------------------------------
+[Ÿ]
+ 11 
+CIRCULAR
+Resumo p/Circular
+
+
+
+011
+
+
+
+
+
+
+
+
+
+ 0 
+ 0 
+ 0 
+ 66 
+ 0 
+ 6 
+ 3 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Grupo
+grupo
+
+ 2 
+C
+ 7 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Circular
+circ
+999
+ 3 
+C
+ 7 
+ 4 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Procpend
+procpend
+99
+ 2 
+N
+ 7 
+ 10 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Emiss„o
+emissao_
+@D
+ 8 
+D
+ 7 
+ 13 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Mˆs Ref.
+mesref
+@R 99/99
+ 5 
+C
+ 7 
+ 22 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Valor
+valor
+@E 999,999.99
+ 10 
+N
+ 7 
+ 28 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Emitidos
+emitidos
+
+ 6 
+N
+ 7 
+ 39 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Pagos
+pagos
+
+ 6 
+N
+ 7 
+ 46 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Cancelados
+cancelados
+
+ 6 
+N
+ 7 
+ 53 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Lancamento
+lancto_
+@D
+ 8 
+D
+ 7 
+ 60 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Usu rio
+funcionar
+ 
+ 10 
+C
+ 7 
+ 69 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 1 
+ 1 
+ 32 
+
+T¡tulo aplica‡„o
+nsis
+
+ 2 
+ 1 
+ 22 
+
+Data do sistema
+DTOC(DATE())
+
+ 3 
+ 69 
+ 8 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 3 
+ 61 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 1 
+ 73 
+ 4 
+
+C¢digo relat¢rio
+"ADM_R016"
+
+ 2 
+ 69 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 4 
+ 1 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 0 
+ 0 
+ 0 
+ 0 

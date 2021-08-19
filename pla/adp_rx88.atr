@@ -1,0 +1,149 @@
+GAS-Pro v3.0
+006015019065001010036001016000176001
+
+     Esta rotina ir  lan‡ar como taxas todas
+  as cobran‡as adicionais ainda n„o lan‡adas
+      nas taxas de cobran‡a do Plano M£tuo.
+
+ Qual a data da cobran‡a a gerar ?
+ Qual o valor m¡nimo a cobrar ?
+
+      Ignorar os custos com data de emiss„o
+              posterior a         .
+                  Confirma ?
+[Ÿ]
+[Ÿ]
+ 4 
+ 0 
+Criar Taxas de Seguros
+Criar Taxas de Seguros
+
+
+
+
+
+
+
+056
+
+
+
+
+
+
+
+ 0 
+ 0 
+-1 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+rini_
+D
+E
+@D
+ 8 
+ 8 
+ 6 
+ 36 
+ 0 
+De:
+
+!EMPT(rini_)
+Necess rio informar Data inicial a considerar
+DATE()-DAY(DATE())+1
+Informe a data inicial a considerar
+
+ 0 
+ 0 
+
+
+rvalor
+N
+E
+@E 999,999.99
+ 9 
+ 10 
+ 7 
+ 33 
+ 2 
+Valor
+
+!(rvalor<0)
+VALOR n„o aceit vel|Deve ser um valor positivo
+
+Informe o valor m¡nimo acumulado|do seguro para gerar a cobran‡a?
+
+ 0 
+ 0 
+
+
+remiss_
+D
+E
+@D
+ 8 
+ 8 
+ 10 
+ 27 
+ 0 
+Emiss„o
+
+!EMPT(Remiss_)
+Informe uma data v lida p/ EMISSŽO
+DATE()
+Informe a data final dos custos a considerar
+
+ 0 
+ 0 
+
+
+confirme
+C
+E
+!
+ 1 
+ 1 
+ 11 
+ 30 
+ 0 
+Confirme
+
+confirme='S'
+CONFIRME n„o aceit vel
+
+Digite S para confirmar|ou|tecle ESC para cancelar
+
+ 0 
+ 0 
+
+
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 

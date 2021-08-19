@@ -1,0 +1,962 @@
+GAS-Pro v3.0
+002003021079001048053048003007033001
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  Contrato Nome do Falecido  Data.Falec. Cidade   N§¢bito
+[Ÿ]
+ 38 
+TAXAS
+Recibo Baldochi
+
+tipo+codigo+circ
+R08701F9()
+011
+
+
+
+
+
+
+
+
+
+-1 
+ 1 
+ 0 
+ 66 
+ 1 
+ 4 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Montagem dos dados
+R08703F9()
+
+ 1 
+C
+ 5 
+ 2 
+R08701F9()
+
+          
+
+
+
+
+
+
+
+
+
+
+detprc1
+LEFT(detprc[1],40)
+
+ 40 
+C
+ 24 
+ 3 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+detprc2
+LEFT(detprc[2],40)
+
+ 40 
+C
+ 25 
+ 3 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+det3
+LEFT(detprc[3],40)
+
+ 40 
+C
+ 26 
+ 3 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+det4
+LEFT(detprc[4],40)
+
+ 40 
+C
+ 27 
+ 3 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+det5
+LEFT(detprc[5],40)
+
+ 40 
+C
+ 28 
+ 3 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+det6
+LEFT(detprc[6],40)
+
+ 40 
+C
+ 29 
+ 3 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+det7
+LEFT(detprc[7],40)
+
+ 40 
+C
+ 30 
+ 3 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+det8
+LEFT(detprc[8],40)
+
+ 40 
+C
+ 31 
+ 3 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+det9
+LEFT(detprc[9],40)
+
+ 40 
+C
+ 32 
+ 3 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+det10
+LEFT(detprc[10],40)
+
+ 40 
+C
+ 33 
+ 3 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Codigo
+GRUPOS->grupo+'  '+GRUPOS->codigo
+
+ 10 
+C
+ 15 
+ 10 
+
+
+û         
+
+
+
+
+
+
+
+
+
+
+Codigo 1
+codigo
+
+ 6 
+C
+ 52 
+ 5 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Codigo 2
+codigo
+
+ 6 
+C
+ 52 
+ 27 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Codigo 3
+codigo
+
+ 6 
+C
+ 52 
+ 51 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Grupo 1
+GRUPOS->grupo
+
+ 2 
+C
+ 52 
+ 20 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Grupo 2
+GRUPOS->grupo
+
+ 2 
+C
+ 52 
+ 42 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Grupo 3
+GRUPOS->grupo
+
+ 2 
+C
+ 52 
+ 66 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+N§ 1
+TAXAS->tipo+[  ]+TAXAS->circ+IIF(tipo=[1].AND.EMCARNE->(EOF()),[],[/]+STRZERO(TCARNES->parf,3))
+
+ 10 
+C
+ 15 
+ 40 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Valor
+R08702F9()
+@E 999,999.99
+ 10 
+N
+ 55 
+ 7 
+
+vlraux
+          
+
+
+
+
+
+
+
+
+
+
+Valor
+vlraux
+@E 999,999.99
+ 10 
+N
+ 55 
+ 53 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Valor
+vlraux
+@E 999,999.99
+ 10 
+N
+ 55 
+ 29 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Nome
+GRUPOS->nome
+
+ 35 
+C
+ 10 
+ 6 
+
+
+û         
+
+
+
+
+
+
+
+
+
+
+Endere‡o
+GRUPOS->endereco
+
+ 35 
+C
+ 11 
+ 6 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Bairro
+GRUPOS->bairro
+
+ 20 
+C
+ 11 
+ 42 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+CEP
+GRUPOS->cep
+@R 99999-999
+ 9 
+C
+ 12 
+ 6 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Cidade
+GRUPOS->cidade
+
+ 25 
+C
+ 12 
+ 25 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+UF
+GRUPOS->uf
+!!
+ 2 
+C
+ 12 
+ 50 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Vencto 1
+TAXAS->emissao_
+@D
+ 10 
+D
+ 60 
+ 12 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Vencto 2
+TAXAS->emissao_
+@D
+ 10 
+D
+ 60 
+ 34 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Vencto 3
+TAXAS->emissao_
+@D
+ 10 
+D
+ 60 
+ 58 
+
+
+û         
+
+
+
+
+
+
+
+
+
+
+Nome
+&drvpcom+GRUPOS->nome+&drvtcom
+
+ 35 
+C
+ 53 
+ 3 
+
+nomaux
+          
+
+
+
+
+
+
+
+
+
+
+Nome1
+nomaux
+
+ 35 
+C
+ 53 
+ 39 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Nome2
+nomaux
+
+ 35 
+C
+ 53 
+ 75 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Endere‡o 1
+&drvpcom+GRUPOS->endereco+&drvtcom
+@!
+ 35 
+C
+ 54 
+ 3 
+
+endaux
+          
+
+
+
+
+
+
+
+
+
+
+End.2
+endaux
+
+ 35 
+C
+ 54 
+ 39 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+End.3
+endaux
+
+ 35 
+C
+ 54 
+ 75 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+CodBar 1
+codigo+tipo+circ
+
+ 13 
+4
+ 48 
+ 53 
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 0 
+ 0 
+ 44 
+
+T¡tulo aplica‡„o
+nsis
+
+ 0 
+ 0 
+ 22 
+
+Data do sistema
+DTOC(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 0 
+ 0 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 0 
+ 0 
+ 4 
+
+C¢digo relat¢rio
+"AMBARV33"
+
+ 0 
+ 0 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 0 
+ 0 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 2 
+EMCARNE
+emissao_
+DATE()
+
+TCARNES->parf=VAL(TAXAS->circ).AND.EMPT(EMCARNE->emissao_).AND.tipo$'16'
+
+
+TAXAS
+stat
+[2]
+
+stat < [2]
+
+
+ 0 
+ 0 
+ 8 
+GRUPOS
+ 1 
+codigo
+
+
+
+CLASSES
+ 1 
+GRUPOS->tipcont
+
+
+
+COBRADOR
+ 1 
+cobrador
+
+
+
+CIRCULAR
+ 1 
+GRUPOS->grupo+circ
+
+
+
+MENSAG
+ 1 
+codigo+circ
+
+
+
+CSTSEG
+ 3 
+codigo+tipo+circ
+
+
+
+EMCARNE
+ 1 
+codigo
+
+
+
+TCARNES
+ 1 
+EMCARNE->tip
+
+
+

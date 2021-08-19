@@ -1,0 +1,321 @@
+GAS-Pro v3.0
+011003022079001004016001015000176001
+
+Processo  Circ Grp Contr Insc Falecido                            Data
+========= ==== === ===== ==== ============================================
+                          /
+[Ÿ]
+ 10 
+PRCESSOS
+Processos Pendentes
+grup
+grup+DTOS(dfal)
+saiu<[001]
+011
+
+
+
+
+
+
+
+
+
+-1 
+ 0 
+ 0 
+ 66 
+ 0 
+ 3 
+ 3 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Processo
+processo
+ 
+ 9 
+C
+ 4 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Circular
+saiu
+ 
+ 3 
+C
+ 4 
+ 11 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Grupo
+grup
+!9
+ 2 
+C
+ 4 
+ 16 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Contrato
+num
+999999
+ 6 
+C
+ 4 
+ 20 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Inscr.
+grau
+9
+ 1 
+C
+ 4 
+ 26 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Seq
+seq
+99
+ 2 
+N
+ 4 
+ 28 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Falecido
+fal
+
+ 35 
+C
+ 4 
+ 31 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Data
+dfal
+@D
+ 8 
+D
+ 4 
+ 67 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Cids
+cids
+@!
+ 15 
+C
+ 5 
+ 60 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Ends
+ends
+@!
+ 40 
+C
+ 5 
+ 20 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 0 
+ 0 
+ 32 
+
+T¡tulo aplica‡„o
+nsis
+
+ 0 
+ 0 
+ 22 
+
+Data do sistema
+DTOC(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 0 
+ 0 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 0 
+ 0 
+ 4 
+
+C¢digo relat¢rio
+"ADM_R011"
+
+ 0 
+ 0 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 0 
+ 0 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 0 
+ 0 
+ 0 
+ 0 

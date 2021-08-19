@@ -1,0 +1,149 @@
+GAS-Pro v3.0
+010021015062001004001001014000176001
+ Vendedor:
+
+ Admiss„o: de:          at‚
+ Confirme:
+[Ÿ]
+[Ÿ]
+ 4 
+ 0 
+Comiss„o
+Comiss„o
+
+
+
+
+
+
+
+056
+
+
+
+
+
+
+
+ 0 
+ 0 
+-1 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+rvend
+C
+E
+!!
+ 2 
+ 2 
+ 1 
+ 12 
+ 0 
+Vendedor
+
+PTAB(rvend,'COBRADOR',1).OR.EMPT(rvend)
+VENDEDOR n„o existe na tabela
+
+Informe o c¢digo do Vendedor|ou|Tecle F8 para consulta em arquivo
+VDBF(6,7,20,77,'COBRADOR',{'cobrador','funcao','nome','cidade'},1,'cobrador')
+ 0 
+ 0 
+
+
+ateh1
+D
+E
+@D
+ 8 
+ 8 
+ 3 
+ 16 
+ 0 
+At‚:
+
+ 
+
+
+
+
+ 0 
+ 0 
+
+
+ateh2
+D
+E
+@D
+ 8 
+ 8 
+ 3 
+ 29 
+ 0 
+At‚:
+
+ 
+
+
+
+
+ 0 
+ 0 
+
+
+confirme
+C
+E
+!
+ 1 
+ 1 
+ 4 
+ 12 
+ 0 
+Confirme
+
+confirme='S'
+CONFIRME n„o aceit vel
+
+Digite S para confirmar|ou|tecle ESC para cancelar
+
+ 0 
+ 0 
+
+
+ 1 
+Nome do Cobrado
+COBRADOR->nome
+
+ 2 
+ 9 
+ 30 
+
+ 0 
+ 0 
+ 0 
+ 0 

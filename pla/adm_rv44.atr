@@ -1,0 +1,170 @@
+GAS-Pro v3.0
+012021017062001003021001015000176001
+ Emiss„o:
+ Grupo..:      De:       -
+ £ltima Circular.:
+ Pr¢xima Circular:        Confirme:
+[Ÿ]
+[Ÿ]
+ 4 
+ 0 
+N„o sai taxas VIP
+N„o sai taxas VIP
+
+
+
+
+
+
+
+056
+
+
+
+
+
+
+
+ 0 
+ 0 
+-1 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+remissao_
+D
+E
+@D
+ 8 
+ 8 
+ 1 
+ 11 
+ 0 
+Emiss„o
+
+!EMPT(Remissao_)
+Informe uma data v lida p/ EMISSO | data de hoje ou posterior.
+CTOD('05'+SUBSTR(DTOC(DATE()+30),3))
+Data da Emiss„o da Circular.| Para atualizar circulares se n„o preenchidas| com antecedˆncia.
+
+ 0 
+ 0 
+
+
+rgrupo
+C
+E
+!9
+ 2 
+ 2 
+ 2 
+ 11 
+ 0 
+Grupo
+
+PTAB(rgrupo,'ARQGRUP',1)
+GRUPO n„o existe na tabela
+M->mgrupvip
+Entre com o grupo ou |tecle F8 para consulta em tabela
+VDBF(6,33,20,77,'ARQGRUP',{'grup','inicio','final','ultcirc','emissao_','procpend'},1,'grup',[])
+ 0 
+ 0 
+
+
+rproxcirc
+C
+E
+999
+ 3 
+ 3 
+ 4 
+ 20 
+ 0 
+N§Proxima Circ.
+
+rproxcirc>=ARQGRUP->ultcirc
+A Pr¢xima circular deve ser maior|ou igual a £ltima emitida
+
+Entre com o n£mero da pr¢xima circular
+STRZERO(VAL(ARQGRUP->ultcirc)+1,3)
+ 0 
+ 0 
+
+
+confirme
+C
+E
+!
+ 1 
+ 1 
+ 4 
+ 37 
+ 0 
+Confirme
+
+confirme='S'.AND.V03001F9()
+CONFIRME n„o aceit vel
+
+Digite S para confirmar|ou|tecle ESC para cancelar
+
+ 0 
+ 0 
+
+
+ 4 
+Nr.Inicial
+ARQGRUP->inicio
+999999
+ 2 
+ 20 
+ 6 
+
+Nr.Final
+ARQGRUP->final
+999999
+ 2 
+ 27 
+ 6 
+
+Ultcirc
+ARQGRUP->ultcirc
+999
+ 3 
+ 20 
+ 3 
+
+Emissao
+ARQGRUP->emissao_
+@D
+ 3 
+ 24 
+ 8 
+
+ 0 
+ 0 
+ 0 
+ 0 

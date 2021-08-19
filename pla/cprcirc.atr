@@ -1,0 +1,277 @@
+GAS-Pro v3.0
+009005016077001003023001012001176001
+ Processo      ³ Num.   ³ Falecido                            Data
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+               ³        ³
+               ³        ³
+               ³        ³
+               ³        ³
+[Ÿ]
+Inclus„o~~26006
+Manuten‡„o~~27007
+Consulta~~28008
+[Ÿ]
+ 9 
+ 3 
+Grupo/Circular
+
+ 1 
+ 2 
+ 3 
+[Ÿ]
+p/Data
+
+ 9 
+[Ÿ]
+Grupo e Data
+
+ 1 
+ 2 
+ 9 
+[Ÿ]
+Processos da Circular
+Processos da Circular
+
+
+
+
+
+
+
+005
+
+
+
+
+
+
+
+ 0 
+ 0 
+-1 
+-1 
+-1 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+grupo
+C
+I
+!!
+ 2 
+ 2 
+ 0 
+ 0 
+ 0 
+Grupo
+
+
+
+
+
+
+-1 
+ 0 
+
+
+circ
+C
+I
+999
+ 3 
+ 3 
+ 0 
+ 0 
+ 0 
+Circular
+
+
+
+
+
+
+-1 
+ 0 
+
+
+processo
+C
+E
+@R 99999/99/!!
+ 9 
+ 11 
+ 3 
+ 1 
+ 0 
+Processo
+
+!EMPT(processo)
+Necess rio informar PROCESSO
+
+Informe o n£mero do processo a incluir
+
+ 0 
+ 0 
+
+
+categ
+C
+E
+!!
+ 2 
+ 2 
+ 3 
+ 13 
+ 0 
+Categoria
+
+categ $ [PL|PD|AF]
+CATEGORIA n„o aceit vel
+
+Preencha com:|PL para Plano,| PD p/Diferen‡a ou |AX para Aux.Funeral
+MTAB([PL=Plano|PD=Plano c/Diferen‡a|AF=Auxilio],[CATEGORIA])
+ 0 
+ 0 
+
+
+num
+C
+E
+999999
+ 6 
+ 6 
+ 3 
+ 18 
+ 0 
+Num
+
+!EMPT(num).AND.PTAB(num,'GRUPOS',1)
+NUM n„o existe na tabela
+
+
+
+ 0 
+ 0 
+
+
+fal
+C
+E
+@!
+ 35 
+ 35 
+ 3 
+ 27 
+ 0 
+Fal
+
+!EMPT(fal)
+Necess rio informar FAL
+
+
+
+ 0 
+ 0 
+
+
+ends
+C
+I
+@!
+ 40 
+ 40 
+ 0 
+ 0 
+ 0 
+Ends
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+cids
+C
+I
+@!
+ 15 
+ 15 
+ 0 
+ 0 
+ 0 
+Cids
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+dfal
+D
+E
+@D
+ 8 
+ 10 
+ 3 
+ 63 
+ 0 
+Data
+
+!EMPT(dfal)
+Necess rio informar DATA
+
+
+
+ 0 
+ 0 
+
+
+ 1 
+Nome
+INSCRITS->nome
+
+ 0 
+ 0 
+ 35 
+
+ 1 
+CIRCULAR
+procpend
+CIRCULAR->procpend + 1
+CIRCULAR->procpend - 1
+
+
+
+ 0 
+ 0 
+ 0 

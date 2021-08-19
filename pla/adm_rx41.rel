@@ -1,0 +1,506 @@
+GAS-Pro v3.0
+002003024079001012040001014000176001
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.
+[Ÿ]
+ 17 
+GRUPOS
+Impress„o Contrato 1
+
+
+codigo==M->rcodigo
+011
+
+
+
+
+
+
+
+
+
+ 0 
+ 1 
+ 0 
+ 88 
+ 0 
+ 3 
+ 3 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+-1 
+-1 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Codigo
+codigo
+
+ 6 
+C
+ 9 
+ 6 
+
+
+û         
+
+
+
+
+
+
+
+
+
+
+Nome
+nome
+
+ 35 
+C
+ 9 
+ 17 
+
+
+û         
+
+
+
+
+
+
+
+
+
+
+Endere‡o
+endereco
+ 
+ 35 
+C
+ 18 
+ 5 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Bairro
+bairro
+ 
+ 25 
+C
+ 21 
+ 5 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Cidade
+cidade
+
+ 25 
+C
+ 21 
+ 40 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+CEP
+cep
+@R 99999-999
+ 9 
+C
+ 18 
+ 55 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Est Civil
+LOWER(IIF(!EMPT(estcivil),SUBS(tbestciv,AT(estcivil,tbestciv),11),[]))
+
+ 11 
+C
+ 15 
+ 40 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+CPF
+cpf
+@R 999.999.999-99
+ 14 
+C
+ 12 
+ 55 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Telefone
+telefone
+@!
+ 14 
+C
+ 24 
+ 56 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Naturalidade
+LEFT(natural,22)
+
+ 22 
+C
+ 12 
+ 17 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Relig
+relig
+@!
+ 20 
+C
+ 15 
+ 5 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Nascto
+nascto_
+@D
+ 8 
+D
+ 12 
+ 5 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+R.G.
+&drvpcom+rg+&drvtcom
+@!
+ 14 
+C
+ 12 
+ 40 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+UF
+uf
+!!
+ 2 
+C
+ 21 
+ 66 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+outro endereco
+IIF(PTAB(codigo,'ECOB',1),ECOB->endereco,[ ])
+
+ 35 
+C
+ 24 
+ 5 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+outra cidade
+IIF(PTAB(codigo,'ECOB',1),ALLTRIM(ECOB->cidade)+' '+ECOB->cep,[ ])
+
+ 30 
+C
+ 27 
+ 40 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+outro bairro
+IIF(PTAB(codigo,'ECOB',1),ECOB->bairro,[ ])
+
+ 25 
+C
+ 27 
+ 5 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 0 
+ 0 
+ 44 
+
+T¡tulo aplica‡„o
+nsis
+
+ 0 
+ 0 
+ 22 
+
+Data do sistema
+DTOC(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 0 
+ 0 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 0 
+ 0 
+ 4 
+
+C¢digo relat¢rio
+"ADM_RX41"
+
+ 0 
+ 0 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 0 
+ 0 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 1 
+GRUPOS
+ultimp_
+DATE()
+
+DATE()>ultimp_
+
+
+ 0 
+ 0 
+ 2 
+EMCARNE
+ 1 
+codigo
+
+
+
+ECOB
+ 1 
+codigo
+
+
+

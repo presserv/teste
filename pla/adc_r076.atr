@@ -1,0 +1,225 @@
+GAS-Pro v3.0
+011016019066001006001001017000176001
+
+ Contratos de:                  at‚:
+ Vencimentos de:                at‚:
+ Imprimir as cobran‡as j  pagas?
+ Imprimir as cobran‡as vencidas?
+ M¡nimo de pendentes a listar..:
+                     Confirme?
+[Ÿ]
+[Ÿ]
+ 8 
+ 0 
+Contratos & Cobran‡as
+Contratos & Cobran‡as
+
+
+
+
+
+
+
+056
+
+
+
+
+
+
+
+ 0 
+ 0 
+-1 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+codi
+C
+E
+999999
+ 6 
+ 6 
+ 2 
+ 22 
+ 0 
+Codigo
+
+PTAB(codi,'GRUPOS',1).OR.VAL(codi)=0
+Necess rio informar CODIGO existente
+
+Informe o n£mero do contrato
+VDBF(6,26,20,77,'GRUPOS',{'grupo','codigo','nome'},1,'codigo')
+ 0 
+ 0 
+
+
+codf
+C
+E
+999999
+ 6 
+ 6 
+ 2 
+ 41 
+ 0 
+Codigo
+
+(PTAB(codf,'GRUPOS',1).AND.codf>codi).OR.VAL(codf)=0
+Necess rio informar CODIGO existente
+
+Informe o n£mero do contrato
+VDBF(6,26,20,77,'GRUPOS',{'grupo','codigo','nome'},1,'codigo')
+ 0 
+ 0 
+
+
+veni_
+D
+E
+@D
+ 8 
+ 10 
+ 3 
+ 21 
+ 0 
+Venc.Inicial
+
+ 
+
+
+Informe o primeiro vencimento a considerar
+
+ 0 
+ 0 
+
+
+venf_
+D
+E
+@D
+ 8 
+ 10 
+ 3 
+ 40 
+ 0 
+Venc.Final
+
+ 
+
+
+Informe o £ltimo vencimento a considerar
+
+ 0 
+ 0 
+
+
+pag
+C
+E
+!
+ 1 
+ 1 
+ 4 
+ 34 
+ 0 
+Pagas?
+
+pag$([SN])
+PAGAS? n„o aceit vel|Digite S ou N
+[N]
+Digite S para listar as cobran‡as pagas.
+
+ 0 
+ 0 
+
+
+pend
+C
+E
+!
+ 1 
+ 1 
+ 5 
+ 34 
+ 0 
+Pendentes?
+
+pend$([SN])
+PENDENTES? n„o aceit vel|Digite S ou N
+[S]
+Digite S para listar as cobran‡as pendentes
+
+ 0 
+ 0 
+
+
+rpend
+N
+E
+99
+ 2 
+ 2 
+ 6 
+ 34 
+ 0 
+Nrpend
+
+rpend>0
+NRPEND n„o aceit vel
+3
+Informe o n£mero m¡nimo de taxas|pendentes para listar
+
+ 0 
+ 0 
+
+
+confirme
+C
+E
+!
+ 1 
+ 1 
+ 7 
+ 32 
+ 0 
+Confirme
+
+confirme='S'
+CONFIRME n„o aceit vel
+
+Digite S para confirmar|ou|tecle ESC para cancelar
+
+ 0 
+ 0 
+
+
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 

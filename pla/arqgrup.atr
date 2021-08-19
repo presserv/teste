@@ -1,0 +1,451 @@
+GAS-Pro v3.0
+005016023063001005032001010001176001
+ Grupo.....:
+ Classe....:
+ N§.Inicial:             N§.Final:
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ Emitir recibos com no m¡nimo      e no
+                    m ximo      processos.
+ Comparar admiss„o & atendimento ?
+ Intervalo minimo de     dias.
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ Os contratos estar„o remidos ap¢s     taxas
+ (por atendimento?  )
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ Ultima circular:      Emiss„o:
+        contratos ativos,        participantes
+ vivos e     processos pendentes.
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ Emitir circular n§
+[Ÿ]
+Inclus„o~~26006
+Manuten‡„o~~27007
+Consulta~~28008
+[Ÿ]
+ 16 
+ 1 
+Grupo
+
+ 1 
+[Ÿ]
+Grupos
+Grupos
+
+
+
+
+
+
+
+005
+
+
+
+
+
+
+
+ 0 
+ 1 
+-1 
+-1 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+grup
+C
+E
+!!
+ 2 
+ 2 
+ 1 
+ 14 
+ 0 
+Grupo
+
+!EMPT(grup)
+Necess rio informar GRUPO
+
+Entre com o c¢digo do Grupo
+
+ 0 
+ 0 
+
+
+classe
+C
+E
+99
+ 2 
+ 2 
+ 2 
+ 14 
+ 0 
+Classe
+
+PTAB(classe,'CLASSES',1)
+CLASSE n„o existe na tabela
+
+Informe a categoria dos planos deste grupo.|Para grupo VIP, digite 00
+VDBF(6,38,20,77,'CLASSES',{'classcod','descricao','contrat'},1,'classcod',[])
+ 0 
+ 0 
+
+
+inicio
+C
+E
+999999
+ 6 
+ 6 
+ 3 
+ 14 
+ 0 
+Nr.Inicial
+
+ 
+
+IF(classe=[00],[000001],STRZERO(VAL(M->lastcodigo)+1,6))
+
+
+ 0 
+ 0 
+
+
+final
+C
+E
+999999
+ 6 
+ 6 
+ 3 
+ 36 
+ 0 
+Nr.Final
+
+VAL(final)>VAL(inicio)
+NR.FINAL n„o aceit vel
+IIF(classe=[00],[999999],STRZERO(VAL(inicio)+CLASSES->contrat-1,6))
+
+
+ 0 
+ 0 
+
+
+acumproc
+N
+E
+99
+ 2 
+ 2 
+ 5 
+ 32 
+ 0 
+N§.Processos
+!(CLASSES->prior=[S])
+!(acumproc<0)
+N§.PROCESSOS n„o aceit vel
+INT((1+VAL(final)-VAL(inicio))/50)
+Informe quantos processos s„o nescess rios|para se emitir recibos.
+
+ 0 
+ 0 
+
+
+maxproc
+N
+E
+99
+ 2 
+ 2 
+ 6 
+ 29 
+ 0 
+N§.Processos
+!(CLASSES->prior=[S])
+maxproc>=acumproc
+N§.PROCESSOS n„o aceit vel|Informe o n£mero m ximo de processos |a se incluir na circular
+acumproc
+Informe o n£mero m ximo de processos|para se emitir na cobran‡a.
+
+ 0 
+ 0 
+
+
+cpadmiss
+C
+E
+!
+ 1 
+ 1 
+ 7 
+ 36 
+ 0 
+Comp.AdmissXAtend.
+!(CLASSES->prior=[S])
+cpadmiss$[SN]
+Digite S ou N|S, n„o ser„o incluidos atendimentos|efetuados antes da admiss„o do contrato.
+[S]
+Se digitar S, n„o ser„o incluidos atendimentos|efetuados antes da admiss„o do contrato|quando da 1¦Cobran‡a.
+
+ 0 
+ 0 
+
+
+periodic
+N
+E
+999
+ 3 
+ 3 
+ 8 
+ 22 
+ 0 
+Periodicidade
+
+!(periodic<0)
+PERIODICIDADE n„o aceit vel
+IIF(CLASSES->prior=[S],30,INT((VAL(final)-VAL(inicio)+1)*90/500))
+Informe o intervalo m¡nimo em dias entre circulares.
+
+ 0 
+ 0 
+
+
+qtdremir
+N
+E
+999
+ 3 
+ 3 
+ 10 
+ 36 
+ 0 
+Remido
+
+!(qtdremir<0)
+REMIDO n„o aceit vel
+acumproc*5
+Entre com o n§ de taxas nescess rias para que|o processo fique remido.
+
+ 0 
+ 0 
+
+
+poratend
+C
+E
+!
+ 1 
+ 1 
+ 11 
+ 20 
+ 0 
+P/Atend.
+
+poratend$[SN]
+Digite|S para deixar de ser remido na utiliza‡„o|ou|N para continuar remido.
+[S]
+Digite S para considerar uma quantidade|a ser paga por atendimento efetuado|ou N para considerar quantidade total.
+
+ 0 
+ 0 
+
+
+ultcirc
+C
+I
+999
+ 3 
+ 3 
+ 0 
+ 0 
+ 0 
+Ultcirc
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+emissao_
+D
+I
+@D
+ 8 
+ 8 
+ 0 
+ 0 
+ 0 
+Emissao
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+procpend
+N
+I
+999
+ 3 
+ 3 
+ 0 
+ 0 
+ 0 
+Processos
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+contrat
+N
+I
+999999
+ 6 
+ 6 
+ 0 
+ 0 
+ 0 
+Contratos
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+partic
+N
+I
+999999
+ 6 
+ 6 
+ 0 
+ 0 
+ 0 
+Partic.
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+proxcirc
+C
+E
+999
+ 3 
+ 3 
+ 17 
+ 21 
+ 0 
+N§Proxima Circ.
+nivelop=3
+proxcirc>=ultcirc.OR.proxcirc=[000]
+A Pr¢xima circular deve ser maior|ou igual a| £ltima emitida ou zeros p/ n„o emitir.
+
+Entre com o n£mero da pr¢xima circular ou|zeros se n„o for emitir.
+
+ 0 
+ 0 
+
+
+ 6 
+Classe/Categor.
+CLASSES->descricao
+
+ 2 
+ 17 
+ 25 
+
+Ultcirc
+ultcirc
+999
+ 13 
+ 19 
+ 3 
+
+Emissao
+emissao_
+@D
+ 13 
+ 33 
+ 8 
+
+Processos
+procpend
+999
+ 15 
+ 10 
+ 3 
+
+Contratos
+contrat
+999999
+ 14 
+ 2 
+ 6 
+
+Partic.
+partic
+999999
+ 14 
+ 27 
+ 6 
+
+ 1 
+PAR_ADM
+lastcodigo
+final
+
+M->lastcodigo<final
+
+
+ 0 
+ 0 
+ 0 

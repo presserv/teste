@@ -1,0 +1,799 @@
+GAS-Pro v3.0
+002003021079001001001001003007179001
+[Ÿ]
+ 31 
+TAXAS
+Recibo Tiete
+
+tipo+codigo+circ
+R08701F9()
+011
+
+
+
+
+
+
+
+
+
+-1 
+ 1 
+ 0 
+ 51 
+ 1 
+ 1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+-1 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Montagem dos dados
+R08703F9()
+
+ 1 
+C
+ 2 
+ 1 
+R08701F9()
+
+          
+
+
+
+
+
+
+
+
+
+
+Ident2
+M->setup2
+
+ 50 
+C
+ 2 
+ 25 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Setup3
+M->setup3
+
+ 50 
+C
+ 3 
+ 25 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Grupo 1
+GRUPOS->grupo
+!!
+ 2 
+C
+ 6 
+ 5 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Contrato
+codigo
+999999
+ 6 
+C
+ 6 
+ 15 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Tipo
+tipo
+!
+ 1 
+C
+ 6 
+ 27 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Circular
+circ
+999
+ 3 
+C
+ 6 
+ 28 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Admiss„o
+GRUPOS->admissao
+@D
+ 8 
+D
+ 6 
+ 37 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Emissao
+emissao_
+@D
+ 8 
+D
+ 9 
+ 3 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Circ.Pagas
+GRUPOS->qtcircpg
+999
+ 3 
+N
+ 9 
+ 28 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Cobrador
+cobrador
+!!
+ 2 
+C
+ 9 
+ 38 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Grupo 2
+GRUPOS->grupo+[   ]+tipo+circ+[ ]+codigo+[ ]+ALLTRIM(STR(valor,9,2))
+
+ 20 
+C
+ 43 
+ 3 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Grupo 3
+GRUPOS->grupo+[   ]+tipo+circ+[ ]+codigo+[ ]+ALLTRIM(STR(valor,9,2))
+
+ 20 
+C
+ 43 
+ 43 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Valor Taxa
+R08702F9()
+@E 999,999.99
+ 10 
+N
+ 9 
+ 14 
+
+valororig
+          
+
+
+
+
+
+
+
+
+
+
+Nome
+GRUPOS->nome
+
+ 35 
+C
+ 11 
+ 3 
+
+
+û         
+
+
+
+
+
+
+
+
+
+
+Nome 2
+&drvtcom+GRUPOS->nome+&drvtcom
+
+ 45 
+C
+ 38 
+ 3 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Nome 3
+&drvtcom+GRUPOS->nome+&drvtcom
+
+ 45 
+C
+ 38 
+ 56 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Endere‡o 2
+&drvpcom+GRUPOS->endereco+&drvtcom
+
+ 45 
+C
+ 39 
+ 3 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Endere‡o 3
+&drvpcom+GRUPOS->endereco+&drvtcom
+
+ 45 
+C
+ 39 
+ 56 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Bairro 2
+&drvpcom+GRUPOS->bairro+ALLTRIM(GRUPOS->cidade)+[, ]+GRUPOS->uf+&drvtcom
+
+ 52 
+C
+ 40 
+ 3 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Bairro 3
+&drvpcom+GRUPOS->bairro+ALLTRIM(GRUPOS->cidade)+[, ]+GRUPOS->uf+&drvtcom
+
+ 52 
+C
+ 40 
+ 56 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Tiete
+[Tiete           Vencimento]
+
+ 27 
+C
+ 34 
+ 12 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+tiete 2
+[Tiete           Vencimento]
+
+ 27 
+C
+ 34 
+ 52 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Endere‡o
+GRUPOS->endereco
+
+ 35 
+C
+ 12 
+ 3 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Bairro
+GRUPOS->bairro
+
+ 20 
+C
+ 13 
+ 3 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Cidade
+GRUPOS->cidade
+
+ 25 
+C
+ 13 
+ 26 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+UF
+GRUPOS->uf
+!!
+ 2 
+C
+ 13 
+ 52 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Vencto 1
+TAXAS->emissao_
+@D
+ 8 
+D
+ 37 
+ 30 
+
+
+û         
+
+
+
+
+
+
+
+
+
+
+Vencto 2
+TAXAS->emissao_
+@D
+ 8 
+D
+ 37 
+ 69 
+
+
+û         
+
+
+
+
+
+
+
+
+
+
+CodBar 1
+codigo+tipo+circ
+
+ 13 
+4
+ 43 
+ 65 
+
+
+
+
+
+
+
+
+
+
+
+
+
+CodBar 2
+codigo+tipo+circ
+
+ 13 
+4
+ 44 
+ 65 
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 0 
+ 0 
+ 32 
+
+T¡tulo aplica‡„o
+nsis
+
+ 0 
+ 0 
+ 22 
+
+Data do sistema
+DTOC(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 0 
+ 0 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 0 
+ 0 
+ 4 
+
+C¢digo relat¢rio
+"APCAR044"
+
+ 0 
+ 0 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 0 
+ 0 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 2 
+EMCARNE
+emissao_
+DATE()
+
+TCARNES->parf=VAL(TAXAS->circ).AND.EMPT(EMCARNE->emissao_).AND.tipo$'16'
+
+
+TAXAS
+stat
+[2]
+
+stat < [2]
+
+
+ 0 
+ 0 
+ 8 
+GRUPOS
+ 1 
+codigo
+
+
+
+CLASSES
+ 1 
+GRUPOS->tipcont
+
+
+
+COBRADOR
+ 1 
+cobrador
+
+
+
+CIRCULAR
+ 1 
+GRUPOS->grupo+circ
+
+
+
+MENSAG
+ 1 
+codigo+circ
+
+
+
+CSTSEG
+ 3 
+codigo+tipo+circ
+
+
+
+EMCARNE
+ 1 
+codigo
+
+
+
+TCARNES
+ 1 
+EMCARNE->tip
+
+
+

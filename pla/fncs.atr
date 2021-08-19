@@ -1,0 +1,340 @@
+GAS-Pro v3.0
+007009016074001001001001008000176001
+ C¢digo..:       Nome..:
+ FunáÑo..:                     Nacionalidade:
+ E.Civil.:                     Nascimento...:
+ Endereáo:
+ Bairro..:
+ Cidade..:
+ CPF.....:                     Telefone.....:
+ ComissÑo:      %
+[ü]
+InclusÑo~~26006
+ManutenáÑo~~27007
+Consulta~~28008
+[ü]
+ 13 
+ 1 
+N£mero
+
+ 1 
+[ü]
+Funcion†rios
+Funcion†rios
+
+
+
+
+
+
+
+005
+
+
+
+
+
+
+
+ 0 
+ 1 
+-1 
+-1 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+codigo
+C
+E
+ 
+ 3 
+ 3 
+ 1 
+ 12 
+ 0 
+C¢digo
+
+!EMPT(codigo)
+Necess†rio informar C¢DIGO
+
+Informe um c¢digo para o funcion†rio
+
+ 0 
+ 1 
+
+
+nome
+C
+E
+@!
+ 35 
+ 35 
+ 1 
+ 26 
+ 0 
+Nome do funcion†rio
+
+!EMPT(nome)
+Necess†rio informar NOME DO FUNCIONèRIO
+
+Entre com o nome do funcion†rio autorizado a|assinar a declaraá∆o de ¢bito no|Cart¢rio de Registro C°vil
+
+ 0 
+ 0 
+
+
+profiss
+C
+E
+@!
+ 15 
+ 15 
+ 2 
+ 12 
+ 0 
+ProfissÑo
+
+!EMPT(profiss)
+êsta informaáÑo Ç necess†rio para a DeclaraáÑo de ¢bito
+
+Entre com a profissÑo do funcion†rio.
+MTAB([ATENDENTE|COBRADOR|MOTORISTA|VENDEDOR],[PROFISSéO])
+ 0 
+ 0 
+
+
+nacional
+C
+E
+@!
+ 15 
+ 15 
+ 2 
+ 47 
+ 0 
+Nacionalidade
+
+!EMPT(nacional)
+Necess†rio informar NACIONALIDADE
+[BRASILEIRO]
+Entre com a nacionalidade
+
+ 0 
+ 0 
+
+
+estciv
+C
+E
+!!
+ 2 
+ 2 
+ 3 
+ 12 
+ 0 
+Est.Civil
+
+estciv $ tbestciv
+EST.CIVIL nÑo aceit†vel.|Tecle F8 para busca em tabela
+
+Entre com o estado civil ou tecle F8
+MTAB(tbestciv,[EST.CIVIL])
+ 0 
+ 0 
+
+
+nascto_
+D
+E
+@D
+ 8 
+ 8 
+ 3 
+ 47 
+ 0 
+Idade
+
+ 
+
+
+Entre com a data de nascimento
+
+ 0 
+ 0 
+
+
+endereco
+C
+E
+@!
+ 30 
+ 30 
+ 4 
+ 12 
+ 0 
+Endereáo
+
+!EMPT(endereco)
+Este dado ser† utilizado na Declaraá∆o de ‡bito
+
+Informe o endereáo do funcion†rio
+
+ 0 
+ 0 
+
+
+bairro
+C
+E
+@!
+ 25 
+ 25 
+ 5 
+ 12 
+ 0 
+Bairro
+
+ 
+
+
+Entre com o bairro
+
+ 0 
+ 0 
+
+
+cidade
+C
+E
+@!
+ 25 
+ 25 
+ 6 
+ 12 
+ 0 
+Cidade
+
+!EMPT(cidade)
+Necess†rio informar CIDADE
+
+Entre com o nome do munic°pio
+
+ 0 
+ 0 
+
+
+cpf
+C
+E
+@R 999.999.999-99
+ 11 
+ 14 
+ 7 
+ 12 
+ 0 
+CPF
+
+VDV2(cpf) .OR. EMPT(cpf)
+CPF nÑo aceit†vel
+
+
+
+ 0 
+ 0 
+
+
+telefone
+C
+E
+ 
+ 14 
+ 14 
+ 7 
+ 47 
+ 0 
+Telefone
+
+ 
+
+
+
+
+ 0 
+ 0 
+
+
+percent
+N
+E
+999.9
+ 5 
+ 5 
+ 8 
+ 12 
+ 1 
+Percentual
+nivelop=3
+!(percent<0).AND.!(percent>100)
+PERCENTUAL nÑo aceit†vel
+
+Informe o percentual de comissÑo|caso o vendedor nÑo receba por n£mero de parcelas
+
+ 0 
+ 0 
+
+
+obs
+M
+E
+
+ 10 
+ 35 
+ 0 
+ 0 
+ 0 
+ObservaáÑo
+
+ 
+
+
+
+
+ 0 
+ 0 
+
+
+ 1 
+estado civil
+SUBS(tbestciv,AT(estciv,tbestciv),11)
+
+ 3 
+ 15 
+ 15 
+
+ 0 
+ 0 
+ 0 
+ 0 

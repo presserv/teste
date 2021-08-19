@@ -1,0 +1,424 @@
+GAS-Pro v2.0
+009021017069001007018001016000176001
+ Contrato..:
+
+ Circular..:
+ Emiss„o...:            Valor.:
+ Pagamento.:            Valor.:
+ Cobrador..:
+ Forma.....:                     p/
+[Ÿ]
+Inclus„o~~26006
+Manuten‡„o~~27007
+Consulta~~28008
+[Ÿ]
+ 10 
+ 2 
+Contrato/Circular
+
+ 1 
+ 2 
+[Ÿ]
+Contrato
+
+ 1 
+[Ÿ]
+Cadastro de Taxas
+Taxas
+
+
+
+forma!=[P]
+Taxa j  baixada.
+
+
+005
+
+
+
+
+
+
+
+ 0 
+ 0 
+-1 
+-1 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+codigo
+C
+E
+99999
+ 5 
+ 5 
+ 1 
+ 14 
+ 0 
+Codigo
+
+PTAB(codigo,'GRUPOS',3)
+Necess rio informar CODIGO existente
+
+Informe o n£mero do contrato
+VDBF(6,26,20,77,'GRUPOS',{'grupo','codigo','nome'},3,'codigo',[GRUPOS->situacao='1'])
+ 0 
+ 0 
+
+
+circ
+C
+E
+999
+ 3 
+ 3 
+ 3 
+ 14 
+ 0 
+Circular
+
+PTAB(GRUPOS->grupo+circ,'CIRCULAR',1)
+Necess rio informar CIRCULAR cadastrada
+
+N£mero da Circular|Mantido pela emissao de recibos
+
+ 0 
+ 0 
+
+
+emissao_
+D
+E
+@D
+ 8 
+ 8 
+ 4 
+ 14 
+ 0 
+Emissao
+
+!EMPT(emissao_)
+Necess rio informar EMISSAO v lida
+CIRCULAR->emissao_
+Data da Emiss„o da Circular|Mantido pela emissao do recibo
+
+ 0 
+ 0 
+
+
+valor
+N
+E
+@E 999,999.99
+ 9 
+ 10 
+ 4 
+ 33 
+ 2 
+Valor
+
+valor>0
+VALOR n„o aceit vel
+CIRCULAR->valor
+
+
+ 0 
+ 0 
+
+
+pgto_
+D
+V
+@D
+ 8 
+ 8 
+ 5 
+ 14 
+ 0 
+Pagamento
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+valorpg
+N
+V
+@E 999,999.99
+ 9 
+ 10 
+ 5 
+ 33 
+ 2 
+Valor pago
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+cobrador
+C
+E
+!!
+ 2 
+ 2 
+ 6 
+ 14 
+ 0 
+Cobrador
+
+PTAB(cobrador,'COBRADOR',1).AND.((PTAB(GRUPOS->grupo+circ,'CIRCULAR',1).AND.PTAB(cobrador+CIRCULAR->mesref,'FCCOB',1).or.1=1))
+Problemas encontrados no arquivo Cobrador ou |Circular do grupo n„o cadastrada para|este cobrador.
+GRUPOS->cobrador
+Informe o Cobrador que recebeu este.
+VDBF(6,39,20,77,'COBRADOR',{'cobrador','nome'},1,'cobrador')
+ 0 
+ 0 
+
+
+forma
+C
+V
+ 
+ 1 
+ 1 
+ 7 
+ 14 
+ 0 
+Forma
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+baixa_
+D
+V
+@D
+ 8 
+ 8 
+ 7 
+ 25 
+ 0 
+Baixa_
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+por
+C
+V
+ 
+ 10 
+ 10 
+ 7 
+ 36 
+ 0 
+Por
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+ 3 
+Nome do Cobrado
+IIF(PTAB(cobrador,'COBRADOR',1),COBRADOR->nome,[ ])
+
+ 6 
+ 17 
+ 30 
+
+pago/retorno
+IIF(forma=[P],[Pago   ],IIF(forma=[R],[Retorno],[]))
+
+ 7 
+ 16 
+ 8 
+
+Nome
+GRUPOS->nome
+@!
+ 2 
+ 12 
+ 35 
+
+ 11 
+FCCOB
+qtdemit
+FCCOB->qtdemit + 1
+FCCOB->qtdemit - 1
+
+
+
+FCCOB
+vlentr
+FCCOB->vlentr + valor
+FCCOB->vlentr - valor
+
+
+
+FCCOB
+qtdpaga
+FCCOB->qtdpaga + 1
+FCCOB->qtdpaga - 1
+TAXAS->valorpg>0
+
+
+FCCOB
+vlreceb
+FCCOB->vlreceb + valorpg
+FCCOB->vlreceb - valorpg
+TAXAS->valorpg>0
+
+
+FCCOB
+qtdret
+FCCOB->qtdret + 1
+FCCOB->qtdret - 1
+forma=[R]
+
+
+FCCOB
+vlretorn
+FCCOB->vlretorn + valor
+FCCOB->vlretorn - valor
+forma=[R]
+
+
+CIRCULAR
+emitidos
+CIRCULAR->emitidos+1
+CIRCULAR->emitidos-1
+PTAB(GRUPOS->grupo+circ,'CIRCULAR',1)
+
+
+CIRCULAR
+pagos
+CIRCULAR->pagos+1
+CIRCULAR->pagos-1
+PTAB(GRUPOS->grupo+circ,'CIRCULAR',1).AND.valorpg>0
+
+
+GRUPOS
+qtcircs
+GRUPOS->qtcircs + 1
+GRUPOS->qtcircs - 1
+
+
+
+GRUPOS
+qtcircpg
+GRUPOS->qtcircpg + 1
+GRUPOS->qtcircpg - 1
+valorpg>0
+
+
+GRUPOS
+ultcirc
+circ
+
+circ>GRUPOS->ultcirc
+
+
+ 0 
+ 1 
+FCCOB
+1
+ 8 
+!(PTAB(cobrador+CIRCULAR->mesref,'FCCOB',1))
+1=3
+ 0 
+
+
+
+cobrador
+C
+cobrador
+
+
+mesref
+C
+CIRCULAR->mesref
+
+
+qtdemit
+N
+
+
+
+qtdpaga
+N
+
+
+
+qtdret
+N
+
+
+
+vlentr
+N
+
+
+
+vlreceb
+N
+
+
+
+vlretorn
+N
+
+
+
+ 0 

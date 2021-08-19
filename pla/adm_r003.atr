@@ -1,0 +1,149 @@
+GAS-Pro v2.0
+010021015062001002010001012000176001
+ N£mero:
+ Grupo.:     Contrato:
+
+ Motivo:
+[Ÿ]
+[Ÿ]
+ 4 
+ 0 
+Cancelamentos
+Cancelamentos
+
+
+
+
+
+
+
+056
+
+
+
+
+
+
+
+ 0 
+ 0 
+-1 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+cnumero
+C
+E
+999999
+ 6 
+ 6 
+ 1 
+ 10 
+ 0 
+N£mero
+
+!EMPT(cnumero)
+Necess rio informar N£MERO
+STRZERO(M->nrcanc+1,6)
+
+
+ 0 
+ 0 
+
+
+cgrupo
+C
+E
+!9
+ 2 
+ 2 
+ 2 
+ 10 
+ 0 
+Grupo
+
+PTAB(cgrupo,'ARQGRUP',1)
+GRUPO n„o existe na tabela
+
+Entre com o grupo ou |tecle F8 para consulta em tabela
+VDBF(6,51,20,77,'ARQGRUP',{'grup','classe','inicio','final'},1,'grup',[])
+ 0 
+ 0 
+
+
+ccodigo
+C
+E
+99999
+ 5 
+ 5 
+ 2 
+ 24 
+ 0 
+Codigo
+
+PTAB(cgrupo+ccodigo,'GRUPOS',1)
+CODIGO n„o aceit vel
+
+Entre com o n£mero do contrato
+VDBF(6,26,20,77,'GRUPOS',{'grupo','codigo','nome'},1,'codigo',[situacao!=[2]])
+ 0 
+ 0 
+
+
+cmotivo
+C
+E
+!
+ 1 
+ 1 
+ 4 
+ 10 
+ 0 
+Motivo
+MTAB([Falta pgto|Mudou|Ignorado|Desistˆncia],[MOTIVO])
+cmotivo$[FMID]
+Necess rio informar MOTIVO
+
+Entre com a justificativa
+MTAB([Falta pgto|Mudou|Ignorado|Desistˆncia],[MOTIVO])
+ 0 
+ 0 
+
+
+ 1 
+Titular
+GRUPOS->nome
+
+ 3 
+ 5 
+ 35 
+
+ 0 
+ 0 
+ 0 
+ 0 

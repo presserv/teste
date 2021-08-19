@@ -1,0 +1,301 @@
+GAS-Pro v3.0
+007016017067001009020001016000176001
+ Codigo..........:      Fun‡„o:
+ Nome............:
+ Endere‡o........:
+ Bairro..........:
+ Cidade..........:
+ Telefone........:
+ CPF.............:
+ Observa‡„o......:            Percentual.:
+ Supervisor......:
+[Ÿ]
+Inclus„o~~26006
+Manuten‡„o~~27007
+Consulta~~28008
+[Ÿ]
+ 11 
+ 1 
+C¢digo/Cobrador
+
+ 1 
+[Ÿ]
+Cobradores/Vendedores
+Cobradores/Vendedores
+
+
+
+
+
+
+
+005
+
+
+
+
+
+
+
+ 0 
+ 1 
+-1 
+-1 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+cobrador
+C
+E
+!!!
+ 3 
+ 3 
+ 1 
+ 20 
+ 0 
+Cobrador
+
+!EMPT(cobrador).AND.COB_02F9()
+Necess rio informar COBRADOR
+
+Informe um c¢digo para o cobrador.
+COB_01F9()
+ 0 
+ 0 
+
+
+funcao
+C
+E
+!
+ 1 
+ 1 
+ 1 
+ 33 
+ 0 
+Fun‡„o
+
+funcao $ [CVS]
+FUN€ŽO n„o aceit vel
+
+Informe se ‚ um Cobrador ou Vendedor|
+MTAB([Cobrador|Vendedor|Supervisor],[FUN€ŽO])
+ 0 
+ 0 
+
+
+nome
+C
+E
+ 
+ 30 
+ 30 
+ 2 
+ 20 
+ 0 
+Nome do Cobrador
+
+!EMPT(nome)
+Necess rio informar NOME DO COBRADOR
+
+
+
+ 0 
+ 0 
+
+
+endereco
+C
+E
+ 
+ 30 
+ 30 
+ 3 
+ 20 
+ 0 
+Endere‡o
+
+ 
+
+
+
+
+ 0 
+ 0 
+
+
+bairro
+C
+E
+ 
+ 20 
+ 20 
+ 4 
+ 20 
+ 0 
+Bairro
+
+ 
+
+
+
+
+ 0 
+ 0 
+
+
+cidade
+C
+E
+ 
+ 25 
+ 25 
+ 5 
+ 20 
+ 0 
+Cidade
+
+ 
+
+
+
+
+ 0 
+ 0 
+
+
+telefone
+C
+E
+ 
+ 14 
+ 14 
+ 6 
+ 20 
+ 0 
+Telefone
+
+ 
+
+
+
+
+ 0 
+ 0 
+
+
+cpf
+C
+E
+@R 999.999.999-99
+ 11 
+ 14 
+ 7 
+ 20 
+ 0 
+CPF
+
+VDV2(cpf).OR.EMPT(cpf)
+CPF n„o aceit vel
+
+
+
+ 0 
+ 0 
+
+
+obs
+M
+E
+
+ 10 
+ 35 
+ 8 
+ 20 
+ 0 
+Observa‡Æo
+
+ 
+
+
+
+
+ 0 
+ 0 
+
+
+percent
+N
+E
+999.9
+ 5 
+ 5 
+ 8 
+ 44 
+ 1 
+Percentual
+
+!(percent<0).AND.!(percent>100)
+PERCENTUAL n„o aceit vel
+
+Informe o percentual de comiss„o
+
+ 0 
+ 0 
+
+
+superv
+C
+E
+!!!
+ 3 
+ 3 
+ 9 
+ 20 
+ 0 
+Supervisor
+
+ 
+
+
+Digite o c¢digo do SUPERVISOR deste cobrador
+
+ 0 
+ 0 
+
+
+ 1 
+Fun‡„o
+SUBSTR([Cobrador  |Vendedor  |Supervisor],AT(funcao,[Cobrador  |Vendedor  |Supervisor]),10)
+
+ 1 
+ 34 
+ 10 
+
+ 0 
+ 0 
+ 0 
+ 0 

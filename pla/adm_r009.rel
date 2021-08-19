@@ -1,0 +1,442 @@
+GAS-Pro v3.0
+002003024079001007001001009000176001
+                                                                       PAG
+
+GRUPOS P/RECIBO
+
+Gr Classe Inicial Final  Proc/Period Remir Ult Emissao  Proc.Pend Contr/Partic.
+-------------------------------------------------------------------------------
+                                                                       /
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Informar em Tabelas/Grupos o n£mero da pr¢xima Circular e cadastra-las em
+Tabelas/Circulares
+[Ÿ]
+ 12 
+ARQGRUP
+Grupos Prontos p/Emitir
+
+RIGHT(grup,1)+grup
+(procpend>=acumproc.AND.(emissao_+periodic)<=M->remissao_).OR.(proxcirc>[000]).AND.!(CLASSES->prior=[S])
+011
+
+
+
+
+
+
+
+
+
+ 0 
+ 1 
+ 0 
+ 66 
+ 0 
+ 6 
+ 3 
+ 0 
+ 0 
+ 0 
+-1 
+-1 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Grupo
+grup
+
+ 2 
+C
+ 7 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Classe
+classe
+99
+ 2 
+C
+ 7 
+ 5 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Nr.Inicial
+inicio
+
+ 6 
+C
+ 7 
+ 12 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Nr.Final
+final
+
+ 6 
+C
+ 7 
+ 19 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+N§.Processos
+acumproc
+99
+ 2 
+N
+ 7 
+ 27 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Periodicidade
+periodic
+999
+ 3 
+N
+ 7 
+ 32 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Remido
+qtdremir
+
+ 3 
+N
+ 7 
+ 39 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Ultcirc
+ultcirc
+999
+ 3 
+C
+ 7 
+ 44 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Emissao
+emissao_
+@D
+ 8 
+D
+ 7 
+ 48 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Processos
+procpend
+999
+ 3 
+N
+ 7 
+ 60 
+
+
+   û      
+
+
+
+
+
+
+
+
+
+
+Contratos
+contrat
+999999
+ 6 
+N
+ 7 
+ 66 
+
+
+   û      
+
+
+
+
+
+
+
+
+
+
+Partic.
+partic
+999999
+ 6 
+N
+ 7 
+ 73 
+
+
+   û      
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 1 
+ 1 
+ 32 
+
+T¡tulo aplica‡„o
+nsis
+
+ 2 
+ 1 
+ 22 
+
+Data do sistema
+DTOC(DATE())
+
+ 3 
+ 66 
+ 8 
+
+Nome do mˆs
+NMES(DATE())
+
+ 2 
+ 58 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 3 
+ 58 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 1 
+ 76 
+ 4 
+
+C¢digo relat¢rio
+"ADM_R009"
+
+ 2 
+ 72 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 4 
+ 1 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 3 
+ 75 
+ 5 
+
+ 1 
+ARQGRUP
+proxcirc
+[000]
+
+
+
+
+ 0 
+ 0 
+ 2 
+CIRCULAR
+ 1 
+grup+proxcirc
+
+
+
+CLASSES
+ 1 
+classe
+
+
+

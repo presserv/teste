@@ -1,0 +1,228 @@
+GAS-Pro v3.0
+002003024079001006063001008000176001
+                                                                      PAG
+
+VENDAS P/BAIRRO   De:             ate:
+Bairro               Vendedor                            qtdade
+------------------------------------------------------------------------------
+[Ÿ]
+ 5 
+GRUPOS
+Vendas p/Bairro
+
+bairro+vendedor
+admissao>=M->rde.AND.admissao<=M->rate
+011
+
+
+
+
+
+
+
+
+
+-1 
+ 1 
+ 0 
+ 66 
+ 0 
+ 5 
+ 3 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Bairro
+bairro
+@!
+ 20 
+C
+ 6 
+ 1 
+
+
+  û       
+
+
+
+
+
+
+
+
+
+
+Vendedor
+vendedor+[-]+COBRADOR->nome
+
+ 35 
+C
+ 6 
+ 22 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+qtdade
+1
+
+ 5 
+N
+ 6 
+ 59 
+
+
+   û      
+
+
+
+
+
+
+
+
+
+
+De:
+M->rde
+@D
+ 10 
+D
+ 3 
+ 23 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+At‚:
+M->rate
+@D
+ 10 
+D
+ 3 
+ 40 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 1 
+ 1 
+ 44 
+
+T¡tulo aplica‡„o
+nsis
+
+ 2 
+ 1 
+ 22 
+
+Data do sistema
+DTOC(DATE())
+
+ 3 
+ 69 
+ 10 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 3 
+ 61 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 1 
+ 75 
+ 4 
+
+C¢digo relat¢rio
+"ADP_R103"
+
+ 2 
+ 71 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 2 
+ 29 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 0 
+ 0 
+ 0 
+ 1 
+COBRADOR
+ 1 
+vendedor
+
+
+

@@ -1,0 +1,354 @@
+GAS-Pro v4.0
+007007016072001005002001012001022001
+ C¢digo do produto...:               Data Atualiza‡„o:
+ Descri‡„o do produto:
+ Unidade do produto..:               Ref. t‚cnica....:
+ Qde em estoque......:               Qde m¡nima......:
+ Preco custo em R$...:               em
+ Pre‡o de Venda......:               em
+ Lucro Bruto (%) ....:
+[Ÿ]
+Manuten‡„o~~27007
+[Ÿ]
+ 11 
+ 2 
+C¢digo
+
+ 1 
+[Ÿ]
+Nome do produto
+
+ 2 
+[Ÿ]
+Cadastro de produtos
+Produtos
+
+1=3
+Mantido pelo sistema de Estoque
+1=3
+Mantido pelo sistema de Estoque
+1=3
+Mantido pelo sistema de Estoque
+005
+
+
+1=3
+Mantido pelo sistema de Estoque
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 0 
+ 1 
+-1 
+-1 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+codigo
+C
+E
+9999
+ 4 
+ 4 
+ 1 
+ 24 
+ 0 
+C¢digo
+
+!EMPT(codigo)
+Necess rio informar C¢DIGO
+
+Informe o c¢digo do produto
+
+ 0 
+ 0 
+
+
+produto
+C
+E
+@!
+ 30 
+ 30 
+ 2 
+ 24 
+ 0 
+Descri‡Æo do produto
+
+!EMPT(produto)
+Necess rio informar DESCRI€ÇO DO PRODUTO
+
+Informe a descri‡Æo do produto
+
+ 0 
+ 0 
+
+
+unid
+C
+E
+@!
+ 2 
+ 2 
+ 3 
+ 24 
+ 0 
+Unid
+MTAB(tbunid,[UNID])
+unid $ [UN|CX|MT|KG|LT]
+Unidade nÆo aceit vel
+'UN'
+Informe a unidade do produto
+
+ 0 
+ 0 
+
+
+reftec
+M
+E
+
+ 10 
+ 35 
+ 3 
+ 56 
+ 0 
+Referˆncia t‚cnica
+
+ 
+
+
+Entre com as especifica‡”es t‚cnicas
+
+ 0 
+ 0 
+
+
+qd_est
+N
+E
+999999
+ 6 
+ 6 
+ 4 
+ 24 
+ 0 
+Qde Est
+
+!(qd_est<0)
+QDE EST nÆo aceit vel
+
+Informe a quantidade em estoque
+
+ 0 
+ 0 
+
+
+qd_min
+N
+E
+9999
+ 4 
+ 4 
+ 4 
+ 56 
+ 0 
+Qde min
+
+!(Qd_min<0)
+QDE MIN nÆo aceit vel
+
+Informe a quantidade m¡nima para o produto
+
+ 0 
+ 0 
+
+
+preco_cus
+N
+E
+999999999.99
+ 12 
+ 12 
+ 5 
+ 24 
+ 2 
+Preco custo
+
+preco_cus>0
+PRECO CUSTO n„o aceit vel
+
+Informe o pre‡o de custo do produto
+
+ 0 
+ 0 
+
+
+custo_
+D
+E
+@D
+ 8 
+ 10 
+ 5 
+ 42 
+ 0 
+Emiss„o
+
+ 
+
+
+Informe a data correspondete ao custo fornecido
+
+ 0 
+ 0 
+
+
+preco_ven
+N
+E
+999999999.99
+ 12 
+ 12 
+ 6 
+ 24 
+ 2 
+Pre‡o venda
+
+!(preco_ven<0)
+PRE€O de VENDA n„o aceit vel
+
+Informe o pre‡o de Venda do produto
+
+ 0 
+ 0 
+
+
+venda_
+D
+E
+@D
+ 8 
+ 10 
+ 6 
+ 42 
+ 0 
+Data Venda
+
+!EMPT(venda_)
+Necess rio informar DATA VENDA
+
+Informe a data da £ltima atualiza‡Æo|do pre‡o de venda
+
+ 0 
+ 0 
+
+
+dt_ult_atu
+D
+V
+@D
+ 8 
+ 10 
+ 0 
+ 0 
+ 0 
+Data atualiz
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+ 2 
+Decodif unidade
+SUBS(tbunid,AT(unid,tbunid)+3,7)
+
+ 3 
+ 27 
+ 7 
+
+lucro
+IIF(preco_ven>0,((preco_ven/preco_cus)-1)*100,0)
+@R 9999.99
+ 7 
+ 24 
+ 7 
+
+ 1 
+PRODUTOS
+dt_ult_atu
+DATE()
+
+
+
+
+ 0 
+ 0 
+ 0 

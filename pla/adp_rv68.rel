@@ -1,0 +1,318 @@
+GAS-Pro v3.0
+002003024079003022061022003000176001
+
+
+
+
+
+
+
+                                      362
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                            (  -      -
+[Ÿ]
+ 8 
+TAXAS
+Verso de Taxas
+
+grupo+cobrador+codigo
+tipo=[2].AND.(EMPT(M->rgrupo).OR.GRUPOS->grupo=M->rgrupo).AND.(M->rproxcirc=[000].OR.ARQGRUP->proxcirc=M->rproxcirc)
+011
+
+
+
+
+
+
+
+
+
+ 0 
+ 3 
+ 0 
+ 51 
+ 1 
+ 15 
+ 26 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Grupo
+GRUPOS->grupo
+!!
+ 2 
+C
+ 23 
+ 62 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Mutuario
+GRUPOS->nome
+
+ 35 
+C
+ 17 
+ 13 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Codigo
+codigo
+
+ 6 
+C
+ 23 
+ 65 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Endere‡o 2
+LEFT(ALLTRIM(GRUPOS->endereco)+'- '+ALLTRIM(GRUPOS->bairro),52)
+
+ 52 
+C
+ 19 
+ 13 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Cidade
+GRUPOS->cidade
+
+ 25 
+C
+ 21 
+ 24 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+UF
+GRUPOS->uf
+!!
+ 2 
+C
+ 21 
+ 51 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+CEP
+GRUPOS->cep
+@R 99999-999
+ 9 
+C
+ 21 
+ 13 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Circular
+tipo+[-]+circ
+
+ 5 
+C
+ 23 
+ 72 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 0 
+ 0 
+ 32 
+
+T¡tulo aplica‡„o
+nsis
+
+ 0 
+ 0 
+ 22 
+
+Data do sistema
+DTOC(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 0 
+ 0 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 0 
+ 0 
+ 4 
+
+C¢digo relat¢rio
+"ADP_RV68"
+
+ 0 
+ 0 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 0 
+ 0 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 0 
+ 0 
+ 0 
+ 3 
+GRUPOS
+ 1 
+codigo
+
+
+
+ARQGRUP
+ 1 
+GRUPOS->grupo
+
+
+
+CIRCULAR
+ 1 
+GRUPOS->grupo+circ
+
+
+

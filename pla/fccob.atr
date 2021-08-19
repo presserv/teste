@@ -1,0 +1,283 @@
+GAS-Pro v3.0
+016004024078001001001001017000176001
+ Mes     Entregue          Recebido         Retornado       Pendˆncia
+[Ÿ]
+Inclus„o~~26006
+Manuten‡„o~~27007
+Consulta~~28008
+[Ÿ]
+ 8 
+ 1 
+C¢digo/Cobrador
+
+ 1 
+ 2 
+[Ÿ]
+Cobran‡as
+Cobran‡as
+
+
+
+
+
+
+
+005
+
+
+
+
+
+
+
+ 0 
+ 0 
+-1 
+-1 
+-1 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+cobrador
+C
+I
+!!!
+ 3 
+ 3 
+ 0 
+ 0 
+ 0 
+Cobrador
+
+
+
+
+
+
+-1 
+ 0 
+
+
+mesref
+C
+E
+@R 99/99
+ 4 
+ 5 
+ 2 
+ 1 
+ 0 
+Mes
+
+MMAA(mesref).AND.!EMPT(mesref)
+MES n„o aceit vel
+
+Informe o mes da cobran‡a.
+
+ 0 
+ 0 
+
+
+qtdemit
+N
+I
+999999
+ 6 
+ 6 
+ 0 
+ 0 
+ 0 
+Qtdemit
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+qtdpaga
+N
+I
+999999
+ 6 
+ 6 
+ 0 
+ 0 
+ 0 
+Qtdbaixa
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+qtdret
+N
+I
+999999
+ 6 
+ 6 
+ 0 
+ 0 
+ 0 
+Qtdret
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+vlentr
+N
+I
+@E 999,999.99
+ 9 
+ 10 
+ 0 
+ 0 
+ 2 
+Valor
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+vlreceb
+N
+I
+@E 999,999.99
+ 9 
+ 10 
+ 0 
+ 0 
+ 2 
+Valor
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+vlretorn
+N
+I
+@E 999,999.99
+ 9 
+ 10 
+ 0 
+ 0 
+ 2 
+Valor
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+ 8 
+Total Entregue
+vlentr
+@E 999,999.99
+ 2 
+ 13 
+ 10 
+
+Total recebido
+vlreceb
+@E 999,999.99
+ 2 
+ 30 
+ 10 
+
+Total retorno
+vlretorn
+@E 999,999.99
+ 2 
+ 47 
+ 10 
+
+Qtdemit
+qtdemit
+999999
+ 2 
+ 7 
+ 6 
+
+Qtdbaixa
+qtdpaga
+999999
+ 2 
+ 24 
+ 6 
+
+Qtdret
+qtdret
+999999
+ 2 
+ 41 
+ 6 
+
+Qtd.Pendente
+qtdemit-qtdpaga-qtdret
+99999
+ 2 
+ 58 
+ 5 
+
+Valor pend.
+vlentr-vlreceb-vlretorn
+@E 999,999.99
+ 2 
+ 63 
+ 10 
+
+ 0 
+ 0 
+ 0 
+ 0 

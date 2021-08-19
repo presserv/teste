@@ -1,0 +1,151 @@
+GAS-Pro v3.0
+009014020072001003007001012001176001
+ Codigo ³ Circular
+ÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+        ³
+        ³
+        ³
+        ³
+        ³
+        ³
+        ³
+        ³
+[Ÿ]
+Inclus„o~~26006
+Manuten‡„o~~27007
+Consulta~~28008
+[Ÿ]
+ 3 
+ 1 
+Contrato e Circ.
+
+ 1 
+ 2 
+ 3 
+[Ÿ]
+Taxas a Imprimir
+Taxas a Imprimir
+
+
+
+
+
+
+
+005
+
+
+
+
+
+
+
+ 0 
+ 0 
+-1 
+-1 
+-1 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+codigo
+C
+E
+999999
+ 6 
+ 6 
+ 3 
+ 2 
+ 0 
+Codigo
+
+PTAB(codigo,'GRUPOS',1)
+Necess rio informar CODIGO
+
+Informe o n£mero do contrato
+
+ 0 
+ 0 
+
+
+tipo
+C
+E
+!
+ 1 
+ 1 
+ 3 
+ 11 
+ 0 
+Tipo
+
+tipo $ [123678]
+TIPO n„o aceit vel
+
+Qual o tipo de Taxa a Emitir
+MTAB([1=J¢ia|2=Taxa|3=Carnˆ|6=J¢ia+Seguro|7=Taxa+Seguro|8=Carnˆ+Seguro],[TIPO])
+ 0 
+ 0 
+
+
+circ
+C
+E
+999
+ 3 
+ 3 
+ 3 
+ 13 
+ 0 
+Circular
+
+PTAB(codigo+tipo+circ,'TAXAS',1).OR.PTAB(codigo+SUBSTR('678  123',VAL(tipo),1)+circ,[TAXAS],1)
+N£mero inv lido|Taxa n„o existe em contas a receber
+
+N£mero da Circular|Mantido pela emissao de recibos
+
+ 0 
+ 0 
+
+
+ 2 
+Nome
+GRUPOS->nome
+@!
+ 3 
+ 17 
+ 35 
+
+paga
+IIF(TAXAS->valorpg>0,[Paga],[    ])
+
+ 3 
+ 53 
+ 4 
+
+ 0 
+ 0 
+ 0 
+ 0 

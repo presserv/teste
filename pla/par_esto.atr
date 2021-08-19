@@ -1,0 +1,66 @@
+GAS-Pro v1.1
+011021014062001001001001012000176001
+ Nome indexador.:
+ Sigla indexador:
+[Ÿ]
+[Ÿ]
+ 2 
+ 0 
+Parƒmetros do sistema
+Parƒmetros do sistema
+
+
+
+-1 
+ 1 
+-1 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+p_nome_ind
+C
+E
+ 
+ 10 
+ 10 
+ 1 
+ 19 
+ 0 
+Nome indexador
+
+!EMPT(p_nome_ind)
+Necess rio informar NOME INDEXADOR
+'DOLAR'
+Entre com o nome do indexador de pre‡os
+
+ 0 
+ 0 
+
+
+p_sigl_ind
+C
+E
+ 
+ 4 
+ 4 
+ 2 
+ 19 
+ 0 
+Sigla indexador
+
+!EMPT(p_sigl_ind)
+Necess rio informar SIGLA INDEXADOR
+'US$'
+Informe a sigla do indexador financeiro
+
+ 0 
+ 0 
+
+
+ 0 
+ 0 
+ 0 

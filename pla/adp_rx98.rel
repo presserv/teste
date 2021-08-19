@@ -1,0 +1,347 @@
+GAS-Pro v3.0
+002003024079040001078001003000176001
+                                                                                                       PAG
+
+CANCELAMENTOS/VENDEDOR
+
+Codigo Nome                                Admiss„o   Canclto_   M    Venda     Vl.Cobr    vl.Pago   Vl.rest.
+---------------------------------------------------------------------------------------------------------------
+                                                                           /
+[Ÿ]
+ 10 
+CGRUPOS
+Cancelamentos/Vendedor
+
+vendedor
+canclto_>=M->rde.AND.canclto_<=M->rate.AND.(M->rregiao$'000,'+regiao).AND.(M->rvend$'000,'+vendedor)
+011
+
+
+
+
+
+
+
+
+
+-1 
+ 1 
+ 0 
+ 66 
+ 0 
+ 6 
+ 3 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Codigo
+codigo
+999999
+ 6 
+C
+ 7 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Nome
+nome
+
+ 35 
+C
+ 7 
+ 8 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Admiss„o
+admissao
+@D
+ 10 
+D
+ 7 
+ 44 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Canclto_
+canclto_
+@D
+ 10 
+D
+ 7 
+ 55 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+M
+motivo
+
+ 1 
+C
+ 7 
+ 66 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Valor
+TCARNES->vali
+99999.99
+ 8 
+N
+ 7 
+ 68 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Parc.
+TCARNES->parf
+99
+ 2 
+N
+ 7 
+ 77 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Vl.Cobr
+valor
+@E 999,999.99
+ 10 
+N
+ 7 
+ 80 
+
+
+   û      
+
+
+
+
+
+
+
+
+
+
+vl.Pago
+valorpg
+@E 999,999.99
+ 10 
+N
+ 7 
+ 91 
+
+
+   û      
+
+
+
+
+
+
+
+
+
+
+Vl.rest.
+valor-valorpg
+@E 999,999.99
+ 10 
+N
+ 7 
+ 102 
+
+
+   û      
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 1 
+ 1 
+ 44 
+
+T¡tulo aplica‡„o
+nsis
+
+ 2 
+ 1 
+ 22 
+
+Data do sistema
+DTOC(DATE())
+
+ 3 
+ 102 
+ 10 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 3 
+ 94 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 1 
+ 108 
+ 4 
+
+C¢digo relat¢rio
+"ADP_RX98"
+
+ 2 
+ 104 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 4 
+ 1 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 0 
+ 1 
+[Vendedor: ]+vendedor+[-]+COBRADOR->nome
+  ûû û    
+vendedor
+
+
+ 0 
+ 3 
+COBRADOR
+ 1 
+vendedor
+
+
+
+EMCARNE
+ 2 
+codigo
+
+
+
+TCARNES
+ 1 
+EMCARNE->tip
+
+
+

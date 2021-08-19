@@ -1,0 +1,959 @@
+GAS-Pro v3.0
+002003021079040019068003019007179001
++---------------------------------------------------+--------+   +---------------------------------------------------+--------+
+|                                                   |        | : |                                                   |        |
+|                                                   |        | : |                                                   |        |
+|                                                   |       || : |                                                   |       ||
++------ Contrato --------+--------------------------+       || : +------ Contrato --------+--------------------------+       ||
+|                        | Manuten‡„o.:             |       || : |                        | Manuten‡„o.:             |       ||
++-- Parcela --- Emiss„o -+ Seguro.....:             |       || : +-- Parcela --- Emiss„o -+ Seguro.....:             |       ||
+|                        | Valor Total:             |       || : |                        | Valor Total:             |       ||
++------------------------+--------------------------+       || : +------------------------+--------------------------+       ||
+|Titular.:                                          |       || : |Titular.:                                          |       ||
+|Endere‡o:                                          |       || : |                                                   |       ||
+|                                                   |       || : |                                                   |       ||
++---------------------------------------------------+        | : |                                                   |        |
+|                                                   |       || : |                                                   |       ||
+|                                                   |       \| : |                                                   |       \|
+|                                                   |       || : |                                                   |       ||
+|                                                   |       \| : |                                                   |       \|
+|                                                   |       || : |                                                   |       ||
++----------------------------1.Via - Contribuinte --+--------+ : +-    --------------------------- 2.Via - Empresa --+--------+
+..............................................................................................................................
+[Ÿ]
+ 38 
+TAXAS
+Modelo Per¡odico
+
+tipo+codigo+circ
+R08701F9()
+011
+
+
+
+
+
+
+
+
+
+ 0 
+ 1 
+ 0 
+ 22 
+ 1 
+ 4 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+-1 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Montagem dos dados
+R08703F9()
+
+ 1 
+C
+ 2 
+ 2 
+R08701F9()
+
+          
+
+
+
+
+
+
+
+
+
+
+Ident1
+M->setup1
+
+ 40 
+C
+ 2 
+ 71 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Ident1
+M->setup1
+
+ 40 
+C
+ 2 
+ 5 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Ident2
+M->setup2
+
+ 50 
+C
+ 3 
+ 2 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Ident2
+M->setup2
+
+ 50 
+C
+ 3 
+ 67 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Setup3
+M->setup3
+
+ 50 
+C
+ 4 
+ 2 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Setup3
+M->setup3
+
+ 50 
+C
+ 4 
+ 67 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Codigo 2
+GRUPOS->grupo+'  '+GRUPOS->codigo
+
+ 10 
+C
+ 6 
+ 3 
+
+
+û         
+
+
+
+
+
+
+
+
+
+
+Codigo 3
+GRUPOS->grupo+'  '+GRUPOS->codigo
+
+ 10 
+C
+ 6 
+ 73 
+
+
+û         
+
+
+
+
+
+
+
+
+
+
+N§ 1
+TAXAS->tipo+[  ]+TAXAS->circ+IIF(tipo$[16].AND.EMCARNE->(EOF()),[],[/]+STRZERO(TCARNES->parf,3))
+
+ 10 
+C
+ 8 
+ 3 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+N§ 2
+TAXAS->tipo+[  ]+TAXAS->circ+IIF(tipo$[16].AND.EMCARNE->(EOF()),[],[/]+STRZERO(TCARNES->parf,3))
+
+ 10 
+C
+ 8 
+ 69 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Valor Taxa
+R08702F9()
+@E 999,999.99
+ 10 
+N
+ 6 
+ 42 
+
+valororig
+          
+
+
+
+
+
+
+
+
+
+
+Valor Taxa
+valororig
+@E 999,999.99
+ 10 
+N
+ 6 
+ 106 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Valor Seg
+vlseg
+@E 999,999.99
+ 10 
+N
+ 7 
+ 42 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Valor Seg
+vlseg
+@E 999,999.99
+ 10 
+N
+ 7 
+ 106 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Valor 1
+valororig+vlseg
+@E 999,999.99
+ 10 
+N
+ 8 
+ 42 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+deb1
+detdeb[1]+[ ]+detdeb[6]
+
+ 50 
+C
+ 12 
+ 68 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+deb1
+detdeb[1]+[ ]+detdeb[6]
+
+ 50 
+C
+ 14 
+ 2 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+deb2
+detdeb[2]+[ ]+detdeb[7]
+
+ 50 
+C
+ 13 
+ 68 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+deb2
+detdeb[2]+[ ]+detdeb[7]
+
+ 50 
+C
+ 15 
+ 2 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+deb3
+detdeb[3]+[ ]+detdeb[8]
+
+ 50 
+C
+ 14 
+ 68 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+deb3
+detdeb[3]+[ ]+detdeb[8]
+
+ 50 
+C
+ 16 
+ 2 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+deb4
+detdeb[4]+[ ]+detdeb[9]
+
+ 50 
+C
+ 15 
+ 68 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+deb4
+detdeb[4]+[ ]+detdeb[9]
+
+ 50 
+C
+ 17 
+ 2 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+deb5
+detdeb[5]+[ ]+detdeb[10]
+
+ 50 
+C
+ 18 
+ 2 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+deb5
+detdeb[5]+[ ]+detdeb[10]
+
+ 50 
+C
+ 16 
+ 68 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Valor 2
+valororig+vlseg
+@E 999,999.99
+ 10 
+N
+ 8 
+ 106 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Nome
+GRUPOS->nome
+
+ 35 
+C
+ 10 
+ 13 
+
+
+û         
+
+
+
+
+
+
+
+
+
+
+Nome
+LEFT(GRUPOS->nome,30)
+
+ 30 
+C
+ 10 
+ 78 
+
+
+û         
+
+
+
+
+
+
+
+
+
+
+Endere‡o
+GRUPOS->endereco
+
+ 35 
+C
+ 11 
+ 13 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Bairro
+GRUPOS->bairro
+
+ 20 
+C
+ 12 
+ 2 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Cidade
+GRUPOS->cidade
+
+ 25 
+C
+ 12 
+ 23 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+UF
+GRUPOS->uf
+!!
+ 2 
+C
+ 12 
+ 49 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Vencto 1
+TAXAS->emissao_
+@D
+ 8 
+D
+ 8 
+ 16 
+
+
+û         
+
+
+
+
+
+
+
+
+
+
+Vencto 2
+TAXAS->emissao_
+@D
+ 8 
+D
+ 8 
+ 81 
+
+
+û         
+
+
+
+
+
+
+
+
+
+
+debitos
+LEFT(M->lindeb,50)
+
+ 50 
+C
+ 11 
+ 68 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+CodBar 1
+codigo+tipo+circ
+
+ 13 
+4
+ 17 
+ 95 
+
+
+
+
+
+
+
+
+
+
+
+
+
+CodBar 2
+codigo+tipo+circ
+
+ 13 
+4
+ 18 
+ 95 
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 0 
+ 0 
+ 44 
+
+T¡tulo aplica‡„o
+nsis
+
+ 0 
+ 0 
+ 22 
+
+Data do sistema
+DTOC(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 0 
+ 0 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 19 
+ 68 
+ 4 
+
+C¢digo relat¢rio
+"ADP_RP44"
+
+ 0 
+ 0 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 0 
+ 0 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 2 
+EMCARNE
+emissao_
+DATE()
+
+TCARNES->parf=VAL(TAXAS->circ).AND.EMPT(EMCARNE->emissao_).AND.tipo$'16'
+
+
+TAXAS
+stat
+[2]
+
+stat < [2]
+
+
+ 0 
+ 0 
+ 8 
+GRUPOS
+ 1 
+codigo
+
+
+
+CLASSES
+ 1 
+GRUPOS->tipcont
+
+
+
+COBRADOR
+ 1 
+cobrador
+
+
+
+CIRCULAR
+ 1 
+GRUPOS->grupo+circ
+
+
+
+MENSAG
+ 1 
+codigo+circ
+
+
+
+CSTSEG
+ 3 
+codigo+tipo+circ
+
+
+
+EMCARNE
+ 1 
+codigo
+
+
+
+TCARNES
+ 1 
+EMCARNE->tip
+
+
+

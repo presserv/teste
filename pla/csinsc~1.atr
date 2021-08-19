@@ -1,0 +1,276 @@
+GAS-Pro v3.0
+014014020073001003055001017001176001
+ Sequˆncia:     Inscrito:    Segurado:
+ Nome.....:
+ Documento:                 Nacimento:
+
+ Falecimento: Processo.:              Data:
+[Ÿ]
+Inclus„o~~26006
+Manuten‡„o~~27007
+Consulta~~28008
+[Ÿ]
+ 9 
+ 2 
+N§Seguro
+
+ 1 
+ 2 
+[Ÿ]
+Cod.Seguro
+
+ 4 
+[Ÿ]
+Inscritos no Seguro
+Inscritos no Seguro
+
+
+
+
+
+
+
+005
+
+
+
+
+
+
+
+ 0 
+ 0 
+-1 
+-1 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+nrseguro
+C
+I
+999999
+ 6 
+ 6 
+ 0 
+ 0 
+ 0 
+N§Seguro
+
+
+
+
+
+
+-1 
+ 0 
+
+
+seq
+C
+V
+99
+ 2 
+ 2 
+ 1 
+ 13 
+ 0 
+Seq
+
+
+
+
+
+
+ 0 
+ 1 
+
+
+grau
+C
+E
+!
+ 1 
+ 1 
+ 1 
+ 27 
+ 0 
+Inscr.
+
+(grau=[T].AND.seq='01').OR.grau$[CF]
+INSCR. n„o aceit vel|O primeiro a ser cadastrado deve, obrigatoriamente,|ser o Titular
+IIF(seq='01',[T],[ ])
+Qual o grau do inscrito no seguro|Tecle F8 para consulta em tabela
+MTAB([Titular|Conjuge|Filho],[INSCR.])
+ 0 
+ 0 
+
+
+codigoseg
+C
+E
+ 
+ 11 
+ 11 
+ 1 
+ 40 
+ 0 
+Segurado
+M->cinscr=[S]
+PTAB(codigoseg,'INSCRITS',1)
+Informar C¢digo do SEGURADO ou|Tecle F8 para consulta.
+IIF(grau=[T],GRSEGUR->contrato,[ ])
+Entre com o c¢digo do segurado|Tecle F8 para consulta
+VDBF(6,3,20,77,'INSCRITS',{'codigo','grau','seq','nome'},1,'kinscf9()')
+ 0 
+ 0 
+
+
+inscseg
+C
+E
+ 
+ 45 
+ 35 
+ 2 
+ 13 
+ 0 
+Nome do inscrito
+
+!EMPT(inscseg)
+Necess rio informar Nome do Inscrito no Seguro
+IIF(PTAB(codigoseg,'INSCRITS',1),INSCRITS->nome,[])
+Entre com o nome do inscrito
+
+ 0 
+ 0 
+
+
+documento
+C
+E
+@!
+ 15 
+ 15 
+ 3 
+ 13 
+ 0 
+Documento
+
+ 
+
+
+Informe um n£mero de documento|para identificar o segurado
+
+ 0 
+ 0 
+
+
+nascto_
+D
+E
+@D
+ 8 
+ 8 
+ 3 
+ 40 
+ 0 
+Nascto
+
+SIN_01F9()
+NASCTO n„o aceit vel
+IIF(PTAB(codigoseg,'INSCRITS',1),INSCRITS->nascto_,CTOD('  /  /  '))
+Informe a Data de Nascimento deste Inscrito
+
+ 0 
+ 0 
+
+
+processo
+C
+E
+@R 99999/99/!!
+ 9 
+ 11 
+ 5 
+ 26 
+ 0 
+Processo
+
+EMPT(processo).OR.PTAB(processo,'PRCESSOS',1)
+Necess rio informar PROCESSO
+
+Informe o n£mero do processo (Aux¡lio ou Atendimento)
+
+ 0 
+ 0 
+
+
+dfal
+D
+E
+@D
+ 8 
+ 8 
+ 5 
+ 45 
+ 0 
+Data
+
+ 
+
+
+Data do falecimento
+
+ 0 
+ 0 
+
+
+ 1 
+Idade
+STR(INT(((YEAR(DATE())-YEAR(nascto_))*12+(MONTH(DATE())-MONTH(nascto_)))/12),2)+[ ano(s)]
+
+ 3 
+ 49 
+ 9 
+
+ 2 
+GRSEGUR
+codigoseg
+codigoseg
+[ ]
+grau=[T]
+
+
+GRSEGUR
+nome
+inscseg
+
+grau=[T]
+
+
+ 0 
+ 0 
+ 0 

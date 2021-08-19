@@ -1,0 +1,292 @@
+/*
+ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+ \ Empresa.: Ind£stria de Urnas Bignotto Ltda
+ \ Programa: ADP_R066.PRG
+ \ Data....: 20-05-97
+ \ Sistema.: Administradora - PLANO
+ \ Funcao..: Emiss„o Carnˆ VIP - Bom Pastor
+ \ Analista: Ademilson Pedro Bom
+ \ Criacao.: GAS-Pro v3.0 
+ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+*/
+
+#include "adpbig.ch"    // inicializa constantes manifestas
+
+LOCAL dele_atu, getlist:={}, so_um_reg, sit_dbf:=POINTER_DBF()
+PARA  lin_menu, col_menu, imp_reg
+PRIV  tem_borda:=.t., op_menu:=VAR_COMPL, l_s:=7, c_s:=17, l_i:=12, c_i:=61, tela_fundo:=SAVESCREEN(0,0,MAXROW(),79)
+nucop=1
+so_um_reg=(PCOU()>2)
+IF !so_um_reg                             // vai receber a variaveis?
+ SETCOLOR(drvtittel)
+ vr_memo=NOVAPOSI(@l_s,@c_s,@l_i,@c_i)     // pega posicao atual da tela
+ CAIXA(mold,l_s,c_s,l_i,c_i)               // monta caixa da tela
+ @ l_s,c_s+15 SAY " IMPRESSŽO VIP "
+ SETCOLOR(drvcortel)
+ @ l_s+01,c_s+1 SAY "  Emiss„o de.:          at‚.:"
+ @ l_s+02,c_s+1 SAY "  Contrato de:          at‚.:"
+ @ l_s+04,c_s+1 SAY "  Confirme..:"
+ENDI
+rem1_=CTOD('')                                     // Emiss„o
+rem2_=CTOD('')                                     // Emiss„o
+rcod1=SPAC(6)                                      // Contrato
+rcod2=SPAC(6)                                      // Contrato
+confirme=SPAC(1)                                   // Confirme
+DO WHILE .t.
+ rola_t=.f.
+ cod_sos=56
+ IF !so_um_reg
+ SET KEY K_ALT_F8 TO ROLATELA
+ SETCOLOR(drvcortel+","+drvcorget+",,,"+corcampo)
+ @ l_s+01 ,c_s+16 GET  rem1_;
+                  PICT "@D";
+                  VALI CRIT("!EMPT(Rem1_)~Informe uma data v lida p/ EMISSŽO | data de hoje ou posterior.")
+                  DEFAULT "CTOD('01'+SUBSTR(DTOC(DATE()-30),3))"
+                  AJUDA "Data da Emiss„o da Circular.| Para atualizar circulares se n„o preenchidas| com antecedˆncia."
+
+ @ l_s+01 ,c_s+31 GET  rem2_;
+                  PICT "@D";
+                  VALI CRIT("!EMPT(Rem2_)~Informe uma data v lida, deve ser posterior|a inicial")
+		  DEFAULT "rem1_+30"
+                  AJUDA "Emitir as emitidas para que vencimento?"
+
+ @ l_s+02 ,c_s+16 GET  rcod1;
+                  PICT "999999";
+                  VALI CRIT("PTAB(rcod1,'GRUPOS',1).OR.rcod1='000000'~CODIGO n„o aceit vel|Digite zeros para listar todos os|contratos no intervalo")
+                  AJUDA "Entre com o n£mero do contrato"
+                  CMDF8 "VDBF(6,26,20,77,'GRUPOS',{'grupo','codigo','nome'},1,'codigo')"
+
+ @ l_s+02 ,c_s+31 GET  rcod2;
+                  PICT "999999";
+                  VALI CRIT("PTAB(rcod2,'GRUPOS',1).OR.rcod2 >= rcod1~CODIGO n„o aceit vel|Digite zeros para listar todos os|contratos no intervalo")
+		  AJUDA "Entre com o n£mero do contrato"
+                  CMDF8 "VDBF(6,26,20,77,'GRUPOS',{'grupo','codigo','nome'},1,'codigo')"
+
+ @ l_s+04 ,c_s+15 GET  confirme;
+		  PICT "!";
+		  VALI CRIT("confirme= 'S'~CONFIRME n„o aceit vel|Digite S ou Tecle ESC")
+		  AJUDA "Digite S para confirmar |ou|Tecle ESC para cancelar"
+
+  READ
+  SET KEY K_ALT_F8 TO
+  IF rola_t
+   ROLATELA(.f.)
+   LOOP
+  ENDI
+  IF LASTKEY()=K_ESC                                // se quer cancelar
+   RETU                                             // retorna
+  ENDI
+ ENDI
+
+ #ifdef COM_REDE
+  IF !USEARQ("TAXAS",.f.,10,1)                     // se falhou a abertura do arq
+   RETU                                            // volta ao menu anterior
+  ENDI
+ #else
+  USEARQ("TAXAS")                                  // abre o dbf e seus indices
+ #endi
+
+ PTAB(codigo,"GRUPOS",1,.t.)                       // abre arquivo p/ o relacionamento
+ PTAB(GRUPOS->tipcont,"CLASSES",1,.t.)
+ PTAB(GRUPOS->cobrador,"COBRADOR",1,.t.)
+ PTAB(codigo+tipo+circ,"CSTSEG",3,.t.)
+ PTAB(codigo,"MENSAG",1,.t.)
+ SET RELA TO codigo INTO GRUPOS,;                  // relacionamento dos arquivos
+	  TO GRUPOS->tipcont INTO CLASSES,;
+	  TO GRUPOS->cobrador INTO COBRADOR,;
+	  TO codigo+tipo+circ INTO CSTSEG,;
+	  TO codigo INTO MENSAG
+ titrel:=criterio:=cpord := ""                     // inicializa variaveis
+ titrel:=chv_rela:=chv_1:=chv_2 := ""
+ tps:=op_x:=ccop := 1
+ arq_=drvporta                                     // porta de saida configurada
+ IF !so_um_reg
+  IF !opcoes_rel(lin_menu,col_menu,16,11)           // nao quis configurar...
+   CLOS ALL                                         // fecha arquivos e
+   LOOP                                             // volta ao menu
+  ENDI
+
+ #ifdef COM_REDE
+
+  ELSE
+
+   tps=lin_menu
+
+ #endi
+
+ ENDI
+  IF tps=2                                          // se vai para arquivo/video
+   arq_=ARQGER()                                    // entao pega nome do arquivo
+   IF EMPTY(arq_)                                   // se cancelou ou nao informou
+    LOOP                                            // retorna
+   ENDI
+ ELSE
+  arq_=drvporta                                    // porta de saida configurada
+ ENDI
+ SET PRINTER TO (arq_)                             // redireciona saida
+ EXIT
+ENDD
+IF !EMPTY(drvtapg)                                 // existe configuracao de tam pag?
+ op_=AT("NNN",drvtapg)                             // se o codigo que altera
+ IF op_=0                                          // o tamanho da pagina
+  msg="Configura‡„o do tamanho da p gina!"         // foi informado errado
+  DBOX(msg,,,,,"ERRO!")                            // avisa
+  CLOSE ALL                                        // fecha todos arquivos abertos
+  RETU                                             // e cai fora...
+ ENDI                                              // codigo para setar/resetar tam pag
+ lpp_026=LEFT(drvtapg,op_-1)+"026"+SUBS(drvtapg,op_+3)
+ lpp_066=LEFT(drvtapg,op_-1)+"066"+SUBS(drvtapg,op_+3)
+ELSE
+ lpp_026:=lpp_066 :=""                             // nao ira mudara o tamanho da pag
+ENDI
+DBOX("[ESC] Interrompe",15,,,NAO_APAGA)
+dele_atu:=SET(_SET_DELETED,.t.)                    // os excluidos nao servem...
+SET DEVI TO PRIN                                   // inicia a impressao
+maxli=24                                           // maximo de linhas no relatorio
+IMPCTL(lpp_026)                                    // seta pagina com 26 linhas
+SET MARG TO 1                                      // ajusta a margem esquerda
+IF tps=2
+ IMPCTL("' '+CHR(8)")
+ENDI
+BEGIN SEQUENCE
+ DO WHIL ccop<=nucop                               // imprime qde copias pedida
+  pg_=1; cl=999
+  IF so_um_reg
+   GO imp_reg
+  ELSE
+   INI_ARQ()                                       // acha 1o. reg valido do arquivo
+  ENDI
+  ccop++                                           // incrementa contador de copias
+  ult_imp=0                                        // ultimo reg impresso
+  DO WHIL !EOF().AND.(!so_um_reg.OR.imp_reg=RECN())
+   #ifdef COM_TUTOR
+    IF IN_KEY()=K_ESC                              // se quer cancelar
+   #else
+    IF INKEY()=K_ESC                               // se quer cancelar
+   #endi
+    IF canc()                                      // pede confirmacao
+     BREAK                                         // confirmou...
+    ENDI
+   ENDI
+   IF (R06601F9()) .OR. so_um_reg		   // se atender a condicao...
+    REL_CAB(1)                                     // soma cl/imprime cabecalho
+    @ cl,015 SAY "Contr :"
+    valororig=IIF(PTAB(codigo+substr('123  123',VAL(tipo),1)+circ,"CSTSEG",3,.t.),CSTSEG->vlorig,valor)// variavel temporaria
+    @ cl,023 SAY TRAN(valororig,"@E 999,999.99")   // Valor Contribuicao
+    @ cl,062 SAY "Contr :"
+    @ cl,069 SAY TRAN(valororig,"@E 999,999.99")// Valor Contribuicao 2
+    REL_CAB(1)                                     // soma cl/imprime cabecalho
+    @ cl,015 SAY "Seguro:"
+    @ cl,023 SAY TRAN(valor-valororig,"@E 999,999.99")// Valor Seguro
+    @ cl,062 SAY "Seguro:"
+    @ cl,069 SAY TRAN(valor-valororig,"@E 999,999.99")// Valor Seguro 2
+    REL_CAB(1)                                     // soma cl/imprime cabecalho
+    @ cl,015 SAY "TOTAL.:"
+    @ cl,023 SAY TRAN(valor,"@E 999,999.99")      // Valor Total
+    @ cl,062 SAY "TOTAL.:"
+    @ cl,069 SAY TRAN(valor,"@E 999,999.99")       // Valor Total 2
+    REL_CAB(3)                                     // soma cl/imprime cabecalho
+    IMPEXP(cl,000,GRUPOS->GRUPO+' '+GRUPOS->codigo,18)// Codigo
+    IMPCTL(drvpenf)
+    @ cl,023 SAY [/]+tipo+[/]+circ+[ ]             // compl.codigo 2
+    IMPCTL(drvtenf)
+    IMPEXP(cl,039,GRUPOS->GRUPO+' '+GRUPOS->codigo,18)// Codigo 2
+    IMPCTL(drvpenf)
+    @ cl,062 SAY [/]+tipo+[/]+circ+[ ]             // compl.codigo 1
+    IMPCTL(drvtenf)
+    REL_CAB(1)                                     // soma cl/imprime cabecalho
+    @ cl,000 SAY "Adm:"
+    @ cl,006 SAY TRAN(GRUPOS->admissao,"@D")       // Admiss„o
+    @ cl,017 SAY "Vencto:"
+    @ cl,024 SAY DTOC(emissao_)           // Emissao
+    @ cl,039 SAY "Adm:"
+    @ cl,045 SAY TRAN(GRUPOS->admissao,"@D")       // Admiss„o 2
+    @ cl,056 SAY "Vencto:"
+    @ cl,063 SAY DTOC(emissao_)           // Emissao 2
+    REL_CAB(1)                                     // soma cl/imprime cabecalho
+    @ cl,000 SAY "Ven:"
+    @ cl,005 SAY GRUPOS->vendedor
+    @ cl,010 SAY "Car:"
+    @ cl,015 SAY GRUPOS->vlcarne
+    @ cl,024 SAY "Cob:"
+    @ cl,029 SAY COBRADOR->cobrador                            // Cobrador
+    @ cl,039 SAY "Ven:"
+    @ cl,044 SAY GRUPOS->vendedor
+    @ cl,049 SAY "Car:"
+    @ cl,054 SAY GRUPOS->vlcarne
+    @ cl,063 SAY "Cob:"
+    @ cl,068 SAY COBRADOR->cobrador                            // Cobrador 2
+    REL_CAB(1)                                     // soma cl/imprime cabecalho
+    @ cl,000 SAY ALLTRIM(CLASSES->descricao)       // definicao 1
+    @ cl,039 SAY ALLTRIM(CLASSES->descricao)       // definicao 2
+    REL_CAB(2)                                     // soma cl/imprime cabecalho
+    @ cl,000 SAY GRUPOS->nome                      // Nome
+    @ cl,039 SAY GRUPOS->nome                      // Nome 2
+    REL_CAB(1)                                     // soma cl/imprime cabecalho
+    @ cl,000 SAY GRUPOS->endereco                  // Endere‡o
+    @ cl,039 SAY GRUPOS->endereco                  // Endere‡o 2
+    REL_CAB(1)                                     // soma cl/imprime cabecalho
+    @ cl,000 SAY GRUPOS->bairro                    // Bairro
+    @ cl,039 SAY GRUPOS->bairro                    // Bairro 2
+    REL_CAB(1)                                     // soma cl/imprime cabecalho
+    @ cl,000 SAY GRUPOS->cep+[ ]+ALLTRIM(GRUPOS->cidade)+[, ]+GRUPOS->uf// Cidade
+    @ cl,039 SAY GRUPOS->cep+[ ]+ALLTRIM(GRUPOS->cidade)+[, ]+GRUPOS->uf// Cidade 2
+    REL_CAB(3)                                     // soma cl/imprime cabecalho
+    @ cl,000 SAY ""
+    IF M->combarra=[S]
+     CODBARRAS({{codigo+tipo+circ,4,13,19}},10,6)
+    ENDI
+    REL_CAB(1)                                     // soma cl/imprime cabecalho
+    @ cl,000 SAY ""
+    IF M->combarra=[S]
+     CODBARRAS({{codigo+tipo+circ,4,13,19}},10,6)
+    ENDI
+
+	 #ifdef COM_REDE
+		IF stat < [2]
+		 rlock()
+		 REPL TAXAS->stat WITH [2]
+//     REPBLO('TAXAS->stat',{||[2]})
+		ENDI
+
+	 #else
+		IF stat < [2]
+		 REPL TAXAS->stat WITH [2]
+		ENDI
+	 #endi
+
+		SKIP                                           // pega proximo registro
+    cl=999                                         // forca salto de pagina
+   ELSE                                            // se nao atende condicao
+    SKIP                                           // pega proximo registro
+   ENDI
+  ENDD
+ ENDD ccop
+ EJEC                                              // salta pagina
+END SEQUENCE
+SET MARG TO                                        // coloca margem esquerda = 0
+IMPCTL(lpp_066)                                    // seta pagina com 66 linhas
+SET PRINTER TO (drvporta)                          // fecha arquivo gerado (se houver)
+SET DEVI TO SCRE                                   // direciona saida p/ video
+IF tps=2                                           // se vai para arquivo/video
+ BROWSE_REL(arq_,2,3,MAXROW()-2,78)
+ENDI                                               // mostra o arquivo gravado
+GRELA(16)                                          // grava variacao do relatorio
+SELE TAXAS                                         // salta pagina
+SET RELA TO                                        // retira os relacionamentos
+SET(_SET_DELETED,dele_atu)                         // os excluidos serao vistos
+IF so_um_reg
+ POINTER_DBF(sit_dbf)
+ENDI
+RETU
+
+STATIC PROC REL_CAB(qt)                            // cabecalho do relatorio
+IF qt>0                                            // se parametro maior que 0
+ cl=cl+qt                                          // soma no contador de linhas
+ENDI
+IF cl>maxli .OR. qt=0                              // quebra de pagina
+ cl=qt+1 ; pg_++
+ENDI
+RETU
+
+* \\ Final de ADP_R066.PRG

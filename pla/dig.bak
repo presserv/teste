@@ -1,0 +1,25 @@
+arg=[.]+SPACE(19)
+DO WHILE !EMPT(ALLTRIM(arg))
+ arg=SPACE(20)
+ @0,0 GET arg
+ READ
+ @1,1 SAY DIGTVER10(arg)
+ENDD
+
+FUNCTION DIGTVER10(Arg1)
+LOCAL Local1, Local2, Local3, Local4, Local5
+Local1:= LEN(ALLTRIM(Arg1))
+Local5:= 2
+Local3:= 0
+DO WHILE (LEN(ALLTRIM(Arg1)) != 0)
+ Local2:= VAL(RIGHT(Arg1, 1))
+ IF (Local2 * Local5 < 9)
+  Local3:= Local3 + Local2 * Local5
+ ELSE
+  Local3:= Local3 + VAL(SUBSTR(STR(Local2 * Local5, 2, 0), 1, ;
+  1)) + Val(SUBSTR(STR(Local2 * Local5, 2, 0), 2, 1))
+ ENDI
+ Local5:=IIF(Local5=2,1,2)
+ Arg1:= SUBSTR(Arg1, 1, Len(Arg1) - 1)
+ENDD
+RETU IIF(10 - Local3 % 10 != 10, 10 - Local3 % 10, 0)

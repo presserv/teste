@@ -1,0 +1,210 @@
+GAS-Pro v3.0
+002003024079001002001001004000176001
+                                                                      PAG
+
+PROC.CANCELAMENTOS
+
+N£mero Codigo Grupo Motivo
+------------------------------------------------------------------------------
+[Ÿ]
+ 4 
+CANCELS
+Proc.Cancelamentos
+
+ccodigo
+EMPT(procto_)
+011
+
+
+
+
+
+
+
+
+
+ 0 
+ 1 
+ 0 
+ 66 
+ 0 
+ 6 
+ 3 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+N£mero
+cnumero
+999999
+ 6 
+C
+ 7 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Codigo
+ccodigo
+999999
+ 6 
+C
+ 7 
+ 8 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Grupo
+cgrupo
+!!
+ 2 
+C
+ 7 
+ 15 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Motivo
+SUBSTR([Falta pgto |Mudou      |Ignorado   |Desistˆncia],AT(cmotivo,[Falta pgto |Mudou      |Ignorado   |Desistˆncia]),11)
+
+ 11 
+C
+ 7 
+ 21 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 1 
+ 1 
+ 44 
+
+T¡tulo aplica‡„o
+nsis
+
+ 2 
+ 1 
+ 22 
+
+Data do sistema
+DTOC(DATE())
+
+ 3 
+ 71 
+ 8 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 3 
+ 63 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 1 
+ 75 
+ 4 
+
+C¢digo relat¢rio
+"ADM_R032"
+
+ 2 
+ 71 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 4 
+ 1 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 1 
+CANCELS
+procto_
+date()
+
+
+
+
+ 0 
+ 0 
+ 0 

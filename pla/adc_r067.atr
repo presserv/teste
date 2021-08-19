@@ -1,0 +1,121 @@
+GAS-Pro v3.0
+011021015062001001017001012000176001
+ A partir de::
+ AtÇ.........:
+ Confirme....:
+[ü]
+[ü]
+ 3 
+ 0 
+Acerto c/Vendedor
+Acerto c/Vendedor
+
+
+
+
+
+
+
+056
+
+
+
+
+
+
+
+ 0 
+ 0 
+-1 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+inicio_
+D
+E
+@D
+ 8 
+ 10 
+ 1 
+ 16 
+ 0 
+A partir de:
+
+ 
+
+DATE()-DAY(DATE())+1
+Informe a data inicial a considerar
+
+ 0 
+ 0 
+
+
+final_
+D
+E
+@D
+ 8 
+ 10 
+ 2 
+ 16 
+ 0 
+AtÇ
+
+EMPT(final_).OR.final_>inicio_
+Necess†rio informar ATê que data
+DATE()
+Informe atÇ que data
+
+ 0 
+ 0 
+
+
+confirme
+C
+E
+!
+ 1 
+ 1 
+ 3 
+ 16 
+ 0 
+Confirme
+
+confirme='S'
+CONFIRME nÑo aceit†vel
+
+Digite S para confirmar|ou|tecle ESC para cancelar
+
+ 0 
+ 0 
+
+
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 

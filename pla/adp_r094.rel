@@ -1,0 +1,250 @@
+GAS-Pro v3.0
+002003024079001007024001009000176001
+                                                                      PAG
+
+ACERTO DE NOSSO N£MERO
+
+Seq    Contrato  Circ.  N.N£mero   Novo n£mero
+------------------------------------------------------------------------------
+[Ÿ]
+ 6 
+BOLETOS
+Acerto de Nosso N£mero
+
+
+seq>=M->numinic.and.val(seq)<VAL(M->numinic)+M->qtdade
+011
+
+
+
+
+
+
+
+
+
+ 0 
+ 1 
+ 0 
+ 66 
+ 0 
+ 6 
+ 3 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Seq
+seq
+999999
+ 6 
+C
+ 7 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Contrato
+codigo
+999999
+ 6 
+C
+ 7 
+ 8 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Tipo
+tipo
+!
+ 1 
+C
+ 7 
+ 18 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+N.Circ
+circ
+999
+ 3 
+C
+ 7 
+ 20 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+N.N£mero
+nnumero
+9999999999
+ 10 
+C
+ 7 
+ 25 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Novo n£mero
+TRAN(VAL(M->newnnum)+(VAL(seq)-VAL(M->numinic)),[9999999999])
+
+ 10 
+C
+ 7 
+ 36 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 1 
+ 1 
+ 32 
+
+T¡tulo aplica‡„o
+nsis
+
+ 2 
+ 1 
+ 22 
+
+Data do sistema
+DTOC(DATE())
+
+ 3 
+ 71 
+ 8 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 3 
+ 63 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 1 
+ 75 
+ 4 
+
+C¢digo relat¢rio
+"ADP_R094"
+
+ 2 
+ 71 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 4 
+ 1 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 1 
+BOLETOS
+nnumero
+TRAN(VAL(M->newnnum)+(VAL(seq)-VAL(M->numinic)),[9999999999])
+
+
+
+
+ 0 
+ 0 
+ 0 

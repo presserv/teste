@@ -1,0 +1,159 @@
+GAS-Pro v3.0
+011003022079001001001001012000176001
+Codigo Situa‡„o
+====== ========
+[Ÿ]
+ 2 
+GRUPOS
+Contratos VAGOS
+grup
+grup
+
+011
+
+
+
+
+
+
+
+
+
+ 0 
+ 0 
+ 0 
+ 66 
+ 0 
+ 2 
+ 3 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Codigo
+codigo
+999999
+ 6 
+C
+ 3 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Situa‡„o
+situacao
+9
+ 1 
+C
+ 3 
+ 8 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 0 
+ 0 
+ 32 
+
+T¡tulo aplica‡„o
+nsis
+
+ 0 
+ 0 
+ 22 
+
+Data do sistema
+DTOC(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 0 
+ 0 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 0 
+ 0 
+ 4 
+
+C¢digo relat¢rio
+"ADP_R090"
+
+ 0 
+ 0 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 0 
+ 0 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 0 
+ 0 
+ 0 
+ 0 

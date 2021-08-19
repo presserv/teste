@@ -1,0 +1,478 @@
+GAS-Pro v3.0
+011003022079001004074001015000176001
+INSCRITOS
+------------------------------------------------------------------------------
+Inscr..:  /     Titular?:
+ Sexo..:    Est. Civil.:          Nascto.:           T.Carˆncia:
+ V/F...:    Falecimento:          Tipo...:           N§Processo:
+[Ÿ]
+ 13 
+CINSCRIT
+Inscritos
+numero
+numero+codigo+grau+STR(seq,02,00)
+
+011
+
+
+
+
+
+
+
+
+
+ 0 
+ 0 
+ 0 
+ 66 
+ 1 
+ 2 
+ 3 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Inscr.
+grau
+9
+ 1 
+C
+ 3 
+ 10 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Seq
+seq
+99
+ 2 
+N
+ 3 
+ 12 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Titular?
+ehtitular
+!
+ 1 
+C
+ 3 
+ 27 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Nome
+nome
+ 
+ 35 
+C
+ 3 
+ 30 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Nascto
+nascto_
+@D
+ 8 
+D
+ 4 
+ 44 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Est Civil
+estcivil
+ 
+ 2 
+C
+ 4 
+ 26 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Interdito
+IIF(Interdito='S',[Interdito],[         ])
+
+ 9 
+C
+ 3 
+ 66 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Sexo
+sexo
+!
+ 1 
+C
+ 4 
+ 10 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+T.Carˆncia
+tcarencia
+@D
+ 8 
+D
+ 4 
+ 66 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+V/F
+vivofalec
+!
+ 1 
+C
+ 5 
+ 10 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Falecto.
+falecto_
+@D
+ 8 
+D
+ 5 
+ 26 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Tipo
+tipo
+!!!
+ 3 
+C
+ 5 
+ 44 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+N§Processo
+procnr
+@R 99999/99
+ 8 
+C
+ 5 
+ 66 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 0 
+ 0 
+ 32 
+
+T¡tulo aplica‡„o
+nsis
+
+ 0 
+ 0 
+ 22 
+
+Data do sistema
+DTOC(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 0 
+ 0 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 0 
+ 0 
+ 4 
+
+C¢digo relat¢rio
+"ADM_R007"
+
+ 0 
+ 0 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 0 
+ 0 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 1 
+ARQGRUP
+partic
+ARQGRUP->partic + 1
+
+vivofalec = [V]
+
+
+ 0 
+ 1 
+INSCRITS
+1
+ 16 
+
+
+-1 
+
+
+
+codigo
+C
+M->rcodigo
+
+
+grau
+C
+grau
+
+
+seq
+N
+seq
+
+
+ehtitular
+C
+ehtitular
+
+
+nome
+C
+nome
+
+
+nascto_
+D
+nascto_
+
+
+estcivil
+C
+estcivil
+
+
+interdito
+C
+interdito
+
+
+sexo
+C
+sexo
+
+
+tcarencia
+D
+tcarencia
+
+
+lancto_
+D
+lancto_
+
+
+vivofalec
+C
+vivofalec
+
+
+falecto_
+D
+falecto_
+
+
+tipo
+C
+tipo
+
+
+procnr
+C
+procnr
+
+
+por
+C
+M->usuario
+
+
+ 0 

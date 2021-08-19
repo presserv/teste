@@ -1,0 +1,260 @@
+GAS-Pro v3.0
+
+[Ÿ]
+ 0 
+GRUPOS
+lan‡amentos
+
+
+
+001
+
+
+
+
+
+
+
+
+
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 1 
+GRUPOS
+ultimp_
+DATE()
+
+
+
+
+ 0 
+ 3 
+TAXAS
+parcf
+ 13 
+
+
+ 0 
+
+
+
+codigo
+C
+codigo
+
+
+tipo
+C
+rtipo
+
+
+circ
+C
+RIGHT('00'+ALLTRIM(STR(nparc+VAL(rcirc)-1)),3)
+
+
+emissao_
+D
+P00801F9()
+
+
+valor
+N
+M->vlparc
+
+
+pgto_
+D
+
+
+
+valorpg
+N
+
+
+
+cobrador
+C
+cobrador
+
+
+forma
+C
+
+
+
+baixa_
+D
+
+
+
+por
+C
+
+
+
+stat
+C
+
+
+
+filial
+C
+
+
+
+TCARNES
+1
+ 7 
+!PTAB(str(M->parcf,02,00)+rtipo+str(vlparc*parcf,8,2),[TCARNES],2)
+
+ 0 
+
+
+
+tip
+C
+
+
+
+tipcob
+C
+M->rtipo
+
+
+formapgto
+C
+[01]
+
+
+pari
+N
+1
+
+
+vali
+N
+M->vlparc*parcf
+
+
+parf
+N
+M->parcf
+
+
+parm
+N
+
+
+
+EMCARNE
+1
+ 12 
+
+
+ 0 
+
+
+
+seq
+C
+
+
+
+codigo
+C
+M->rcodigo
+
+
+vendedor
+C
+vendedor
+
+
+tip
+C
+TCARNES->tip
+
+
+circ
+C
+M->rcirc
+
+
+vencto_
+D
+M->vini_
+
+
+emissao_
+D
+
+
+
+etiqueta_
+D
+
+
+
+filial
+C
+
+
+
+lancto_
+D
+DATE()
+
+
+por
+C
+M->usuario
+
+
+parok
+N
+M->parcf
+
+
+ 2 
+ARQGRUP
+ 1 
+grupo
+
+
+
+TAXAS
+ 1 
+codigo
+
+
+

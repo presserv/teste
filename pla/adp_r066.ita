@@ -1,0 +1,399 @@
+/*
+ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+ \ Empresa.: Ind£stria de Urnas Bignotto Ltda
+ \ Programa: ADP_R066.PRG
+ \ Data....: 18-03-98
+ \ Sistema.: Administradora - PLANO
+ \ Funcao..: Carnˆs Ossel
+ \ Analista: Ademilson Pedro Bom
+ \ Criacao.: GAS-Pro v3.0
+ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+*/
+
+#include "adpbig.ch"    // inicializa constantes manifestas
+
+LOCAL dele_atu, getlist:={}, so_um_reg, sit_dbf:=POINTER_DBF()
+PARA  lin_menu, col_menu, imp_reg, mcodaux
+PRIV  tem_borda:=.t., op_menu:=VAR_COMPL, l_s:=9, c_s:=19, l_i:=17, c_i:=63, tela_fundo:=SAVESCREEN(0,0,MAXROW(),79)
+nucop=1
+V87001F9()  // Monta variaveis publicas...
+so_um_reg=(PCOU()>2)
+IF !so_um_reg                             // vai receber a variaveis?
+ SETCOLOR(drvtittel)
+ vr_memo=NOVAPOSI(@l_s,@c_s,@l_i,@c_i)    // pega posicao atual da tela
+ CAIXA(mold,l_s,c_s,l_i,c_i)              // monta caixa da tela
+ @ l_s,c_s+11 SAY " IMPRESSŽO DE COBRAN€A "
+ SETCOLOR(drvcortel)
+ @ l_s+02,c_s+1 SAY " IMPRIMIR os carnˆs JA' impressos:"
+ @ l_s+04,c_s+1 SAY " Inscri‡„o de:         at‚ :"
+ @ l_s+05,c_s+1 SAY " Vencimento inicial:"
+ @ l_s+06,c_s+1 SAY "                   Confirme:"
+ENDIF
+rtodas=[ ]                             // Todas?
+IF !so_um_reg                             // vai receber a variaveis?
+ rtp=SPAC(1)                                        // Tipo
+ rcod1=SPAC(6)                                      // Contrato
+ rcod2=SPAC(6)                                      // Contrato
+ rtodas=[N]
+ mcodaux:=[]
+ELSEIF PCOU()=3
+ mcodaux:=codigo+tipo+circ
+ELSEIF PCOU()=4
+ rcod1:=rcod2:=mcodaux
+ENDIF
+confirme=SPAC(1)                                   // Confirme
+dtaux:=date()-day(date())+66
+dtaux:=dtaux-day(dtaux)+1
+rmes:=ctod([  /  /  ]) //substr(dtoc(dtaux+65),4,2)
+DO WHILE .t.
+ rola_t=.f.
+ cod_sos=56
+ IF !so_um_reg
+  SET KEY K_ALT_F8 TO ROLATELA
+  SETCOLOR(drvcortel+","+drvcorget+",,,"+corcampo)
+  @ l_s+02 ,c_s+36 GET  rtodas;
+                   PICT "!"
+  DEFAULT "[N]"
+  AJUDA "Digite S para imprimir todas as vendas|que ainda n„o tenham sido impressas."
+
+  @ l_s+04 ,c_s+16 GET  rcod1;
+                   PICT "999999";
+                   VALI CRIT("PTAB(rcod1,'GRUPOS',1).OR.rcod1='000000'~CODIGO n„o aceit vel|Digite zeros para listar todos os|contratos no intervalo")
+  DEFAULT "[000000]"
+  AJUDA "Entre com o n£mero do contrato"
+  CMDF8 "VDBF(6,26,20,77,'GRUPOS',{'grupo','codigo','nome'},1,'codigo')"
+
+  @ l_s+04 ,c_s+30 GET  rcod2;
+                   PICT "999999";
+                   VALI CRIT("PTAB(rcod2,'GRUPOS',1).OR.rcod2 >= rcod1~CODIGO n„o aceit vel|Digite zeros para listar todos os|contratos no intervalo")
+  DEFAULT "rcod1"
+  AJUDA "Entre com o n£mero do contrato"
+  CMDF8 "VDBF(6,26,20,77,'GRUPOS',{'grupo','codigo','nome'},1,'codigo')"
+
+  @ l_s+05 ,c_s+30 GET  rmes;
+                   PICT "99/99/9999"
+  AJUDA "Informe a data inicial do carne a imprimir"
+  CMDF8 "dtaux"
+
+  @ l_s+06 ,c_s+30 GET  confirme;
+                   PICT "!";
+  VALI CRIT("confirme='S'.AND.V87001F9()~CONFIRME n„o aceit vel")
+  AJUDA "Digite S para confirmar|ou|tecle ESC para cancelar"
+
+  READ
+  SET KEY K_ALT_F8 TO
+  IF rola_t
+   ROLATELA(.f.)
+   LOOP
+  ENDIF
+  IF LASTKEY()=K_ESC                               // se quer cancelar
+   RETU                                            // retorna
+  ENDIF
+ ENDIF
+
+ #ifdef COM_REDE
+  IF !USEARQ("TAXAS",.f.,10,1)                   // se falhou a abertura do arq
+   RETU                                            // volta ao menu anterior
+  ENDIF
+ #else
+  USEARQ("TAXAS")                                // abre o dbf e seus indices
+ #ENDIF
+
+ PTAB(codigo,"GRUPOS",1,.t.)                       // abre arquivo p/ o relacionamento
+ PTAB(SUBSTR(CODlan,4,8),"EMCARNE",5,.t.)
+ SET RELA TO codigo INTO GRUPOS,;                  // relacionamento dos arquivos
+                                        TO SUBSTR(CODLan,4,8) INTO EMCARNE
+ titrel:=criterio:=cpord := ""                     // inicializa variaveis
+ titrel:=chv_rela:=chv_1:=chv_2 := ""
+ tps:=op_x:=ccop := 1
+ arq_=drvporta                                     // porta de saida configurada
+ IF !so_um_reg
+  IF !opcoes_rel(lin_menu,col_menu,10,11)          // nao quis configurar...
+   CLOS ALL                                        // fecha arquivos e
+   LOOP                                            // volta ao menu
+  ENDIF
+
+  #ifdef COM_REDE
+
+  ELSE
+
+   tps=lin_menu
+
+  #ENDIF
+
+ ENDIF
+ IF tps=2                                          // se vai para arquivo/video
+  arq_=ARQGER()                                    // entao pega nome do arquivo
+  IF EMPTY(arq_)                                   // se cancelou ou nao informou
+   LOOP                                            // retorna
+  ENDIF
+ ELSE
+  arq_=drvporta                                    // porta de saida configurada
+ ENDIF
+ SET PRINTER TO (arq_)                             // redireciona saida
+ EXIT
+ENDD
+IF !EMPTY(drvtapg)                                 // existe configuracao de tam pag?
+ op_=AT("NNN",drvtapg)                             // se o codigo que altera
+ IF op_=0                                          // o tamanho da pagina
+  msg="Configura‡„o do tamanho da p gina!"         // foi informado errado
+  DBOX(msg,,,,,"ERRO!")                            // avisa
+  CLOSE ALL                                        // fecha todos arquivos abertos
+  RETU                                             // e cai fora...
+ ENDIF                                              // codigo para setar/resetar tam pag
+ lpp_018=LEFT(drvtapg,op_-1)+"017"+SUBS(drvtapg,op_+3)
+ lpp_066=LEFT(drvtapg,op_-1)+"066"+SUBS(drvtapg,op_+3)
+ELSE
+ lpp_018:=lpp_066 :=""                             // nao ira mudara o tamanho da pag
+ENDIF
+DBOX("[ESC] Interrompe",15,,,NAO_APAGA)
+dele_atu:=SET(_SET_DELETED,.t.)                    // os excluidos nao servem...
+SET DEVI TO PRIN                                   // inicia a impressao
+maxli=14                                           // maximo de linhas no relatorio
+SET MARG TO 1                                      // ajusta a margem esquerda
+IMPCTL(lpp_018)                                    // seta pagina com 18 linhas
+IF tps=2
+ IMPCTL("' '+CHR(8)")
+ENDIF
+ultcod=[000000]
+ultcir=[000]
+BEGIN SEQUENCE
+ DO WHIL ccop<=nucop                               // imprime qde copias pedida
+  pg_=1; cl=999
+  IF so_um_reg
+   PTAB(M->mcodaux,[TAXAS],1,.t.)
+  ELSE
+   INI_ARQ()                                       // acha 1o. reg valido do arquivo
+   IF M->rcod1>[000000]
+    PTAB(M->rcod1,[TAXAS],1,.t.)
+   ENDIF
+  ENDIF
+  ccop++                                           // incrementa contador de copias
+  DO WHIL !EOF().AND.(!so_um_reg.OR.(M->mcodaux=codigo))
+   IF M->rcod2>[000000].AND.codigo>M->rcod2
+    GO BOTT
+    SKIP
+    LOOP
+   ENDIF
+   IF M->rtodas=[N].AND.STAT>[2]
+    SKIP
+    LOOP
+   ENDIF
+   IF codigo=ultcod
+    skip
+    loop
+   ENDIF
+   ultcod=codigo
+   XINTLAN:=CODLAN
+   IF (M->rcod1<=codigo.AND.M->rcod2>=codigo)
+
+    SELE TAXAS
+    DO WHILE !EOF().AND.(M->rcod1<=codigo.AND.M->rcod2>=codigo)
+     IF valorpg>0 //.OR.EMISSAO_ < (DATE()-30)
+      SKIP
+      LOOP
+     ENDIF
+
+     IF !EMPT(M->rmes)
+      IF M->rcod1=[000000].AND.M->rcod2=M->rcod1.AND.;
+       SUBSTR(DTOC(M->rmes),4,2)#LEFT(GRUPOS->saitxa,2)
+       SKIP
+       LOOP
+      ENDIF
+      IF !EMPT(M->rmes).AND.emissao_ < M->rmes
+       SKIP
+       LOOP
+      ENDIF
+     ENDIF
+     IF [MONGAG]$M->p_cidade
+      imp_monga()
+     ELSE
+      IF [017]$lpp_018
+       lpp_018=LEFT(drvtapg,op_-1)+"016"+SUBS(drvtapg,op_+3)
+      ELSE
+       lpp_018=LEFT(drvtapg,op_-1)+"017"+SUBS(drvtapg,op_+3)
+      ENDIF
+      IMPCTL(lpp_018)                                    // seta pagina com 18 linhas
+
+      IMPCTL(drvtcom)
+      REL_CAB(1)
+      @ cl,000 SAY "+--------------------------------------------+"+&drvpcom+" : +---------------------------------------------------+"+&drvtcom
+      REL_CAB(1)
+      @ cl,000 SAY "|"
+//      @ cl,001 SAY R08703F9()                            // Montagem dos dados
+      R08701F9()                                     // pode imprimir?
+      @ cl,001 SAY M->setup1                            // Ident1
+      @ cl,045 SAY "|"+&drvpcom+" : |"+ M->setup1+"           |"+&drvTcom
+      REL_CAB(1)
+      @ cl,000 SAY "|"+M->setup2
+      @ cl,045 SAY "|"+&drvpcom+" : |"+M->setup2+" |"+&drvTcom
+      REL_CAB(1)
+      @ cl,000 SAY "|"+LEFT(M->setup3,44)
+      @ cl,045 SAY "|"+&drvpcom+" : |"+M->setup3+" |"+&drvTcom
+      REL_CAB(1)                                     // soma cl/imprime cabecalho
+      @ cl,000 SAY "+------ Contrato ------+--  Emissao  --------+"+&drvpcom+" : +------ Contrato -------------+--  Emissao  --------+"+&drvTcom
+      REL_CAB(1)                                     // soma cl/imprime cabecalho
+      @ cl,000 SAY "|"
+      @ cl,003 say GRUPOS->grupo+'  '+GRUPOS->codigo // Codigo 2
+      @ cl,023 SAY "| Manut.:"
+      valororig=TAXAS->valor //R08702F9()                           // variavel temporaria
+      vlseg:=0
+      @ cl,033 SAY TRAN(valororig,"@E 999,999.99")   // Valor 1
+      @ cl,045 SAY "|"+&drvpcom+" : | "+ &drvTcom+GRUPOS->grupo+'  '+GRUPOS->codigo+[     ]+&drvpcom+;
+                  "  | Manut.:  "+TRAN(M->valororig,"@E 999,999.99")+" |"+&drvTcoM
+      REL_CAB(1)                                     // soma cl/imprime cabecalho
+      @ cl,000 SAY "+----------------------+ Seguro:"
+      @ cl,033 SAY TRAN(vlseg,"@E 999,999.99")       // Valor Seg
+      @ cl,045 SAY "|"+&drvpcom+" : +-----------------------------+ Seguro:  "+;
+                 TRAN(vlseg,"@E 999,999.99") +" |"+&drvTcom
+      REL_CAB(1)                                     // soma cl/imprime cabecalho
+      @ cl,000 SAY "|"
+      @ cl,002 SAY TAXAS->tipo+[  ]+TAXAS->circ//+IIF(tipo$[16].AND.EMCARNE->(EOF()),[],[/]+STRZERO(TCARNES->parf,3))// N§ 1
+      @ cl,013 SAY TRAN(TAXAS->emissao_,"@D")   // Vencto 1
+      @ cl,023 SAY "| Total.:"
+      @ cl,033 SAY TRAN(valororig+vlseg,"@E 999,999.99")// Valor Total
+      @ cl,045 SAY "|"+&drvpcom+" : |"+TAXAS->tipo+[  ]+TAXAS->circ+[  ]+;
+                 TRAN(TAXAS->emissao_,"@D")+" Total.:"+ &drvTcom+TRAN(valororig+vlseg,"@E 999,999.99")+&drvpcom+;
+                 "        |"+&drvTcom
+      REL_CAB(1)                                     // soma cl/imprime cabecalho
+      @ cl,000 SAY "+----------------------+---------------------+"+&drvpcom+" : +-----------------------------+---------------------+"+&drvTcom
+      REL_CAB(1)                                     // soma cl/imprime cabecalho
+      @ cl,000 SAY "|Tit.:"+GRUPOS->nome                      // Nome
+      @ cl,045 SAY "|"+&drvpcom+" : |Tit.:"+GRUPOS->nome+"           |"+&drvTcom
+      REL_CAB(1)                                     // soma cl/imprime cabecalho
+      @ cl,000 SAY "|End.:"+GRUPOS->endereco                  // Endere‡o
+      @ cl,045 SAY "|"+&drvpcom+" : |End.:"+GRUPOS->endereco+"           |"+&drvTcom
+      REL_CAB(1)                                     // soma cl/imprime cabecalho
+      @ cl,000 SAY "|"
+      @ cl,001 SAY LEFT(ALLTRIM(GRUPOS->bairro)+[ ]+;
+                 ALLTRIM(GRUPOS->cidade)+[ ]+;
+                 TRAN(GRUPOS->uf,"!!"),43)
+      @ cl,045 SAY "|"+&drvpcom+" : |"+PADR(ALLTRIM(GRUPOS->bairro)+[ ]+;
+                 ALLTRIM(GRUPOS->cidade)+[ ]+;
+                 TRAN(GRUPOS->uf,"!!"),50)+" |"+&drvTcom
+      REL_CAB(1)                                     // soma cl/imprime cabecalho
+      @ cl,000 SAY "+--------------------- 1.Via - Contribuinte -+"+&drvpcom+;
+                 " : +-"+TRAN(pg_,'9999')+;
+                 "---------------------------- 2.Via - Empresa -+"+&drvTCom
+      REL_CAB(1)                                     // soma cl/imprime cabecalho
+      @ cl,001 SAY &drvpcom+". . . . . . . . . . . . . . . . . . . . . . . . . . .:. . . . . . . . . . . . . . . . . . . . . . . . . . . "+&drvTcom
+     ENDIF
+
+     SKIP                                            // pega proximo registro
+     cl=999                                          // forca salto de pagina
+    ENDD
+    SELE TAXAS
+    SKIP
+   ELSE
+    skip
+   ENDIF
+  ENDD
+ ENDD ccop
+ EJEC                                              // salta pagina
+END SEQUENCE
+ IMPCTL(lpp_066)                                    // seta pagina com 66 linhas
+ SET MARG TO                                        // ajusta a margem esquerda
+ SET PRINTER TO (drvporta)                          // fecha arquivo gerado (se houver)
+ SET DEVI TO SCRE                                   // direciona saida p/ video
+ IF tps=2                                           // se vai para arquivo/video
+  BROWSE_REL(arq_,2,3,MAXROW()-2,78)
+ ENDIF                                               // mostra o arquivo gravado
+ GRELA(10)                                          // grava variacao do relatorio
+ msgt="PROCESSAMENTOS DO RELAT¢RIO|CARNES OSSEL"
+ ALERTA()
+ op_=2 //DBOX("Prosseguir|Cancelar opera‡„o",,,E_MENU,,msgt)
+ IF op_=1
+  DBOX("Processando registros",,,,NAO_APAGA,"AGUARDE!")
+  dele_atu:=SET(_SET_DELETED,.t.)                   // os excluidos nao servem...
+  SELE EMCARNE                                      // processamentos apos emissao
+  IF so_um_reg
+   GO imp_reg
+  ELSE
+   INI_ARQ()                                        // acha 1o. reg valido do arquivo
+  ENDIF
+  DO WHIL !EOF().AND.(!so_um_reg.OR.imp_reg=RECN())
+
+   #ifdef COM_REDE
+    REPBLO('EMCARNE->emissao_',{||DATE()})
+   #else
+    REPL EMCARNE->emissao_ WITH DATE()
+   #ENDIF
+
+   SKIP                                             // pega proximo registro
+  ENDD
+  ALERTA(2)
+  DBOX("Processo terminado com sucesso!",,,,,msgt)
+ ENDIF
+ SELE EMCARNE                                       // salta pagina
+ SET RELA TO                                        // retira os relacionamentos
+ SET(_SET_DELETED,dele_atu)                         // os excluidos serao vistos
+ IF so_um_reg
+  POINTER_DBF(sit_dbf)
+ ENDIF
+ RETU
+
+ STATIC PROC REL_CAB(qt)                            // cabecalho do relatorio
+ IF qt>0                                            // se parametro maior que 0
+  cl=cl+qt                                          // soma no contador de linhas
+ ENDIF
+ IF cl>maxli .OR. qt=0                              // quebra de pagina
+  cl=qt+1 ; pg_++
+ ENDIF
+ RETU
+
+* \\ Final de ADP_R066.PRG
+func imp_monga
+ valororig=TAXAS->valor //R08702F9()+vlseg-vlcst               // variavel temporaria
+
+ REL_CAB(5)                                      // soma cl/imprime cabecalho
+ @ cl,006 SAY LEFT(GRUPOS->nome,27)                       // Nome
+ @ cl,045 SAY LEFT(GRUPOS->nome,27)                       // Nome
+ REL_CAB(1)                                      // soma cl/imprime cabecalho
+ @ cl,006 SAY GRUPOS->endereco                   // Endere‡o
+ @ cl,045 SAY LEFT(GRUPOS->endereco,33)                   // Endere‡o
+ REL_CAB(1)                                      // soma cl/imprime cabecalho
+//               @ cl,006 SAY GRUPOS->bairro                     // Endere‡o
+//               @ cl,045 SAY GRUPOS->bairro                     // Endere‡o
+ REL_CAB(1)                                      // soma cl/imprime cabecalho
+ @ cl,003 SAY TRAN(TAXAS->codigo,"999999")              // Codigo
+ IF TAXAS->tipo=[1]
+  @ cl,009 SAY RIGHT(TAXAS->circ,2)+"/"//+STR(TCARNES->parf,2)
+ ELSE
+  @ cl,011 SAY TRAN(TAXAS->tipo,"!")                     // Tipo
+  @ cl,012 SAY TRAN(TAXAS->circ,"999")                   // Circular
+ ENDIF
+ @ cl,017 SAY left(dtoc(TAXAS->emissao_),6)+right(dtoc(TAXAS->emissao_),2)
+ @ cl,024 SAY TRAN(TAXAS->valor,"@E 999,999.99")        // Valor
+ @ cl,042 SAY TRAN(TAXAS->codigo,"999999")              // Codigo
+ IF TAXAS->tipo=[1]
+  @ cl,048 SAY RIGHT(TAXAS->circ,2)+"/" //+STR(TCARNES->parf,2)
+ ELSE
+  @ cl,050 SAY TRAN(TAXAS->tipo,"!")                     // Tipo
+  @ cl,051 SAY TRAN(TAXAS->circ,"999")                   // Circular
+ ENDIF
+ @ cl,056 SAY left(dtoc(TAXAS->emissao_),6)+right(dtoc(TAXAS->emissao_),2)                // Emissao
+ @ cl,063 SAY TRAN(TAXAS->valor,"@E 999,999.99")        // Valor
+ REL_CAB(2)                                      // soma cl/imprime cabecalho
+ @ cl,066 SAY ""        // Valor
+ IF M->combarra=[S]
+  CODBARRAS({{codigo+tipo+circ,4,13,66}},10,6)
+ ENDIF
+ REL_CAB(1)                                      // soma cl/imprime cabecalho
+ @ cl,033 SAY TRAN(TAXAS->tipo,"!")                     // Tipo
+ @ cl,034 SAY TRAN(TAXAS->circ,"999")                   // Circular
+ @ cl,066 SAY ""        // Valor
+ IF M->combarra=[S]
+  CODBARRAS({{codigo+tipo+circ,4,13,66}},10,6)
+ ENDIF
+
+// Processamentos
+ #ifdef COM_REDE
+  IF stat < [2]
+   REPBLO('TAXAS->stat',{||[2]})
+  ENDIF
+ #else
+  IF stat < [2]
+   REPL TAXAS->stat WITH [2]
+  ENDIF
+ #ENDIF
+ retu .t.

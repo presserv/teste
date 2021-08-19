@@ -1,0 +1,496 @@
+GAS-Pro v3.0
+002003024079005008079001010000176001
+                                                                       PAG
+
+RESUMO TAXAS EMITIDAS
+
+Grp Cl Inicial Final Procs Periodic Rem Ultcirc Emissao  Procs Cont Partic Emtd
+-------------------------------------------------------------------------------
+[Ÿ]
+ 17 
+ARQGRUP
+Resumo Taxas Emitidas
+
+
+proxcirc>[000].AND.!(CLASSES->prior=[S])
+011
+
+
+
+
+
+
+
+
+
+ 0 
+ 3 
+ 0 
+ 66 
+ 0 
+ 6 
+ 3 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Grupo
+grup
+!!
+ 2 
+C
+ 7 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Classe
+classe
+99
+ 2 
+C
+ 7 
+ 5 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Nr.Inicial
+inicio
+
+ 6 
+C
+ 7 
+ 8 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Nr.Final
+final
+
+ 6 
+C
+ 7 
+ 16 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+N§.Processos
+acumproc
+99
+ 2 
+N
+ 7 
+ 23 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Periodicidade
+periodic
+999
+ 3 
+N
+ 7 
+ 30 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Remido
+qtdremir
+99
+ 2 
+N
+ 7 
+ 38 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Ultcirc
+ultcirc
+999
+ 3 
+C
+ 7 
+ 41 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Emissao
+emissao_
+@D
+ 8 
+D
+ 7 
+ 49 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Processos
+procpend
+999
+ 3 
+N
+ 7 
+ 59 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Contratos
+contrat
+999999
+ 6 
+N
+ 7 
+ 63 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Partic.
+partic
+99999
+ 5 
+N
+ 7 
+ 70 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Circ.Emtd.
+proxcirc
+999
+ 3 
+C
+ 7 
+ 77 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Emiss„o
+CIRCULAR->emissao_
+@D
+ 8 
+D
+ 8 
+ 4 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Mˆs Ref.
+CIRCULAR->mesref
+@R 99/99
+ 5 
+C
+ 8 
+ 13 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Valor
+CIRCULAR->valor
+@E 999,999.99
+ 10 
+N
+ 8 
+ 19 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Mensagem
+CIRCULAR->menscirc
+@!
+ 50 
+C
+ 8 
+ 30 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 1 
+ 1 
+ 32 
+
+T¡tulo aplica‡„o
+nsis
+
+ 2 
+ 1 
+ 22 
+
+Data do sistema
+DTOC(DATE())
+
+ 3 
+ 72 
+ 8 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 3 
+ 64 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 1 
+ 76 
+ 4 
+
+C¢digo relat¢rio
+"ADM_R010"
+
+ 2 
+ 72 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 4 
+ 1 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 3 
+ARQGRUP
+ultcirc
+proxcirc
+
+
+
+
+ARQGRUP
+emissao_
+CIRCULAR->emissao_
+
+
+
+
+ARQGRUP
+proxcirc
+[000]
+
+
+
+
+ 0 
+ 0 
+ 2 
+CIRCULAR
+ 1 
+grup+proxcirc
+
+
+
+CLASSES
+ 1 
+classe
+
+
+

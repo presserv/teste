@@ -1,0 +1,475 @@
+GAS-Pro v3.0
+002003024079001002001001004000176001
+
+
+
+
+
+
+
+
+
+CONTRATO                                                 (SEG)
+                                                         (FAL) Proc:
+
+                     Data Fal.:
+[Ÿ]
+ 17 
+PRCESSOS
+Cartinha de Processos
+
+grup+saiu+DTOS(dfal)
+(EMPT(M->rgrupo).OR.grup=M->rgrupo).AND.(EMPT(M->rcirc).OR.saiu=M->rcirc)
+011
+
+
+
+
+
+
+
+
+
+-1 
+ 1 
+ 0 
+ 66 
+ 1 
+ 8 
+ 2 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Processo
+processo
+@R 99999/99/!!
+ 11 
+C
+ 11 
+ 70 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Categoria
+categ
+!!
+ 2 
+C
+ 10 
+ 70 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Grup
+grup
+!!
+ 2 
+C
+ 10 
+ 10 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Num
+num
+999999
+ 6 
+C
+ 10 
+ 14 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Inscr.
+grau
+9
+ 1 
+C
+ 11 
+ 14 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Seq
+seq
+99
+ 2 
+N
+ 11 
+ 16 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Seg
+seg
+@!
+ 35 
+C
+ 10 
+ 22 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Ends
+ends
+@!
+ 40 
+C
+ 12 
+ 22 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Cids
+cids
+@!
+ 15 
+C
+ 12 
+ 63 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Fal
+fal
+@!
+ 35 
+C
+ 11 
+ 22 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Sep
+sep
+@!
+ 35 
+C
+ 13 
+ 44 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Data
+dfal
+@D
+ 10 
+D
+ 13 
+ 33 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Mens1
+M->rmens1
+@!
+ 70 
+C
+ 3 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Mens2
+M->rmens2
+@!
+ 70 
+C
+ 4 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Mens3
+M->rmens3
+@!
+ 70 
+C
+ 5 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Mens4
+M->rmens4
+@!
+ 70 
+C
+ 6 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Mens5
+M->rmens5
+@!
+ 70 
+C
+ 7 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 1 
+ 1 
+ 44 
+
+T¡tulo aplica‡„o
+nsis
+
+ 0 
+ 0 
+ 22 
+
+Data do sistema
+DTOC(DATE())
+
+ 0 
+ 0 
+ 10 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 0 
+ 0 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 0 
+ 0 
+ 4 
+
+C¢digo relat¢rio
+"ADP_R101"
+
+ 0 
+ 0 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 0 
+ 0 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 0 
+ 1 
+M->rdata+[ Grupo: ]+grup+[ Circ: ]+saiu
+  û ûû    
+grup+saiu
+
+
+ 0 
+ 0 

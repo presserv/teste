@@ -1,0 +1,527 @@
+GAS-Pro v3.0
+002003024079001010041001012000176001
+                                                                      PAG
+
+
+CONTRATOS
+------------------------------------------------------------------------------
+
+Contrato:             Situa‡„o:    Admiss„o:           SaiTxa:        Cobrador:      Funerais:     Vl.Carne:
+Circ.Inicial:         UltCirc.:      Qt.Circ:      Circ.Pagas:      Regi„o:      Nome:
+End.:                                       Bairro:                            Cidade:
+Fone:                 Nacimento:
+[Ÿ]
+ 20 
+GRUPOS
+Contratos
+
+
+
+011
+
+
+
+
+
+
+
+
+
+ 0 
+ 1 
+ 0 
+ 66 
+ 1 
+ 5 
+ 2 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Grupo
+grupo
+
+ 2 
+C
+ 7 
+ 11 
+
+
+û         
+
+
+
+
+
+
+
+
+
+
+Codigo
+codigo
+
+ 6 
+C
+ 7 
+ 14 
+
+
+û         
+
+
+
+
+
+
+
+
+
+
+Situa‡„o
+situacao
+9
+ 1 
+C
+ 7 
+ 33 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Admiss„o
+admissao
+@D
+ 8 
+D
+ 7 
+ 46 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Saitxa
+saitxa
+@R 99/99
+ 5 
+C
+ 7 
+ 64 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Cobrador
+cobrador
+!!
+ 2 
+C
+ 7 
+ 81 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Funerais
+funerais
+99
+ 2 
+N
+ 7 
+ 96 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Vlcarne
+vlcarne
+ 
+ 3 
+C
+ 7 
+ 110 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Circ.Inicial
+circinic
+999
+ 3 
+C
+ 8 
+ 15 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Ult.Circular
+ultcirc
+999
+ 3 
+C
+ 8 
+ 33 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Qt.Circulares
+qtcircs
+999
+ 3 
+N
+ 8 
+ 47 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Circ.Pagas
+qtcircpg
+999
+ 3 
+N
+ 8 
+ 64 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Regi„o
+regiao
+999
+ 3 
+C
+ 8 
+ 77 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Nome
+nome
+@!
+ 35 
+C
+ 8 
+ 88 
+
+
+û         
+
+
+
+
+
+
+
+
+
+
+Endere‡o
+endereco
+ 
+ 35 
+C
+ 9 
+ 7 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Bairro
+bairro
+ 
+ 25 
+C
+ 9 
+ 53 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Cidade
+cidade
+ 
+ 25 
+C
+ 9 
+ 88 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+CEP
+cep
+@R 99999-999
+ 9 
+C
+ 9 
+ 114 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Telefone
+telefone
+@!
+ 14 
+C
+ 10 
+ 7 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Nacimento
+nascto_
+@D
+ 8 
+D
+ 10 
+ 34 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 1 
+ 1 
+ 32 
+
+T¡tulo aplica‡„o
+nsis
+
+ 2 
+ 1 
+ 22 
+
+Data do sistema
+DTOC(DATE())
+
+ 3 
+ 71 
+ 8 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 3 
+ 63 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 1 
+ 75 
+ 4 
+
+C¢digo relat¢rio
+"ADM_R043"
+
+ 2 
+ 71 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 3 
+ 1 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 0 
+ 0 
+ 0 
+ 0 

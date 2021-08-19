@@ -1,0 +1,395 @@
+GAS-Pro v3.0
+002003021079010018071001020000176001
+[Ÿ]
+ 12 
+TAXAS
+Emiss„o Carnˆs Mod.2
+
+tipo+codigo+circ
+R06601F9()
+011
+
+
+
+
+
+
+
+
+
+ 0 
+ 1 
+ 0 
+ 18 
+ 1 
+ 6 
+ 6 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Codigo 1
+GRUPOS->codigo
+
+ 6 
+C
+ 11 
+ 7 
+R06601F9()
+
+          
+
+
+
+
+
+
+
+
+
+
+Codigo 2
+GRUPOS->codigo
+
+ 6 
+C
+ 11 
+ 46 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+N§ 1
+RIGHT(TAXAS->circ,2)+'/'+STRZERO(TCARNES->parf,2)
+
+ 5 
+C
+ 11 
+ 14 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+N§ 2
+RIGHT(TAXAS->circ,2)+'/'+STRZERO(TCARNES->parf,2)
+
+ 5 
+C
+ 11 
+ 53 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Valor 1
+TAXAS->valor
+@E 999,999.99
+ 10 
+N
+ 11 
+ 28 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Valor 2
+TAXAS->valor
+@E 999,999.99
+ 10 
+N
+ 11 
+ 67 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Nome 2
+LEFT(GRUPOS->nome,30)
+
+ 30 
+C
+ 7 
+ 7 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Vencto 1
+TAXAS->emissao_
+@D
+ 8 
+D
+ 11 
+ 20 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Vencto 2
+TAXAS->emissao_
+@D
+ 8 
+D
+ 11 
+ 59 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Nome 3
+LEFT(GRUPOS->nome,30)
+
+ 30 
+C
+ 7 
+ 46 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Endere‡o 2
+LEFT(GRUPOS->endereco,30)
+
+ 30 
+C
+ 8 
+ 7 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Endereco 3
+LEFT(GRUPOS->endereco,30)
+
+ 30 
+C
+ 8 
+ 46 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 0 
+ 0 
+ 32 
+
+T¡tulo aplica‡„o
+nsis
+
+ 0 
+ 0 
+ 22 
+
+Data do sistema
+DTOC(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 0 
+ 0 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 0 
+ 0 
+ 4 
+
+C¢digo relat¢rio
+"ADM_RX38"
+
+ 0 
+ 0 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 0 
+ 0 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 2 
+EMCARNE
+emissao_
+DATE()
+
+CLASSES->nrparc=VAL(TAXAS->circ).AND.EMPT(EMCARNE->emissao_)
+
+
+TAXAS
+stat
+[2]
+
+stat < [2]
+
+
+ 0 
+ 0 
+ 4 
+GRUPOS
+ 1 
+codigo
+
+
+
+EMCARNE
+ 1 
+codigo
+
+
+
+CLASSES
+ 1 
+EMCARNE->tip
+
+
+
+TCARNES
+ 1 
+EMCARNE->tip
+
+
+

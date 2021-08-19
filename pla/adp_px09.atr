@@ -1,0 +1,169 @@
+GAS-Pro v3.0
+010021016062001004034001014000176001
+ Contrato de...:
+
+ Contrato para.:
+ Confirme?.....:
+[Ÿ]
+[Ÿ]
+ 5 
+ 0 
+Transferˆncia
+Transferˆncia
+
+
+
+
+
+
+
+056
+
+
+
+
+
+
+
+ 0 
+ 0 
+-1 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+rcodigo
+C
+E
+999999
+ 6 
+ 6 
+ 1 
+ 18 
+ 0 
+Contrato de:
+
+PTAB(rcodigo,'GRUPOS',1).and.V00901F9()
+CONTRATO n„o existe em arquivo de tabela|tecle F8 para consulta
+
+Informe o n£mero do contrato|ou tecle F8 para consulta em arquivo
+VDBF(6,3,20,77,'GRUPOS',{'codigo','nome','endereco','cidade'},1,'codigo',[])
+ 0 
+ 0 
+
+
+rcodig2
+C
+E
+999999
+ 6 
+ 6 
+ 3 
+ 18 
+ 0 
+Contrato para:
+
+!PTAB(rcodig2,'GRUPOS',1).and.V00902F9()
+CONTRATO n„o existe em arquivo de tabela|Tecle F8 para consulta em tabela
+
+Informe o n£mero do contrato|ou tecle F8 para consulta em arquivo
+VDBF(6,3,20,77,'GRUPOS',{'codigo','nome','endereco','cidade'},1,'codigo',[])
+ 0 
+ 0 
+
+
+confirme
+C
+E
+!
+ 1 
+ 1 
+ 4 
+ 18 
+ 0 
+Confirme?
+
+confirme=[S]
+CONFIRME? n„o aceit vel
+
+Digite S para confirmar ou|Tecle ESC para sair
+
+ 0 
+ 0 
+
+
+gru1
+C
+E
+ 
+ 2 
+ 2 
+ 5 
+ 35 
+ 0 
+Gru1
+1=3
+ 
+
+
+
+
+ 0 
+ 0 
+
+
+gru2
+C
+E
+ 
+ 2 
+ 2 
+ 5 
+ 38 
+ 0 
+Gru2
+1=3
+!EMPT(gru2)
+Necess rio informar GRU2
+
+
+
+ 0 
+ 0 
+
+
+ 1 
+Nome
+IIF(PTAB(rcodigo,[GRUPOS],1),GRUPOS->nome,SPACE(35))
+
+ 2 
+ 4 
+ 35 
+
+ 0 
+ 0 
+ 0 
+ 0 

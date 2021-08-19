@@ -1,0 +1,250 @@
+GAS-Pro v3.0
+002003024079041006115001008000176001
+                                                                                                           PAG
+
+VENDEDOR X REA
+Contr. Nome                                Endere‡o                            Cidade                    Admiss„o
+-------------------------------------------------------------------------------------------------------------------
+[Ÿ]
+ 5 
+GRUPOS
+Vendas (Vend. X rea)
+
+vendedor+regiao
+admissao>=M->rde.AND.admissao<=M->rate.AND.(M->rregiao$'000,'+regiao).AND.(M->rvend$'000,'+vendedor)
+011
+
+
+
+
+
+
+
+
+
+ 0 
+ 1 
+ 0 
+ 66 
+ 0 
+ 5 
+ 3 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Contr.
+codigo
+999999
+ 6 
+C
+ 6 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Nome
+nome
+@!
+ 35 
+C
+ 6 
+ 8 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Endere‡o
+endereco
+@!
+ 35 
+C
+ 6 
+ 44 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Cidade
+cidade
+@!
+ 25 
+C
+ 6 
+ 80 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Admiss„o
+admissao
+@D
+ 10 
+D
+ 6 
+ 106 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 1 
+ 1 
+ 44 
+
+T¡tulo aplica‡„o
+nsis
+
+ 2 
+ 1 
+ 22 
+
+Data do sistema
+DTOC(DATE())
+
+ 3 
+ 108 
+ 8 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 3 
+ 100 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 1 
+ 112 
+ 4 
+
+C¢digo relat¢rio
+"ADP_R098"
+
+ 2 
+ 108 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 1 
+ 56 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 0 
+ 2 
+'[ '+vendedor+'-'+COBRADOR->nome+' ]'
+ ûûû û    
+vendedor
+
+
+'[ '+regiao+' - '+REGIAO->regiao+' ]'
+  ûû û    
+vendedor+regiao
+
+
+ 0 
+ 3 
+COBRADOR
+ 1 
+vendedor
+
+
+
+REGIAO
+ 1 
+regiao
+
+
+
+TAXAS
+ 1 
+codigo
+
+
+

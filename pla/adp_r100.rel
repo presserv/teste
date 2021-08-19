@@ -1,0 +1,386 @@
+GAS-Pro v3.0
+002003024079034004108001006000176001
+                                                                                                       PAG
+
+COMISSŽO       De:             At‚:
+                                                                            Vendedor              Supervisor
+Contr. Nome                                Parcela Pagto.          Valor   %   Vl.Comiss.        %   Vl.Comiss.
+---------------------------------------------------------------------------------------------------------------
+[Ÿ]
+ 12 
+TAXAS
+Comiss„o
+
+GRUPOS->vendedor+tipo+circ
+pgto_>=M->rde.AND.pgto_<=M->rate.AND.(M->rvend$'000,'+GRUPOS->vendedor)
+011
+
+
+
+
+
+
+
+
+
+ 0 
+ 1 
+ 0 
+ 66 
+ 0 
+ 6 
+ 3 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Contr.
+GRUPOS->codigo
+999999
+ 6 
+C
+ 7 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Nome
+GRUPOS->nome
+@!
+ 35 
+C
+ 7 
+ 8 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Parcela
+tipo+[-]+circ
+
+ 5 
+C
+ 7 
+ 44 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Pagto.
+pgto_
+@D
+ 10 
+D
+ 7 
+ 52 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Valor
+valor
+@E 999,999.99
+ 10 
+N
+ 7 
+ 63 
+
+vltax
+   û      
+
+
+
+
+
+
+
+
+
+
+Porc.
+IIF(PTAB(GRUPOS->vendedor+tipo+circ,[PCBRAD],1).AND.EMPT(PCBRAD->vlcomiss),PCBRAD->pcomiss,0)
+999.9
+ 5 
+N
+ 7 
+ 74 
+
+pccob
+          
+
+
+
+
+
+
+
+
+
+
+Vl.Comiss.
+IIF(PTAB(GRUPOS->vendedor+tipo+circ,[PCBRAD],1).AND.PCBRAD->vlcomiss>0,PCBRAD->vlcomiss,pccob*vltax/100)
+@E 999,999.99
+ 10 
+N
+ 7 
+ 80 
+
+vlcob
+   û      
+
+
+
+
+
+
+
+
+
+
+Spv.
+COBRADOR->superv
+999
+ 3 
+C
+ 7 
+ 91 
+
+spv
+          
+
+
+
+
+
+
+
+
+
+
+%Sup.
+IIF(PTAB(spv+tipo+circ,[PCBRAD],1).AND.EMPT(PCBRAD->vlcomiss),PCBRAD->pcomiss,0)
+999.9
+ 5 
+N
+ 7 
+ 96 
+
+pcspv
+          
+
+
+
+
+
+
+
+
+
+
+Vl.Sup.
+IIF(PTAB(spv+tipo+circ,[PCBRAD],1).AND.PCBRAD->vlcomiss>0,PCBRAD->vlcomiss,pcspv*valor/100)
+@E 999,999.99
+ 10 
+N
+ 7 
+ 102 
+
+vlsup
+   û      
+
+
+
+
+
+
+
+
+
+
+De:
+M->rde
+@D
+ 8 
+D
+ 3 
+ 20 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+At‚:
+M->rate
+@D
+ 8 
+D
+ 3 
+ 37 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 1 
+ 1 
+ 44 
+
+T¡tulo aplica‡„o
+nsis
+
+ 2 
+ 1 
+ 22 
+
+Data do sistema
+DTOC(DATE())
+
+ 3 
+ 104 
+ 8 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 3 
+ 96 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 1 
+ 108 
+ 4 
+
+C¢digo relat¢rio
+"ADP_R100"
+
+ 2 
+ 104 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 1 
+ 58 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 0 
+ 1 
+'[ '+COBRADOR->cobrador+' - '+COBRADOR->nome+' ]'
+  ûû û    
+GRUPOS->vendedor
+
+
+ 0 
+ 3 
+GRUPOS
+ 1 
+codigo
+
+
+
+COBRADOR
+ 1 
+GRUPOS->vendedor
+
+
+
+PCBRAD
+ 1 
+COBRADOR->cobrador
+
+
+

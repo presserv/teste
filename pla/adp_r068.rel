@@ -1,0 +1,374 @@
+GAS-Pro v3.0
+002003024079001001001001003000176001
+                                                                       PAG
+        - VERIFICAR CUSTOS
+                                                     de:          at‚:
+Emiss„o  Horas His Contr. Complemento                    Qtdade    Valor  Circ.
+-------------------------------------------------------------------------------
+[Ÿ]
+ 12 
+CSTSEG
+Verificar Custos
+
+
+emissao_>=M->remiss_.AND.emissao_<=M->rem2_.AND.(M->rhist<[001].OR.historic=M->rhist)
+011
+
+
+
+
+
+
+
+
+
+ 0 
+ 1 
+ 0 
+ 66 
+ 0 
+ 5 
+ 3 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Emiss„o
+emissao_
+@D
+ 8 
+D
+ 6 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Hora
+hora
+99:99
+ 5 
+C
+ 6 
+ 10 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Hist¢rico
+historic
+999
+ 3 
+C
+ 6 
+ 16 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Contrato
+contrato
+999999
+ 6 
+C
+ 6 
+ 20 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Complemento
+LEFT(complement,30)
+@!
+ 30 
+C
+ 6 
+ 27 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Qtdade
+qtdade
+99999
+ 5 
+N
+ 6 
+ 58 
+
+
+   û      
+
+
+
+
+
+
+
+
+
+
+Valor
+valor
+999999.99
+ 9 
+N
+ 6 
+ 64 
+
+
+   û      
+
+
+
+
+
+
+
+
+
+
+Tipo
+tipo
+!
+ 1 
+C
+ 6 
+ 75 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Circ
+circ
+999
+ 3 
+C
+ 6 
+ 77 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Hist¢rico
+[Hist.:]+M->rhist+[ ]+HISTORIC->descricao
+
+ 50 
+C
+ 3 
+ 1 
+M->rhist>[000]
+
+          
+
+
+
+
+
+
+
+
+
+
+Emiss„o
+M->remiss_
+@D
+ 8 
+D
+ 3 
+ 58 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Emiss„o
+M->rem2_
+@D
+ 8 
+D
+ 3 
+ 72 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 1 
+ 1 
+ 42 
+
+T¡tulo aplica‡„o
+nsis
+
+ 2 
+ 1 
+ 7 
+
+Data do sistema
+DTOC(DATE())
+
+ 2 
+ 72 
+ 8 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 2 
+ 63 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 1 
+ 76 
+ 4 
+
+C¢digo relat¢rio
+"ADP_R068"
+
+ 1 
+ 63 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 2 
+ 31 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 0 
+ 0 
+ 0 
+ 2 
+GRUPOS
+ 1 
+contrato
+
+
+
+HISTORIC
+ 1 
+historic
+
+
+

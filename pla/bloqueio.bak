@@ -1,0 +1,4 @@
+ //Rotina de bloqueio definido para o cliente H\AMERICAN
+ if dtos(DATE()) > STR(2006,4)+[0719]
+  return
+ endi

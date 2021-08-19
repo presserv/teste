@@ -1,0 +1,14 @@
+FI ADP_ADAP
+FI ADP_ATRI
+FI ADP_ATR1
+FI ADP_ATR2
+FI ADP_ATR3
+FI ADP_ESTR
+fi dbt
+fi sixuk
+fi sixcdx
+FI SIXTOOLS
+lib six3
+lib hprot
+
+LIB d:\GASPRO30\GASPRO52

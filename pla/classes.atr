@@ -1,0 +1,369 @@
+GAS-Pro v3.0
+005013022069001007046001012001176001
+ C¢digo......:
+ Descri‡„o...:
+ N§ Contratos:
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ A cobran‡a ‚ por per¡odo?:
+ (Digite N se a cobran‡a sair por n§ de atendimentos)
+ (Digite S se a cobran‡a sair a cada n meses.)
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ Valor J¢ia..:             (      )
+               N§Parcelas:     (1¦ a gerar:   )
+ Valor adicional.:             (      )
+     p/Dependente:             (      )
+ Validade do contrato (em meses)....:
+ Renova‡„o autom tica no vencimento.:
+                      na utiliza‡„o.:
+ Valor total dos servi‡os oferecidos:
+[Ÿ]
+Inclus„o~~26006
+Manuten‡„o~~27007
+Consulta~~28008
+[Ÿ]
+ 13 
+ 1 
+Classe
+
+ 1 
+[Ÿ]
+Categoria dos Planos
+Categoria dos Planos
+
+
+
+
+
+
+
+005
+
+
+
+
+
+
+
+ 0 
+ 1 
+-1 
+-1 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+classcod
+C
+E
+99
+ 2 
+ 2 
+ 1 
+ 16 
+ 0 
+C¢digo
+
+!EMPT(classcod)
+Necess rio informar C¢DIGO
+
+Informe um c¢digo para esta categoria
+
+ 0 
+ 1 
+
+
+descricao
+C
+E
+@!
+ 35 
+ 35 
+ 2 
+ 16 
+ 0 
+Descri‡„o
+
+!EMPT(descricao)
+Informe uma descri‡„o deste tipo de contrato.
+
+Informe o nome desta categoria. Ex.: POPULAR, ESPECIAL,...
+
+ 0 
+ 0 
+
+
+contrat
+N
+E
+999999
+ 6 
+ 6 
+ 3 
+ 16 
+ 0 
+Contratos
+
+ 
+
+
+Informe o n£mero de contratos desta categoria|Para categoria VIP, desconsidere esta informa‡„o
+
+ 0 
+ 0 
+
+
+prior
+C
+E
+!
+ 1 
+ 1 
+ 5 
+ 29 
+ 0 
+Prior
+
+prior$' SN'
+Necess rio informar PRIORIDADE
+
+Os contratos enquadrados nesta categoria|ter„o cobran‡as emitidas periodicamente,|independente de n§ de falecimentos do grupo?
+
+ 0 
+ 0 
+
+
+vljoia
+N
+E
+99999999.99
+ 11 
+ 11 
+ 9 
+ 16 
+ 2 
+Valor da J¢ia
+
+!(VLjoia<0.00)
+Valor da j¢ia deve ser positivo
+
+Informe o valor da J¢ia do contrato
+
+ 0 
+ 0 
+
+
+nrparc
+N
+E
+99
+ 2 
+ 2 
+ 10 
+ 28 
+ 0 
+N§Parcelas
+vljoia>0
+!(nrparc<0)
+NR.Parcelas n„o aceit vel
+
+A j¢ia pode ser parcelada em quantas vezes?
+
+ 0 
+ 0 
+
+
+parcger
+N
+E
+99
+ 2 
+ 2 
+ 10 
+ 45 
+ 0 
+N§Parcelas
+vljoia>0
+!(parcger<1 .OR. parcger>nrparc)
+NR.Parcelas a gerar n„o aceit vel|
+1
+Gerar a partir da parcela de J¢ia de n§...
+
+ 0 
+ 0 
+
+
+vlmensal
+N
+E
+99999999.99
+ 11 
+ 11 
+ 11 
+ 20 
+ 2 
+Valor Mensal
+
+ 
+
+
+Informe o valor a acumular na cobran‡a|das taxas de manuten‡„o para esta categoria|
+
+ 0 
+ 0 
+
+
+vldepend
+N
+E
+99999999.99
+ 11 
+ 11 
+ 12 
+ 20 
+ 2 
+V.p/Dependente
+
+!(VLdepend<0.00)
+Valor mensal cobrado a mais por|dependente deve ser maior ou igual a zeros
+
+Informe o valor a ser acrescido por dependente
+
+ 0 
+ 0 
+
+
+nrmesval
+N
+E
+99
+ 2 
+ 2 
+ 13 
+ 39 
+ 0 
+V lidade
+
+!(nrmesval<0)
+Validade n„o aceit vel
+
+Contratos v lidos por quantos meses?
+
+ 0 
+ 0 
+
+
+renvenc
+C
+E
+!
+ 1 
+ 1 
+ 14 
+ 39 
+ 0 
+RenVencto
+
+renvenc$[ SN]
+RENVENCTO n„o aceit vel
+
+Os contratos terÆo|renova‡Æo automatica no vencimento?
+
+ 0 
+ 0 
+
+
+renuso
+C
+E
+!
+ 1 
+ 1 
+ 15 
+ 39 
+ 0 
+RenUso
+
+renuso$[ SN]
+RENUSO n„o aceit vel
+
+Os contratos terÆo|renova‡Æo automatica quando|utilizarem os servi‡os de atendimento/Auxilio?
+
+ 0 
+ 0 
+
+
+vltotal
+N
+I
+@E 99,999,999.99
+ 11 
+ 13 
+ 0 
+ 0 
+ 2 
+Valor
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+ 4 
+Valor
+vltotal
+@E 99,999,999.99
+ 16 
+ 39 
+ 13 
+
+Valor da J¢ia
+(vljoia/vltotal)*100
+999.99
+ 9 
+ 29 
+ 6 
+
+Valor Mensal
+(vlmensal/vltotal)*100
+999.99
+ 11 
+ 33 
+ 6 
+
+V.p/Dependente
+(vldepend/vltotal)*100
+999.99
+ 12 
+ 33 
+ 6 
+
+ 0 
+ 0 
+ 0 
+ 0 

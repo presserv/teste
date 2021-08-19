@@ -1,0 +1,81 @@
+GAS-Pro v3.0
+012021017064001001001001013000176001
+
+ Emitir etiquetas para os carnˆs emitidos
+ em que data?  Emiss„o :
+[Ÿ]
+[Ÿ]
+ 1 
+ 0 
+Etiquetas
+Etiquetas
+
+
+
+
+
+
+
+056
+
+
+
+
+
+
+
+ 0 
+ 0 
+-1 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+remissao_
+D
+E
+@D
+ 8 
+ 8 
+ 3 
+ 26 
+ 0 
+Emiss„o
+
+!EMPT(remissao_)
+Necess rio informar uma data para filtragem
+DATE()
+Emitir etiqueta para os carnˆs emitidos |em que data.
+DATE()
+ 0 
+ 0 
+
+
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 

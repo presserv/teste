@@ -1,0 +1,173 @@
+GAS-Pro v3.0
+009018018067001008033001017001176001
+ Taxa ³    M U L T A      ³    J U R O S
+ Tipo ³  %       Carˆncia ³   %      Carˆncia
+ÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+      ³                   ³
+      ³                   ³
+      ³                   ³
+      ³                   ³
+      ³                   ³
+[Ÿ]
+Inclus„o~~26006
+Manuten‡„o~~27007
+Consulta~~28008
+[Ÿ]
+ 5 
+ 1 
+Tipo
+
+ 1 
+[Ÿ]
+Parƒmetro de Juros
+Parƒmetro de Juros
+
+
+
+
+
+
+
+005
+
+
+
+
+
+
+
+ 0 
+ 3 
+-1 
+-1 
+-1 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+tipo
+C
+E
+9
+ 1 
+ 1 
+ 4 
+ 2 
+ 0 
+Tipo
+
+!EMPT(tipo)
+TIPO n„o aceit vel|Deve ser n£mero positivo
+
+Qual o tipo de lan‡amento
+MTAB([1=J¢ia |2=Taxa |3=Carnˆ|4=Acerto],[TIPO])
+ 0 
+ 0 
+
+
+multa
+N
+E
+99.99
+ 5 
+ 5 
+ 4 
+ 9 
+ 2 
+Multa %
+
+multa>=0
+MULTA % n„o aceit vel
+
+Informe a porcentagem de multa
+
+ 0 
+ 0 
+
+
+mltcaren
+N
+E
+999
+ 3 
+ 3 
+ 4 
+ 20 
+ 0 
+Carˆncia
+
+mltcaren>=0
+CARENCIA n„o aceit vel
+
+Informe a carˆncia para a |aplica‡„o da multa|em dias.
+
+ 0 
+ 0 
+
+
+juros
+N
+E
+9.999
+ 5 
+ 5 
+ 4 
+ 29 
+ 3 
+Juros %
+
+juros>=0
+JUROS % n„o aceit vel|deve ser maior ou igual a zeros|(Juros Di rios)
+
+Informe a porcentagem do Juros di rios
+
+ 0 
+ 0 
+
+
+jrscaren
+N
+E
+999
+ 3 
+ 3 
+ 4 
+ 41 
+ 0 
+Carˆncia
+
+jrscaren>=0
+CARENCIA n„o aceit vel|deve ser maior ou igual a zeros
+
+Informe a carˆncia para a |aplica‡„o do juros|em dias.
+
+ 0 
+ 0 
+
+
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 

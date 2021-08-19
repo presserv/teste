@@ -1,0 +1,257 @@
+GAS-Pro v4.0
+007018017064001001023001008001176001
+ Tipo.....:
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ Gerar cobran‡a tipo:
+ Forma de Pagamento.:
+ Parcela inicial.:
+ Valor Total.....:
+ N§ de Parcelas..:
+[Ÿ]
+Inclus„o~~26006
+Manuten‡„o~~27007
+Consulta~~28008
+[Ÿ]
+ 7 
+ 2 
+p/C¢digo
+
+ 1 
+[Ÿ]
+Parcelas
+
+ 6 
+ 2 
+ 5 
+[Ÿ]
+Tabela
+Tabela
+
+
+
+
+
+
+
+005
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 0 
+ 2 
+-1 
+-1 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+tip
+C
+V
+99
+ 2 
+ 2 
+ 1 
+ 13 
+ 0 
+Tipo
+
+
+
+
+
+
+ 0 
+ 1 
+
+
+tipcob
+C
+E
+!
+ 1 
+ 1 
+ 3 
+ 23 
+ 0 
+Tipo
+
+tipcob $ [123]
+TIPO n„o aceit vel
+[1]
+Qual o tipo de lan‡amento
+MTAB([1=J¢ia |2=Taxa |3=Carnˆ],[TIPO])
+ 0 
+ 0 
+
+
+formapgto
+C
+E
+99
+ 2 
+ 2 
+ 4 
+ 23 
+ 0 
+FormaPgto
+
+ 
+
+[01]
+Informe a forma de pagamento desejada|A Taxa de manuten‡„o ser  emitida cada NN meses.
+
+ 0 
+ 0 
+
+
+pari
+N
+E
+9
+ 1 
+ 1 
+ 5 
+ 20 
+ 0 
+PIni
+
+pari>0
+PINI n„o aceit vel
+1
+Informe o n£mero da primeira|parcela a lan‡ar.
+
+ 0 
+ 0 
+
+
+vali
+N
+E
+99999.99
+ 8 
+ 8 
+ 6 
+ 20 
+ 2 
+Val.Inic.
+
+!(vali<0)
+VAL.INIC. n„o aceit vel
+
+
+
+ 0 
+ 0 
+
+
+parf
+N
+E
+99
+ 2 
+ 2 
+ 7 
+ 20 
+ 0 
+PFim
+
+parf>=pari
+PFIM n„o aceit vel
+
+
+
+ 0 
+ 0 
+
+
+parm
+N
+I
+9
+ 1 
+ 1 
+ 0 
+ 0 
+ 0 
+PMeio
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 

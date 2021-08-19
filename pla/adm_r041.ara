@@ -1,0 +1,380 @@
+/*
+ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+ \ Empresa.: Ind£stria de Urnas Bignotto Ltda
+ \ Programa: ADM_R041.PRG
+ \ Data....: 21-07-99
+ \ Sistema.: Administradora - PLANO
+ \ Funcao..: Contrato Bom Jesus - Araraquara
+ \ Analista: Ademilson Pedro Bom
+ \ Criacao.: GAS-Pro v3.0
+ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+*/
+
+#include "adpbig.ch"    // inicializa constantes manifestas
+
+LOCAL dele_atu, getlist:={}, so_um_reg, sit_dbf:=POINTER_DBF()
+PARA  lin_menu, col_menu, imp_reg
+PRIV  tem_borda:=.t., op_menu:=VAR_COMPL, l_s:=8, c_s:=11, l_i:=15, c_i:=66, tela_fundo:=SAVESCREEN(0,0,MAXROW(),79)
+nucop=1
+so_um_reg=(PCOU()>2)
+IF !so_um_reg                             // vai receber a variaveis?
+ SETCOLOR(drvtittel)
+ vr_memo=NOVAPOSI(@l_s,@c_s,@l_i,@c_i)    // pega posicao atual da tela
+ CAIXA(mold,l_s,c_s,l_i,c_i)              // monta caixa da tela
+ @ l_s,c_s+18 SAY " IMPRESSŽO CONTRATO "
+ SETCOLOR(drvcortel)
+ @ l_s+01,c_s+1 SAY " Imprimir os contratos do n§ :        at‚ o n§"
+ @ l_s+02,c_s+1 SAY "          os lan‡ados entre..:           e"
+// @ l_s+03,c_s+1 SAY " Imprimir modelo com rodap‚..:           "
+// @ l_s+04,c_s+1 SAY "                   Reimpress„o?:"
+ @ l_s+05,c_s+1 SAY "                    Confirme...:"
+ENDI
+rcodin=SPAC(6)                                     // Codigo
+rcodfi=SPAC(6)                                     // Codigo
+rlanc1_=CTOD([  /  /  ])                           // Lan‡.Inic.
+rlanc2_=CTOD([  /  /  ])                           // Lan‡.Final
+rreimp=[S]                                         // Reimprimir?
+rmodelo=[ ]
+confirme=SPAC(1)                                   // Confirme
+DO WHILE .t.
+ rola_t=.f.
+ cod_sos=56
+ IF !so_um_reg
+	SET KEY K_ALT_F8 TO ROLATELA
+	SETCOLOR(drvcortel+","+drvcorget+",,,"+corcampo)
+	@ l_s+01 ,c_s+32 GET  rcodin;
+									 PICT "999999";
+									 VALI CRIT("PTAB(rcodin,'GRUPOS',1)~CODIGO n„o aceit vel")
+									 AJUDA "Entre com o n£mero do |primeiro contrato a imprimir"
+									 CMDF8 "VDBF(6,20,20,77,'GRUPOS',{'codigo','nome','admissao'},1,'codigo',[])"
+
+	@ l_s+01 ,c_s+48 GET  rcodfi;
+									 PICT "999999";
+									 VALI CRIT("PTAB(rcodfi,'GRUPOS',1)~CODIGO n„o aceit vel")
+									 AJUDA "Entre com o n£mero do |£ltimo contrato a imprimir"
+									 CMDF8 "VDBF(6,20,20,77,'GRUPOS',{'codigo','nome','admissao'},1,'codigo',[])"
+
+	@ l_s+02 ,c_s+32 GET  rlanc1_;
+									 PICT "@D";
+									 VALI CRIT("!EMPT(Rlanc1_)~Deve ser informada uma data v lida.")
+									 DEFAULT "DATE()"
+									 AJUDA "Listar os contratos lan‡ados| a partir de qual data."
+
+	@ l_s+02 ,c_s+45 GET  rlanc2_;
+									 PICT "@D";
+									 VALI CRIT("!EMPT(Rlanc2_)~Deve ser informada uma data v lida.")
+									 DEFAULT "DATE()"
+									 AJUDA "Listar os contratos lan‡ados| at‚ quel data."
+/*
+	@ l_s+04 ,c_s+34 GET  rreimp;
+									 PICT "!";
+			 VALI CRIT("rreimp$[SN ]~Necess rio informar REIMPRIMIR?|Digite S ou N")
+									 DEFAULT "[N]"
+									 AJUDA "Digite S para imprimir| inclusive os j  impressos."
+
+	@ l_s+03 ,c_s+34 GET  rmodelo;
+									 PICT "!";
+			             VALI CRIT("rmodelo$[SN ]~Informe o modelo a imprimir|Digite S para o novo ou|N para o velho")
+									 DEFAULT "[N]"
+									 AJUDA "Digite S para imprimir| no modelo novo."
+*/
+	@ l_s+05 ,c_s+34 GET  confirme;
+									 PICT "!";
+									 VALI CRIT("confirme='S'~CONFIRME n„o aceit vel|Digite S ou tecle ESC para cancelar")
+									 AJUDA "Digite S para imprimir o contrato|ou |Tecle ESC para cancelar"
+
+	READ
+	SET KEY K_ALT_F8 TO
+	IF rola_t
+	 ROLATELA(.f.)
+   LOOP
+  ENDI
+  IF LASTKEY()=K_ESC                               // se quer cancelar
+   RETU                                            // retorna
+  ENDI
+ ENDI
+
+ #ifdef COM_REDE
+  CLOSE GRUPOS
+  IF !USEARQ("GRUPOS",.f.,10,1)                    // se falhou a abertura do arq
+   RETU                                            // volta ao menu anterior
+  ENDI
+ #else
+	USEARQ("GRUPOS")                                 // abre o dbf e seus indices
+ #endi
+
+ PTAB(codigo,"ECOB",1,.t.)                         // abre arquivo p/ o relacionamento
+ SET RELA TO codigo INTO ECOB                      // relacionamento dos arquivos
+ titrel:=criterio:=cpord := ""                     // inicializa variaveis
+ titrel:=chv_rela:=chv_1:=chv_2 := ""
+ tps:=op_x:=ccop := 1
+ arq_=drvporta                                     // porta de saida configurada
+ IF !so_um_reg
+  IF !opcoes_rel(lin_menu,col_menu,17,11)          // nao quis configurar...
+   CLOS ALL                                        // fecha arquivos e
+   LOOP                                            // volta ao menu
+  ENDI
+
+ #ifdef COM_REDE
+
+  ELSE
+
+   tps=lin_menu
+
+ #endi
+
+ ENDI
+ IF tps=2                                          // se vai para arquivo/video
+  arq_=ARQGER()                                    // entao pega nome do arquivo
+  IF EMPTY(arq_)                                   // se cancelou ou nao informou
+   LOOP                                            // retorna
+  ENDI
+ ELSE
+  arq_=drvporta                                    // porta de saida configurada
+ ENDI
+ SET PRINTER TO (arq_)                             // redireciona saida
+ EXIT
+ENDD
+criterio_=criterio                                 // salva criterio e ordenacao
+cpord_=cpord                                       // definidos se huver
+criterio=""
+
+#ifdef COM_REDE
+ IF !USEARQ("INSCRITS",.f.,10,1)                   // se falhou a abertura do arq
+  RETU                                             // volta ao menu anterior
+ ENDI
+#else
+ USEARQ("INSCRITS")                                // abre o dbf e seus indices
+#endi
+
+cpord="codigo+grau+STR(seq,02,00)"
+INDTMP()
+criterio=criterio_                                 // restabelece criterio e
+cpord=cpord_                                       // ordenacao definidos
+msgt="MODELO DE CONTRATO"
+ALERTA()
+/*
+IF !(M->rmodelo$[SN])
+ op_=1
+ rmodelo=[N]
+ op_=DBOX("Sem Rodap‚ (velho)|Com Rodap‚ (novo)",,,E_MENU,,msgt)
+ IF op_=2
+  rmodelo=[S]
+ ENDI
+ENDI
+*/
+confirme=[S]
+SELE GRUPOS
+IF !EMPTY(drvtapg)                                 // existe configuracao de tam pag?
+ op_=AT("NNN",drvtapg)                             // se o codigo que altera
+ IF op_=0                                          // o tamanho da pagina
+	msg="Configura‡„o do tamanho da p gina!"         // foi informado errado
+	DBOX(msg,,,,,"ERRO!")                            // avisa
+	CLOSE ALL                                        // fecha todos arquivos abertos
+	RETU                                             // e cai fora...
+ ENDI                                              // codigo para setar/resetar tam pag
+ lpp_018=LEFT(drvtapg,op_-1)+"051"+SUBS(drvtapg,op_+3)
+ lpp_066=LEFT(drvtapg,op_-1)+"066"+SUBS(drvtapg,op_+3)
+ IF rmodelo=[S]
+  lpp_018=LEFT(drvtapg,op_-1)+"072"+SUBS(drvtapg,op_+3)
+ ENDI
+ELSE
+ lpp_018:=lpp_066 :=""                             // nao ira mudara o tamanho da pag
+ENDI
+DBOX("[ESC] Interrompe",15,,,NAO_APAGA)
+dele_atu:=SET(_SET_DELETED,.t.)                    // os excluidos nao servem...
+SET DEVI TO PRIN                                   // inicia a impressao
+maxli=38                                           // maximo de linhas no relatorio
+poerdp=.t.
+SET MARG TO 1                                      // ajusta a margem esquerda
+IMPCTL(lpp_018)                                    // seta pagina com 18 linhas
+IF tps=2
+ IMPCTL("' '+CHR(8)")
+ENDI
+BEGIN SEQUENCE
+ DO WHIL ccop<=nucop                               // imprime qde copias pedida
+	pg_=1; cl=999
+	IF so_um_reg
+	 GO imp_reg
+	ELSE
+	 INI_ARQ()                                       // acha 1o. reg valido do arquivo
+	ENDI
+	IF !EMPT(VAL(M->rcodin))
+	 PTAB(M->rcodin,[GRUPOS],1)
+	ENDI
+	ccop++                                           // incrementa contador de copias
+	DO WHIL !EOF().AND.(!so_um_reg.OR.imp_reg=RECN())
+	 #ifdef COM_TUTOR
+		IF IN_KEY()=K_ESC                              // se quer cancelar
+	 #else
+		IF INKEY()=K_ESC                               // se quer cancelar
+	 #endi
+		IF canc()                                      // pede confirmacao
+		 BREAK                                         // confirmou...
+		ENDI
+	 ENDI
+	 IF (R04101F9()) .OR. so_um_reg                  // se atender a condicao...
+		confirme=[S]
+    rel_cab(1)
+		chv031=codigo
+		SELE INSCRITS
+		SEEK chv031
+		IF FOUND()
+		 IF cl+2>maxli                                 // se cabecalho do arq filho
+			REL_CAB(0)                                   // nao cabe nesta pagina
+		 ENDI                                          // salta para a proxima pagina
+		 DO WHIL ! EOF() .AND. chv031=codigo //LEFT(&(INDEXKEY(0)),LEN(chv031))
+			#ifdef COM_TUTOR
+			 IF IN_KEY()=K_ESC                           // se quer cancelar
+			#else
+			 IF INKEY()=K_ESC                            // se quer cancelar
+			#endi
+			 IF canc()                                   // pede confirmacao
+				BREAK                                      // confirmou...
+			 ENDI
+			ENDI
+
+			 REL_CAB(1)                                  // soma cl/imprime cabecalho
+			 @ cl,008 SAY nome // Nome
+			 @ cl,053 SAY TRAN(nascto_,"@D")            // Nascto
+       @ cl,069 SAY LEFT(TRAN(SUBSTR([TitPaiMaeSgoSgaEspFilDep],(VAL(grau)-1)*3+1,3),[]),03)
+
+       poerdp=.t.
+       SKIP                                        // pega proximo registro
+		 ENDD
+		 cl+=3                                         // soma contador de linha
+		ENDI
+		SELE GRUPOS                                    // volta ao arquivo pai
+    rel_rdp()
+		SKIP                                           // pega proximo registro
+		cl=999                                         // forca salto de pagina
+	 ELSE                                            // se nao atende condicao
+    SKIP                                           // pega proximo registro
+   ENDI
+   IF !EMPT(VAL(M->rcodfi)).AND.codigo>M->rcodfi
+    EXIT
+   ENDI
+  ENDD
+ ENDD ccop
+ EJEC                                              // salta pagina
+END SEQUENCE
+IMPCTL(lpp_066)                                    // seta pagina com 66 linhas
+SET MARG TO                                        // ajusta a margem esquerda
+SET PRINTER TO (drvporta)                          // fecha arquivo gerado (se houver)
+SET DEVI TO SCRE                                   // direciona saida p/ video
+IF tps=2                                           // se vai para arquivo/video
+ BROWSE_REL(arq_,2,3,MAXROW()-2,78)
+ENDI                                               // mostra o arquivo gravado
+GRELA(17)                                          // grava variacao do relatorio
+SELE GRUPOS                                        // salta pagina
+SET RELA TO                                        // retira os relacionamentos
+SET(_SET_DELETED,dele_atu)                         // os excluidos serao vistos
+IF so_um_reg
+ POINTER_DBF(sit_dbf)
+ENDI
+RETU
+
+STATIC PROC REL_RDP                                // rodape'
+if poerdp
+ IF PTAB(GRUPOS->codigo,[TAXAS],1)
+  SELE TAXAS
+  DO WHILE !EOF().AND.codigo=GRUPOS->codigo
+   IF SUBSTR(DTOC(emissao_),4)=SUBSTR(DTOC(DATE()-DAY(DATE())+35),4)
+    @ 43,066 SAY TRAN(TAXAS->valor,"@E 99,999.99")
+    EXIT
+   ENDI
+   SKIP
+  ENDD
+  SELE GRUPOS
+ ENDI
+ @ 45,020 SAY GRUPOS->diapgto   //MEMOLINE(GRUPOS->obs,60,3)
+ @ 45,060 SAY TRAN(GRUPOS->tcarencia,"@D") //MEMOLINE(GRUPOS->obs,60,4)
+
+ @ 47,026 SAY [...  ]  // Respons vel pela continuidade
+
+ @ 49,020 SAY MEMOLINE(GRUPOS->obs,60,3)
+ @ 50,020 SAY MEMOLINE(GRUPOS->obs,60,4)
+
+ @ 51,020 SAY LEFT(DTOC(admissao),2)+[ de ]+NMES(MONTH(admissao))+ [ de ]+LEFT(DTOS(admissao),4)// Data final
+
+ IF M->rmodelo=[S]
+  @ 49,001 SAY GRUPOS->codigo+[  ]+GRUPOS->nome
+  @ 49,064 SAY GRUPOS->admissao
+  @ 51,001 SAY GRUPOS->endereco                          // Endere‡o
+  @ 51,057 SAY GRUPOS->bairro                            // Bairro
+  @ 53,001 SAY TRAN(GRUPOS->cep,"@R 99999-999")          // CEP
+  @ 53,015 SAY GRUPOS->cidade                            // Cidade
+  @ 53,040 SAY TRAN(GRUPOS->uf,"!!")                     // UF
+  @ 53,056 SAY TRAN(GRUPOS->telefone,"@!")               // Telefone
+  @ 56,006 SAY MEMOLINE(GRUPOS->obs,60,3)
+  @ 57,006 SAY MEMOLINE(GRUPOS->obs,60,4)
+  @ 60,001 SAY GRUPOS->vendedor+[-]+IIF(PTAB(GRUPOS->vendedor,[COBRADOR]),COBRADOR->nome,[ ])
+ ENDI
+ poerdp=.f.
+endi
+RETU
+
+
+
+STATIC PROC REL_CAB(qt)                            // cabecalho do relatorio
+IF qt>0                                            // se parametro maior que 0
+ cl=cl+qt                                          // soma no contador de linhas
+ENDI
+IF cl>maxli .OR. qt=0                              // quebra de pagina
+
+ IF pg_>1
+  REL_RDP()                                        // imprime rodape' do relatorio
+ ENDI
+ poerdp=.t.
+ sit_aux:=POINTER_DBF()
+		cl:=1 //REL_CAB(1)                                     // soma cl/imprime cabecalho
+
+		@ 009,015 SAY GRUPOS->grupo+[ ]+GRUPOS->codigo          // Codigo
+
+		@ 011,015 SAY GRUPOS->nome                              // Nome
+
+    IF PTAB(GRUPOS->codigo+[1],[INSCRITS],1)
+     @ 013,015 SAY IIF(INSCRITS->sexo=[M],[Masculino],IIF(INSCRITS->sexo=[F],[Feminino],[ ]))
+    ENDI
+    @ 013,037 SAY lower(LEFT(TRAN(IIF(!EMPT(estcivil),SUBS(tbestciv,AT(estcivil,tbestciv),11),[]),[]),11))
+    @ 013,062 SAY LEFT(CONTATO,16)
+
+		@ 015,015 SAY TRAN(LEFT(GRUPOS->rg,13),"@!")            // R.G.
+		@ 015,040 SAY TRAN(GRUPOS->cpf,"@R 999.999.999-99")     // CPF
+		@ 015,063 SAY TRAN(GRUPOS->telefone,"@!")               // Telefone
+
+		@ 017,022 SAY GRUPOS->endereco                          // Endere‡o
+		@ 017,063 SAY LEFT(GRUPOS->bairro,16)                   // Bairro
+
+		@ 019,015 SAY GRUPOS->cidade                            // Cidade
+		@ 019,055 SAY TRAN(GRUPOS->uf,"!!")                     // UF
+		@ 019,066 SAY TRAN(GRUPOS->cep,"@R 99999-999")          // CEP
+
+    POINTER_DBF(sit_aux)
+
+    cl=qt+20 ; pg_++
+		IF confirme=[N]
+     @ 021,006 SAY [Continuacao...]
+		 cl:=22
+    ENDI
+ENDI
+
+RETU
+
+* \\ Final de ADM_R041.PRG
+static proc r04101f9
+DO CASE
+CASE (codigo<M->rcodin.AND.!(M->rcodin='000000')) // Contrato menor que
+ RETU .f.                                        // o pedido.
+CASE (codigo>M->rcodfi.AND.!(M->rcodfi='000000')) // contrato maior.
+ RETU .f.
+CASE (GRUPOS->ender_<M->rlanc1_.AND.!EMPT(M->rlanc1_)) //Lan‡ado antes
+ RETU .f.
+CASE (GRUPOS->ender_>M->rlanc2_.AND.!EMPT(M->rlanc2_)) //Lan‡ado depois
+ RETU .f.
+CASE M->rreimp=[S] // Se j  foi impresso, imprimir novamente.
+ RETU .t.
+ENDCASE
+RETU EMPT(GRUPOS->ultimp_)    //S¢ quero os n„o impressos
+
+* \\ Final de R04101F9.PRG

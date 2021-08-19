@@ -1,0 +1,1163 @@
+GAS-Pro v3.0
+003004023078001013036001016001176001
+ Cancelamento:         C¢digo:           Motivo:
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ Reintegra‡„o:         Motivo:
+ Sob C¢digo..:
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+                                                 Situa‡„o:
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ Dados Pessoais ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ Nome..:                                     Nasc.:
+ ECivil:                  CIC:               RG...:
+ Ender.:                                     Bairr:
+ Cidade:                                           (        -          )
+ Contato                                            Impresso em
+ Categor.:                  Carnˆ:              FormaPgto.:
+ Admiss„o:             T.Carˆncia:              Sai Taxas.:
+ Vendedor:
+ Regi„o..:                                      Observa‡„o:
+ Cobrador:                                      Renova‡„o.:
+ Funerais:       Circ.Inic:       Ult.:       Emit:      Baix:
+ Participantes: Vivos:    Falecidos:    Dependentes:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      M‰
+
+
+
+
+
+
+
+
+
+
+02005COBRADOR.ATR
+02005COBRADOR.ATR
+[Ÿ]
+Manuten‡„o~~27007
+Consulta~~28008
+[Ÿ]
+ 48 
+ 2 
+p/Numero
+
+ 1 
+[Ÿ]
+p/Contrato
+
+ 2 
+[Ÿ]
+Contratos Cancelados
+Contratos Cancelados
+
+1=3
+Contrato Cancelado
+1=3
+Contrato Cancelado!!!
+1=3
+Arquivo para contratos Cancelados!!!
+005
+
+
+1=3
+Contrato Cancelado
+
+
+
+ 0 
+ 1 
+-1 
+-1 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+numero
+C
+E
+999999
+ 6 
+ 6 
+ 1 
+ 16 
+ 0 
+N£mero
+
+!EMPT(numero).AND.PTAB(numero,'CANCELS',1)
+Necess rio informar N£MERO
+
+Informe o n£mero do cancelamento
+
+ 0 
+ 0 
+
+
+codigo
+C
+E
+999999
+ 6 
+ 6 
+ 1 
+ 32 
+ 0 
+Codigo
+
+PTAB('',[ARQGRUP],1).AND.GRU_01F9()
+CODIGO n„o aceit vel|N„o cadastrado na tabela de grupos
+
+Entre com o n£mero do contrato
+
+ 0 
+ 0 
+
+
+grupo
+C
+I
+!!
+ 2 
+ 2 
+ 0 
+ 0 
+ 0 
+Grupo
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+motivo
+C
+E
+ 
+ 1 
+ 1 
+ 1 
+ 50 
+ 0 
+Motivo
+MTAB([Falta pgto|Mudou|Ignorado|Desistˆncia],[MOTIVO])
+motivo$[FMID]
+Necess rio informar MOTIVO
+
+
+
+ 0 
+ 0 
+
+
+canclto_
+D
+V
+@D
+ 8 
+ 10 
+ 1 
+ 53 
+ 0 
+Canclto_
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+cancpor
+C
+E
+ 
+ 10 
+ 10 
+ 1 
+ 62 
+ 0 
+Por
+
+!EMPT(cancpor)
+Necess rio informar POR
+
+
+
+ 0 
+ 0 
+
+
+reintnum
+C
+V
+999999
+ 6 
+ 6 
+ 3 
+ 16 
+ 0 
+N£mero
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+motreint
+C
+V
+@!
+ 30 
+ 30 
+ 3 
+ 32 
+ 0 
+Motreint
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+reintem_
+D
+V
+@D
+ 8 
+ 10 
+ 4 
+ 53 
+ 0 
+Reintem
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+reintpor
+C
+V
+ 
+ 10 
+ 10 
+ 4 
+ 62 
+ 0 
+Reintpor
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+codreint
+C
+V
+@R !!/99999
+ 7 
+ 8 
+ 4 
+ 16 
+ 0 
+Codigo
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+situacao
+C
+E
+9
+ 1 
+ 1 
+ 6 
+ 60 
+ 0 
+Situa‡„o
+
+situacao $ [12]
+SITUA€O n„o aceit vel
+[1]
+Digite 1 para ativo ou 2 para cancelado
+MTAB([1=Ativo|2=Cancelado],[SITUA€O])
+ 0 
+ 0 
+
+
+nome
+C
+E
+ 
+ 35 
+ 35 
+ 8 
+ 10 
+ 0 
+Nome
+
+!EMPT(nome)
+Necess rio informar NOME
+
+
+
+ 0 
+ 0 
+
+
+nascto_
+D
+E
+@D
+ 8 
+ 10 
+ 8 
+ 53 
+ 0 
+Nascto
+
+ 
+
+
+Informe a data de nascimento do titular
+
+ 0 
+ 0 
+
+
+estcivil
+C
+E
+!!
+ 2 
+ 2 
+ 9 
+ 10 
+ 0 
+Est Civil
+
+(estcivil$tbestciv)
+Informe Estado Civil|ou|Tecle F8 para consulta em tabela
+
+Digite o Estado Civil do Titular
+MTAB(tbestciv,[EST CIVIL])
+ 0 
+ 0 
+
+
+cpf
+C
+E
+@R 999.999.999-99
+ 11 
+ 14 
+ 9 
+ 31 
+ 0 
+CPF
+
+VDV2(cpf).OR.EMPT(cpf)
+CPF nÆo aceit vel
+
+Informe o CIC (CPF) do titular
+
+ 0 
+ 0 
+
+
+rg
+C
+E
+@!
+ 20 
+ 20 
+ 9 
+ 53 
+ 0 
+R.G.
+
+ 
+
+
+Informe o n£mero do documento do titular
+
+ 0 
+ 0 
+
+
+endereco
+C
+E
+ 
+ 35 
+ 35 
+ 10 
+ 10 
+ 0 
+Endere‡o
+
+!EMPT(endereco)
+Necess rio informar ENDERE€O do Titular
+
+Informe o Endere‡o para correspondˆncias.|Rua,n£mero,apto, blocl, etc...
+
+ 0 
+ 0 
+
+
+bairro
+C
+E
+ 
+ 20 
+ 20 
+ 10 
+ 53 
+ 0 
+Bairro
+
+!EMPT(bairro)
+Necess rio informar BAIRRO do Titular
+
+
+
+ 0 
+ 0 
+
+
+cidade
+C
+E
+ 
+ 25 
+ 25 
+ 11 
+ 10 
+ 0 
+Cidade
+
+!EMPT(cidade)
+Necess rio informar MUNICIPIO para cobran‡a do Titular.
+
+
+
+ 0 
+ 0 
+
+
+uf
+C
+E
+!!
+ 2 
+ 2 
+ 11 
+ 36 
+ 0 
+UF
+
+VUF(uf).OR.EMPT(UF)
+UNIDADE DA FEDERA€O inv lida
+
+
+
+ 0 
+ 0 
+
+
+cep
+C
+E
+@R 99999-999
+ 8 
+ 9 
+ 11 
+ 39 
+ 0 
+CEP
+
+!EMPT(cep)
+Necess rio informar CEP do Titular |com 08 digitos
+
+
+
+ 0 
+ 0 
+
+
+contato
+C
+E
+@!
+ 25 
+ 25 
+ 12 
+ 10 
+ 0 
+Contato
+
+ 
+
+
+
+
+ 0 
+ 0 
+
+
+telefone
+C
+E
+@!
+ 14 
+ 14 
+ 12 
+ 36 
+ 0 
+Telefone
+
+ 
+
+
+Informe o n£mero de telefone para|Contato com o contratante
+
+ 0 
+ 0 
+
+
+tipcont
+C
+E
+99
+ 2 
+ 2 
+ 13 
+ 12 
+ 0 
+TipCont
+
+PTAB(tipcont,'CLASSES',1)
+Informe a Classe deste contrato
+
+Qual a categoria do Contrato?|Tecle F8 para consulta em tabela
+VDBF(6,13,20,77,'CLASSES',('classcod','descricao','vljoia'),1,'classcod',[])
+ 0 
+ 0 
+
+
+vlcarne
+C
+E
+ 
+ 3 
+ 3 
+ 13 
+ 36 
+ 0 
+Vlcarne
+
+ 
+
+
+
+
+ 0 
+ 0 
+
+
+formapgto
+C
+E
+99
+ 2 
+ 2 
+ 13 
+ 61 
+ 0 
+FormaPgto
+
+ 
+
+
+Informe a forma de pagamento desejada
+
+ 0 
+ 0 
+
+
+seguro
+N
+I
+ 
+ 2 
+ 0 
+ 0 
+ 0 
+ 0 
+Seguro
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+admissao
+D
+E
+@D
+ 8 
+ 10 
+ 14 
+ 12 
+ 0 
+Admiss„o
+
+!EMPT(admissao)
+Necess rio informar DATA DE ADMISSO
+DATE()
+Informe a data da Admiss„o neste contrato
+DATE()
+ 0 
+ 0 
+
+
+tcarencia
+D
+E
+@D
+ 8 
+ 10 
+ 14 
+ 36 
+ 0 
+T.Carˆncia
+
+ 
+
+
+
+
+ 0 
+ 0 
+
+
+saitxa
+C
+E
+@R 99/99
+ 4 
+ 5 
+ 14 
+ 61 
+ 0 
+Saitxa
+
+!EMPT(saitxa).AND.MMAA(saitxa) .or.nivelop==3
+Necess rio informar SAITXA (MM/AA)
+SUBSTR(DTOC(admissao+120),4,2)+RIGHT(DTOC(admissao+120),2)
+Informe o Mˆs a sair a 1¦ Taxa.
+
+ 0 
+ 0 
+
+
+vendedor
+C
+E
+!!!
+ 3 
+ 3 
+ 15 
+ 12 
+ 0 
+Vendedor
+
+PTAB(vendedor,'COBRADOR',1).OR.EMPT(vendedor)
+VENDEDOR n„o existe na tabela
+
+
+
+ 0 
+ 0 
+
+
+regiao
+C
+E
+999
+ 3 
+ 3 
+ 16 
+ 12 
+ 0 
+Regi„o
+
+PTAB(regiao,'REGIAO',1).OR.EMPT(regiao)
+REGIO n„o existe na tabela
+
+Informe a regi„o ou tecle F8 para busca em tabela
+VDBF(6,38,20,77,'REGIAO',{'codigo','regiao'},1,'codigo')
+ 0 
+ 0 
+
+
+cobrador
+C
+E
+!!!
+ 3 
+ 3 
+ 17 
+ 12 
+ 0 
+Cobrador
+
+PTAB(cobrador,'COBRADOR',1)
+COBRADOR n„o existe na tabela
+
+Digite o c¢digo do COBRADOR que|receber  as Taxas deste contrato,|Tecle F8 para consultar os cobradores.
+VDBF(6,39,20,77,'REGIAO',{'regiao','cobrador'},2,'cobrador',[!EMPT(cobrador)])
+ 0 
+ 0 
+
+
+obs
+M
+E
+
+ 10 
+ 35 
+ 16 
+ 61 
+ 0 
+Obs
+
+ 
+
+
+
+
+ 0 
+ 0 
+
+
+renovar
+D
+E
+@D
+ 8 
+ 10 
+ 17 
+ 61 
+ 0 
+Renovar
+
+ 
+
+
+Data final para renova‡Æo
+
+ 0 
+ 0 
+
+
+funerais
+N
+E
+99
+ 2 
+ 2 
+ 18 
+ 12 
+ 0 
+Funerais
+
+!(funerais<0)
+FUNERAIS n„o aceit vel
+
+N£mero de Funerais efetuados|para este processo
+
+ 0 
+ 0 
+
+
+circinic
+C
+E
+999
+ 3 
+ 3 
+ 18 
+ 29 
+ 0 
+Circ.Inicial
+
+circinic <=ARQGRUP->ultcirc .or. nivelop==3
+CIRC.INICIAL maior que a £ltima|emitida para este Grupo.
+
+Informe o n£mero da 1¦ Circular|que saiu para este contrato.
+
+ 0 
+ 0 
+
+
+ultcirc
+C
+E
+999
+ 3 
+ 3 
+ 18 
+ 41 
+ 0 
+Ult.Circular
+
+PTAB(IIF(CLASSES->prior=[S],M->mgrupvip,grupo)+ultcirc,'CIRCULAR',1).OR.ultcirc=[000].or.nivelop==3
+Necess rio informar ULT.CIRCULAR
+
+Entre com o £ltimo n£mero de circular|deste contrato.
+
+ 0 
+ 0 
+
+
+qtcircs
+N
+E
+999
+ 3 
+ 3 
+ 18 
+ 53 
+ 0 
+Qt.Circulares
+
+ 
+
+
+Informe a quantidade de Circulares|emitidas para este contrato.
+
+ 0 
+ 0 
+
+
+qtcircpg
+N
+E
+999
+ 3 
+ 3 
+ 18 
+ 64 
+ 0 
+Circ.Pagas
+
+ 
+
+
+Informe a quantidade de Circulares|pagas/retornadas deste contrato
+
+ 0 
+ 0 
+
+
+titular
+C
+I
+ 
+ 3 
+ 3 
+ 0 
+ 0 
+ 0 
+Titular
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+particv
+N
+I
+99
+ 2 
+ 2 
+ 0 
+ 0 
+ 0 
+Part.Vivos
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+particf
+N
+I
+99
+ 2 
+ 2 
+ 0 
+ 0 
+ 0 
+Part.Falecidos
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+nrdepend
+N
+I
+99
+ 2 
+ 2 
+ 0 
+ 0 
+ 0 
+N§ Depend.
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+ultimp_
+D
+I
+@D
+ 8 
+ 10 
+ 0 
+ 0 
+ 0 
+Ult.Impress.
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+ender_
+D
+I
+@D
+ 8 
+ 10 
+ 0 
+ 0 
+ 0 
+élt.alter.endere‡o
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+ultend
+C
+I
+ 
+ 10 
+ 10 
+ 0 
+ 0 
+ 0 
+UltEnd
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+ 12 
+Situacao
+IIF(situacao=[2],[CANCELADO],[         ])
+
+ 6 
+ 62 
+ 9 
+
+Part.Vivos
+particv
+99
+ 19 
+ 24 
+ 2 
+
+Part.Falecidos
+particf
+99
+ 19 
+ 38 
+ 2 
+
+Nome do Cobrado
+COBRADOR->nome
+
+ 17 
+ 16 
+ 30 
+
+grupo
+IIF(!EMPT(grupo),grupo,[  ])
+
+ 1 
+ 39 
+ 2 
+
+Descri‡„o Reg
+REGIAO->regiao
+
+ 16 
+ 16 
+ 30 
+
+Est.Civil
+IIF(!EMPT(estcivil),SUBS(tbestciv,AT(estcivil,tbestciv),11),[])
+
+ 9 
+ 13 
+ 11 
+
+N§ Depend.
+nrdepend
+99
+ 19 
+ 54 
+ 2 
+
+Ult.Impress.
+ultimp_
+@D
+ 12 
+ 65 
+ 8 
+
+élt.alter.ender
+ender_
+@D
+ 11 
+ 53 
+ 8 
+
+UltEnd
+ultend
+
+ 11 
+ 62 
+ 10 
+
+Seguro
+IIF(seguro>0,'SEGURO ('+str(seguro,2)+')',[   ])
+
+ 6 
+ 29 
+ 12 
+
+ 0 
+ 0 
+ 0 
+ 0 

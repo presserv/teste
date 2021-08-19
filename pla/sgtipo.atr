@@ -1,0 +1,204 @@
+GAS-Pro v3.0
+006018011064001004023001010000176001
+ Sequˆncia:
+ Tipo.....:
+ Abertura.:            Vencimento:
+ Nr.Parcelas geradas:
+[Ÿ]
+Inclus„o~~26006
+Manuten‡„o~~27007
+Consulta~~28008
+[Ÿ]
+ 6 
+ 1 
+Por Segurado
+
+ 1 
+ 2 
+[Ÿ]
+Tipo / vigˆncias
+Tipo vigˆncias
+
+
+
+
+
+
+
+005
+
+
+
+
+
+
+
+-1 
+ 0 
+-1 
+-1 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+codigoseg
+C
+I
+ 
+ 11 
+ 11 
+ 0 
+ 0 
+ 0 
+Segurado
+
+
+
+
+
+
+-1 
+ 0 
+
+
+seq
+C
+V
+99
+ 2 
+ 2 
+ 1 
+ 13 
+ 0 
+Seq
+
+
+
+
+
+
+ 0 
+ 1 
+
+
+aberseg_
+D
+E
+@D
+ 8 
+ 8 
+ 3 
+ 13 
+ 0 
+Abertura
+
+!EMPT(aberseg_)
+Necess rio informar a data da|ABERTURA do Seguro.
+(GRUPOS->admissao+30)-DAY(GRUPOS->admissao+30)+1
+Informe a data da admiss„o no plano de seguro
+
+ 0 
+ 0 
+
+
+tipo
+C
+E
+ 
+ 2 
+ 2 
+ 2 
+ 13 
+ 0 
+Tipo
+
+PTAB(tipo,'TSEGURO',1)
+Necess rio informar TIPO
+
+Informe o tipo do seguro
+VDBF(6,3,20,77,'TSEGURO',{'tipo','descricao','cobertura','custmesemp','custmescon'},1,'tipo',[])
+ 0 
+ 0 
+
+
+vencseg_
+D
+E
+@D
+ 8 
+ 8 
+ 3 
+ 36 
+ 0 
+Vencimento
+
+ 
+
+aberseg_+(30*TSEGURO->validade)
+Informe o vencimento do seguro
+
+ 0 
+ 0 
+
+
+nrlanc
+N
+I
+99
+ 2 
+ 2 
+ 0 
+ 0 
+ 0 
+Nrlanc
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+ 1 
+Nrlanc
+nrlanc
+99
+ 4 
+ 23 
+ 2 
+
+ 1 
+GRSEGUR
+vencseg_
+vencseg_
+
+GRSEGUR->vencseg_<vencseg_
+
+
+ 0 
+ 0 
+ 0 

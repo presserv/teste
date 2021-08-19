@@ -1,0 +1,276 @@
+GAS-Pro v3.0
+002003024079001007005001009000176001
+                                                                      PAG
+
+BOLETOS ELIMINADOS (JA LAN€ADOS NA FCC)
+
+Seq   N.N£mero        Valor Vl.Despesas Valor baixado  Nr.FCC
+------------------------------------------------------------------------------
+                                                         -
+[Ÿ]
+ 7 
+BXBOLET
+Apagar Boletos p/ FCC
+
+
+BXTXAS->valorpg>0
+011
+
+
+
+
+
+
+
+
+
+ 0 
+ 1 
+-1 
+ 66 
+ 0 
+ 6 
+ 3 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Seq
+seq
+99999
+ 5 
+C
+ 7 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+N.N£mero
+nnumero
+9999999999
+ 10 
+C
+ 7 
+ 7 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Valor
+valor
+@E 999,999.99
+ 10 
+N
+ 7 
+ 18 
+
+
+   û      
+
+
+
+
+
+
+
+
+
+
+Vl.Despesas
+vldesp
+@E 999,999.99
+ 10 
+N
+ 7 
+ 30 
+
+
+   û      
+
+
+
+
+
+
+
+
+
+
+Valor baixado
+BXTXAS->valorpg
+@E 999,999.99
+ 10 
+N
+ 7 
+ 44 
+
+
+   û      
+
+
+
+
+
+
+
+
+
+
+Id
+BXTXAS->idfilial
+!!
+ 2 
+C
+ 7 
+ 56 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+n.fcc
+BXTXAS->numero
+999999
+ 6 
+C
+ 7 
+ 59 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 1 
+ 1 
+ 32 
+
+T¡tulo aplica‡„o
+nsis
+
+ 2 
+ 1 
+ 22 
+
+Data do sistema
+DTOC(DATE())
+
+ 3 
+ 71 
+ 8 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 3 
+ 63 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 1 
+ 75 
+ 4 
+
+C¢digo relat¢rio
+"ADP_R095"
+
+ 2 
+ 71 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 4 
+ 1 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 0 
+ 0 
+ 0 
+ 2 
+BOLETOS
+ 2 
+nnumero
+
+
+
+BXTXAS
+ 2 
+BOLETOS->codigo+BOLETOS->tipo+BOLETOS->circ
+
+
+

@@ -1,0 +1,182 @@
+GAS-Pro v3.0
+002003024079002004054001006000176001
+                                                                      PAG
+
+TITULAR & DEPENDENTES
+Codigo Nome                                Nascto    Falecto. tip Processo
+------------------------------------------------------------------------------
+[Ÿ]
+ 3 
+GRUPOS
+Titular & Dependentes
+
+
+
+011
+
+
+
+
+
+
+
+
+
+ 0 
+ 0 
+ 0 
+ 66 
+ 0 
+ 5 
+ 3 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Codigo
+codigo
+999999
+ 6 
+C
+ 6 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Nome
+nome
+@!
+ 35 
+C
+ 6 
+ 8 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Nascto
+nascto_
+@D
+ 8 
+D
+ 6 
+ 44 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 1 
+ 1 
+ 32 
+
+T¡tulo aplica‡„o
+nsis
+
+ 2 
+ 1 
+ 22 
+
+Data do sistema
+DTOC(DATE())
+
+ 3 
+ 71 
+ 8 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 3 
+ 63 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 1 
+ 75 
+ 4 
+
+C¢digo relat¢rio
+"ADP_R073"
+
+ 2 
+ 71 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 3 
+ 27 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 0 
+ 0 
+ 0 
+ 0 

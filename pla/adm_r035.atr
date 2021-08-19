@@ -1,0 +1,115 @@
+GAS-Pro v2.0
+011015015062001003026001014000176001
+ Cobrador.:
+
+               Confirma?
+[Ÿ]
+[Ÿ]
+ 2 
+ 0 
+Taxas pendentes
+Taxas pendentes
+
+
+
+
+
+
+
+056
+
+
+
+
+
+
+
+ 0 
+ 0 
+-1 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+rcobrador
+C
+E
+!!
+ 2 
+ 2 
+ 1 
+ 13 
+ 0 
+Cobrador
+
+PTAB(rcobrador,'COBRADOR',1).OR.EMPT(rcobrador)
+COBRADOR n„o existe na tabela
+
+Digite o c¢digo do COBRADOR que|receber  as Taxas deste contrato,|Tecle F8 para consultar os cobradores.
+VDBF(6,49,20,77,'BAIRROS',{'bairro','cobrador'},1,'cobrador')
+ 0 
+ 0 
+
+
+confirme
+C
+E
+!
+ 1 
+ 1 
+ 3 
+ 26 
+ 0 
+Confirme?
+
+confirme='S'
+Digite S para confirmar|ou|Tecle ESC para cancelar
+
+Digite S para confirmar|ou|Tecle ESC para cancelar
+
+ 0 
+ 0 
+
+
+ 2 
+Nome do Cobrado
+COBRADOR->nome
+
+ 1 
+ 16 
+ 30 
+
+Endere‡o
+COBRADOR->endereco
+
+ 2 
+ 16 
+ 30 
+
+ 0 
+ 0 
+ 0 
+ 0 

@@ -1,0 +1,121 @@
+GAS-Pro v3.0
+010016016062001003037001013000176001
+
+  Hist¢rico..:
+  Emiss„o de.:          at‚:
+[Ÿ]
+[Ÿ]
+ 3 
+ 0 
+Verificar Custos
+Verificar Custos
+
+
+
+
+
+
+
+056
+
+
+
+
+
+
+
+ 0 
+ 0 
+-1 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+rhist
+C
+E
+999
+ 3 
+ 3 
+ 2 
+ 16 
+ 0 
+Hist¢rico
+
+rhist=[000].OR. PTAB(rhist,'HISTORIC',1)
+HIST¢RICO n„o existe na tabela|Tecle F8 para consulta
+M->histpg
+Informe o hist¢rico|a considerar
+VDBF(6,24,20,77,'HISTORIC',{'historico','descricao','tipo'},1,'historico')
+ 0 
+ 0 
+
+
+remiss_
+D
+E
+@D
+ 8 
+ 8 
+ 3 
+ 16 
+ 0 
+Emiss„o
+
+!EMPT(Remiss_)
+Informe uma data v lida p/ EMISSŽO
+DATE()-DAY(DATE())+1
+Informe a data da cobran‡a de seguro gerada| a considerar
+
+ 0 
+ 0 
+
+
+rem2_
+D
+E
+@D
+ 8 
+ 8 
+ 3 
+ 30 
+ 0 
+Emiss„o
+
+!EMPT(Rem2_)
+Informe uma data v lida p/ EMISSŽO|final a considerar
+DATE()
+Informe a £ltima data a considerar
+
+ 0 
+ 0 
+
+
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 

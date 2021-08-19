@@ -1,0 +1,223 @@
+GAS-Pro v3.0
+010019021062001009019001019001176001
+  Utilize esta rotina para gerar o valor
+  da manuten‡„o de cada um dos contratos
+ do grupo desejado (Rateio ou peri¢dico).
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ Emiss„o:
+ Grupo..:      De:       -
+ £ltima Circular.:
+ Pr¢xima Circular:
+
+    Confirme:
+[Ÿ]
+[Ÿ]
+ 6 
+ 0 
+Grupos c/Taxas a Emitir
+Grupos c/Taxas a Emitir
+
+
+
+
+
+
+
+056
+
+
+
+
+
+
+
+ 0 
+ 0 
+-1 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+remissao_
+D
+E
+@D
+ 8 
+ 10 
+ 5 
+ 11 
+ 0 
+Emiss„o
+
+!EMPT(Remissao_)
+Informe uma data v lida p/ EMISSŽO | data de hoje ou posterior.
+CTOD('05'+SUBSTR(DTOC(DATE()+30),3))
+Data da Emiss„o da Circular.| Para atualizar circulares se n„o preenchidas| com antecedˆncia.
+
+ 0 
+ 0 
+
+
+rgrupo
+C
+E
+!!
+ 2 
+ 2 
+ 6 
+ 11 
+ 0 
+Grupo
+
+PTAB(rgrupo,'ARQGRUP',1).AND.PTAB(ARQGRUP->classe,'CLASSES',1)
+GRUPO n„o existe na tabela|ou|Categoria do grupo n„o cadastrada
+
+Entre com o grupo ou |tecle F8 para consulta em tabela
+VDBF(6,33,20,77,'ARQGRUP',{'grup','inicio','final','ultcirc','emissao_','procpend'},1,'grup',[])
+ 0 
+ 0 
+
+
+rproxcirc
+C
+E
+999
+ 3 
+ 3 
+ 8 
+ 20 
+ 0 
+N§Proxima Circ.
+
+rproxcirc>=ARQGRUP->ultcirc
+A Pr¢xima circular deve ser maior|ou igual a £ltima emitida
+
+Entre com o n£mero da pr¢xima circular
+STRZERO(VAL(ARQGRUP->ultcirc)+1,3)
+ 0 
+ 0 
+
+
+rvlaux
+N
+E
+@E 999,999.99
+ 9 
+ 10 
+ 9 
+ 22 
+ 2 
+Valor
+v87001f9()
+rvlaux>0
+VALOR n„o aceit vel
+
+
+
+ 0 
+ 0 
+
+
+rnraux
+N
+E
+99
+ 2 
+ 2 
+ 9 
+ 33 
+ 0 
+Nr.Auxiliar
+1=3
+ 
+
+
+Este campo ‚ utilizado para controle do sistema
+
+ 0 
+ 0 
+
+
+confirme
+C
+E
+!
+ 1 
+ 1 
+ 10 
+ 15 
+ 0 
+Confirme
+
+confirme='S'.AND.V03001F9()
+CONFIRME n„o aceit vel
+
+Digite S para confirmar|ou|tecle ESC para cancelar
+
+ 0 
+ 0 
+
+
+ 5 
+Nr.Inicial
+ARQGRUP->inicio
+999999
+ 6 
+ 20 
+ 6 
+
+Nr.Final
+ARQGRUP->final
+999999
+ 6 
+ 27 
+ 6 
+
+Ultcirc
+ARQGRUP->ultcirc
+999
+ 7 
+ 20 
+ 3 
+
+Emissao
+ARQGRUP->emissao_
+@D
+ 7 
+ 24 
+ 8 
+
+desc
+IIF(CLASSES->prior=[S],[Valor por mˆs......:],IIF(ARQGRUP->maxproc>ARQGRUP->acumproc,[Valor p/atendimento:],[Valor da circular.:]))
+
+ 9 
+ 2 
+ 20 
+
+ 0 
+ 0 
+ 0 
+ 0 

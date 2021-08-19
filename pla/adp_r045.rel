@@ -1,0 +1,244 @@
+GAS-Pro v3.0
+002003024079001003036001005000176001
+                                                                      PAG
+
+PROCESSAMENTO DE BAIXAS (1) - Taxas
+
+Codigo Circ     Vl.Pago
+------------------------------------------------------------------------------
+[Ÿ]
+ 3 
+BXTXAS
+Baixar Pagos p/FCC
+
+codigo+tipo+circ
+
+011
+
+
+
+
+
+
+
+
+
+ 0 
+ 1 
+-1 
+ 66 
+ 0 
+ 6 
+ 3 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Codigo
+codigo
+999999
+ 6 
+C
+ 7 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Circ
+tipo+[ ]+circ
+
+ 5 
+C
+ 7 
+ 8 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Vl.Pago
+valorpg
+@E 999,999.99
+ 10 
+N
+ 7 
+ 14 
+
+
+   û      
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 1 
+ 1 
+ 32 
+
+T¡tulo aplica‡„o
+nsis
+
+ 2 
+ 1 
+ 22 
+
+Data do sistema
+DTOC(DATE())
+
+ 3 
+ 71 
+ 8 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 3 
+ 63 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 1 
+ 75 
+ 4 
+
+C¢digo relat¢rio
+"ADP_R045"
+
+ 2 
+ 71 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 4 
+ 1 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 7 
+TAXAS
+valorpg
+valorpg
+
+
+
+
+TAXAS
+forma
+[P]
+
+
+
+
+TAXAS
+por
+[FCC]+numero+idfilial
+
+
+
+
+TAXAS
+pgto_
+BXFCC->baixa_
+
+
+
+
+TAXAS
+cobrador
+BXFCC->cobrador
+
+
+
+
+TAXAS
+stat
+[9]
+
+
+
+
+BXTXAS
+procok
+[2]
+
+
+
+
+ 0 
+ 0 
+ 2 
+TAXAS
+ 1 
+codigo+tipo+circ
+
+
+
+BXFCC
+ 1 
+idfilial+numero
+
+
+

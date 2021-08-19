@@ -1,0 +1,101 @@
+GAS-Pro v3.0
+010027016057001004004001014000176001
+
+   Data Inicial:
+   Data Final..:
+[Ÿ]
+[Ÿ]
+ 2 
+ 0 
+Taxas pagas no Mˆs
+Taxas pagas no Mˆs
+
+
+
+
+
+
+
+056
+
+
+
+
+
+
+
+ 0 
+ 0 
+-1 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+inicio_
+D
+E
+@D
+ 8 
+ 8 
+ 2 
+ 18 
+ 0 
+Data Inicial
+
+!EMPT(inicio_)
+Necess rio informar DATA INICIAL
+DATE() - DAY(DATE())
+Listar as taxas pagas na recep‡„o|a partir de que data.
+
+ 0 
+ 0 
+
+
+final_
+D
+E
+@D
+ 8 
+ 8 
+ 3 
+ 18 
+ 0 
+Data Final
+
+!EMPT(final_)
+Necess rio informar DATA FINAL
+(inicio_+31)-DAY(inicio_+31)
+Listar as taxas pagas na recep‡„o|at‚ que data.
+
+ 0 
+ 0 
+
+
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 

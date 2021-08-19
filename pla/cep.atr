@@ -1,0 +1,237 @@
+GAS-Pro v3.0
+009005015079001004001001013000176001
+ Nome_log.:
+ Local_log:
+ Bairro_1.:
+ Bairro_2.:
+ Cep5_log.:        CEP.:             UF.:     Tipo_log.:
+[Ÿ]
+Consulta~~28008
+Manuten‡„o~~27007
+[Ÿ]
+ 8 
+ 3 
+Rua / Logradouro
+
+ 1 
+[Ÿ]
+Bairro
+
+ 3 
+[Ÿ]
+Cidade
+
+ 2 
+[Ÿ]
+CEP
+CEP
+
+
+
+
+
+
+
+005
+
+
+
+
+
+
+
+-1 
+ 1 
+-1 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+nome_log
+C
+E
+@!
+ 60 
+ 60 
+ 1 
+ 13 
+ 0 
+Nome_log
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+local_log
+C
+E
+@!
+ 60 
+ 60 
+ 2 
+ 13 
+ 0 
+Local_log
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+bairro_1
+C
+E
+@!
+ 30 
+ 30 
+ 3 
+ 13 
+ 0 
+Bairro_1
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+bairro_2
+C
+E
+@!
+ 30 
+ 30 
+ 4 
+ 13 
+ 0 
+Bairro_2
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+cep5_log
+C
+E
+
+ 5 
+ 5 
+ 5 
+ 13 
+ 0 
+Cep5_log
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+cep8_log
+C
+E
+@R 99999-999
+ 8 
+ 9 
+ 5 
+ 26 
+ 0 
+CEP
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+uf_log
+C
+E
+!!
+ 2 
+ 2 
+ 5 
+ 43 
+ 0 
+UF
+
+VUF(UF_LOG)
+UNIDADE DA FEDERA€ŽO inv lida
+
+
+
+ 0 
+ 0 
+
+
+tipo_log
+C
+E
+
+ 10 
+ 10 
+ 5 
+ 58 
+ 0 
+Tipo_log
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 

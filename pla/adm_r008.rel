@@ -1,0 +1,348 @@
+GAS-Pro v3.0
+011003022079001001001001012000176001
+Tipo Circular Emissao       Valor Pagamento Valor pago Cobrador Forma
+==== ======== ======== ========== ========= ========== ======== =====
+[Ÿ]
+ 8 
+CTAXAS
+Taxas
+numero
+numero+codigo+circ
+
+011
+
+
+
+
+
+
+
+
+
+-1 
+ 0 
+ 0 
+ 66 
+ 1 
+ 2 
+ 3 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Tipo
+tipo
+!
+ 1 
+C
+ 3 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Circular
+circ
+999
+ 3 
+C
+ 3 
+ 6 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Emissao
+emissao_
+@D
+ 8 
+D
+ 3 
+ 15 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Valor
+valor
+@E 999,999.99
+ 10 
+N
+ 3 
+ 24 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Pagamento
+pgto_
+@D
+ 8 
+D
+ 3 
+ 35 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Valor pago
+valorpg
+@E 999,999.99
+ 10 
+N
+ 3 
+ 45 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Cobrador
+cobrador
+!!
+ 2 
+C
+ 3 
+ 56 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Forma
+forma
+!
+ 1 
+C
+ 3 
+ 65 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 0 
+ 0 
+ 32 
+
+T¡tulo aplica‡„o
+nsis
+
+ 0 
+ 0 
+ 22 
+
+Data do sistema
+DTOC(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 0 
+ 0 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 0 
+ 0 
+ 4 
+
+C¢digo relat¢rio
+"ADM_R008"
+
+ 0 
+ 0 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 0 
+ 0 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 0 
+ 0 
+ 1 
+TAXAS
+1
+ 12 
+PTAB(M->rcodigo,'GRUPOS',1)
+
+ 0 
+
+
+
+codigo
+C
+M->rcodigo
+
+
+tipo
+C
+tipo
+
+
+circ
+C
+circ
+
+
+emissao_
+D
+emissao_
+
+
+valor
+N
+valor
+
+
+pgto_
+D
+pgto_
+
+
+valorpg
+N
+valorpg
+
+
+cobrador
+C
+cobrador
+
+
+forma
+C
+forma
+
+
+baixa_
+D
+baixa_
+
+
+por
+C
+por
+
+
+stat
+C
+
+
+
+ 0 

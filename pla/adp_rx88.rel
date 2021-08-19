@@ -1,0 +1,394 @@
+GAS-Pro v3.0
+002003024079006006079001008000176001
+                                                                       PAG
+
+GERAR TAXA C/ADICIONAL
+Emiss„o  Horas Hist Contr. Complemento                   Qtdade     Valor Circ
+-------------------------------------------------------------------------------
+[Ÿ]
+ 8 
+CSTSEG
+Gerar Taxa c/Adicional
+
+contrato
+circ<[001].AND.M->remiss_>emissao_.AND.(RX8801F9()>M->rvalor.OR.(PTAB(contrato+[3]+ARQGRUP->ultcirc,[TAXAS],1).AND.TAXAS->valorpg=0))
+011
+
+
+
+
+
+
+
+
+
+ 0 
+ 0 
+ 0 
+ 66 
+ 0 
+ 5 
+ 3 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Emiss„o
+emissao_
+@D
+ 8 
+D
+ 6 
+ 1 
+(RX8801F9()>0)
+
+          
+
+
+
+
+
+
+
+
+
+
+Horas
+hora
+99:99
+ 5 
+C
+ 6 
+ 10 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Hist
+historic
+999
+ 3 
+C
+ 6 
+ 16 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Contr.
+contrato
+999999
+ 6 
+C
+ 6 
+ 21 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Complemento
+&drvpcom+complement+&drvtcom
+@!
+ 20 
+C
+ 6 
+ 28 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Qtdade
+qtdade
+99999
+ 5 
+N
+ 6 
+ 59 
+
+
+   û      
+
+
+
+
+
+
+
+
+
+
+Valor
+valor
+999999.99
+ 9 
+N
+ 6 
+ 65 
+
+
+   û      
+
+
+
+
+
+
+
+
+
+
+Circ.
+TAXAS->tipo+[ ]+TAXAS->circ
+
+ 5 
+C
+ 6 
+ 75 
+PTAB(contrato+[3]+ARQGRUP->ultcirc,[TAXAS],1)
+
+          
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 1 
+ 1 
+ 42 
+
+T¡tulo aplica‡„o
+nsis
+
+ 2 
+ 1 
+ 7 
+
+Data do sistema
+DTOC(DATE())
+
+ 3 
+ 72 
+ 8 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 3 
+ 64 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 1 
+ 76 
+ 4 
+
+C¢digo relat¢rio
+"ADP_RX88"
+
+ 2 
+ 72 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 3 
+ 27 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 3 
+TAXAS
+valor
+TAXAS->valor+valor
+
+PTAB(contrato+[3]+ARQGRUP->ultcirc,[TAXAS],1)
+
+
+CSTSEG
+tipo
+TAXAS->tipo
+
+
+
+
+CSTSEG
+circ
+TAXAS->circ
+
+
+
+
+ 1 
+DTOC(emissao_)
+û û  û    
+emissao_
+
+
+ 1 
+TAXAS
+1
+ 13 
+!PTAB(contrato+[3]+ARQGRUP->ultcirc,[TAXAS],1)
+
+ 0 
+
+
+
+codigo
+C
+contrato
+
+
+tipo
+C
+[3]
+
+
+circ
+C
+ARQGRUP->ultcirc
+
+
+emissao_
+D
+M->rini_
+
+
+valor
+N
+
+
+
+pgto_
+D
+
+
+
+valorpg
+N
+
+
+
+cobrador
+C
+IIF(PTAB(contrato,[GRUPOS],1),GRUPOS->cobrador,[  ])
+
+
+forma
+C
+
+
+
+baixa_
+D
+
+
+
+por
+C
+
+
+
+stat
+C
+
+
+
+filial
+C
+
+
+
+ 2 
+GRUPOS
+ 1 
+contrato
+
+
+
+ARQGRUP
+ 1 
+GRUPOS->grupo
+
+
+

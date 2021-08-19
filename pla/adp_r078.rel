@@ -1,0 +1,239 @@
+GAS-Pro v3.0
+011003022079001001074001012000176001
+Ins Nome                                Nascto     T.Carˆnc   V/F Falecto.
+=== =================================== ========== ========== === ==========
+[Ÿ]
+ 6 
+CINSCRIT
+Inscritos
+codigo
+codigo
+
+011
+
+
+
+
+
+
+
+
+
+-1 
+ 0 
+-1 
+ 66 
+ 0 
+ 2 
+ 3 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Inscr.
+grau+str(seq,2)
+
+ 3 
+C
+ 3 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Nome
+nome
+ 
+ 35 
+C
+ 3 
+ 5 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Nascto
+nascto_
+@D
+ 10 
+D
+ 3 
+ 41 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+T.Carˆnc
+tcarencia
+@D
+ 10 
+D
+ 3 
+ 52 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+V/F
+vivofalec
+!
+ 1 
+C
+ 3 
+ 64 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Falecto.
+falecto_
+@D
+ 10 
+D
+ 3 
+ 67 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 0 
+ 0 
+ 44 
+
+T¡tulo aplica‡„o
+nsis
+
+ 0 
+ 0 
+ 22 
+
+Data do sistema
+DTOC(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 0 
+ 0 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 0 
+ 0 
+ 4 
+
+C¢digo relat¢rio
+"ADP_R078"
+
+ 0 
+ 0 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 0 
+ 0 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 0 
+ 0 
+ 0 
+ 0 

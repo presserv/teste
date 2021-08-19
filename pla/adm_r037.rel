@@ -1,0 +1,229 @@
+GAS-Pro v3.0
+002003024079001001001001003000176001
+                                                                      PAG
+
+PAGAS POR PER¡ODO
+
+Codig  Circ    Val.Pago Cobrador mes
+------------------------------------------------------------------------------
+[Ÿ]
+ 5 
+TAXAS
+Pagas por Per¡odo
+
+
+pgto_>=M->inicio_.AND.pgto_<=M->final_
+011
+
+
+
+
+
+
+
+
+
+ 0 
+ 1 
+ 0 
+ 66 
+ 0 
+ 6 
+ 3 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Codig
+codigo
+
+ 6 
+C
+ 7 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Circ
+tipo+'-'+circ
+
+ 5 
+C
+ 7 
+ 8 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Val.Pago
+valorpg
+@E 999,999.99
+ 10 
+N
+ 7 
+ 14 
+
+
+   û      
+
+
+
+
+
+
+
+
+
+
+Cobrador
+cobrador
+!!
+ 2 
+C
+ 7 
+ 25 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+mes
+RIGHT(DTOC(inicio_),5)
+
+ 5 
+C
+ 7 
+ 34 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 1 
+ 1 
+ 32 
+
+T¡tulo aplica‡„o
+nsis
+
+ 2 
+ 1 
+ 22 
+
+Data do sistema
+DTOC(DATE())
+
+ 3 
+ 71 
+ 8 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 3 
+ 63 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 1 
+ 75 
+ 4 
+
+C¢digo relat¢rio
+"ADM_R037"
+
+ 2 
+ 71 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 4 
+ 1 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 0 
+ 0 
+ 0 
+ 1 
+GRUPOS
+ 1 
+codigo
+
+
+

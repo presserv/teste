@@ -1,0 +1,1294 @@
+GAS-Pro v3.0
+002003021079001001001001003000176001
+[Ÿ]
+ 57 
+TAXAS
+Peri¢dico
+
+
+R08701F9()
+011
+
+
+
+
+
+
+
+
+
+ 0 
+ 1 
+ 0 
+ 76 
+ 1 
+ 2 
+ 1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Valor Contribuicao
+R08702F9()+vlseg-vlcst
+@E 999,999.99
+ 10 
+N
+ 10 
+ 29 
+R08701F9()
+valororig
+          
+
+
+
+
+
+
+
+
+
+
+Valor Seguro
+vlseg
+@E 999,999.99
+ 10 
+N
+ 10 
+ 41 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Valor Locacao
+vlcst - vlseg
+@E 999,999.99
+ 10 
+N
+ 10 
+ 54 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Valor
+valororig+vlcst
+@E 999,999.99
+ 10 
+N
+ 10 
+ 70 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Valor
+valororig+vlcst
+@E 999,999.99
+ 10 
+N
+ 38 
+ 9 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Valor
+valororig+vlcst
+@E 999,999.99
+ 10 
+N
+ 38 
+ 69 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Codigo
+GRUPOS->codigo+[ ]+GRUPOS->grupo
+
+ 9 
+C
+ 8 
+ 54 
+
+
+û         
+
+
+
+
+
+
+
+
+
+
+compl.codigo 1
+tipo+[-]+circ
+
+ 5 
+C
+ 10 
+ 4 
+
+
+û         
+
+
+
+
+
+
+
+
+
+
+Codigo 2
+GRUPOS->codigo+[ ]+GRUPOS->grupo
+
+ 9 
+C
+ 34 
+ 13 
+
+
+û         
+
+
+
+
+
+
+
+
+
+
+Codigo 3
+GRUPOS->codigo+[ ]+GRUPOS->grupo
+
+ 9 
+C
+ 34 
+ 71 
+
+
+û         
+
+
+
+
+
+
+
+
+
+
+compl.codigo 2
+tipo+[-]+circ
+
+ 5 
+C
+ 57 
+ 69 
+
+
+û         
+
+
+
+
+
+
+
+
+
+
+Emissao
+emissao_
+@D
+ 8 
+D
+ 10 
+ 15 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Emissao 2
+LEFT(DTOC(emissao_),6)+RIGHT(DTOC(emissao_),2)
+
+ 8 
+C
+ 36 
+ 13 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Emissao_ 3
+LEFT(DTOC(emissao_),6)+RIGHT(DTOC(emissao_),2)
+
+ 8 
+C
+ 36 
+ 72 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+definicao 1
+LEFT(CLASSES->descricao,15)
+
+ 15 
+C
+ 8 
+ 65 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+definicao 2
+LEFT(CLASSES->descricao,10)
+
+ 10 
+C
+ 34 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+data
+LEFT(DTOC(DATE()),6)+RIGHT(DTOC(DATE()),2)
+
+ 8 
+C
+ 36 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+data
+LEFT(DTOC(DATE()),6)+RIGHT(DTOC(DATE()),2)
+
+ 8 
+C
+ 36 
+ 61 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+definicao 3
+LEFT(CLASSES->descricao,10)
+
+ 10 
+C
+ 34 
+ 60 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Nome
+GRUPOS->nome
+
+ 35 
+C
+ 8 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Nome 2
+GRUPOS->nome
+
+ 35 
+C
+ 57 
+ 17 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Endere‡o
+GRUPOS->endereco
+
+ 35 
+C
+ 59 
+ 17 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Bairro
+GRUPOS->bairro
+
+ 25 
+C
+ 59 
+ 53 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Cidade
+GRUPOS->cep+[ ]+ALLTRIM(GRUPOS->cidade)+[, ]+GRUPOS->uf
+
+ 35 
+C
+ 61 
+ 17 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+titulo custos
+&drvpcom+[   Data    Descricao                           Valor]+&drvtcom
+
+ 42 
+C
+ 12 
+ 6 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Rlocpg1
+M->rlocpg1
+@!
+ 50 
+C
+ 29 
+ 25 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Rlocpg2
+M->rlocpg2
+@!
+ 50 
+C
+ 30 
+ 25 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+cst01
+detcst[1]
+
+ 42 
+C
+ 13 
+ 6 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+cst02
+detcst[2]
+
+ 42 
+C
+ 14 
+ 6 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+cst03
+detcst[3]
+
+ 42 
+C
+ 15 
+ 6 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+cst04
+detcst[4]
+
+ 42 
+C
+ 16 
+ 6 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+cst05
+detcst[5]
+
+ 42 
+C
+ 17 
+ 6 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+cst06
+detcst[6]
+
+ 42 
+C
+ 18 
+ 6 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+cst07
+detcst[7]
+
+ 42 
+C
+ 19 
+ 6 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+cst08
+detcst[8]
+
+ 42 
+C
+ 20 
+ 6 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+cst09
+detcst[9]
+
+ 42 
+C
+ 21 
+ 6 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+cst10
+detcst[10]
+
+ 42 
+C
+ 22 
+ 6 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+csr01
+detcst[1]
+
+ 30 
+C
+ 32 
+ 25 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+csr02
+detcst[02]
+
+ 30 
+C
+ 33 
+ 25 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+csr03
+detcst[03]
+
+ 30 
+C
+ 34 
+ 25 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+csr04
+detcst[04]
+
+ 30 
+C
+ 35 
+ 25 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+csr05
+detcst[05]
+
+ 30 
+C
+ 36 
+ 25 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+csr06
+detcst[06]
+
+ 30 
+C
+ 37 
+ 25 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+csr07
+detcst[07]
+
+ 30 
+C
+ 38 
+ 25 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+csr08
+detcst[08]
+
+ 30 
+C
+ 39 
+ 25 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+csr09
+detcst[09]
+
+ 30 
+C
+ 40 
+ 25 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+csr10
+detcst[10]
+
+ 30 
+C
+ 41 
+ 25 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Mens1
+M->rmens1
+
+ 28 
+C
+ 13 
+ 52 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Mens2
+M->rmens2
+
+ 28 
+C
+ 14 
+ 52 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Mens3
+M->rmens3
+
+ 28 
+C
+ 15 
+ 52 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Mens4
+M->rmens4
+
+ 28 
+C
+ 16 
+ 52 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Mens5
+M->rmens5
+
+ 28 
+C
+ 17 
+ 52 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Mens6
+M->rmens6
+
+ 28 
+C
+ 18 
+ 52 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Mens7
+M->rmens7
+
+ 28 
+C
+ 19 
+ 52 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Mens8
+M->rmens8
+
+ 28 
+C
+ 20 
+ 52 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Mens9
+M->rmens9
+
+ 28 
+C
+ 21 
+ 52 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+pagina
+pg_ - 1
+99999
+ 5 
+N
+ 62 
+ 69 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 0 
+ 0 
+ 44 
+
+T¡tulo aplica‡„o
+nsis
+
+ 0 
+ 0 
+ 22 
+
+Data do sistema
+DTOC(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 0 
+ 0 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 0 
+ 0 
+ 4 
+
+C¢digo relat¢rio
+"ADP_R044"
+
+ 0 
+ 0 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 0 
+ 0 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 1 
+TAXAS
+stat
+[2]
+
+stat < [2]
+
+
+ 0 
+ 0 
+ 5 
+GRUPOS
+ 1 
+codigo
+
+
+
+CLASSES
+ 1 
+GRUPOS->tipcont
+
+
+
+COBRADOR
+ 1 
+cobrador
+
+
+
+CIRCULAR
+ 1 
+M->mgrupvip+circ
+
+
+
+CSTSEG
+ 3 
+codigo+tipo+circ
+
+
+

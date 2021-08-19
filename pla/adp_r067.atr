@@ -1,0 +1,120 @@
+GAS-Pro v3.0
+012021015062001001001001013000176001
+ Emiss„o.:
+ Mˆs Ref.:              Confirme:
+[Ÿ]
+[Ÿ]
+ 3 
+ 0 
+Gerar contr.Cobradores
+Gerar contr.Cobradores
+
+
+
+
+
+
+
+056
+
+
+
+
+
+
+
+ 0 
+ 0 
+-1 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+remissao_
+D
+E
+@D
+ 8 
+ 8 
+ 1 
+ 12 
+ 0 
+Emiss„o
+
+!EMPT(Remissao_)
+Informe uma data v lida p/ EMISSŽO
+DATE()
+Data da Emiss„o da Circular.| Para atualizar circulares se n„o preenchidas| com antecedˆncia.
+
+ 0 
+ 0 
+
+
+rmesref
+C
+E
+@R 99/99
+ 4 
+ 5 
+ 2 
+ 12 
+ 0 
+Mes.Ref.
+
+MMAA(rmesref)
+Necess rio informar MES.REF.
+SUBSTR(DTOC(remissao_),4,2)+RIGHT(DTOC(remissao_),2)
+Mˆs de referˆncia da cobran‡a
+
+ 0 
+ 0 
+
+
+confirme
+C
+E
+!
+ 1 
+ 1 
+ 2 
+ 35 
+ 0 
+Confirme
+
+confirme='S'
+CONFIRME n„o aceit vel
+
+Digite S para confirmar|ou|tecle ESC para cancelar
+
+ 0 
+ 0 
+
+
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 

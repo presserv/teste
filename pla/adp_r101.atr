@@ -1,0 +1,247 @@
+GAS-Pro v3.0
+008005018078001003002001011000176001
+ Grupo...:     Circular:
+ Data....:
+ Mensagem:
+
+
+
+
+
+ Confirme:
+[Ÿ]
+[Ÿ]
+ 9 
+ 0 
+Cartinha de Processos
+Cartinha de Processos
+
+
+
+
+
+
+
+056
+
+
+
+
+
+
+
+ 0 
+ 0 
+-1 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+rgrupo
+C
+E
+!!
+ 2 
+ 2 
+ 1 
+ 12 
+ 0 
+Grupo
+
+PTAB(rgrupo,'ARQGRUP',1).OR.EMPT(rgrupo)
+GRUPO n„o existe na tabela|Informe um existente |ou|deixe sem preencher para listar todos
+
+Circular de qual grupo?
+VDBF(6,54,20,77,'ARQGRUP',{'grup','inicio','final'},1,'grup',[])
+ 0 
+ 0 
+
+
+rcirc
+C
+E
+999
+ 3 
+ 3 
+ 1 
+ 26 
+ 0 
+Circular
+
+PTAB(rgrupo+rcirc,'CIRCULAR',1).OR.EMPT(rcirc)
+Necess rio informar CIRCULAR v lida
+
+Informe o n£mero da circular a listar
+VDBF(6,40,20,77,'CIRCULAR',{'grupo','circ','emissao_','valor'},1,'grupo',[grupo=rgrupo])
+ 0 
+ 0 
+
+
+rdata
+C
+E
+@!
+ 45 
+ 45 
+ 2 
+ 12 
+ 0 
+Data
+
+!EMPT(rdata)
+Necess rio informar DATA
+RTRIM(M->p_cidade)+[, ]+NMES(MONTH(CIRCULAR->emissao_))+ [ de ]+LEFT(DTOS(CIRCULAR->emissao_),4)
+Informe a data do cabe‡alho
+
+ 0 
+ 0 
+
+
+rmens1
+C
+E
+@!
+ 70 
+ 70 
+ 4 
+ 2 
+ 0 
+Mens1
+
+ 
+
+
+Mensagem 1
+Informe a linha 1/5 da cartinha
+ 0 
+ 0 
+
+
+rmens2
+C
+E
+@!
+ 70 
+ 70 
+ 5 
+ 2 
+ 0 
+Mens2
+
+ 
+
+
+Mensagem 2
+Informe a linha 2/5 da cartinha
+ 0 
+ 0 
+
+
+rmens3
+C
+E
+@!
+ 70 
+ 70 
+ 6 
+ 2 
+ 0 
+Mens3
+
+ 
+
+
+Mensagem 3
+Informe a linha 3/5 da cartinha
+ 0 
+ 0 
+
+
+rmens4
+C
+E
+@!
+ 70 
+ 70 
+ 7 
+ 2 
+ 0 
+Mens4
+
+ 
+
+
+Mensagem 4
+Informe a linha 4/5 da cartinha
+ 0 
+ 0 
+
+
+rmens5
+C
+E
+@!
+ 70 
+ 70 
+ 8 
+ 2 
+ 0 
+Mens5
+
+ 
+
+
+Mensagem 5
+Informe a linha 5/5 da cartinha
+ 0 
+ 0 
+
+
+confirme
+C
+E
+!
+ 1 
+ 1 
+ 9 
+ 12 
+ 0 
+Confirme
+
+confirme= 'S'
+CONFIRME n„o aceit vel|Digite S ou Tecle ESC
+
+Digite S para confirmar |ou|Tecle ESC para cancelar
+
+ 0 
+ 0 
+
+
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 

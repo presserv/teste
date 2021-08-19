@@ -1,0 +1,695 @@
+GAS-Pro v3.0
+002003024079001043019028018000176001
+
+
+
+
+
+
+
+.
+[Ÿ]
+ 27 
+TX2VIA
+Emiss„o
+
+
+
+011
+
+
+
+
+
+
+
+
+
+ 0 
+ 1 
+-1 
+ 48 
+ 1 
+ 7 
+ 28 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Grupo
+GRUPOS->grupo
+!9
+ 2 
+C
+ 2 
+ 77 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Nome
+GRUPOS->nome
+
+ 35 
+C
+ 2 
+ 8 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Codigo
+codigo
+99999
+ 5 
+C
+ 2 
+ 59 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Mensagem
+CHR(18)+[2¦ Via ]+IIF(TAXAS->valorpg>0,[-Taxa Paga],[ ])
+
+ 61 
+C
+ 22 
+ 9 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+N§ Recibo
+[2¦ Via]
+
+ 6 
+C
+ 29 
+ 21 
+
+
+û         
+
+
+
+
+
+
+
+
+
+
+N§ Recibo 2
+[2¦ Via]
+
+ 6 
+C
+ 29 
+ 69 
+
+
+û         
+
+
+
+
+
+
+
+
+
+
+Valor
+TAXAS->valor
+@E 999,999.99
+ 10 
+N
+ 26 
+ 18 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Valor 2
+TAXAS->valor
+@E 999,999.99
+ 10 
+N
+ 26 
+ 66 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Circular 1
+TAXAS->circ+[     ]+DTOC(TAXAS->emissao_)+[     ]+STR(GRUPOS->funerais,2)
+
+ 30 
+C
+ 32 
+ 3 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Circular 2
+TAXAS->circ+[     ]+DTOC(TAXAS->emissao_)+[     ]+STR(GRUPOS->funerais,2)
+
+ 30 
+C
+ 32 
+ 39 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Grupo 1
+GRUPOS->grupo +[        ]+codigo+[       ]+GRUPOS->cobrador
+
+ 30 
+C
+ 35 
+ 3 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Grupo 2
+GRUPOS->grupo +[        ]+codigo+[       ]+GRUPOS->cobrador
+
+ 30 
+C
+ 35 
+ 39 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Inicio
+[Inic:]+DTOC(GRUPOS->admissao)+[ Ult:]+GRUPOS->ultcirc+[ QtTx:]+STR(GRUPOS->qtcircs,3)
+
+ 35 
+C
+ 41 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Inicio 2
+[Inic:]+DTOC(GRUPOS->admissao)+[ Ult:]+GRUPOS->ultcirc+[ QtTx:]+STR(GRUPOS->qtcircs,3)
+
+ 35 
+C
+ 41 
+ 37 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Nome
+GRUPOS->nome
+ 
+ 35 
+C
+ 37 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Nome 2
+GRUPOS->nome
+
+ 35 
+C
+ 37 
+ 37 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Endere‡o
+GRUPOS->endereco
+ 
+ 35 
+C
+ 38 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Endere‡o 2
+GRUPOS->endereco
+
+ 35 
+C
+ 38 
+ 37 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Bairro
+GRUPOS->bairro
+ 
+ 25 
+C
+ 39 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Bairro 2
+GRUPOS->bairro
+
+ 25 
+C
+ 39 
+ 37 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Cidade
+GRUPOS->cidade+[ ] +GRUPOS->cep
+
+ 35 
+C
+ 40 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Cidade 2
+GRUPOS->cidade+[ ] +GRUPOS->cep
+
+ 35 
+C
+ 40 
+ 37 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Valor
+TAXAS->valor
+@E 999,999.99
+ 10 
+N
+ 4 
+ 33 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+data 1
+[ ]
+
+ 10 
+C
+ 44 
+ 3 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+data 2
+[ ]
+
+ 10 
+C
+ 44 
+ 40 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+BarCode 1
+codigo+tipo+circ
+
+ 12 
+4
+ 43 
+ 19 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+BarCode 2
+codigo+tipo+circ
+
+ 12 
+4
+ 44 
+ 19 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 0 
+ 0 
+ 32 
+
+T¡tulo aplica‡„o
+nsis
+
+ 0 
+ 0 
+ 22 
+
+Data do sistema
+DTOC(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 0 
+ 0 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 0 
+ 0 
+ 4 
+
+C¢digo relat¢rio
+"ADC_R063"
+
+ 0 
+ 0 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 0 
+ 0 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 0 
+ 0 
+ 0 
+ 5 
+GRUPOS
+ 1 
+codigo
+
+
+
+ARQGRUP
+ 1 
+GRUPOS->grupo
+
+
+
+REGIAO
+ 1 
+GRUPOS->regiao
+
+
+
+CIRCULAR
+ 1 
+GRUPOS->grupo+circ
+
+
+
+TAXAS
+ 1 
+codigo+tipo+circ
+
+
+

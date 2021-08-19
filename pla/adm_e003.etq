@@ -1,0 +1,174 @@
+GAS-Pro v3.0
+009022016058001002001001011000176001
+[Ÿ]
+ 6 
+GRUPOS
+Etiqueta Contratos
+
+
+codigo>=M->ecodini.AND.codigo<=M->ecodfin.AND.!EMPT(nome)
+052
+
+
+
+
+
+
+
+
+
+ 0 
+ 1 
+ 0 
+ 6 
+ 0 
+ 35 
+ 1 
+ 2 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Nome
+nome
+@!
+ 35 
+C
+ 2 
+ 1 
+
+
+û         
+
+
+
+
+
+
+
+
+
+
+Codigo
+codigo+' '+grupo
+
+ 9 
+C
+ 1 
+ 27 
+
+
+û         
+
+
+
+
+
+
+
+
+
+
+Endere‡o
+endereco
+
+ 35 
+C
+ 3 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Bairro
+bairro
+
+ 20 
+C
+ 4 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Cidade
+cidade
+
+ 25 
+C
+ 5 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+CEP
+cep
+@R 99999-999
+ 9 
+C
+ 5 
+ 27 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 

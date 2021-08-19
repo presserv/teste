@@ -1,0 +1,193 @@
+GAS-Pro v3.0
+016014023068001003036001019001176001
+ Tipo ³ Circ ³Incluir Seguro?³ Comiss„o% Valor
+ÄÄÄÄÄÄÅÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+      ³      ³               ³
+      ³      ³               ³
+      ³      ³               ³
+      ³      ³               ³
+[Ÿ]
+Inclus„o~~26006
+Manuten‡„o~~27007
+Consulta~~28008
+[Ÿ]
+ 6 
+ 1 
+C¢digo/Cobrador
+
+ 1 
+ 2 
+ 3 
+[Ÿ]
+Parcelas do Vendedor
+Parcelas do Vendedor
+
+
+
+
+
+
+
+005
+
+
+
+
+
+
+
+ 0 
+ 0 
+-1 
+-1 
+-1 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+cobrador
+C
+I
+!!!
+ 3 
+ 3 
+ 0 
+ 0 
+ 0 
+Cobrador
+
+
+
+
+
+
+-1 
+ 0 
+
+
+tipo
+C
+E
+9
+ 1 
+ 1 
+ 3 
+ 2 
+ 0 
+Tipo
+
+ 
+
+
+Qual o tipo de lan‡amento
+MTAB([1=J¢ia|2=Taxa|3=Carnˆ|6=J¢ia+Seguro|7=Taxa+Seguro|8=Carnˆ+Seguro],[TIPO])
+ 0 
+ 0 
+
+
+circ
+C
+E
+999
+ 3 
+ 3 
+ 3 
+ 9 
+ 0 
+Circular
+
+circ>[000]
+Necess rio informar CIRCULAR
+
+N£mero da Circular|Mantido pela emissao de recibos
+
+ 0 
+ 0 
+
+
+seg
+C
+E
+!
+ 1 
+ 1 
+ 3 
+ 22 
+ 0 
+Seg
+
+seg $ [SN]
+SEG n„o aceit vel
+[N]
+Inclui o valor do seguro nesta taxa?|Digite S se o cobrador/vendedor repassar|o valor do seguro p/a Empresa
+MTAB([Sim, pode ser lan‡ado a parcela do seguro|N„o, acumule o seguro para a pr¢xima taxa.],[SEG])
+ 0 
+ 0 
+
+
+pcomiss
+N
+E
+999.99
+ 6 
+ 6 
+ 3 
+ 33 
+ 2 
+Comiss„o %
+
+pcomiss>=0.and.pcomiss<=100
+COMISSŽO % n„o aceit vel
+
+Informe a % de comiss„o|ou zeros para informar|um valor fixo
+
+ 0 
+ 0 
+
+
+vlcomiss
+N
+E
+@E 999,999.99
+ 9 
+ 10 
+ 3 
+ 42 
+ 2 
+Valor
+pcomiss=0
+vlcomiss>=0
+VALOR n„o aceit vel
+
+Informe o valor fixo de comiss„o
+
+ 0 
+ 0 
+
+
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 

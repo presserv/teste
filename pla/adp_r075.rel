@@ -1,0 +1,595 @@
+GAS-Pro v3.0
+002003021079001001001001003001176001
+
+
+
+Eu,                                            representante aut“nomo,
+portador do CIC:                e RG:
+Recebi do Sr.:
+Endereco     :
+
+
+Contrato n§ :
+Parcela     :                       A importƒncia de :  Contr :
+Vencimento  :                                           Seguro:
+Admiss„o    :                                           TOTAL.:
+
+Referente a intermedia‡„o da venda do Plano de Assistˆncia Funeral da
+
+
+
+
+                                           ______________________________
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+[Ÿ]
+ 20 
+TAXAS
+Carnˆ Form.Branco
+
+
+R06601F9()
+011
+
+
+
+
+
+
+
+
+
+ 0 
+ 1 
+ 0 
+ 22 
+ 1 
+ 2 
+ 1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Valor Total
+valor
+@E 999,999.99
+ 10 
+N
+ 13 
+ 65 
+R06601F9()
+
+û         
+
+
+
+
+
+
+
+
+
+
+recibo
+'R E C I B O'
+
+ 12 
+C
+ 2 
+ 24 
+
+
+ûû        
+
+
+
+
+
+
+
+
+
+
+Ident1
+M->setup1
+
+ 40 
+C
+ 16 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+CPF
+COBRADOR->cpf
+@R 999.999.999-99
+ 14 
+C
+ 5 
+ 18 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Valor Contribuicao
+IIF(!CSTSEG->(EOF()),CSTSEG->vlorig,valor)
+@E 999,999.99
+ 10 
+N
+ 11 
+ 65 
+
+valororig
+          
+
+
+
+
+
+
+
+
+
+
+Valor Seguro
+valor-valororig
+@E 999,999.99
+ 10 
+N
+ 12 
+ 65 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Codigo
+GRUPOS->codigo
+
+ 6 
+C
+ 10 
+ 16 
+
+
+ û        
+
+
+
+
+
+
+
+
+
+
+compl.codigo 1
+tipo+[/]+circ+[ ]
+
+ 6 
+C
+ 11 
+ 16 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Emissao
+emissao_
+@D
+ 8 
+D
+ 12 
+ 16 
+
+
+û         
+
+
+
+
+
+
+
+
+
+
+Admiss„o
+GRUPOS->admissao
+@D
+ 8 
+D
+ 13 
+ 16 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Cobrador
+COBRADOR->nome+' ('+cobrador+')'
+
+ 42 
+C
+ 4 
+ 5 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+definicao 1
+ALLTRIM(CLASSES->descricao)+[ ]+IIF(GRUPOS->formapgto<[05],SUBSTR(tbfpgto,(VAL(GRUPOS->formapgto)-1)*13+1,13),GRUPOS->formapgto)
+
+ 35 
+C
+ 10 
+ 31 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Nome
+GRUPOS->nome
+
+ 35 
+C
+ 6 
+ 16 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Endere‡o
+GRUPOS->endereco
+
+ 35 
+C
+ 7 
+ 16 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Bairro
+GRUPOS->bairro
+
+ 20 
+C
+ 8 
+ 16 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Cidade
+GRUPOS->cep+[ ]+ALLTRIM(GRUPOS->cidade)+[, ]+GRUPOS->uf
+
+ 35 
+C
+ 9 
+ 16 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Data
+ALLTRIM(M->p_cidade)+', ___ de ________________ de _____.'
+
+ 55 
+C
+ 18 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Nome do Cobrador
+COBRADOR->nome
+
+ 30 
+C
+ 21 
+ 44 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Codigo barras 1
+codigo+tipo+circ
+
+ 13 
+4
+ 6 
+ 60 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Codigo barras 2
+codigo+tipo+circ
+
+ 13 
+4
+ 7 
+ 60 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 0 
+ 0 
+ 32 
+
+T¡tulo aplica‡„o
+nsis
+
+ 0 
+ 0 
+ 22 
+
+Data do sistema
+DTOC(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 0 
+ 0 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 0 
+ 0 
+ 4 
+
+C¢digo relat¢rio
+"ADP_R075"
+
+ 0 
+ 0 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 0 
+ 0 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 2 
+TAXAS
+stat
+[2]
+
+stat < [2]
+
+
+EMCARNE
+emissao_
+DATE()
+
+VAL(circ)=TCARNES->parf
+
+
+ 0 
+ 0 
+ 7 
+GRUPOS
+ 1 
+codigo
+
+
+
+CLASSES
+ 1 
+GRUPOS->tipcont
+
+
+
+COBRADOR
+ 1 
+cobrador
+
+
+
+CSTSEG
+ 3 
+codigo+tipo+circ
+
+
+
+MENSAG
+ 1 
+codigo
+
+
+
+EMCARNE
+ 1 
+codigo
+
+
+
+TCARNES
+ 1 
+EMCARNE->tip
+
+
+

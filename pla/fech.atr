@@ -1,0 +1,339 @@
+GAS-Pro v2.0
+010016018063001006020001016000176001
+
+ Data.....:              Hor rio..:
+ Usu rio..:
+ Caso seja confirmado, ser  incluido nova
+ numera‡„o nos Recibos e Auxilio Funeral.
+       Confirma???
+[Ÿ]
+Inclus„o~~26006
+Consulta~~28008
+[Ÿ]
+ 4 
+ 1 
+p/Data
+
+ 1 
+ 2 
+[Ÿ]
+Fechamento
+Fechamento
+
+
+
+
+
+
+
+005
+
+
+
+
+
+
+
+-1 
+ 3 
+-1 
+-1 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+data_
+D
+V
+@D
+ 8 
+ 8 
+ 2 
+ 13 
+ 0 
+Data
+
+
+
+date()
+
+
+ 0 
+ 0 
+
+
+horario
+C
+V
+ 
+ 5 
+ 5 
+ 2 
+ 37 
+ 0 
+Hor rio
+
+
+
+time()
+
+
+ 0 
+ 0 
+
+
+quem
+C
+E
+ 
+ 10 
+ 10 
+ 3 
+ 13 
+ 0 
+Usu rio
+
+!EMPT(quem)
+Necess rio informar USURIO
+M->usuario
+Informe o nome do usu rio
+
+ 0 
+ 0 
+
+
+confirma
+C
+E
+!
+ 1 
+ 1 
+ 6 
+ 20 
+ 0 
+Confirma?
+
+confirma='S'
+CONFIRMA? n„o aceit vel, Tecle ESC para cancelar
+
+Se for confirmado, ser  incluido um registro|com a nova numera‡„o.|Para cancelar, Tecle ESC
+
+ 0 
+ 0 
+
+
+ 0 
+ 0 
+ 0 
+ 2 
+BXREC
+1
+ 9 
+
+
+ 0 
+
+
+
+ano
+C
+RIGHT(DTOC(DATE()),2)
+
+
+numero
+C
+'00000'
+
+
+codigo
+C
+
+
+
+circ
+C
+
+
+
+valorpg
+N
+
+
+
+emitido_
+D
+DATE()
+
+
+por
+C
+M->usuario
+
+
+numop
+C
+
+
+
+grupo
+C
+
+
+
+AFUNER
+1
+ 25 
+
+
+ 0 
+
+
+
+processo
+C
+'00000'
+
+
+proc2
+C
+RIGHT(DTOC(DATE()),2)
+
+
+ocorr_
+D
+DATE()
+
+
+contrato
+C
+
+
+
+grauparcon
+C
+
+
+
+nomedec
+C
+
+
+
+codigofal
+C
+
+
+
+falecido
+C
+
+
+
+ruares
+C
+
+
+
+baires
+C
+
+
+
+munres
+C
+
+
+
+estres
+C
+
+
+
+nascto_
+D
+
+
+
+falecto_
+D
+
+
+
+horafal
+C
+
+
+
+ruafal
+C
+
+
+
+municfal
+C
+
+
+
+estfal
+C
+
+
+
+sepult_
+D
+
+
+
+horasepult
+C
+
+
+
+cemitsep
+C
+
+
+
+funcresp
+C
+
+
+
+procpagto_
+D
+
+
+
+vlauxilio
+N
+
+
+
+pagtoem_
+D
+
+
+
+ 0 

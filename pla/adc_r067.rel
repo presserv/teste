@@ -1,0 +1,286 @@
+GAS-Pro v3.0
+002003024079001007058001009000176001
+                                                                      PAG
+
+ACERTO C/VENDEDOR
+
+Contrato Circ  Emissao       Valor Pagamento Valor pago Cobrador
+------------------------------------------------------------------------------
+[Ÿ]
+ 7 
+TAXAS
+Acerto c/Vendedor
+
+GRUPOS->vendedor
+pgto_>=M->inicio_.AND.pgto_<=M->final_.AND.valorpg>0.AND.PTAB(GRUPOS->vendedor+tipo+circ,[PCBRAD],1)
+011
+
+
+
+
+
+
+
+
+
+ 0 
+ 0 
+ 0 
+ 66 
+ 0 
+ 6 
+ 3 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Contrato
+GRUPOS->codigo
+999999
+ 6 
+C
+ 7 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Circ
+tipo+[-]+circ
+
+ 5 
+C
+ 7 
+ 10 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Emissao
+emissao_
+@D
+ 8 
+D
+ 7 
+ 16 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Valor
+valor
+@E 999,999.99
+ 10 
+N
+ 7 
+ 25 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Pagamento
+pgto_
+@D
+ 8 
+D
+ 7 
+ 36 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Valor pago
+valorpg
+@E 999,999.99
+ 10 
+N
+ 7 
+ 46 
+
+
+   û      
+
+
+
+
+
+
+
+
+
+
+Cobrador
+cobrador
+!!
+ 2 
+C
+ 7 
+ 57 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 1 
+ 1 
+ 44 
+
+T¡tulo aplica‡„o
+nsis
+
+ 2 
+ 1 
+ 22 
+
+Data do sistema
+DTOC(DATE())
+
+ 3 
+ 71 
+ 8 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 3 
+ 63 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 1 
+ 75 
+ 4 
+
+C¢digo relat¢rio
+"ADC_R067"
+
+ 2 
+ 71 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 4 
+ 1 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 0 
+ 1 
+[Vendedor: (]+GRUPOS->vendedor+[) ]+COBRADOR->nome
+  ûû û    
+GRUPOS->vendedor
+
+
+ 0 
+ 3 
+GRUPOS
+ 1 
+codigo
+
+
+
+PCBRAD
+ 1 
+GRUPOS->vendedor+tipo+circ
+
+
+
+COBRADOR
+ 1 
+GRUPOS->vendedor
+
+
+

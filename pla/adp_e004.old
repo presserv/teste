@@ -1,0 +1,196 @@
+/*
+ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+ \ Empresa.: PresServ Inform tica-Limeira (019)452.6623
+ \ Programa: ADP_E004.PRG
+ \ Data....: 24-11-96
+ \ Sistema.: Administradora - PLANO
+ \ Funcao..: Etiquetas de Cobran‡a
+ \ Analista: Ademilson Pedro Bom
+ \ Criacao.: GAS-Pro v3.0
+ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+*/
+
+#include "adpbig.ch"    // inicializa constantes manifestas
+
+LOCAL lin_:={}, i_, ct_, dele_atu
+PARA  lin_menu, col_menu
+nucop=1
+
+#ifdef COM_REDE
+ IF !USEARQ("GRUPOS",.f.,10,1)                     // se falhou a abertura do arq
+  RETU                                             // volta ao menu anterior
+ ENDI
+#else
+ USEARQ("GRUPOS")                                  // abre o dbf e seus indices
+#endi
+
+PTAB(grupo,"ARQGRUP",1,.t.)                        // abre arquivo p/ o relacionamento
+PTAB(grupo+ARQGRUP->proxcirc,"CIRCULAR",1,.t.)
+PTAB(tipcont,"CLASSES",1,.t.)
+SET RELA TO grupo INTO ARQGRUP,;                   // relacionamento dos arquivos
+         TO grupo+ARQGRUP->proxcirc INTO CIRCULAR,;
+         TO tipcont INTO CLASSES
+titrel:=criterio:=cpord := ""                      // inicializa variaveis
+titrel:=chv_rela:=chv_1:=chv_2 := ""
+tps:=op_x:=ccop := 1
+IF TYPE("drvdp_e004")="C"                          // conf da etq alterada?
+ qtlin_=VAL(SUBS(drvdp_e004, 1,3))                 // linhas da etiqueta
+ qtcol_=VAL(SUBS(drvdp_e004, 4,3))                 // largura da etiqueta
+ qtcse_=VAL(SUBS(drvdp_e004, 7,3))                 // espaco entre as carreiras
+ qtcar_=VAL(SUBS(drvdp_e004,10,3))                 // numero de carreiras
+ qtreg_=SUBS(drvdp_e004,13)                        // qtde por registro
+ELSE                                               // se nao alterou pega
+ qtlin_=6                                          // 'defaults` da qde linhas
+ qtcol_=35                                         // largura da etiqueta
+ qtcse_=1                                          // espaco entre as carreiras
+ qtcar_=2                                          // numero de carreiras
+ qtreg_="1"                                        // qtde por registro
+ENDI
+IF !opcoes_etq(lin_menu,col_menu,5,35,52)          // nao quis configurar...
+ CLOS ALL                                          // fecha arquivos e
+ RETU                                              // volta ao menu
+ENDI
+lin_=ARRAY(qtlin_)                                 // inicializa vetor de linhas
+IF tps=2                                           // se vai para arquivo/video
+ arq_=ARQGER()                                     // entao pega nome do arquivo
+ IF EMPTY(arq_)                                    // se cancelou ou nao informou
+  RETU                                             // retorna
+ ENDI
+ELSE
+ arq_=drvporta                                     // porta de saida configurada
+ENDI
+SET PRINTER TO (arq_)                              // redireciona saida
+IF !EMPTY(drvtapg)                                 // existe configuracao de tam pag?
+ op_=AT("NNN",drvtapg)                             // se o codigo que altera
+ IF op_=0                                          // o tamanho da pagina
+  msg="Configura‡„o do tamanho da p gina!"         // foi informado errado
+  DBOX(msg,,,,,"ERRO!")                            // avisa
+  CLOSE ALL                                        // fecha todos arquivos abertos
+  RETU                                             // e cai fora...
+ ENDI                                              // codigo para setar/resetar tam pag
+ lpp_006=LEFT(drvtapg,op_-1)+"006"+SUBS(drvtapg,op_+3)
+ lpp_066=LEFT(drvtapg,op_-1)+"066"+SUBS(drvtapg,op_+3)
+ELSE
+ lpp_006:=lpp_066 :=""                             // nao ira mudara o tamanho da pag
+ENDI
+AFILL(lin_,"")                                     // inicializa vetor lin_[]
+FOR i_=1 TO qtcar_                                 // lin de p/ teste de posicionamento
+ lin_[1]+=PADR("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",qtcol_+qtcse_)
+ lin_[2]+=PADR("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",qtcol_+qtcse_)
+ lin_[3]+=PADR("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",qtcol_+qtcse_)
+ lin_[4]+=PADR("XXXXXXXXXXXXXXXXXXXX",qtcol_+qtcse_)
+ lin_[5]+=PADR("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",qtcol_+qtcse_)
+NEXT
+op_2=1
+DO WHIL op_2=1 .AND. tps=1                         // teste de posicionamento
+ msg="Testar Posicionamento|Emitir a Etiqueta|"+;
+     "Cancelar a Opera‡„o"
+ op_2=DBOX(msg,,,E_MENU,,"EMISSŽO DE ETIQUETA")    // menu de opcoes
+ IF op_2=0 .OR. op_2=3                             // cancelou ou teclou ESC
+  CLOSE ALL                                        // fecha todos arquivos abertos
+  RETU
+ ELSEIF op_2=2                                     // emite conteudos...
+  EXIT
+ ELSE                                              // testar posicionamento
+  SET CONSOLE OFF                                  // desliga impressao no video
+  SET PRINT ON                                     // e envia para impressora
+  IMPCTL(lpp_006)                                  // seta pagina com 6 linhas
+  ?? CHR(13)
+  FOR i_=1 TO qtlin_
+   ?? lin_[i_]                                     // imprime 'X` para teste
+   IF EMPTY(drvtapg) .OR. i_<qtlin_
+    ?
+   ENDI
+  NEXT
+  IF !EMPTY(drvtapg)                               // existe configuracao de tam pag?
+   EJEC                                            // salta pagina no inicio
+  ENDI
+  IMPCTL(lpp_066)                                  // seta pagina com 66 linhas
+  SET CONSOLE ON                                   // liga impressao em video
+  SET PRINT OFF                                    // e desliga a impresora
+ ENDI
+ENDD
+DBOX("[ESC] Interrompe",15,,,NAO_APAGA)
+dele_atu:=SET(_SET_DELETED,.t.)                    // os excluidos nao servem...
+SET CONSOLE OFF                                    // desliga impressao no video
+SET PRINT ON                                       // e envia para impressora
+IMPCTL(lpp_006)                                    // seta pagina com 6 linhas
+IF tps=2
+ IMPCTL("' '+CHR(8)")
+ENDI
+BEGIN SEQUENCE
+ DO WHIL ccop<=nucop                               // imprime qde copias pedida
+  INI_ARQ()                                        // acha 1o. reg valido do arquivo
+  ccop++                                           // incrementa contador de copias
+  DO WHIL !EOF()
+   AFILL(lin_,""); ct_=0                           // inicializa lin_/contador de carreiras
+   DO WHILE !EOF() .AND. ct_<qtcar_                // faz todas as carreiras
+    #ifdef COM_TUTOR
+     IF IN_KEY()=K_ESC                             // se quer cancelar
+    #else
+     IF INKEY()=K_ESC                              // se quer cancelar
+    #endi
+     IF canc()                                     // pede confirmacao
+      BREAK                                        // confirmou...
+     ENDI
+    ENDI
+    IF ARQGRUP->proxcirc>[000].AND.EMPT(RV4401F9()).AND. !CLASSES->prior=[S]// se atender a condicao...
+     FOR t_=1 TO &qtreg_.                          // repete a mesma n vezes
+      ct_++                                        // soma contador de carreiras
+      lin_[1]+=grupo +[ ]+codigo+[ ]+cobrador+SPAC(qtcol_+qtcse_-35)
+      lin_[2]+=nome+SPAC(qtcol_+qtcse_-35)
+      lin_[3]+=endereco+SPAC(qtcol_+qtcse_-35)
+      lin_[4]+=bairro+SPAC(qtcol_+qtcse_-20)
+      lin_[5]+=LEFT(ALLTRIM(cidade)+cep,35)+SPAC(qtcol_+qtcse_-35)
+      IF ct_>=qtcar_                               // atingiu o numero de carreiras?
+       ?? CHR(13)
+       FOR i_=1 TO qtlin_                          // imprime linhas da etiqueta
+        ?? lin_[i_]
+        IF EMPTY(drvtapg) .OR. i_<qtlin_
+         ?
+        ENDI
+       NEXT
+       IF !EMPTY(drvtapg)                          // existe configuracao de tam pag?
+        EJEC                                       // salta pagina no inicio
+       ENDI
+       AFILL(lin_,""); ct_=0                       // inicializa lin_/contador de carreiras
+      ENDI
+     NEXT
+     SKIP                                          // pega proximo registro
+    ELSE                                           // se nao atende condicao
+     SKIP                                          // pega proximo registro
+    ENDI
+   ENDD                                            // eof ou encheu todas as carreiras
+   IF ct_>0                                        // preenchido a carreira parcialmente
+    ?? CHR(13)
+    FOR i_=1 TO qtlin_                             // imprime linhas da etiqueta
+     ?? lin_[i_]
+     IF EMPTY(drvtapg) .OR. i_<qtlin_
+      ?
+     ENDI
+    NEXT
+    IF !EMPTY(drvtapg)                             // existe configuracao de tam pag?
+     EJEC                                          // salta pagina no inicio
+    ENDI
+   ENDI
+  ENDD
+ ENDD ccop
+ IF EMPTY(drvtapg)
+  EJEC                                             // salta pagina no inicio
+ ENDI
+END SEQUENCE
+IMPCTL(lpp_066)                                    // seta pagina com 66 linhas
+SET PRINTER TO (drvporta)                          // fecha arquivo gerado (se houver)
+SET CONSOLE ON                                     // liga impressao em video
+SET PRINT OFF                                      // e desliga a impresora
+IF tps=2                                           // se vai para arquivo/video
+ BROWSE_REL(arq_,2,3,MAXROW()-2,78)
+ENDI                                               // mostra o arquivo gravado
+SET CONSOLE ON                                     // liga impressao em video
+SET PRINT OFF                                      // e desliga a impresora
+SELE GRUPOS                                        // salta pagina
+SET RELA TO                                        // retira os relacionamentos
+SET(_SET_DELETED,dele_atu)                         // os excluidos serao vistos
+RETU
+
+* \\ Final de ADP_E004.PRG

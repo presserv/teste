@@ -1,0 +1,239 @@
+GAS-Pro v3.0
+011003022079001001001001012000176001
+Processo    Categ Contrato Falecido                            Endere‡o                                 Falecto.
+=========== ===== ======== =================================== ======================================== ========
+[Ÿ]
+ 6 
+CPRCIRC
+Processos a cobrar
+grupo
+grupo+DTOS(dfal)
+circ==CIRCULAR->circ
+011
+
+
+
+
+
+
+
+
+
+-1 
+ 0 
+ 0 
+ 48 
+ 1 
+ 2 
+ 3 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Processo
+processo
+@R 99999/99/!!
+ 11 
+C
+ 3 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Categ
+categ
+!!
+ 2 
+C
+ 3 
+ 13 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Contrato
+num
+
+ 6 
+C
+ 3 
+ 19 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Falecido
+fal
+
+ 35 
+C
+ 3 
+ 28 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Endere‡o
+ALLTRIM(ends)+'-'+ALLTRIM(cids)
+@!
+ 40 
+C
+ 3 
+ 64 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Falecto.
+dfal
+@D
+ 8 
+D
+ 3 
+ 105 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 0 
+ 0 
+ 32 
+
+T¡tulo aplica‡„o
+nsis
+
+ 0 
+ 0 
+ 22 
+
+Data do sistema
+DTOC(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 0 
+ 0 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 0 
+ 0 
+ 4 
+
+C¢digo relat¢rio
+"ADM_R013"
+
+ 0 
+ 0 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 0 
+ 0 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 0 
+ 0 
+ 0 
+ 0 

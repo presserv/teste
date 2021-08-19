@@ -1,0 +1,483 @@
+GAS-Pro v3.0
+011003022079001005044001016000176001
+INSCRITOS
+------------------------------------------------------------------------------
+Inscr.:   Seq.:     Titular.?:     Nome.:
+Nascto:             Est.Civil:     Interdito:    Sexo:    Carˆncia:
+V/F...:    Falecto:            Tipo:       N§Processo:
+[Ÿ]
+ 13 
+INSCRITS
+Inscritos
+codigo
+codigo
+
+011
+
+
+
+
+
+
+
+
+
+ 0 
+ 0 
+-1 
+ 66 
+ 0 
+ 1 
+ 2 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Inscr.
+grau
+9
+ 1 
+C
+ 3 
+ 9 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Seq
+seq
+99
+ 2 
+N
+ 3 
+ 17 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Titular?
+ehtitular
+!
+ 1 
+C
+ 3 
+ 32 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Nome
+nome
+ 
+ 35 
+C
+ 3 
+ 43 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Nascto
+nascto_
+@D
+ 8 
+D
+ 4 
+ 9 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Est Civil
+estcivil
+ 
+ 2 
+C
+ 4 
+ 32 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Interdito
+interdito
+!
+ 1 
+C
+ 4 
+ 47 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Sexo
+sexo
+!
+ 1 
+C
+ 4 
+ 56 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+T.Carˆncia
+tcarencia
+@D
+ 8 
+D
+ 4 
+ 69 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+V/F
+vivofalec
+!
+ 1 
+C
+ 5 
+ 9 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Falecto.
+falecto_
+@D
+ 8 
+D
+ 5 
+ 21 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Tipo
+tipo
+!!!
+ 3 
+C
+ 5 
+ 38 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+N§Processo
+procnr
+@R 99999/99
+ 8 
+C
+ 5 
+ 56 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 0 
+ 0 
+ 32 
+
+T¡tulo aplica‡„o
+nsis
+
+ 0 
+ 0 
+ 22 
+
+Data do sistema
+DTOC(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 0 
+ 0 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 0 
+ 0 
+ 4 
+
+C¢digo relat¢rio
+"ADM_R004"
+
+ 0 
+ 0 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 0 
+ 0 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 1 
+ARQGRUP
+partic
+ARQGRUP->partic - 1
+
+vivofalec=[V]
+
+
+ 0 
+ 1 
+CINSCRIT
+1
+ 17 
+
+
+ 0 
+
+
+
+numero
+C
+CANCELS->cnumero
+
+
+codigo
+C
+CANCELS->ccodigo
+
+
+grau
+C
+grau
+
+
+seq
+N
+seq
+
+
+ehtitular
+C
+ehtitular
+
+
+nome
+C
+nome
+
+
+nascto_
+D
+nascto_
+
+
+estcivil
+C
+estcivil
+
+
+interdito
+C
+interdito
+
+
+sexo
+C
+sexo
+
+
+tcarencia
+D
+tcarencia
+
+
+lancto_
+D
+lancto_
+
+
+vivofalec
+C
+vivofalec
+
+
+falecto_
+D
+falecto_
+
+
+tipo
+C
+tipo
+
+
+procnr
+C
+procnr
+
+
+por
+C
+por
+
+
+ 0 

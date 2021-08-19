@@ -1,0 +1,148 @@
+GAS-Pro v3.0
+007017018064001008020001015000176001
+ Transferir para as filiais as Taxas emitidas
+ ou baixadas a partir de que data?:
+
+ Efetivar no Plano as Taxas baixadas atrav‚s
+ da Recep‡„o?   (desobriga baixa p/FCC)
+
+ Efetivar no Plano as Taxas baixadas por
+ FCC (Cobran‡a)?
+
+                   Confirme?:
+[Ÿ]
+[Ÿ]
+ 4 
+ 0 
+Gerar p/ Filiais
+Gerar p/ Filiais
+
+
+
+
+
+
+
+056
+
+
+
+
+
+
+
+ 0 
+ 0 
+-1 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+inicio_
+D
+E
+@D
+ 8 
+ 8 
+ 2 
+ 37 
+ 0 
+Inicio
+
+!EMPT(inicio_).AND.inicio_<=DATE()
+Necess rio informar INICIO
+
+Informe a data inicial a considerar|Gerar movimento a partir de que data?
+
+ 0 
+ 0 
+
+
+bxrec
+C
+E
+!
+ 1 
+ 1 
+ 5 
+ 15 
+ 0 
+Baixar pagas na Recep‡„o?
+
+bxrec$'SN'
+BAIXAR PAGAS NA RECEP€ŽO? |se S, ser„o consideradas quitadas as|Taxas pagas na Recep‡„o.
+[N]
+Digite S para quitar as pagas na Recep‡„o|Ou N para considerar apenas as|baixadas por FCC.
+
+ 0 
+ 0 
+
+
+bxcob
+C
+E
+!
+ 1 
+ 1 
+ 8 
+ 18 
+ 0 
+Baixar pagas por FCC?
+
+bxcob$'SN'
+BAIXAR PAGAS POR FCC?|se S, ser„o quitadas as|Taxas baixadas por FCC.
+[S]
+Digite S para quitar as pagas por FCC|Ou N para n„o baixar.
+
+ 0 
+ 0 
+
+
+confirme
+C
+E
+!
+ 1 
+ 1 
+ 10 
+ 31 
+ 0 
+Confirme?
+
+confirme=[S]
+CONFIRME? n„o aceit vel|Digite S para confirmar ou|Tecle ESC para cancelar
+
+Digite S para confirmar ou |Tecle ESC para cancelar
+
+ 0 
+ 0 
+
+
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 

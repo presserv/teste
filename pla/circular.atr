@@ -1,0 +1,383 @@
+GAS-Pro v3.0
+008016019067001005026001013001176001
+ Grupo:    Circular:
+ Emiss„o....:              Mˆs Refer:
+
+ Lan‡ado em.:            Usu rio.:
+ Impresso em:            com    processos.
+ Mensagem...:
+
+
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ Emitidos:       Pagos:       Cancelados:
+[Ÿ]
+Inclus„o~~26006
+Manuten‡„o~~27007
+Consulta~~28008
+[Ÿ]
+ 15 
+ 1 
+Grupo/Circular
+
+ 1 
+ 2 
+[Ÿ]
+Circulares
+Circulares
+
+
+
+
+
+
+
+005
+
+
+
+
+
+
+
+ 0 
+ 1 
+-1 
+-1 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+grupo
+C
+E
+!!
+ 2 
+ 2 
+ 1 
+ 8 
+ 0 
+Grupo
+
+PTAB(grupo,'ARQGRUP',1).and.PTAB(ARQGRUP->classe,'CLASSES',1)
+GRUPO ou Classe lan‡ada no Grupo|n„o existe na tabela.
+
+Informe o grupo
+
+ 0 
+ 0 
+
+
+circ
+C
+E
+999
+ 3 
+ 3 
+ 1 
+ 21 
+ 0 
+Circular
+nivelop=3
+ 
+
+STRZERO(VAL(ARQGRUP->proxcirc),3)
+Informe o n£mero da CIRCULAR a emitir.
+STRZERO(VAL(ARQGRUP->proxcirc),3)
+ 0 
+ 0 
+
+
+procpend
+N
+V
+99
+ 2 
+ 2 
+ 5 
+ 30 
+ 0 
+Procpend
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+emissao_
+D
+E
+@D
+ 8 
+ 10 
+ 2 
+ 15 
+ 0 
+Emiss„o
+
+!EMPT(emissao_)
+Necess rio informar EMISSŽO
+DATE()
+Data da Emiss„o da Circular
+
+ 0 
+ 0 
+
+
+mesref
+C
+E
+@R 99/99
+ 4 
+ 5 
+ 2 
+ 39 
+ 0 
+Mˆs Ref.
+
+MMAA(mesref)
+MES REF. n„o aceit vel
+SUBSTR(DTOC(emissao_),4,2)+RIGHT(DTOC(emissao_),2)
+Entre com o mˆs de referˆncia desta circular.
+
+ 0 
+ 0 
+
+
+valor
+N
+E
+@E 999,999.99
+ 9 
+ 10 
+ 3 
+ 21 
+ 2 
+Valor
+
+valor>0
+VALOR n„o aceit vel
+
+
+
+ 0 
+ 0 
+
+
+menscirc
+C
+E
+ 
+ 60 
+ 35 
+ 6 
+ 15 
+ 0 
+Mensagem
+
+ 
+
+
+Entre com uma mensagem exclusiva … ‚sta circular.
+
+ 0 
+ 0 
+
+
+menscirc1
+C
+E
+ 
+ 35 
+ 35 
+ 7 
+ 15 
+ 0 
+Mensagem
+
+ 
+
+
+Entre com uma mensagem exclusiva … ‚sta circular.
+
+ 0 
+ 0 
+
+
+menscirc2
+C
+E
+ 
+ 35 
+ 35 
+ 8 
+ 15 
+ 0 
+Mensagem
+
+ 
+
+
+Entre com uma mensagem exclusiva … ‚sta circular.
+
+ 0 
+ 0 
+
+
+emitidos
+N
+I
+999999
+ 6 
+ 6 
+ 10 
+ 11 
+ 0 
+Emitidos
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+pagos
+N
+I
+999999
+ 6 
+ 6 
+ 10 
+ 24 
+ 0 
+Pagos
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+cancelados
+N
+I
+999999
+ 6 
+ 6 
+ 10 
+ 42 
+ 0 
+Cancelados
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+lancto_
+D
+V
+@D
+ 8 
+ 10 
+ 4 
+ 15 
+ 0 
+Lancamento
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+funcionar
+C
+V
+ 
+ 10 
+ 10 
+ 4 
+ 36 
+ 0 
+Usu rio
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+impress_
+D
+V
+@D
+ 8 
+ 10 
+ 5 
+ 15 
+ 0 
+Impress„o
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+ 1 
+Descri‡„o
+IIF(CLASSES->prior=[S],[Valor por mˆs......:],IIF(ARQGRUP->maxproc>ARQGRUP->acumproc,[Valor p/atendimento:],[Valor da circular.:]))
+
+ 3 
+ 2 
+ 18 
+
+ 0 
+ 0 
+ 0 
+ 0 

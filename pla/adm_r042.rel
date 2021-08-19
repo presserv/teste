@@ -1,0 +1,217 @@
+GAS-Pro v3.0
+011003022079001004058001015000176001
+[Ÿ]
+ 5 
+INSCRITS
+Impress.Inscr.
+codigo
+codigo
+grau>'1'
+011
+
+
+
+
+
+
+
+
+
+ 0 
+ 0 
+ 0 
+ 88 
+ 0 
+ 1 
+ 1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Nome
+nome
+
+ 37 
+C
+ 4 
+ 15 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+tab1
+'X'
+
+ 1 
+C
+ 4 
+ 52 
+grau<'6'.and.vivofalec='V'
+
+          
+
+
+
+
+
+
+
+
+
+
+tab2
+IIF(grau<'6'.AND.vivofalec='F',' X',IIF(!EMPT(nascto_),DTOC(nascto_),[ ]))
+
+ 10 
+C
+ 4 
+ 58 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Habilita 216/20
+CHR(27)+'3'+chr(20)
+
+ 5 
+C
+ 1 
+ 14 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Desabilita 216/20
+CHR(27)+'2'
+
+ 5 
+C
+ 89 
+ 14 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 0 
+ 0 
+ 32 
+
+T¡tulo aplica‡„o
+nsis
+
+ 0 
+ 0 
+ 22 
+
+Data do sistema
+DTOC(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 0 
+ 0 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 0 
+ 0 
+ 4 
+
+C¢digo relat¢rio
+"ADM_R042"
+
+ 0 
+ 0 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 0 
+ 0 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 0 
+ 0 
+ 0 
+ 0 

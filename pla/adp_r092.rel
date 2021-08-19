@@ -1,0 +1,285 @@
+GAS-Pro v3.0
+002003024079001006051001008000176001
+                                                                      PAG
+
+COMISSŽO
+Codigo Vendedor Tipo Vencto   Admiss„o Val.Total    Parc.
+------------------------------------------------------------------------------
+[Ÿ]
+ 7 
+EMCARNE
+Comiss„o
+
+vendedor+codigo
+tip=[1].AND.vendedor$('  '+M->rvend).AND.M->ateh1<=GRUPOS->admissao.AND.M->ateh2>=GRUPOS->admissao
+011
+
+
+
+
+
+
+
+
+
+ 0 
+ 1 
+ 0 
+ 66 
+ 0 
+ 5 
+ 3 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Codigo
+codigo
+999999
+ 6 
+C
+ 6 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Vendedor
+vendedor
+!!
+ 2 
+C
+ 6 
+ 8 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Tipo
+tip
+@!
+ 2 
+C
+ 6 
+ 17 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Vencto
+vencto_
+@D
+ 8 
+D
+ 6 
+ 22 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Admiss„o
+GRUPOS->admissao
+@D
+ 8 
+D
+ 6 
+ 31 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Val.Total
+TCARNES->vali
+99999.99
+ 8 
+N
+ 6 
+ 41 
+
+
+   û      
+
+
+
+
+
+
+
+
+
+
+Parc.
+TCARNES->vali/TCARNES->parf
+99999.99
+ 8 
+N
+ 6 
+ 50 
+
+
+   û      
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 1 
+ 1 
+ 32 
+
+T¡tulo aplica‡„o
+nsis
+
+ 2 
+ 1 
+ 22 
+
+Data do sistema
+DTOC(DATE())
+
+ 3 
+ 71 
+ 8 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 3 
+ 63 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 1 
+ 75 
+ 4 
+
+C¢digo relat¢rio
+"ADP_R092"
+
+ 2 
+ 71 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 3 
+ 15 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 0 
+ 1 
+[Vendedor ]
+  ûû û    
+vendedor
+
+
+ 0 
+ 3 
+COBRADOR
+ 1 
+vendedor
+
+
+
+GRUPOS
+ 1 
+codigo
+
+
+
+TCARNES
+ 1 
+tip
+
+
+

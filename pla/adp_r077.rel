@@ -1,0 +1,277 @@
+GAS-Pro v3.0
+011003022079001001001001012000176001
+[Ÿ]
+ 8 
+COECOB
+Outros Endere‡os
+codigo
+codigo
+
+011
+
+
+
+
+
+
+
+
+
+ 0 
+ 0 
+-1 
+ 66 
+ 0 
+ 1 
+ 3 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Tipo
+tipo
+!
+ 1 
+C
+ 2 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Endere‡o
+endereco
+@!
+ 35 
+C
+ 2 
+ 6 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Bairro
+bairro
+@!
+ 20 
+C
+ 2 
+ 42 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+CEP
+cep
+@R 99999-999
+ 9 
+C
+ 3 
+ 6 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Cidade
+cidade
+@!
+ 25 
+C
+ 3 
+ 16 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+UF
+uf
+!!
+ 2 
+C
+ 3 
+ 42 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Telefone
+telefone
+@!
+ 14 
+C
+ 3 
+ 45 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Obs
+obs
+ 
+ 20 
+C
+ 3 
+ 60 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 0 
+ 0 
+ 44 
+
+T¡tulo aplica‡„o
+nsis
+
+ 0 
+ 0 
+ 22 
+
+Data do sistema
+DTOC(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 0 
+ 0 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 0 
+ 0 
+ 4 
+
+C¢digo relat¢rio
+"ADP_R077"
+
+ 0 
+ 0 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 0 
+ 0 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 0 
+ 0 
+ 0 
+ 0 

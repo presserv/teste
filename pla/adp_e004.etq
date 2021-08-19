@@ -1,0 +1,172 @@
+GAS-Pro v3.0
+009022016058001001011001010000176001
+[Ÿ]
+ 5 
+GRUPOS
+Etiquetas de Cobran‡a
+
+
+ARQGRUP->proxcirc>[000].AND.EMPT(R00201F9()).AND. !CLASSES->prior=[S]
+052
+
+
+
+
+
+
+
+
+
+ 0 
+ 1 
+ 0 
+ 6 
+ 0 
+ 35 
+ 1 
+ 2 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Grupo
+grupo +[ ]+codigo+[ ]+cobrador
+
+ 35 
+C
+ 1 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Nome
+nome
+
+ 35 
+C
+ 2 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Endere‡o
+endereco
+
+ 35 
+C
+ 3 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Bairro
+bairro
+
+ 20 
+C
+ 4 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Cidade
+LEFT(ALLTRIM(cidade)+cep,35)
+
+ 35 
+C
+ 5 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+ 0 
+ 0 
+ 0 
+ 0 
+ 3 
+ARQGRUP
+ 1 
+grupo
+
+
+
+CIRCULAR
+ 1 
+grupo+ARQGRUP->proxcirc
+
+
+
+CLASSES
+ 1 
+tipcont
+
+
+

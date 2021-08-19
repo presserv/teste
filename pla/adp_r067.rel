@@ -1,0 +1,229 @@
+GAS-Pro v3.0
+002003024079001006002001008000176001
+                                                                      PAG
+
+GERAR CONTR.COBRADORES
+
+------------------------------------------------------------------------------
+ Total:
+[Ÿ]
+ 1 
+TAXAS
+Gerar contr.Cobradores
+
+cobrador+DTOS(emissao_)
+emissao_=M->remissao_.AND.valorpg=0
+011
+
+
+
+
+
+
+
+
+
+ 0 
+ 1 
+ 0 
+ 66 
+ 0 
+ 5 
+ 3 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Valor
+valor
+@E 999,999.99
+ 10 
+N
+ 6 
+ 9 
+
+
+   û      
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 1 
+ 1 
+ 32 
+
+T¡tulo aplica‡„o
+nsis
+
+ 2 
+ 1 
+ 22 
+
+Data do sistema
+DTOC(DATE())
+
+ 3 
+ 71 
+ 8 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 3 
+ 63 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 1 
+ 75 
+ 4 
+
+C¢digo relat¢rio
+"ADP_R067"
+
+ 2 
+ 71 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 4 
+ 1 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 0 
+ 1 
+[Cobrador: ]+COBRADOR->cobrador+[-]+COBRADOR->nome
+  û  û    
+cobrador
+
+
+ 1 
+TXENTR
+1
+ 12 
+!PTAB(codigo+tipo+circ,'TXENTR',3)
+
+ 0 
+
+
+
+seq
+N
+
+
+
+codigo
+C
+codigo
+
+
+tipo
+C
+tipo
+
+
+circ
+C
+circ
+
+
+valor
+N
+valor
+
+
+cob
+C
+cobrador
+
+
+mesref
+C
+M->rmesref
+
+
+pgto_
+D
+
+
+
+valorpg
+N
+
+
+
+forma
+C
+
+
+
+baixa_
+D
+
+
+
+por
+C
+
+
+
+ 2 
+TXENTR
+ 3 
+codigo+tipo+circ
+
+
+
+COBRADOR
+ 1 
+cobrador
+
+
+

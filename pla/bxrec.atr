@@ -1,0 +1,542 @@
+GAS-Pro v3.0
+004011024063001002010001006001176001
+ Numero:   -      -
+ Contrato:
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄ
+                                     ³ Circulares
+                                     ³  Ini
+                           Reg.:     ³  £lt
+                                     ³  Qtd
+ Admiss„o:           Sai Taxa:       ³
+ Funerais:           Cobrador:       ³  Pend
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄ
+    Cir Emiss„o     Valor   Pago em     Valor
+
+
+
+
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ Circular..:        Valor pago:
+ Pago com..:             Troco:
+  emitida em          por
+[Ÿ]
+Inclus„o~~26006
+Manuten‡„o~~27007
+Consulta~~28008
+[Ÿ]
+ 12 
+ 2 
+p/ N£mero
+
+ 1 
+ 2 
+[Ÿ]
+p/O.P.
+
+ 10 
+ 1 
+ 2 
+[Ÿ]
+Recebimento de Taxas
+Recebimento de Taxas
+
+1=3
+Mantido pela Recep‡„o
+nivelop=3
+Para alterar este documento|chame o gerente de sistema
+1=3
+Mantido pela Recep‡„o
+005
+
+
+
+
+
+
+
+ 0 
+ 1 
+-1 
+-1 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ano
+C
+V
+99
+ 2 
+ 2 
+ 1 
+ 10 
+ 0 
+Ano
+
+
+
+RIGHT(DTOC(DATE()),2)
+
+
+ 0 
+ 0 
+
+
+numero
+C
+V
+999999
+ 6 
+ 6 
+ 1 
+ 13 
+ 0 
+Numero
+
+
+
+
+
+
+ 0 
+ 1 
+
+
+codigo
+C
+E
+999999
+ 6 
+ 6 
+ 2 
+ 12 
+ 0 
+Codigo
+
+PTAB(codigo,'GRUPOS',1).AND.(PTAB(codigo,'TAXAS',1).OR.1=1)
+Contrato inv lido |ou inexistente
+
+Informe o n£mero do contrato
+VDBF(6,26,20,77,'GRUPOS',{'grupo','codigo','nome'},1,'codigo')
+ 0 
+ 0 
+
+
+tipo
+C
+E
+!
+ 1 
+ 1 
+ 17 
+ 14 
+ 0 
+Tipo
+nivelop=3
+tipo $ [123678]
+TIPO n„o aceit vel
+
+Qual o tipo de lan‡amento
+MTAB([1=J¢ia|2=Taxa|3=Carnˆ|6=J¢ia+Seguro|7=Taxa+Seguro|8=Carnˆ+Seguro],[TIPO])
+ 0 
+ 0 
+
+
+circ
+C
+E
+999
+ 3 
+ 3 
+ 17 
+ 15 
+ 0 
+Circular
+
+PTAB(codigo+tipo+circ,'TAXAS',1).AND.EMPT(TAXAS->valorpg)
+Circular n„o cadastrada|ou|Taxa j  baixada
+
+N£mero da Circular|Mantido pela emissao de recibos
+PTAB(codigo,'TAXAS',1).AND.VDBF(6,23,20,77,'TAXAS',{'codigo','tipo','circ','emissao_','valor','pgto_','valorpg'},1,'circ')
+ 0 
+ 0 
+
+
+valorpg
+N
+E
+@E 999,999.99
+ 9 
+ 10 
+ 17 
+ 33 
+ 2 
+Valor pago
+!EMPT(circ)
+valorpg>0
+VALOR PAGO n„o aceit vel|Digite o valor recebido
+BXR_02F9() // Atualiza pr¢x.impress„o
+Informe o valor pago ou zeros se for retorno.
+
+ 0 
+ 0 
+
+
+valoraux
+N
+E
+@E 999,999.99
+ 9 
+ 10 
+ 18 
+ 14 
+ 2 
+Pago com...
+
+valoraux>=valorpg
+VALOR INSUFICIENTE para quitar o d‚bito|A T E N € Ç O
+
+Informe o valor pago
+
+ 0 
+ 0 
+
+
+emitido_
+D
+V
+@D
+ 8 
+ 8 
+ 19 
+ 14 
+ 0 
+Emitido em
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+por
+C
+V
+ 
+ 10 
+ 10 
+ 19 
+ 27 
+ 0 
+Por
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+numop
+C
+V
+999999
+ 6 
+ 6 
+ 19 
+ 44 
+ 0 
+N§ O.P.
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+grupo
+C
+I
+!9
+ 2 
+ 2 
+ 0 
+ 0 
+ 0 
+Grupo
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+filial
+C
+I
+@!
+ 2 
+ 2 
+ 0 
+ 0 
+ 0 
+Filial
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+ 18 
+Nome
+GRUPOS->nome
+
+ 4 
+ 2 
+ 35 
+
+Circ 1 - 4
+IIF(PTAB(codigo,'TAXAS',1),BXR_01F9(),[])
+
+ 12 
+ 3 
+ 45 
+
+Ult.Circular
+GRUPOS->ultcirc
+999
+ 6 
+ 46 
+ 3 
+
+Situa‡„o
+IIF(GRUPOS->situacao='2',[CANCELADO],[         ])+[ - Grupo ]+GRUPOS->grupo
+
+ 2 
+ 23 
+ 22 
+
+Admiss„o
+GRUPOS->admissao
+@D
+ 8 
+ 12 
+ 8 
+
+Saitxa
+GRUPOS->saitxa
+@R 99/99
+ 8 
+ 32 
+ 5 
+
+Cobrador
+GRUPOS->cobrador
+!!
+ 9 
+ 32 
+ 2 
+
+Funerais
+GRUPOS->funerais
+99
+ 9 
+ 12 
+ 2 
+
+Circ.Inicial
+GRUPOS->circinic
+999
+ 5 
+ 46 
+ 3 
+
+Endere‡o
+GRUPOS->endereco
+
+ 5 
+ 2 
+ 35 
+
+Bairro
+GRUPOS->bairro
+
+ 6 
+ 2 
+ 25 
+
+Cidade
+GRUPOS->cidade
+
+ 7 
+ 2 
+ 25 
+
+CEP
+GRUPOS->cep
+@R 99999-999
+ 7 
+ 28 
+ 9 
+
+Regi„o
+GRUPOS->regiao
+999
+ 6 
+ 34 
+ 3 
+
+endereco
+IIF(PTAB(codigo,'ALENDER',1),[ENDERE€O ALTERADO ]+DTOC(ALENDER->data_),[ ])
+
+ 1 
+ 23 
+ 27 
+
+troco
+valoraux-valorpg
+@E 999,999.99
+ 18 
+ 33 
+ 11 
+
+Qt.Circulares
+GRUPOS->qtcircs
+999
+ 7 
+ 46 
+ 3 
+
+Filial
+filial
+@!
+ 1 
+ 20 
+ 2 
+
+ 8 
+TAXAS
+pgto_
+DATE()
+CTOD('  /  /  ')
+!EMPT(valorpg)
+
+
+TAXAS
+forma
+[P]
+[ ]
+!EMPT(valorpg)
+
+
+TAXAS
+baixa_
+DATE()
+CTOD('  /  /  ')
+!EMPT(valorpg)
+
+
+TAXAS
+por
+M->usuario
+
+!EMPT(valorpg)
+
+
+TAXAS
+valorpg
+valorpg
+0
+!EMPT(valorpg)
+
+
+BXREC
+emitido_
+DATE()
+
+
+
+
+BXREC
+por
+M->usuario
+
+EMPT(por)
+
+
+BXREC
+numop
+ORDPGRC->numop
+
+
+
+
+ 0 
+ 1 
+HISTORIC
+1
+ 4 
+1=3 //For‡a INTLAN
+1=3
+ 0 
+
+
+
+historico
+C
+
+
+
+descricao
+C
+
+
+
+tipo
+C
+
+
+
+origem
+C
+
+
+
+ 0 

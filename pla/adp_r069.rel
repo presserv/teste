@@ -1,0 +1,289 @@
+GAS-Pro v3.0
+002003024079006007080001009000176001
+                                                                      PAG
+
+LAN€AR CUSTOS NAS TAXAS
+
+Hora  Hist Contr. Complemento                         Qtde.     Valor Circ.
+------------------------------------------------------------------------------
+[Ÿ]
+ 7 
+CSTSEG
+Lan‡ar Custos nas Taxas
+
+DTOS(emissao_)
+circ<[001].AND.M->remiss_>emissao_.AND.(PTAB(contrato+[3],'TAXAS',1).AND.R06901F9())
+011
+
+
+
+
+
+
+
+
+
+ 0 
+ 1 
+ 0 
+ 66 
+ 0 
+ 6 
+ 3 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Hora
+hora
+99:99
+ 5 
+C
+ 7 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Hist
+historic
+999
+ 3 
+C
+ 7 
+ 7 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Contr.
+contrato
+999999
+ 6 
+C
+ 7 
+ 12 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Complemento
+complement
+@!
+ 35 
+C
+ 7 
+ 19 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Qtde.
+qtdade
+99999
+ 5 
+N
+ 7 
+ 55 
+
+
+   û      
+
+
+
+
+
+
+
+
+
+
+Valor
+valor
+999999.99
+ 9 
+N
+ 7 
+ 61 
+
+
+   û      
+
+
+
+
+
+
+
+
+
+
+Circ.
+TAXAS->tipo+[ ]+TAXAS->circ
+
+ 5 
+C
+ 7 
+ 71 
+R06901F9()
+
+          
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 1 
+ 1 
+ 44 
+
+T¡tulo aplica‡„o
+nsis
+
+ 2 
+ 1 
+ 22 
+
+Data do sistema
+DTOC(DATE())
+
+ 3 
+ 71 
+ 8 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 3 
+ 63 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 1 
+ 75 
+ 4 
+
+C¢digo relat¢rio
+"ADP_R069"
+
+ 2 
+ 71 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 4 
+ 1 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 3 
+TAXAS
+valor
+TAXAS->valor+valor
+
+
+
+
+CSTSEG
+tipo
+TAXAS->tipo
+
+
+
+
+CSTSEG
+circ
+TAXAS->circ
+
+
+
+
+ 1 
+DTOC(emissao_)
+û û  û    
+emissao_
+
+
+ 0 
+ 0 

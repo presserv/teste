@@ -1,0 +1,444 @@
+GAS-Pro v4.0
+014002024078001003074001017001165001
+  Tip   N§  Emissao       Valor   ³ Pagto     Valor Pago Cb  F Status
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+                                  ³
+                                  ³
+                                  ³
+                                  ³
+                                  ³
+                                  ³
+                                  ³
+[Ÿ]
+Manuten‡„o~~27007
+Consulta~~28008
+[Ÿ]
+ 13 
+ 4 
+Contrato/Circular
+
+ 1 
+ 2 
+ 3 
+[Ÿ]
+Tipo de taxa
+
+ 2 
+ 3 
+[Ÿ]
+Emiss„o
+
+ 4 
+[Ÿ]
+Cobrador
+
+ 8 
+ 2 
+ 3 
+[Ÿ]
+Cadastro de Taxas
+Taxas
+
+
+
+
+
+
+
+005
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 0 
+ 0 
+-1 
+-1 
+-1 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+codigo
+C
+I
+999999
+ 6 
+ 6 
+ 0 
+ 0 
+ 0 
+Codigo
+
+
+
+
+
+
+-1 
+ 0 
+
+
+tipo
+C
+E
+9
+ 1 
+ 1 
+ 3 
+ 1 
+ 0 
+Tipo
+
+tipo $ [1236789].AND.(PTAB(codigo,'GRUPOS',1).AND.PTAB(GRUPOS->tipcont,'CLASSES',1).OR.1=1)
+TIPO n„o aceit vel
+
+Qual o tipo de lan‡amento
+MTAB([1=J¢ia |2=Taxa |3=Carnˆ|6=J¢ia+Seguro|7=Taxa+Seguro|8=Carnˆ+Seguro],[TIPO])
+ 0 
+ 0 
+
+
+circ
+C
+E
+999
+ 3 
+ 3 
+ 3 
+ 9 
+ 0 
+Circular
+
+!EMPT(circ).AND.(tipo$[16].OR.PTAB(GRUPOS->grupo+circ,'CIRCULAR',1))
+Necess rio informar CIRCULAR v lida
+
+Informe o n£mero da circular a consultar
+
+ 0 
+ 0 
+
+
+emissao_
+D
+E
+@D
+ 8 
+ 10 
+ 3 
+ 13 
+ 0 
+Emissao
+
+!EMPT(emissao_)
+Necess rio informar EMISSAO v lida
+
+Data da Emiss„o da Circular|Mantido pela emissao do recibo
+
+ 0 
+ 0 
+
+
+valor
+N
+E
+@E 999,999.99
+ 9 
+ 10 
+ 3 
+ 24 
+ 2 
+Valor
+
+valor>0
+VALOR n„o aceit vel
+
+
+
+ 0 
+ 0 
+
+
+pgto_
+D
+E
+@D
+ 8 
+ 10 
+ 3 
+ 36 
+ 0 
+Pagamento
+nivelop=3
+ 
+
+
+Informe a data de pagamento/Baixa
+
+ 0 
+ 0 
+
+
+valorpg
+N
+E
+@E 999,999.99
+ 9 
+ 10 
+ 3 
+ 47 
+ 2 
+Valor pago
+nivelop=3
+!(valorpg<0)
+VALOR PAGO n„o aceit vel
+
+Informe o valor pago/baixado
+
+ 0 
+ 0 
+
+
+cobrador
+C
+E
+!!!
+ 3 
+ 3 
+ 3 
+ 58 
+ 0 
+Cobrador
+
+PTAB(cobrador,'COBRADOR',1).AND.(PTAB(cobrador+M->mmesref,'FCCOB',1).OR.1=1)
+Problemas encontrados no arquivo Cobrador ou |Circular do grupo n„o cadastrada para|este cobrador.
+GRUPOS->cobrador
+Informe o Cobrador que recebeu este.
+VDBF(6,3,20,77,'COBRADOR',{'cobrador','funcao','nome','cidade','telefone'},1,'cobrador',[])
+ 0 
+ 0 
+
+
+forma
+C
+E
+!
+ 1 
+ 1 
+ 3 
+ 62 
+ 0 
+Forma
+
+forma$[PR ]
+FORMA n„o aceit vel
+
+Esta lan‡amento foi Pago ou Cancelado|Deixe sem preencher se ainda em aberto
+
+ 0 
+ 0 
+
+
+baixa_
+D
+I
+@D
+ 8 
+ 10 
+ 0 
+ 0 
+ 0 
+Baixa_
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+por
+C
+I
+ 
+ 10 
+ 10 
+ 0 
+ 0 
+ 0 
+Por
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+stat
+C
+E
+9
+ 1 
+ 1 
+ 0 
+ 0 
+ 0 
+Status
+
+stat $ [12679]
+STATUS n„o aceit vel
+
+Informe a situa‡„o deste recibo|Tecle F8 para busca em tabela
+MTAB([1=Gerada|2=Impressa|6=Pg Recep‡„o|7=Bx.p/FCC|9=Bx.Plano],[STATUS])
+ 0 
+ 0 
+
+
+filial
+C
+I
+@!
+ 2 
+ 2 
+ 0 
+ 0 
+ 0 
+Filial
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+ 4 
+Status
+TAX_02F9()
+
+ 3 
+ 64 
+ 8 
+
+Por
+LEFT(por,9)
+
+ 0 
+ 0 
+ 9 
+
+Filial
+filial
+@!
+ 3 
+ 73 
+ 2 
+
+Tipo
+SUBSTR('J¢ia Taxa Carnˆ          J+SegT+SegC+Seg',(VAL(tipo)-1)*5+1,5)
+
+ 3 
+ 3 
+ 5 
+
+ 3 
+GRUPOS
+qtcircs
+GRUPOS->qtcircs + 1
+GRUPOS->qtcircs - 1
+!tipo='1'
+
+
+GRUPOS
+qtcircpg
+GRUPOS->qtcircpg + 1
+GRUPOS->qtcircpg - 1
+!tipo='1'.AND.valorpg>0
+
+
+GRUPOS
+ultcirc
+circ
+
+!tipo='1'.AND.circ>GRUPOS->ultcirc
+
+
+ 0 
+ 0 
+ 1 
+ADM_RV33
+ 0 
+Impress„o das Taxas
+stat<[2]
+
+

@@ -1,0 +1,188 @@
+GAS-Pro v3.0
+
+[Ÿ]
+ 0 
+GRUPOS
+Gera contas
+
+
+EMPT(rv4401f9())
+001
+
+
+
+
+
+
+
+
+
+-1 
+ 1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 6 
+TAXAS
+emissao_
+M->remissao_
+
+PTAB(codigo+IIF(CLASSES->prior=[S],'3','2')+M->rproxcirc,'TAXAS',1)
+
+
+TAXAS
+valor
+VAL_01F9()
+
+PTAB(codigo+IIF(CLASSES->prior=[S],'3','2')+M->rproxcirc,'TAXAS',1)
+
+
+TAXAS
+cobrador
+cobrador
+
+PTAB(codigo+IIF(CLASSES->prior=[S],'3','2')+M->rproxcirc,'TAXAS',1)
+
+
+TAXAS
+stat
+[1]
+
+PTAB(codigo+IIF(CLASSES->prior=[S],'3','2')+M->rproxcirc,'TAXAS',1)
+
+
+GRUPOS
+circinic
+M->rproxcirc
+
+circinic<'001'
+
+
+GRUPOS
+ultcirc
+M->rproxcirc
+
+
+
+
+ 0 
+ 1 
+TAXAS
+1
+ 13 
+!PTAB(codigo+IIF(CLASSES->prior=[S],[3],[2])+M->rproxcirc,'TAXAS',1).AND.VAL_01F9()>0
+
+-1 
+
+
+
+codigo
+C
+codigo
+
+
+tipo
+C
+IIF(CLASSES->prior=[S],[3],[2])
+
+
+circ
+C
+M->rproxcirc
+
+
+emissao_
+D
+M->remissao_
+
+
+valor
+N
+VAL_01F9()
+
+
+pgto_
+D
+
+
+
+valorpg
+N
+
+
+
+cobrador
+C
+cobrador
+
+
+forma
+C
+
+
+
+baixa_
+D
+
+
+
+por
+C
+
+
+
+stat
+C
+'1'
+
+
+filial
+C
+
+
+
+ 3 
+CLASSES
+ 1 
+tipcont
+
+
+
+ARQGRUP
+ 1 
+grupo
+
+
+
+COBRADOR
+ 1 
+cobrador
+
+
+

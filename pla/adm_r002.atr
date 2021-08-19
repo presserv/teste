@@ -1,0 +1,140 @@
+GAS-Pro v3.0
+012009016067001001042001013000176001
+ Emiss„o.:            Mes.Ref.:        Valor:
+ Mensagem:
+[Ÿ]
+[Ÿ]
+ 4 
+ 0 
+Recibos
+Recibos
+
+
+
+
+
+
+
+056
+
+
+
+
+
+
+
+ 0 
+ 0 
+-1 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+remissao_
+D
+E
+@D
+ 8 
+ 8 
+ 1 
+ 12 
+ 0 
+Emiss„o
+
+!EMPT(Remissao_)
+Informe uma data v lida p/ EMISSŽO
+DATE()
+Data da Emiss„o da Circular.| Para atualizar circulares se n„o preenchidas| com antecedˆncia.
+
+ 0 
+ 0 
+
+
+rmesref
+C
+E
+@R 99/99
+ 4 
+ 5 
+ 1 
+ 33 
+ 0 
+Mes.Ref.
+
+MMAA(rmesref)
+Necess rio informar MES.REF.
+SUBSTR(DTOC(remissao_),4,2)+RIGHT(DTOC(remissao_),2)
+Mˆs de referˆncia da cobran‡a
+
+ 0 
+ 0 
+
+
+recvalor
+N
+E
+@E 999,999.99
+ 9 
+ 10 
+ 1 
+ 47 
+ 2 
+Valor
+
+recvalor>0
+VALOR n„o aceit vel
+
+Este valor ser  para atualizar o arquivo de |Circulares caso n„o tenha sido preenchido.
+
+ 0 
+ 0 
+
+
+recmensag
+C
+E
+@!
+ 60 
+ 45 
+ 2 
+ 12 
+ 0 
+Mensagem
+
+ 
+
+
+Entre com uma mensagem a ser impressa nos recibos|no caso de n„o existir uma na circular.
+
+ 0 
+ 0 
+
+
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 

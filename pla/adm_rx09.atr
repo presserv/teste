@@ -1,0 +1,79 @@
+GAS-Pro v3.0
+012021014062001001001001013000176001
+ Emiss„o:
+[Ÿ]
+[Ÿ]
+ 1 
+ 0 
+Grupos c/Taxas a Emitir
+Grupos c/Taxas a Emitir
+
+
+
+
+
+
+
+056
+
+
+
+
+
+
+
+ 0 
+ 0 
+-1 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+remissao_
+D
+E
+@D
+ 8 
+ 8 
+ 1 
+ 11 
+ 0 
+Emiss„o
+
+!EMPT(Remissao_).AND.remissao_>=DATE()
+Informe uma data v lida p/ EMISSŽO | data de hoje ou posterior.
+CTOD('05'+SUBSTR(DTOC(DATE()+30),3))
+Data da Emiss„o da Circular.| Para atualizar circulares se n„o preenchidas| com antecedˆncia.
+
+ 0 
+ 0 
+
+
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 

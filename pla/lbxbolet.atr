@@ -1,0 +1,327 @@
+GAS-Pro v3.0
+005019013064001002011001007000176001
+ Nr Lote:           (                   )
+ Emiss„o:           FCC:
+
+ Total das Despesas:
+ Total dos Cr‚ditos:
+ Liquido creditado.:
+[Ÿ]
+Inclus„o~~26006
+Manuten‡„o~~27007
+Consulta~~28008
+[Ÿ]
+ 10 
+ 1 
+Nr.Lote
+
+ 1 
+[Ÿ]
+Baixa Boletos (Francesinha)
+Baixa Boletos
+
+
+
+
+
+
+
+005
+
+
+
+
+
+
+
+ 0 
+ 1 
+-1 
+-1 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+nrlote
+C
+E
+999999
+ 6 
+ 6 
+ 1 
+ 11 
+ 0 
+Nr Lote
+
+!EMPT(nrlote)
+Necess rio informar NR LOTE
+
+Informe o n£mero do lote|ou a identifica‡„o da Francesinha
+
+ 0 
+ 1 
+
+
+emissao_
+D
+E
+@D
+ 8 
+ 8 
+ 2 
+ 11 
+ 0 
+Emiss„o
+
+!EMPT(emissao_)
+Necess rio informar EMISSŽO
+DATE()-1
+Informe a data da emiss„o do lote
+
+ 0 
+ 0 
+
+
+nfcc
+C
+I
+999999
+ 6 
+ 6 
+ 0 
+ 0 
+ 0 
+N.FCC
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+totdesp
+N
+E
+@E 999,999.99
+ 9 
+ 10 
+ 4 
+ 22 
+ 2 
+Total das Despesas
+
+!(totdesp<0)
+VALOR n„o aceit vel|deve ser positivo
+
+Informe o total das despesas|cobradas pelo banco
+
+ 0 
+ 0 
+
+
+totcred
+N
+E
+@E 999,999.99
+ 9 
+ 10 
+ 5 
+ 22 
+ 2 
+Total dos Cr‚ditos
+
+!(totcred<0)
+VALOR n„o aceit vel
+
+Informe o valor bruto dos|boletos baixados
+
+ 0 
+ 0 
+
+
+totliq
+N
+E
+@E 999,999.99
+ 9 
+ 10 
+ 6 
+ 22 
+ 2 
+Liquido creditado
+
+!(totliq<0)
+VALOR n„o aceit vel|Informe o valor liquido creditado.
+
+Informe o valor liquido|creditado em conta
+totcred-totdesp
+ 0 
+ 0 
+
+
+por
+C
+I
+ 
+ 10 
+ 10 
+ 0 
+ 0 
+ 0 
+Por
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+em_
+D
+I
+@D
+ 8 
+ 8 
+ 0 
+ 0 
+ 0 
+Em
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+ldesp
+N
+I
+@E 999,999.99
+ 9 
+ 10 
+ 0 
+ 0 
+ 2 
+Total das Despesas
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+lcred
+N
+I
+@E 999,999.99
+ 9 
+ 10 
+ 0 
+ 0 
+ 2 
+Total dos Cr‚ditos
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+ 6 
+Por
+por
+
+ 1 
+ 22 
+ 10 
+
+Em
+em_
+@D
+ 1 
+ 33 
+ 8 
+
+Titulo
+IIF(nivelop=3,[Diferen‡a],[         ])
+
+ 3 
+ 34 
+ 10 
+
+Total das Despe
+IIF(nivelop=3,TRAN(totdesp-ldesp,[@E 999,999.99]),[ ])
+
+ 4 
+ 34 
+ 10 
+
+Total dos Cr‚di
+IIF(nivelop=3,TRAN(totcred-lcred,[@E 999,999.99]),[ ])
+
+ 5 
+ 34 
+ 10 
+
+N.FCC
+nfcc
+
+ 2 
+ 26 
+ 6 
+
+ 2 
+LBXBOLET
+por
+M->usuario
+
+EMPT(em_)
+
+
+LBXBOLET
+em_
+DATE()
+
+EMPT(em_)
+
+
+ 0 
+ 0 
+ 0 

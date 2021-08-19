@@ -1,0 +1,923 @@
+GAS-Pro v4.0
+003009024072001014043001017001176001
+ Conta Recebto.:         Conta Pagto.:
+ Hist.F.C.C....:
+ Hist.Rec.Taxas:
+ Hist.Rec.Carn.:
+ Hist.Pagamento:
+       ÄÄÄÄÄÄÄÄÄÄ Dados do £ltimo lan‡amento ÄÄÄÄÄÄÄÄÄÄ
+ Grupo.:    Filial:     C¢digo:        Inscr:    Seq:
+       ÄÄÄÄÄÄÄÄÄÄÄÄÄ Dados de uso interno ÄÄÄÄÄÄÄÄÄÄÄÄÄ
+ Cancelamentos:           Reintegra‡”es:
+ Recibo 2¦ Via:           Contr.        Tipo   Circ
+ C¢digo de Grupo para controle VIP:
+ Imprime recibo com c¢digo barra..?
+ Os Inscritos est„o cadastrados...?
+ Imprime recibos da recep‡„o c/Falecidos?
+ Cidade:
+ Usar como padr„o recibos em formul rio branco?
+       ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ Dados da Empresa ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+                                         CGC
+[Ÿ]
+[Ÿ]
+ 39 
+ 0 
+Parƒmetros do sistema
+Parƒmetros
+
+
+
+
+
+
+
+054
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 0 
+ 2 
+-1 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+pgrupo
+C
+V
+!!
+ 2 
+ 2 
+ 7 
+ 10 
+ 0 
+Grupo
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+p_filial
+C
+E
+@!
+ 2 
+ 2 
+ 7 
+ 21 
+ 0 
+C¢digo
+
+ 
+
+
+Informe o c¢digo da filial
+
+ 0 
+ 0 
+
+
+pcontrato
+C
+V
+999999
+ 6 
+ 6 
+ 7 
+ 33 
+ 0 
+Codigo
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+pgrau
+C
+V
+9
+ 1 
+ 1 
+ 7 
+ 47 
+ 0 
+Inscr.
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+pseq
+N
+V
+99
+ 2 
+ 2 
+ 7 
+ 55 
+ 0 
+Seq
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+pverpag
+C
+I
+!
+ 1 
+ 1 
+ 0 
+ 0 
+ 0 
+Verificar Pagas?
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+preplanc
+C
+I
+!
+ 1 
+ 1 
+ 0 
+ 0 
+ 0 
+Repetir lan‡amento?
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+lastcodigo
+C
+I
+999999
+ 6 
+ 6 
+ 0 
+ 0 
+ 0 
+Maior Contrato
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+nrcanc
+N
+V
+999999
+ 6 
+ 6 
+ 9 
+ 17 
+ 0 
+N£mero
+
+
+
+000000
+
+
+ 0 
+ 0 
+
+
+nrreint
+N
+V
+999999
+ 6 
+ 6 
+ 9 
+ 42 
+ 0 
+Nrreint
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+contarec
+C
+E
+@!
+ 5 
+ 5 
+ 1 
+ 18 
+ 0 
+Conta Recepcao
+
+!EMPT(contarec)
+Necess rio informar CONTA RECEPCAO p/recebimentos
+[RECEP]
+Informe a Conta que receber |os lan‡amentos da recep‡„o.
+
+ 0 
+ 0 
+
+
+contapag
+C
+E
+@!
+ 5 
+ 5 
+ 1 
+ 41 
+ 0 
+Conta Pagamento
+
+!EMPT(contapag)
+Necess rio informar CONTA RECEPCAO p/Pagamentos
+[RECEP]
+Informe a Conta que pagar |os lan‡amentos da recep‡„o.
+
+ 0 
+ 0 
+
+
+histrcfcc
+C
+E
+999
+ 3 
+ 3 
+ 2 
+ 18 
+ 0 
+Hist¢rico
+
+histrcfcc=[000].OR. PTAB(histrcfcc,'HISTORIC',1)
+HIST¢RICO n„o existe na tabela
+
+Informe o hist¢rico do lan‡amento de|recebimento de FCC.
+VDBF(6,24,20,77,'HISTORIC',{'historico','descricao','tipo'},1,'historico',[HISTORIC->origem$'ADM   '])
+ 0 
+ 0 
+
+
+histrcrec
+C
+E
+999
+ 3 
+ 3 
+ 3 
+ 18 
+ 0 
+Hist¢rico
+
+histrcrec=[000].OR. PTAB(histrcrec,'HISTORIC',1)
+HIST¢RICO n„o existe na tabela
+
+Informe o hist¢rico do lan‡amento|para taxas recebidas na Recep‡„o.
+VDBF(6,24,20,77,'HISTORIC',{'historico','descricao','tipo'},1,'historico',[HISTORIC->origem$'ADM   '])
+ 0 
+ 0 
+
+
+histrccar
+C
+E
+999
+ 3 
+ 3 
+ 4 
+ 18 
+ 0 
+Hist¢rico
+
+histrccar=[000].OR. PTAB(histrccar,'HISTORIC',1)
+HIST¢RICO n„o existe na tabela
+
+Informe o hist¢rico do lan‡amento|para parcelas recebidas na Recep‡„o.
+VDBF(6,24,20,77,'HISTORIC',{'historico','descricao','tipo'},1,'historico',[HISTORIC->origem$'ADM   '])
+ 0 
+ 0 
+
+
+histpg
+C
+E
+999
+ 3 
+ 3 
+ 5 
+ 18 
+ 0 
+Hist¢rico
+
+histpg=[000].OR. PTAB(histpg,'HISTORIC',1)
+HIST¢RICO n„o existe na tabela
+
+Informe o hist¢rico|para lan‡amento de pagamentos.
+VDBF(6,24,20,77,'HISTORIC',{'historico','descricao','tipo'},1,'historico',[HISTORIC->origem$'ADM   '])
+ 0 
+ 0 
+
+
+nrauxrec
+C
+E
+@R 99-999999
+ 8 
+ 9 
+ 10 
+ 17 
+ 0 
+N§ Recibo
+
+ 
+
+
+Informe o n£mero do recibo a imprimir.|no formato AA-NNNNNN|onde: AA=Ano, N=n£mero|ou deixe sem preencher
+
+ 0 
+ 0 
+
+
+mcodigo
+C
+E
+999999
+ 6 
+ 6 
+ 10 
+ 34 
+ 0 
+Codigo
+
+PTAB(mcodigo,'GRUPOS',1).AND.PTAB(mcodigo,'TAXAS',1).OR.mcodigo=[00000]
+C¢digo inv lido ou sem Taxas pendentes
+
+Informe o n£mero do contrato
+VDBF(6,26,20,77,'GRUPOS',{'grupo','codigo','nome'},1,'codigo',[situacao=1])
+ 0 
+ 0 
+
+
+mtipo
+C
+E
+!
+ 1 
+ 1 
+ 10 
+ 46 
+ 0 
+Tipo
+!(mcodigo=[00000])
+mtipo $ [123678 ]
+TIPO n„o aceit vel|Tecle F8 ou deixe sem preencher
+
+Qual o tipo de lan‡amento
+MTAB([1=J¢ia|2=Taxa|3=Carnˆ|6=J¢ia+Seguro|7=Taxa+Seguro|8=Carnˆ+Seguro],[TIPO])
+ 0 
+ 0 
+
+
+mcirc
+C
+E
+999
+ 3 
+ 3 
+ 10 
+ 53 
+ 0 
+Circular
+!(mcodigo=[00000])
+PTAB(mcodigo+mcirc,'TAXAS',1).AND.PTAB(GRUPOS->grupo+mcirc,'CIRCULAR',1).or.mcirc='000'
+Necess rio informar CIRCULAR existente
+
+N£mero da Circular|Mantido pela emissao de recibos
+VDBF(6,22,20,77,'TAXAS',{'codigo','circ','emissao_','valor','valorpg','forma'},1,'circ',[])
+ 0 
+ 0 
+
+
+mgrupvip
+C
+E
+!!
+ 2 
+ 2 
+ 11 
+ 37 
+ 0 
+Grup
+
+EMPT(mgrupvip).OR.PTAB(mgrupvip,'ARQGRUP',1)
+GRUP n„o existe na tabela
+
+Entre com o c¢digo do Grupo que ser  utilizado|como controle dos contratos VIPs.
+
+ 0 
+ 0 
+
+
+combarra
+C
+E
+!
+ 1 
+ 1 
+ 12 
+ 37 
+ 0 
+Combarra
+
+combarra$'SN '
+COMBARRA n„o aceit vel|Digite S ou N
+
+Informe se os recibos devem ser impressos|com o c¢digo de barras
+
+ 0 
+ 0 
+
+
+cinscr
+C
+E
+!
+ 1 
+ 1 
+ 13 
+ 37 
+ 0 
+Com Inscritos
+
+cinscr$'SN '
+Digite S ou N
+
+Informe se os Inscritos estÆo cadastrados|Se sim, ser  obrigat¢rio a identifica‡Æo|dele em alguns procedimentos, como guias, processos,etc...
+
+ 0 
+ 0 
+
+
+comfalec
+C
+E
+!
+ 1 
+ 1 
+ 14 
+ 43 
+ 0 
+Com Falecido
+
+comfalec$'SN '
+Digite S para imprimir recibos com os|Falecidos da circular (pr‚-impresso)|ou N para folha branca
+
+Informe se os recibos da recep‡Æo|devem ser impressos com os|falecidos, se digitar N, ser  impresso em folha branca
+
+ 0 
+ 0 
+
+
+mproc1
+C
+I
+99999
+ 5 
+ 5 
+ 0 
+ 0 
+ 0 
+Processo
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+mproc2
+C
+I
+99
+ 2 
+ 2 
+ 0 
+ 0 
+ 0 
+Ano
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+mproc3
+C
+I
+99
+ 2 
+ 2 
+ 0 
+ 0 
+ 0 
+Filial
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+impnrrec
+C
+I
+99999
+ 5 
+ 5 
+ 0 
+ 0 
+ 0 
+N£mero
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+procimp
+C
+I
+@R 99999/99/!!
+ 9 
+ 11 
+ 0 
+ 0 
+ 0 
+Procimp
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+pvalor
+N
+I
+@E 999,999.99
+ 9 
+ 10 
+ 0 
+ 0 
+ 2 
+Valor
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+pcob
+C
+I
+!!!
+ 3 
+ 3 
+ 0 
+ 0 
+ 0 
+Cobrador
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+mmesref
+C
+I
+@R 99/99
+ 4 
+ 5 
+ 0 
+ 0 
+ 0 
+Mˆs Ref.
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+pnumfcc
+C
+I
+ 
+ 8 
+ 8 
+ 0 
+ 0 
+ 0 
+Pnumfcc
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+p_cidade
+C
+E
+@!
+ 25 
+ 25 
+ 15 
+ 10 
+ 0 
+Munic¡pio
+
+!EMPT(p_cidade)
+Informe o nome do munic¡pio|Ser  utilizado na impressÆo de alguns relat¢rios|como parte da data.
+
+Entre com o nome do Munic¡pio
+
+ 0 
+ 0 
+
+
+p_recp
+C
+E
+!
+ 1 
+ 1 
+ 16 
+ 49 
+ 0 
+Recibo Padr„o
+
+(p_recp$[SN ])
+RECIBO PADRŽO n„o aceit vel|Digite S, N ou deixe sem preencher.
+[S]
+Digite S para utilizar o modelo|Padronizado de recibos (formul rio branco)|ou N para recibos personalizados
+MTAB([S-Recibos em pap‚l branco|N-Recibos pr‚-impressos],[RECIBO PADRŽO])
+ 0 
+ 0 
+
+
+setup1
+C
+E
+ 
+ 40 
+ 40 
+ 18 
+ 1 
+ 0 
+Ident1
+
+!EMPT(setup1)
+Digite o nome da Empresa|Ser  utilizado em relat¢rios
+[Ind£stria de Urnas Bignotto Ltda]
+Informe o nome da Empresa
+
+ 0 
+ 0 
+
+
+cgcsetup
+C
+E
+@R 99.999.999/9999-99
+ 14 
+ 18 
+ 18 
+ 45 
+ 0 
+CGC
+
+VCGC(cgcsetup).or.EMPT(cgcsetup)
+Necess rio informar CGC
+
+
+
+ 0 
+ 0 
+
+
+setup2
+C
+E
+ 
+ 50 
+ 50 
+ 19 
+ 9 
+ 0 
+Ident2
+
+ 
+
+
+Digite o endere‡o.
+Digite o endere‡o,|ser  a 2¦ linha de cabe‡alho|de alguns relat¢rios
+ 0 
+ 0 
+
+
+setup3
+C
+E
+ 
+ 50 
+ 50 
+ 20 
+ 9 
+ 0 
+Setup3
+
+ 
+
+
+Informe a 3¦ linha de cabe‡alho.|Ex.: Telefone, Fax, etc...
+
+ 0 
+ 0 
+
+
+ 4 
+Desc.Pgto.
+IIF(PTAB(histpg,'HISTORIC',1),HISTORIC->descricao,SPACE(40))
+
+ 5 
+ 22 
+ 40 
+
+Desc.Recebto
+IIF(PTAB(histrcrec,'HISTORIC',1),HISTORIC->descricao,SPACE(40))
+
+ 3 
+ 22 
+ 40 
+
+Desc.Receb.FCC
+IIF(PTAB(histrcfcc,'HISTORIC',1),HISTORIC->descricao,SPACE(40))
+
+ 2 
+ 22 
+ 40 
+
+Descri‡„o de Hi
+IIF(PTAB(histrccar,'HISTORIC',1),HISTORIC->descricao,SPACE(40))
+
+ 4 
+ 22 
+ 40 
+
+ 0 
+ 0 
+ 0 
+ 0 

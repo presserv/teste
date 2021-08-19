@@ -1,0 +1,280 @@
+GAS-Pro v3.0
+011003022079002001074001012000176001
+  Circular Emissao       Valor   Pagamento  Valor pago Cobrador  SubTotal
+  ======== ========== ========== ========== ========== ======== ==========
+    -
+[Ÿ]
+ 8 
+TAXAS
+Cobran‡as
+codigo
+codigo
+R07701F9()
+011
+
+
+
+
+
+
+
+
+
+-1 
+ 0 
+ 0 
+ 66 
+ 0 
+ 2 
+ 3 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Tipo
+tipo
+!
+ 1 
+C
+ 3 
+ 4 
+R07701F9()
+
+  û       
+
+
+
+
+
+
+
+
+
+
+Circular
+circ
+999
+ 3 
+C
+ 3 
+ 6 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Emissao
+emissao_
+@D
+ 10 
+D
+ 3 
+ 12 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Valor
+R07702F9()
+@E 999,999.99
+ 10 
+N
+ 3 
+ 23 
+
+vlpend
+   û      
+
+
+
+
+
+
+
+
+
+
+Pagamento
+pgto_
+@D
+ 10 
+D
+ 3 
+ 34 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Valor pago
+valorpg
+@E 999,999.99
+ 10 
+N
+ 3 
+ 45 
+
+vlpg
+   û      
+
+
+
+
+
+
+
+
+
+
+Cobrador
+cobrador
+!!!
+ 3 
+C
+ 3 
+ 58 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Sub
+subtt+vlpend-vlpg
+@E 999,999.99
+ 10 
+N
+ 3 
+ 65 
+
+subtt
+          
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 0 
+ 0 
+ 44 
+
+T¡tulo aplica‡„o
+nsis
+
+ 0 
+ 0 
+ 29 
+
+Data do sistema
+DTOC(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 0 
+ 0 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 0 
+ 0 
+ 4 
+
+C¢digo relat¢rio
+"ADC_R077"
+
+ 0 
+ 0 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 0 
+ 0 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 0 
+ 0 
+ 0 
+ 0 

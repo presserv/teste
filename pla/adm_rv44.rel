@@ -1,0 +1,388 @@
+GAS-Pro v3.0
+002003024079001007001001009000176001
+                                                                      PAG
+
+NÆO SAI TAXAS
+
+Codigo Gr TC FP Admiss„o Carˆncia Saitxa Reg Cob Fun U.C. Motivo
+------------------------------------------------------------------------------
+[Ÿ]
+ 12 
+GRUPOS
+N„o Sai Taxas
+
+
+CLASSES->prior=[S].AND.!EMPT(rv4401f9())
+011
+
+
+
+
+
+
+
+
+
+ 0 
+ 1 
+ 0 
+ 66 
+ 0 
+ 6 
+ 3 
+ 0 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Codigo
+codigo
+999999
+ 6 
+C
+ 7 
+ 1 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Gr
+grupo
+
+ 2 
+C
+ 7 
+ 8 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+TC
+tipcont
+99
+ 2 
+C
+ 7 
+ 11 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+FP
+formapgto
+99
+ 2 
+C
+ 7 
+ 14 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Admiss„o
+admissao
+@D
+ 8 
+D
+ 7 
+ 17 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Carˆncia
+tcarencia
+@D
+ 8 
+D
+ 7 
+ 26 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Saitxa
+saitxa
+@R 99/99
+ 5 
+C
+ 7 
+ 35 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Reg
+regiao
+999
+ 3 
+C
+ 7 
+ 42 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Cob
+cobrador
+!!
+ 2 
+C
+ 7 
+ 46 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Fun
+funerais
+99
+ 2 
+N
+ 7 
+ 51 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+U.C.
+ultcirc
+999
+ 3 
+C
+ 7 
+ 54 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+Motivo
+RV4401F9()
+
+ 18 
+C
+ 7 
+ 59 
+
+
+          
+
+
+
+
+
+
+
+
+
+
+ 9 
+Nome da empresa
+nemp
+
+ 1 
+ 1 
+ 32 
+
+T¡tulo aplica‡„o
+nsis
+
+ 2 
+ 1 
+ 22 
+
+Data do sistema
+DTOC(DATE())
+
+ 3 
+ 71 
+ 8 
+
+Nome do mˆs
+NMES(DATE())
+
+ 0 
+ 0 
+ 8 
+
+Dia da semana
+NSEM(DATE())
+
+ 3 
+ 63 
+ 7 
+
+N£mero da p gina
+TRAN(pg_,'9999')
+
+ 1 
+ 75 
+ 4 
+
+C¢digo relat¢rio
+"ADM_RV44"
+
+ 2 
+ 71 
+ 8 
+
+T¡tulo a definir
+titrel
+
+ 4 
+ 1 
+ 30 
+
+Hora da emiss„o
+hora_rel_
+
+ 0 
+ 0 
+ 5 
+
+ 1 
+ARQGRUP
+proxcirc
+M->rproxcirc
+
+ARQGRUP->proxcirc<M->rproxcirc
+
+
+ 0 
+ 0 
+ 3 
+CLASSES
+ 1 
+tipcont
+
+
+
+ARQGRUP
+ 1 
+M->mgrupvip
+
+
+
+CIRCULAR
+ 1 
+M->mgrupvip+ARQGRUP->proxcirc
+
+
+

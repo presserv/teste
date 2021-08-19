@@ -1,0 +1,601 @@
+GAS-Pro v3.0
+005002021080001015001001020001176001
+ Tipo da Cobran‡a:                             ÚÄÄÄÄÄÄÄÄ Mensagem ÄÄÄÄÄÄÄÄÄÄ¿
+ Grupo:     (      -       £lt.:             ) ³                            ³
+                                               ³                            ³
+ Circulares a emitir: N§      at‚              ³                            ³
+ Cobran‡as  entre:                             ³                            ³
+ e n§ de contrato entre:        e              ³                            ³
+                                               ³                            ³
+         Reimprimir taxas j  impressas?        ³                            ³
+     Acumular valor das cobran‡as vencidas?    ³                            ³
+         Tipo das taxas a acumular :           ³                            ³
+                                               ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ Local de Pagamento:
+
+ Imprimir os recibos do n£mero      at‚
+                                 Confirme:
+[Ÿ]
+[Ÿ]
+ 25 
+ 0 
+Impress„o de Cobran‡a
+Impress„o de Cobran‡a
+
+
+
+
+
+
+
+056
+
+
+
+
+
+
+
+ 0 
+ 0 
+-1 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+rtp
+C
+E
+!
+ 1 
+ 1 
+ 1 
+ 20 
+ 0 
+Tipo
+MTAB([1=J¢ia |2=Taxa |3=Carnˆ],[TIPO])
+rtp $ [123]
+TIPO n„o aceit vel
+[3]
+Qual o tipo de cobran‡a a imprimir neste impresso.
+MTAB([1=J¢ia |2=Taxa |3=Carnˆ],[TIPO])
+ 0 
+ 0 
+
+
+rgrupo
+C
+E
+!!
+ 2 
+ 2 
+ 2 
+ 9 
+ 0 
+Grupo
+
+PTAB(rgrupo,'ARQGRUP',1).OR.EMPT(rgrupo)
+GRUPO n„o existe na tabela
+
+Entre com o grupo ou |tecle F8 para consulta em tabela
+VDBF(6,33,20,77,'ARQGRUP',{'grup','inicio','final','ultcirc','emissao_','procpend'},1,'grup',[])
+ 0 
+ 0 
+
+
+rproxcirc
+C
+E
+999
+ 3 
+ 3 
+ 4 
+ 26 
+ 0 
+N§Proxima Circ.
+
+PTAB(rgrupo+rproxcirc,'CIRCULAR',1).OR.1=1
+A Pr¢xima circular deve estar|lan‡ada em Tabela/Circulares
+ARQGRUP->proxcirc
+Entre com o n£mero da pr¢xima circular
+STRZERO(VAL(ARQGRUP->ultcirc)+1,3)
+ 0 
+ 0 
+
+
+rultcirc
+C
+E
+999
+ 3 
+ 3 
+ 4 
+ 35 
+ 0 
+N§Ultima Circ.
+
+ 
+
+
+Entre com o n£mero da ultima circular
+STRZERO(VAL(ARQGRUP->ultcirc)+1,3)
+ 0 
+ 0 
+
+
+rem1_
+D
+E
+@D
+ 8 
+ 10 
+ 5 
+ 20 
+ 0 
+Emiss„o
+
+!EMPT(Rem1_)
+Deve ser informada uma data v lida.
+IIF(!(rproxcirc<[001]),CIRCULAR->emissao_,DATE())
+Data da Emiss„o da Circular.| Informe a data a considerar como inicial na emiss„o.
+
+ 0 
+ 0 
+
+
+rem2_
+D
+E
+@D
+ 8 
+ 10 
+ 5 
+ 31 
+ 0 
+Emiss„o
+
+!EMPT(Rem2_)
+Informe uma data v lida, deve ser posterior|a inicial
+(DATE()+31)-DAY(DATE()+31)
+Imprimir a cobran‡a lan‡ada at‚ que data.
+
+ 0 
+ 0 
+
+
+rcod1
+C
+E
+999999
+ 6 
+ 6 
+ 6 
+ 26 
+ 0 
+Contrato
+
+PTAB(rcod1,'GRUPOS',1).OR.rcod1='000000'
+CODIGO n„o aceit vel|Digite zeros para listar todos os|contratos no intervalo
+[000000]
+Entre com o n£mero do contrato
+VDBF(6,26,20,77,'GRUPOS',{'grupo','codigo','nome'},1,'codigo')
+ 0 
+ 0 
+
+
+rcod2
+C
+E
+999999
+ 6 
+ 6 
+ 6 
+ 35 
+ 0 
+Contrato
+
+PTAB(rcod2,'GRUPOS',1).OR.rcod2 >= rcod1
+CODIGO n„o aceit vel|Digite zeros para listar todos os|contratos no intervalo
+[000000]
+Entre com o n£mero do contrato
+VDBF(6,26,20,77,'GRUPOS',{'grupo','codigo','nome'},1,'codigo')
+ 0 
+ 0 
+
+
+rreimp
+C
+E
+!
+ 1 
+ 1 
+ 8 
+ 41 
+ 0 
+Reimprimir?
+
+rreimp$[SN ]
+Necess rio informar REIMPRIMIR?|Digite S ou N
+[N]
+Digite S para imprimir todos os documentos|mesmo os que j  foram impressos anteriormente.
+
+ 0 
+ 0 
+
+
+racum
+C
+E
+!
+ 1 
+ 1 
+ 9 
+ 45 
+ 0 
+Acumular?
+
+racum$[SN ]
+ACUMULAR? n„o aceit vel|Digite S ou N
+[ ]
+Digite S para acumular o valor|das cobran‡as n„o pagas neste documento.
+
+ 0 
+ 0 
+
+
+rtipo
+C
+E
+!!!
+ 3 
+ 3 
+ 10 
+ 38 
+ 0 
+Tipos a imprimir
+racum='S'
+!EMPT(rtipo)
+Necess rio informar TIPOS A IMPRIMIR
+[123]
+Digite 1 para J¢ia, 2 para cobran‡as e 3 p/Periodo
+MTAB([111-J¢ia|222-p/Processos|333-Peri¢dico|122-J¢ia+Processos|133-J¢ia+Per¡odico|233-Processos+Peri¢dicos|123-Todos],[TIPOS A IMPRIMIR])
+ 0 
+ 0 
+
+
+rmens1
+C
+E
+ 
+ 28 
+ 28 
+ 2 
+ 49 
+ 0 
+Mens1
+
+ 
+
+
+Informe a mensagem do recibo|de cobran‡a
+
+ 0 
+ 0 
+
+
+rmens2
+C
+E
+ 
+ 28 
+ 28 
+ 3 
+ 49 
+ 0 
+Mens2
+
+ 
+
+
+Informe a mensagem do recibo|de cobran‡a
+
+ 0 
+ 0 
+
+
+rmens3
+C
+E
+ 
+ 28 
+ 28 
+ 4 
+ 49 
+ 0 
+Mens3
+
+ 
+
+
+Informe a mensagem do recibo|de cobran‡a
+
+ 0 
+ 0 
+
+
+rmens4
+C
+E
+ 
+ 28 
+ 28 
+ 5 
+ 49 
+ 0 
+Mens4
+
+ 
+
+
+Informe a mensagem do recibo|de cobran‡a
+
+ 0 
+ 0 
+
+
+rmens5
+C
+E
+ 
+ 28 
+ 28 
+ 6 
+ 49 
+ 0 
+Mens5
+
+ 
+
+
+Informe a mensagem do recibo|de cobran‡a
+
+ 0 
+ 0 
+
+
+rmens6
+C
+E
+ 
+ 28 
+ 28 
+ 7 
+ 49 
+ 0 
+Mens6
+
+ 
+
+
+Informe a mensagem do recibo|de cobran‡a
+
+ 0 
+ 0 
+
+
+rmens7
+C
+E
+ 
+ 28 
+ 28 
+ 8 
+ 49 
+ 0 
+Mens7
+
+ 
+
+
+Informe a mensagem do recibo|de cobran‡a
+
+ 0 
+ 0 
+
+
+rmens8
+C
+E
+ 
+ 28 
+ 28 
+ 9 
+ 49 
+ 0 
+Mens8
+
+ 
+
+
+Informe a mensagem do recibo|de cobran‡a
+
+ 0 
+ 0 
+
+
+rmens9
+C
+E
+ 
+ 28 
+ 28 
+ 10 
+ 49 
+ 0 
+Mens9
+
+ 
+
+
+Informe a mensagem do recibo|de cobran‡a
+
+ 0 
+ 0 
+
+
+rlocpg1
+C
+E
+@!
+ 50 
+ 50 
+ 12 
+ 22 
+ 0 
+Rlocpg1
+
+ 
+
+
+
+
+ 0 
+ 0 
+
+
+rlocpg2
+C
+E
+@!
+ 50 
+ 50 
+ 13 
+ 22 
+ 0 
+Rlocpg1
+
+ 
+
+
+
+
+ 0 
+ 0 
+
+
+rpagin
+N
+E
+9999
+ 4 
+ 4 
+ 14 
+ 32 
+ 0 
+Pag.inicial
+
+ 
+
+
+Informe o n£mero do primeiro recibo a imprimir.
+
+ 0 
+ 0 
+
+
+rpagfim
+N
+E
+9999
+ 4 
+ 4 
+ 14 
+ 41 
+ 0 
+Pag.final
+
+ 
+
+
+Informe o n£mero do £ltimo recibo a imprimir.
+
+ 0 
+ 0 
+
+
+confirme
+C
+E
+!
+ 1 
+ 1 
+ 15 
+ 44 
+ 0 
+Confirme
+
+confirme='S'.AND.V87001F9()
+CONFIRME n„o aceit vel
+
+Digite S para confirmar|ou|tecle ESC para cancelar
+
+ 0 
+ 0 
+
+
+ 4 
+Nr.Inicial
+ARQGRUP->inicio
+999999
+ 2 
+ 14 
+ 6 
+
+Nr.Final
+ARQGRUP->final
+999999
+ 2 
+ 21 
+ 6 
+
+Ultcirc
+ARQGRUP->ultcirc
+999
+ 2 
+ 34 
+ 3 
+
+Emissao
+ARQGRUP->emissao_
+@D
+ 2 
+ 38 
+ 8 
+
+ 0 
+ 0 
+ 0 
+ 0 

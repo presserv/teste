@@ -1,0 +1,390 @@
+GAS-Pro v3.0
+
+[Ÿ]
+ 15 
+TAXAS
+Consulta D‚bitos gerados
+
+
+R08701F9()
+008
+
+
+
+
+
+
+
+
+
+ 0 
+ 1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+Grupo
+IIF(R08701F9(),GRUPOS->grupo,[])
+!!
+ 2 
+C
+ 0 
+ 0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Codigo
+codigo
+999999
+ 6 
+C
+ 0 
+ 0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Circular
+tipo+[-]+circ
+
+ 5 
+C
+ 0 
+ 0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Nome
+GRUPOS->nome
+
+ 35 
+C
+ 0 
+ 0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Endere‡o
+GRUPOS->endereco
+
+ 35 
+C
+ 0 
+ 0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bairro
+GRUPOS->bairro
+
+ 20 
+C
+ 0 
+ 0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Cidade
+GRUPOS->cidade
+
+ 25 
+C
+ 0 
+ 0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+CEP
+GRUPOS->cep
+@R 99999-999
+ 9 
+C
+ 0 
+ 0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Admiss„o
+GRUPOS->admissao
+@D
+ 8 
+D
+ 0 
+ 0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Funerais
+GRUPOS->funerais
+99
+ 2 
+N
+ 0 
+ 0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Circ.Inicial
+GRUPOS->circinic
+999
+ 3 
+C
+ 0 
+ 0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ult.Circular
+GRUPOS->ultcirc
+999
+ 3 
+C
+ 0 
+ 0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Emissao
+emissao_
+@D
+ 8 
+D
+ 0 
+ 0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Valor
+valor
+@E 999,999.99
+ 10 
+N
+ 0 
+ 0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Val.Taxas
+R08702F9()+vlseg
+@E 999,999.99
+ 10 
+N
+ 0 
+ 0 
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 0 
+ 0 
+ 0 
+ 0 
+ 6 
+GRUPOS
+ 1 
+codigo
+
+
+
+CSTSEG
+ 3 
+codigo+tipo+circ
+
+
+
+CLASSES
+ 1 
+GRUPOS->tipcont
+
+
+
+COBRADOR
+ 1 
+cobrador
+
+
+
+ARQGRUP
+ 1 
+GRUPOS->grupo
+
+
+
+CIRCULAR
+ 1 
+GRUPOS->grupo+circ
+
+
+

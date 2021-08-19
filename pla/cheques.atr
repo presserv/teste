@@ -1,0 +1,199 @@
+GAS-Pro v3.0
+016017023067001002001001018000176001
+ Seqch ³ Banco ³ Agˆncia ³ Numcheq ³       Valor
+ÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄ
+       ³       ³         ³         ³
+       ³       ³         ³         ³
+       ³       ³         ³         ³
+       ³       ³         ³         ³
+[Ÿ]
+Inclus„o~~26006
+Manuten‡„o~~27007
+Consulta~~28008
+[Ÿ]
+ 6 
+ 1 
+p/N£mero
+
+ 1 
+ 2 
+[Ÿ]
+Cheques
+Cheques
+
+
+
+
+
+
+
+005
+
+
+
+
+
+
+
+ 0 
+ 0 
+-1 
+-1 
+-1 
+-1 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+numero
+C
+I
+9999999
+ 7 
+ 7 
+ 0 
+ 0 
+ 0 
+Lan‡amento N§
+
+
+
+
+
+
+ 0 
+ 0 
+
+
+seqch
+C
+V
+999
+ 3 
+ 3 
+ 3 
+ 2 
+ 0 
+Seqch
+
+
+
+
+
+
+ 0 
+ 1 
+
+
+banco
+C
+E
+9999
+ 4 
+ 4 
+ 3 
+ 10 
+ 0 
+Banco
+
+!EMPT(banco)
+Necess rio informar BANCO
+
+Entre com o n£mero do banco
+
+ 0 
+ 0 
+
+
+agencia
+C
+E
+9999
+ 4 
+ 4 
+ 3 
+ 18 
+ 0 
+Agˆncia
+
+!EMPT(agencia)
+Necess rio informar AGENCIA
+
+Informe a agˆncia do cheque
+
+ 0 
+ 0 
+
+
+numcheq
+C
+E
+ 
+ 7 
+ 7 
+ 3 
+ 28 
+ 0 
+Numcheq
+
+!EMPT(numcheq)
+Necess rio informar NUMCHEQ
+
+Digite o n£mero do cheque
+
+ 0 
+ 0 
+
+
+valorch
+N
+E
+99999999.99
+ 11 
+ 11 
+ 3 
+ 38 
+ 2 
+Valor
+
+valorch>0
+VALOR n„o aceit vel
+
+Informe o valor do cheque
+
+ 0 
+ 0 
+
+
+ 0 
+ 1 
+BAIXAS
+vlpagcheq
+BAIXAS->vlpagcheq+valorch
+BAIXAS->vlpagcheq-valorch
+
+
+
+ 0 
+ 0 
+ 0 

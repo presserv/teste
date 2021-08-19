@@ -1,0 +1,149 @@
+GAS-Pro v3.0
+
+[Ÿ]
+ 0 
+TAXAS
+Gerar TxProc
+
+
+
+001
+
+
+
+
+
+
+
+
+
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 1 
+TXPROC
+1
+ 16 
+TXPROC->(EOF()).AND.((emissao_>=M->inicio_.AND.stat<'5').OR.(baixa_>=M->inicio_.AND.stat=[9]))
+
+ 0 
+
+
+
+codigo
+C
+codigo
+
+
+tipo
+C
+tipo
+
+
+circ
+C
+circ
+
+
+emissao_
+D
+emissao_
+
+
+valor
+N
+valor
+
+
+pgto_
+D
+pgto_
+
+
+valorpg
+N
+valorpg
+
+
+cobrador
+C
+cobrador
+
+
+forma
+C
+forma
+
+
+baixa_
+D
+baixa_
+
+
+por
+C
+por
+
+
+stat
+C
+stat
+
+
+filial
+C
+filial
+
+
+atp
+C
+
+
+
+atc
+C
+
+
+
+atr
+C
+
+
+
+ 1 
+TXPROC
+ 1 
+codigo+tipo+circ
+
+
+

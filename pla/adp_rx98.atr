@@ -1,0 +1,197 @@
+GAS-Pro v3.0
+009018016067001002014001011000176001
+ Per¡odo..: De:            At‚:
+ Regi„o...:
+ Vendedor.:
+ Anal¡tico:
+ Confirme:
+[Ÿ]
+[Ÿ]
+ 6 
+ 0 
+Vendedor por rea
+Vendedor por rea
+
+
+
+
+
+
+
+056
+
+
+
+
+
+
+
+ 0 
+ 0 
+-1 
+-1 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0 
+rde
+D
+E
+@D
+ 8 
+ 10 
+ 1 
+ 17 
+ 0 
+De:
+
+!EMPT(rde)
+Necess rio informar a data inicial a considerar
+DATE()-DAY(DATE())+1
+Informe a data inicial a considerar
+
+ 0 
+ 0 
+
+
+rate
+D
+E
+@D
+ 8 
+ 10 
+ 1 
+ 33 
+ 0 
+At‚:
+
+!EMPT(rate)
+Necess rio informar AT:
+DATE()
+Informe a data final a considerar
+
+ 0 
+ 0 
+
+
+rregiao
+C
+E
+999
+ 3 
+ 3 
+ 2 
+ 13 
+ 0 
+Regi„o
+
+PTAB(rregiao,'REGIAO',1).OR.EMPT(VAL(rregiao))
+REGIŽO n„o existe na tabela
+
+Informe a regi„o ou tecle F8 para busca em tabela
+VDBF(6,38,20,77,'REGIAO',{'codigo','regiao'},1,'codigo')
+ 0 
+ 0 
+
+
+rvend
+C
+E
+999
+ 3 
+ 3 
+ 3 
+ 13 
+ 0 
+Vendedor
+
+PTAB(rvend,'COBRADOR',1).OR.rvend=[000]
+VENDEDOR n„o existe na tabela
+
+Informe o c¢digo do Vendedor|ou|Tecle F8 para consulta em arquivo
+VDBF(6,7,20,77,'COBRADOR',{'cobrador','funcao','nome','cidade'},1,'cobrador')
+ 0 
+ 0 
+
+
+ranalit
+C
+E
+!
+ 1 
+ 1 
+ 4 
+ 13 
+ 0 
+Anal¡tico?
+
+ranalit $ [SN]
+ANAL¡TICO? n„o aceit vel
+[N]
+Digite S para listar os detalhes|ou|N para somente totais
+MTAB([Sim, liste os detalhes|N„o, apenas totalize],[ANAL¡TICO?])
+ 0 
+ 0 
+
+
+confirme
+C
+E
+!
+ 1 
+ 1 
+ 5 
+ 12 
+ 0 
+Confirme
+
+confirme= 'S'
+CONFIRME n„o aceit vel|Digite S ou Tecle ESC
+
+Digite S para confirmar |ou|Tecle ESC para cancelar
+
+ 0 
+ 0 
+
+
+ 2 
+Descri‡„o
+REGIAO->regiao
+
+ 2 
+ 17 
+ 30 
+
+Nome do Cobrado
+COBRADOR->nome
+
+ 3 
+ 17 
+ 30 
+
+ 0 
+ 0 
+ 0 
+ 0 
